@@ -9,6 +9,8 @@ CREATE TABLE SBT_ID (
 
 INSERT INTO SBT_ID (Template_ID, SMS_ID, Vender) VALUES
   ('T123', 'SMS123', 'SBT'),
+  ('T789', 'SMS789', 'SBT'),
+  ('T012', 'SMS012', 'SBT'),
   ('T456', 'SMS456', 'SBT');
   
   
