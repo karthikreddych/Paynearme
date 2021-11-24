@@ -15,20 +15,22 @@
  */
 package LendingClub.sbtsmsfebe;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.stereotype.Controller;
+//import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Greg Turnquist
+ * @author 
  */
 // tag::code[]
-@Controller // <1>
+@RestController // <1>
 public class HomeController {
 
-	@RequestMapping(value = "/") // <2>
-	public String index() {
-		return "index"; // <3>
+	@GetMapping("/api/dadjokes")
+    public String dadJokes() {
+        return "Justice is a dish best served cold, if it were served warm it would be just water.";
 	}
 
 }
-// end::code[]
+// end::code[]  

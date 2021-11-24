@@ -35,22 +35,20 @@ class Dropdown extends React.Component{
 			<Sbt_id key={Sbt_id._links.self.href} Sbt_id={Sbt_id}/>
 		);
 		return (
-			<div id="react">
-      
+			//<div id="react">
+			
+      		<div>
 		<p>Select the Template ID from the drop down</p>
 		<p>Template ID </p>
 		<select id="TemplateID">
 		<option value = "Select Template ID">Select Template ID</option>
-        <option value = "Template123">Template123</option>
-		<option value = "Template456">Template456</option>
 		</select>     
                
     	<p>Select the SMS ID from the drop down</p>
-        <p >SMS ID</p>
+        <p>SMS ID</p>
 		<select id="SMSid">
 		<option value = "Select SMS ID">Select SMS ID </option>
-        <option value = "SMS123">SMS123</option>
-		<option value = "SMS456">SMS456</option>
+       
 		</select>
         
   </div>
