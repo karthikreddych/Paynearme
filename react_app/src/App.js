@@ -11,7 +11,7 @@ class App extends Component {
         }
 
     dadJokes = () => {
-        fetch('/api/dadjokes')
+        fetch('http://localhost:8080/api/dadjokes')
             .then(response => response.text())
             .then(message => {
                console.log(message)
@@ -21,15 +21,21 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-            <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo"/>
-            <h3 className="App-title">{this.state.message}</h3>
-            </header>
-            <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        </div>
+            <div className = "idselection">
+		<p>Select the Template ID from the drop down</p>
+		<p>Template ID </p>
+		<select id="TemplateID">
+		<option value = "Select Template ID">Select Template ID</option>
+		</select>     
+               
+    	<p>Select the SMS ID from the drop down</p>
+        <p>SMS ID</p>
+		<select id="SMSid">
+		<option value = "Select SMS ID">Select SMS ID </option>
+       
+		</select>
+        
+  </div>
     );
     }
 }
