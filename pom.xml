@@ -8,9 +8,11 @@
 		<version>2.5.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>LendingClub</groupId>
 	<artifactId>sbt-sms-febe</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>sbt-sms-febe</name>
 	<description>Custom Activity for Journey Builder to send the Template and SMS ID to SBT</description>
 	<properties>
@@ -21,6 +23,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
@@ -52,6 +55,9 @@
 	</dependencies>
 
 	<build>
+	
+    <pluginManagement>
+    
 		<plugins>
 		<plugin>
    <groupId>com.github.eirslett</groupId>
@@ -82,12 +88,12 @@
          </configuration>
       </execution>
       <execution>
-         <id>npm run build</id>
+         <id>npm build</id>
          <goals>
             <goal>npm</goal>
          </goals>
          <configuration>
-            <arguments>run build</arguments>
+            <arguments>build</arguments>
          </configuration>
       </execution>
    </executions>
@@ -101,6 +107,7 @@
             <target>
                <copy todir="${project.build.directory}/classes/public">
                   <fileset dir="${project.basedir}/react_app/build"/>
+                  
                </copy>
             </target>
          </configuration>
@@ -115,41 +122,19 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			
+			<plugin>
+    <artifactId>maven-war-plugin</artifactId>
+    <version>3.3.1</version>
+    <configuration>
+        <archive>
+            <manifest>
+                <addClasspath>true</addClasspath>
+            </manifest>
+        </archive>
+    </configuration>
+</plugin>
+			
 		</plugins>
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.apache.maven.plugins
-										</groupId>
-										<artifactId>
-											maven-antrun-plugin
-										</artifactId>
-										<versionRange>
-											[1.8,)
-										</versionRange>
-										<goals>
-											<goal>run</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
 		</pluginManagement>
 	</build>
 

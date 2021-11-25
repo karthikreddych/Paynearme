@@ -22,14 +22,15 @@ class App extends Component {
     render() {
         return (
             <div className = "idselection">
-		<p>Select the Template ID from the drop down</p>
-		<p>Template ID </p>
+        <img src="./images/lending_logo.jpg" alt=""></img>
+		<p className="idselection_mainheading">Select the TEMPLATE ID from the drop down</p>
+		<p className="idselection_heading">Template ID </p>
 		<select id="TemplateID">
-		<option value = "Select Template ID">Select Template ID</option>
-		</select>     
+		<option value = "Select Template ID">Select TEMPLATE ID</option>
+       </select>     
                
-    	<p>Select the SMS ID from the drop down</p>
-        <p>SMS ID</p>
+    	<p className="idselection_mainheading">Select the SMS ID from the drop down</p>
+        <p className="idselection_heading">SMS ID</p>
 		<select id="SMSid">
 		<option value = "Select SMS ID">Select SMS ID </option>
        
