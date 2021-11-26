@@ -1,4 +1,4 @@
-package LendingClub.sbtsmsfebe;
+package com.lendingclub.smsbe;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class SbtSmsFebeApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 

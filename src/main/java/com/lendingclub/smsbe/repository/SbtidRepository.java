@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 the original author or authors.
+ * Copyright 2015 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,29 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package LendingClub.sbtsmsfebe;
+package com.lendingclub.smsbe.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
+import com.lendingclub.smsbe.domain.SbtId;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  * @author Greg Turnquist
  */
 // tag::code[]
-@Component // <1>
-public class DatabaseLoader implements CommandLineRunner { // <2>
+public interface SbtidRepository extends CrudRepository<SbtId, Long> { // <1>
 
-	private final SbtidRepository repository;
-
-	@Autowired // <3>
-	public DatabaseLoader(SbtidRepository repository) {
-		this.repository = repository;
-	}
-
-	@Override
-	public void run(String...strings) throws Exception { // <4>
-		this.repository.save(new Sbt_id("T000", "SMS000"));
-	}
 }
 // end::code[]

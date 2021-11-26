@@ -13,15 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package LendingClub.sbtsmsfebe;
+package com.lendingclub.smsbe.domain;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.Objects;
+
+import javax.persistence.*;
+import lombok.Data;
 
 /**
  * @author Greg Turnquist
  */
 // tag::code[]
-public interface SbtidRepository extends CrudRepository<Sbt_id, Long> { // <1>
+@Entity //(1)
+@Table(name="sbt_id")
+@Data
+public class SbtId {
 
+	private @Id @GeneratedValue Long id; //(2)
+
+	@Column(name = "template_id")
+	private String templateId;
+	@Column(name = "sms_id")
+	private String smsId;
+	
+	public SbtId() {}
+
+	public SbtId(String templateId, String smsId) {
+		this.templateId = templateId;
+		this.smsId = smsId;
+	}
+	
 }
-// end::code[]
+	
+	
