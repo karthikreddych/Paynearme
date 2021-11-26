@@ -1,5 +1,5 @@
 
-package LendingClub.sbtsmsfebe;
+package com.lendingclub.smsbe.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.stereotype.Controller;

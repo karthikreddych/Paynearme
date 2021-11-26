@@ -1,4 +1,4 @@
-package LendingClub.sbtsmsfebe;
+package com.lendingclub.smsbe;
 
 
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
