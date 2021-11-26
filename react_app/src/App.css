@@ -26,3 +26,11 @@ select:hover{
 	background-color: lightgray;
 	color:black
 }
+.logo{
+	border-bottom: 5px solid #82CDE5;
+	}
+	
+	.lending_logo{
+	height: 50px;
+}
+	
