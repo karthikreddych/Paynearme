@@ -16,7 +16,7 @@
 	<name>sbt-sms-febe</name>
 	<description>Custom Activity for Journey Builder to send the Template and SMS ID to SBT</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
