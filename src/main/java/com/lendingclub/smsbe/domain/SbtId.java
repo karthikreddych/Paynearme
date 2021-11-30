@@ -21,19 +21,19 @@ import javax.persistence.*;
 import lombok.Data;
 
 /**
- * @author Greg Turnquist
+ * @author 
  */
 // tag::code[]
-@Entity //(1)
-@Table(name="sbt_id")
+@Entity 
+@Table(name="SBT_ID")
 @Data
 public class SbtId {
 
 	private @Id @GeneratedValue Long id; //(2)
 
-	@Column(name = "template_id")
+	@Column(name = "Template_ID")
 	private String templateId;
-	@Column(name = "sms_id")
+	@Column(name = "SMS_ID")
 	private String smsId;
 	
 	public SbtId() {}

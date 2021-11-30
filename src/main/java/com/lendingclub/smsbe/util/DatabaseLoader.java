@@ -22,7 +22,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Greg Turnquist
+ * @author 
  */
 // tag::code[]
 @Component // <1>

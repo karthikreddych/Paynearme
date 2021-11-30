@@ -19,7 +19,7 @@ import com.lendingclub.smsbe.domain.SbtId;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * @author Greg Turnquist
+ * @author 
  */
 // tag::code[]
 public interface SbtidRepository extends CrudRepository<SbtId, Long> { // <1>
