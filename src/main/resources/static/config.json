@@ -9,7 +9,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "SBT SMS",
+           "name": "MBO-GATEWAY",
            "description": "To send the Outbound Messaging to SBT via Comms Gateway"
            
        }
