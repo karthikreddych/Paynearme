@@ -12,20 +12,17 @@ class App extends Component {
 
     getSbtIds = () => {
         fetch('http://localhost:8080/api/sbtIds')
-			.then(response => response.text())
+			.then(response=>response.json())
             .then(response=> {
+            let data = response;
             let templateIds = [];
             let smsIds = [];
             let sbtIds = [];
-            sbtIds = JSON.parse(response)._embedded.sbtIds ;
-            console.log(sbtIds)
-            sbtIds.map(sbtId => {
-                 templateIds.push(sbtId.templateId);
-                 smsIds.push(sbtId.smsId);                 
+            sbtIds = data._embedded.sbtIds ;
+            sbtIds?.forEach(sbtId => {
+                 templateIds.push(sbtId?.templateId);
+                 smsIds.push(sbtId?.smsId);                 
             });
-			console.log(response)
-               console.log(templateIds)
-               console.log(smsIds)
             this.setState({sbtIds: response,templateIds:templateIds,smsIds:smsIds});
             });
     };
@@ -38,18 +35,20 @@ class App extends Component {
         </div>
 		<p className="idselection_mainheading">Select the TEMPLATE ID from the drop down</p>
 		<p className="idselection_heading">TEMPLATE ID </p>
-		<select id="TemplateID">
-        {console.log(this.state)}
-		{this.state.templateIds?.map(templateId => {
-        <option value ={templateId}>{templateId}</option>
+		<select id="TemplateID" defaultValue="">
+        <option value="" disabled>Select</option>
+        {this.state.templateIds?.map((templateId,index) => {
+            return <option key={index}>{templateId}</option>
         })}
 		</select>   
                
     	<p className="idselection_mainheading">Select the SMS ID from the drop down</p>
         <p className="idselection_heading">SMS ID</p>
-		<select id="SMSid">
-		<option value = "Select SMS ID">Select SMS ID </option>
-       
+		<select id="SMSid" defaultValue="">
+        <option value="" disabled>Select</option>
+        {this.state.smsIds?.map((smsId,index) => {
+            return <option key={index} value={smsId}>{smsId}</option>
+        })}
 		</select>
         
   </div>

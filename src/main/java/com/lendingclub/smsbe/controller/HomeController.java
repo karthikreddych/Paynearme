@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
   
  */
 // tag::code[]
-@RestController // <1>
+@RestController 
 public class HomeController {
 
 	@GetMapping("/api/dadjokes")

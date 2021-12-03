@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.7</version>
+		<version>2.6.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
 	<groupId>LendingClub</groupId>
 	<artifactId>sbt-sms-febe</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<version>0.0.1-ETM-4612-SNAPSHOT</version>
 	<name>sbt-sms-febe</name>
 	<description>Custom Activity for Journey Builder to send the Template and SMS ID to SBT</description>
 	<properties>
 		<java.version>8</java.version>
 	</properties>
+
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -48,11 +48,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-            <groupId>com.github.eirslett</groupId>
-            <artifactId>frontend-maven-plugin</artifactId>
-            <version>1.6</version>
-		</dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
@@ -60,87 +55,19 @@
 	</dependencies>
 
 	<build>
-	
-    <pluginManagement>
-    
 		<plugins>
-		<plugin>
-   <groupId>com.github.eirslett</groupId>
-   <artifactId>frontend-maven-plugin</artifactId>
-   <version>1.6</version>
-   <configuration>
-      <workingDirectory>react_app</workingDirectory>
-      <installDirectory>target</installDirectory>
-   </configuration>
-   <executions>
-      <execution>
-         <id>install node and npm</id>
-         <goals>
-            <goal>install-node-and-npm</goal>
-         </goals>
-         <configuration>
-            <nodeVersion>v8.9.4</nodeVersion>
-            <npmVersion>3.10.8</npmVersion>
-         </configuration>
-      </execution>
-      <execution>
-         <id>npm install</id>
-         <goals>
-            <goal>npm</goal>
-         </goals>
-         <configuration>
-            <arguments>install</arguments>
-         </configuration>
-      </execution>
-      <execution>
-         <id>npm build</id>
-         <goals>
-            <goal>npm</goal>
-         </goals>
-         <configuration>
-            <arguments>build</arguments>
-         </configuration>
-      </execution>
-   </executions>
-</plugin>
-<plugin>
-   <artifactId>maven-antrun-plugin</artifactId>
-   <executions>
-      <execution>
-         <phase>generate-resources</phase>
-         <configuration>
-            <target>
-               <copy todir="${project.build.directory}/classes/public">
-                  <fileset dir="${project.basedir}/react_app/build"/>
-                  
-               </copy>
-            </target>
-         </configuration>
-         <goals>
-            <goal>run</goal>
-         </goals>
-      </execution>
-   </executions>
-</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			
+
+			<!-- tag::frontend-maven-plugin[] -->
 			<plugin>
-    <artifactId>maven-war-plugin</artifactId>
-    <version>3.3.1</version>
-    <configuration>
-        <archive>
-            <manifest>
-                <addClasspath>true</addClasspath>
-            </manifest>
-        </archive>
-    </configuration>
-</plugin>
-			
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+			</plugin>
+			<!-- end::frontend-maven-plugin[] -->
 		</plugins>
-		</pluginManagement>
 	</build>
 
 </project>

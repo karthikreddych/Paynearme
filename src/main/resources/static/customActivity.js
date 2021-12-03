@@ -50,7 +50,7 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'SMSid') {
+                if (key === 'templateIds') {
                     $('#SMSid').val(val);
                 }
 
