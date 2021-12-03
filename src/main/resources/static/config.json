@@ -18,7 +18,7 @@
         "execute": {
             "inArguments": [
                 {
-                  "email": "{{Contact.Default.EmailAddress}}",	
+                  "email": "{{Contact.Attribute.EmailAddress}}",	
 				  "to": "{{Contact.Attribute.SBT.Contact}}" 
 				 }               
             ],
@@ -79,8 +79,8 @@
 
     "userInterfaces": {
         "configModal": {
-            "height": 300,
-            "width": 470,
+            "height": 650,
+            "width": 650,
             "fullscreen": false
         }
 
