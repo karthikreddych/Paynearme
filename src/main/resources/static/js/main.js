@@ -1,4 +1,4 @@
-/*'use strict';
+'use strict';
 
 requirejs.config({
 	paths: {
@@ -22,4 +22,4 @@ requirejs.onError = function (err) {
 		console.log('modules: ' + err.requireModules);
 	}
 	throw err;
-};*/
+};
