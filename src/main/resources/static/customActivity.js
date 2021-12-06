@@ -50,11 +50,11 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'SMSids') {
+                if (key === 'SMSid_Value') {
                     $('#SMSid').val(val);
                 }
 
-                if (key === 'TemplateIDs') {
+                if (key === 'TemplateID_Value') {
                     $('#TemplateID').val(val);
                 }
 
@@ -88,8 +88,8 @@ define([
        // var body = $('#messageBody').val();
 
         payload['arguments'].execute.inArguments = {
-            "SMSids": SMSidValue,
-            "TemplateIDs": TemplateIDValue,
+            "SMSid_Value": SMSidValue,
+            "TemplateID_Value": TemplateIDValue,
             //"messagingService": messagingService,
             //"body": body,
             "to": "{{Contact.Attribute.SBT.Contact}}" //<----This should map to your data extension name and phone number column

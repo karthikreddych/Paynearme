@@ -79,8 +79,8 @@
 
     "userInterfaces": {
         "configModal": {
-            "height": 430,
-            "width": 580,
+            "height": 420,
+            "width": 575,
             "fullscreen": false
         }
 
