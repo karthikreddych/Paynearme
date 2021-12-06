@@ -9,7 +9,7 @@ define([
     var payload = {};
     var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
-    {'key': 'idselection', 'label': 'SBT Template and SMS ID Selection'}
+    {'key': 'idselection', 'label': 'MBO Gayeway Template and SMS ID Selection'}
     //{'key': 'SMSidselection', 'label': 'Select SMS ID'}
     ];
     var currentStep = steps[0].key;
@@ -31,7 +31,7 @@ define([
     }
 
   function initialize(data) {
-        console.log("Initializing data data: "+ JSON.stringify(data));
+        console.log(data);
         if (data) {
             payload = data;
         }    
@@ -45,16 +45,16 @@ define([
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
-        console.log('Has In arguments: '+JSON.stringify(inArguments));
+        console.log(inArguments);
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'templateIds') {
+                if (key === 'SMSids') {
                     $('#SMSid').val(val);
                 }
 
-                if (key === 'TemplateID') {
+                if (key === 'TemplateIDs') {
                     $('#TemplateID').val(val);
                 }
 
@@ -71,25 +71,25 @@ define([
 
     function onGetTokens (tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-        console.log("Tokens function: "+JSON.stringify(tokens));
-        //authTokens = tokens;
+        console.log(tokens);
+        authTokens = tokens;
     }
 
     function onGetEndpoints (endpoints) {
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
-        console.log("Get End Points function: "+JSON.stringify(endpoints));
+        console.log(endpoints);
     }
 
     function save() {
 	//alert($('#SMSid').val());
-        var SMSid = $('#SMSid').val();
-        var TemplateID = $('#TemplateID').val();
+        var SMSidValue = $('#SMSid').val();
+        var TemplateIDValue = $('#TemplateID').val();
         //var messagingService = $('#messagingService').val();
        // var body = $('#messageBody').val();
 
         payload['arguments'].execute.inArguments = {
-            "SMSid": SMSid,
-            "TemplateID": TemplateID,
+            "SMSids": SMSidValue,
+            "TemplateIDs": TemplateIDValue,
             //"messagingService": messagingService,
             //"body": body,
             "to": "{{Contact.Attribute.SBT.Contact}}" //<----This should map to your data extension name and phone number column
@@ -97,7 +97,7 @@ define([
 
         payload['metaData'].isConfigured = true;
 
-        console.log("Payload on SAVE function: "+JSON.stringify(payload));
+        console.log(payload);
         connection.trigger('updateActivity', payload);
 
     }                    

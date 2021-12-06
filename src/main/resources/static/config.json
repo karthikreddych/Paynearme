@@ -10,7 +10,7 @@
     "lang": {
        "en-US": {
            "name": "MBO-GATEWAY",
-           "description": "To send the Outbound Messaging to SBT via Comms Gateway"
+           "description": "To send the Outbound Messaging to Message Service Provider	 via Comms Gateway"
            
        }
     },
@@ -18,8 +18,7 @@
         "execute": {
             "inArguments": [
                 {
-                  "email": "{{Contact.Attribute.EmailAddress}}",	
-				  "to": "{{Contact.Attribute.SBT.Contact}}" 
+                  "to": "{{Contact.Attribute.SBT.Contact}}" 
 				 }               
             ],
             "outArguments": [],
@@ -73,7 +72,7 @@
        }
     },
     "wizardSteps": [
-		{"key": "idselection", "label": "SBT Template and SMS ID Selection"}
+		{"key": "step1", "label": "MBO Gateway Template and SMS ID Selection"}
 		
 	],
 
