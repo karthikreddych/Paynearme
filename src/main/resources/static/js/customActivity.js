@@ -45,7 +45,7 @@ define([
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
-        console.log(inArguments);
+         console.log('Has In arguments: '+JSON.stringify(inArguments));
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
@@ -71,13 +71,13 @@ define([
 
     function onGetTokens (tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-        console.log(tokens);
+        console.log("Tokens function: "+JSON.stringify(tokens));
         authTokens = tokens;
     }
 
     function onGetEndpoints (endpoints) {
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
-        console.log(endpoints);
+        console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
 
     function save() {
