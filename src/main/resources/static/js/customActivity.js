@@ -9,7 +9,7 @@ define([
     var payload = {};
     var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
-    {'key': 'idselection', 'label': 'MBO Gayeway Template and SMS ID Selection'}
+    {'key': 'step1', 'label': 'MBO Gayeway Template and SMS ID Selection'}
     //{'key': 'SMSidselection', 'label': 'Select SMS ID'}
     ];
     var currentStep = steps[0].key;
@@ -81,7 +81,7 @@ define([
     }
 
     function save() {
-	//alert($('#SMSid').val());
+		alert($('#SMSid').val());
         var SMSidValue = $('#SMSid').val();
         var TemplateIDValue = $('#TemplateID').val();
         //var messagingService = $('#messagingService').val();
