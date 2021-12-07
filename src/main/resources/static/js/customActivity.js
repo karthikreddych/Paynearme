@@ -81,7 +81,7 @@ define([
     }
 
     function save() {
-		alert($('#SMSid').val());
+		alert($('#SMSidValue').val());
         var SMSidValue = $('#SMSid').val();
         var TemplateIDValue = $('#TemplateID').val();
         //var messagingService = $('#messagingService').val();
