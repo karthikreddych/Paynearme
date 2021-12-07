@@ -9,10 +9,9 @@ define([
     var payload = {};
     //var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
-    {'key': 'step1', 'label': 'MBO Gayeway Template and SMS ID Selection'}
-    //{'key': 'SMSidselection', 'label': 'Select SMS ID'}
+    {"key": "step1", "label": "MBO Gayeway Template and SMS ID Selection	"}
     ];
-    //var currentStep = steps[0].key;
+    var currentStep = steps[0].key;
 
     $(window).ready(onRender);
 
