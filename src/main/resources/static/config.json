@@ -9,8 +9,8 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "SBT SMS",
-           "description": "To send the Outbound Messaging to SBT via Comms Gateway"
+           "name": "MBO-GATEWAY",
+           "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
            
        }
     },
@@ -18,8 +18,7 @@
         "execute": {
             "inArguments": [
                 {
-                  "email": "{{Contact.Default.EmailAddress}}",	
-				  "to": "{{Contact.Attribute.SBT.Contact}}" 
+                  "to": "{{Contact.Attribute.SBT.Contact}}" 
 				 }               
             ],
             "outArguments": [],
@@ -32,7 +31,7 @@
             "timeout": 9000
         }
     },
-    "configurationArguments": {
+	"configurationArguments": {
       "applicationExtensionKey": "c4e307d2-7680-4e5b-b741-fde5c3528ff0",
        "save": {
            "url": "https://sbt-sms-febe.herokuapp.com/save",
@@ -62,25 +61,25 @@
 			
             "timeout": 9000
        },
-       "stop": {
+	"stop": {
            "url": "https://sbt-sms-febe.herokuapp.com/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
-			
-            "timeout": 9000
+            "timeout": 2000
        }
     },
+       
     "wizardSteps": [
-		{"key": "idselection", "label": "SBT Template and SMS ID Selection"}
+		{"key": "step1", "label": "MBO Gateway Template and SMS ID Selection"}
 		
 	],
 
     "userInterfaces": {
         "configModal": {
-            "height": 300,
-            "width": 470,
+            "height": 420,
+            "width": 575,
             "fullscreen": false
         }
 
