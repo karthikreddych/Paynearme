@@ -7,18 +7,18 @@ define([
 
     var connection = new Postmonger.Session();
     var payload = {};
-    var lastStepEnabled = false;
+    //var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
     {'key': 'step1', 'label': 'MBO Gayeway Template and SMS ID Selection'}
     //{'key': 'SMSidselection', 'label': 'Select SMS ID'}
     ];
-    var currentStep = steps[0].key;
+    //var currentStep = steps[0].key;
 
     $(window).ready(onRender);
 
     connection.on('initActivity', initialize);
     //connection.on('requestedTokens', onGetTokens);
-    //connection.on('requestedEndpoints', onGetEndpoints);
+    connection.on('requestedEndpoints', onGetEndpoints);
     connection.on('clickedNext', save);
     //connection.on('clickedBack', onClickedBack);
     //connection.on('gotoStep', onGotoStep);
@@ -27,7 +27,7 @@ define([
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
         //connection.trigger('requestTokens');
-        //connection.trigger('requestEndpoints');
+        connection.trigger('requestEndpoints');
     }
 
   function initialize(data) {
@@ -73,12 +73,12 @@ define([
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log("Tokens function: "+JSON.stringify(tokens));
         authTokens = tokens;
-    }
+    }*/
 
     function onGetEndpoints (endpoints) {
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
         console.log("Get End Points function: "+JSON.stringify(endpoints));
-    }*/
+    }
 
     function save() {
 		alert($('#SMSid').val());
