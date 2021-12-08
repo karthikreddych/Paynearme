@@ -16,7 +16,7 @@ define([
     $(window).ready(onRender);
 
     connection.on('initActivity', initialize);
-    //connection.on('requestedTokens', onGetTokens);
+    connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
     connection.on('clickedNext', save);
     //connection.on('clickedBack', onClickedBack);
@@ -25,7 +25,7 @@ define([
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
-        //connection.trigger('requestTokens');
+        connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
     }
 
@@ -68,11 +68,11 @@ define([
 
     }
 
-    /*function onGetTokens (tokens) {
+    function onGetTokens (tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log("Tokens function: "+JSON.stringify(tokens));
         authTokens = tokens;
-    }*/
+    }
 
     function onGetEndpoints (endpoints) {
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
