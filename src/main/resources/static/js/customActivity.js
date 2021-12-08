@@ -46,7 +46,7 @@ define([
 
          console.log('Has In arguments: '+JSON.stringify(inArguments));
 
-         $.each(inArguments, function (inArgument) {
+         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
                 if (key === 'SMSid_Value') {
