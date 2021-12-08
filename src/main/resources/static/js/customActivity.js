@@ -80,7 +80,7 @@ define([
     }
 
     function save() {
-		alert($('#SMSid').val());
+		//alert($('#SMSid').val());
 		console.log("Calling save function: "+JSON.stringify(save));
         var SMSidValue = $('#SMSid').val();
         var TemplateIDValue = $('#TemplateID').val();
