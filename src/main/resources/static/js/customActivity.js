@@ -94,7 +94,8 @@ define([
             //"body": body,
             "to": "{{Contact.Attribute.SBT.Contact}}" //<----This should map to your data extension name and phone number column
         };
-
+		console.log("Contact number from DE: ", "{{Contact.Attribute.SBT.Contact}}");
+		
         payload['metaData'].isConfigured = true;
 
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
