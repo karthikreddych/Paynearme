@@ -39,7 +39,7 @@ public class DatabaseLoader implements CommandLineRunner { // <2>
 	public void run(String...strings) throws Exception { // <4>
 		System.out.println(">>>>>>inserting data");
 		for(int i = 1; i <= 20; i++){
-			this.repository.save(new SbtId("T00"+i, "SMS000"));
+			this.repository.save(new SbtId("T00"+i, "S00"+i));
 		}
 
 		System.out.println(">>>>>>insertion done");
