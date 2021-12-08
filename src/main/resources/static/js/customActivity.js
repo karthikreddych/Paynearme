@@ -46,7 +46,7 @@ define([
 
          console.log('Has In arguments: '+JSON.stringify(inArguments));
 
-         $.each(inArguments, function (index, inArgument) {
+         $.each(inArguments, function (inArgument) {
             $.each(inArgument, function (key, val) {
 
                 if (key === 'SMSid_Value') {
@@ -81,7 +81,7 @@ define([
 
     function save() {
 		alert($('#SMSid').val());
-		console.log("Calling save function");
+		console.log("Calling save function: "+JSON.stringify(save));
         var SMSidValue = $('#SMSid').val();
         var TemplateIDValue = $('#TemplateID').val();
         //var messagingService = $('#messagingService').val();
