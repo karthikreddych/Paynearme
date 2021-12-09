@@ -17,6 +17,7 @@
         "execute": {
             "inArguments": [
                 {
+					"EmailAddress": "{{Contact.Key}}",
 					"to": "{{Contact.Attribute.SBT.Contact}}" 
 				 }               
             ],
