@@ -6,14 +6,14 @@ define([
     'use strict';
 
     var connection = new Postmonger.Session();
-	var contacts = {};
+	//var contacts = {};
     var payload = {};
-    //var lastStepEnabled = false;
+    var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
     {"key": "step1", "label": "MBO Gayeway Template and SMS ID Selection	"}
     ];
     var currentStep = steps[0].key;
-	var authTokens = {};
+	//var authTokens = {};
     $(window).ready(onRender);
 
     connection.on('initActivity', initialize);
@@ -72,7 +72,7 @@ define([
     function onGetTokens (tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log("Tokens function: "+JSON.stringify(tokens));
-        authTokens = tokens;
+        //authTokens = tokens;
     }
 
     function onGetEndpoints (endpoints) {
@@ -105,13 +105,13 @@ define([
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
 		
-		fetch('https://jsonplaceholder.typicode.com/posts', {
+		/*fetch('https://jsonplaceholder.typicode.com/posts', {
   		method: "POST",
   		body: JSON.stringify(payload),
   		headers: {"Content-type": "application/json; charset=UTF-8"}
 		})
 		.then(response => response.json()) 
-		.then(json => console.log(json));
+		.then(json => console.log(json));*/
     }                    
 
 });
