@@ -91,7 +91,7 @@ define([
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
-			 "tokens": authTokens,
+			 //"tokens": authTokens,
             //"messagingService": messagingService,
             //"body": body,
             "to": "{{Contact.Attribute.SBT.Contact}}", //<----This should map to your data extension name and phone number column
