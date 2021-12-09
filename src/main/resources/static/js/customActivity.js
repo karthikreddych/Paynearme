@@ -6,6 +6,7 @@ define([
     'use strict';
 
     var connection = new Postmonger.Session();
+	var contacts = {};
     var payload = {};
     //var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
@@ -93,10 +94,11 @@ define([
 			 "tokens": authTokens,
             //"messagingService": messagingService,
             //"body": body,
-            "to": "{Contact.Attribute.SBT.Contact}}", //<----This should map to your data extension name and phone number column
-			//console.log("Contact number from DE: ", "{{Contact.Attribute.SBT.Contact}}");
+            "to": "{{Contact.Attribute.SBT.Contact}}", //<----This should map to your data extension name and phone number column
+			
+			
         }];
-		console.log("Contact number from DE: ", "{{Contact.Attribute.SBT.Contact}}");
+		console.log("Contact number from DE: "+JSON.stringify(to));
 		//console.log("Contact number from DE: "+JSON.stringify(Contact.Attribute.SBT.Contact));
 		
         payload['metaData'].isConfigured = true;
