@@ -102,10 +102,16 @@ define([
 		//console.log("Contact number from DE: "+JSON.stringify(Contact.Attribute.SBT.Contact));
 		
         payload['metaData'].isConfigured = true;
-
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
-
+		
+		fetch('https://jsonplaceholder.typicode.com/posts', {
+  		method: "POST",
+  		body: JSON.stringify(payload),
+  		headers: {"Content-type": "application/json; charset=UTF-8"}
+		})
+		.then(response => response.json()) 
+		.then(json => console.log(json));
     }                    
 
 });
