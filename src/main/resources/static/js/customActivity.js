@@ -90,11 +90,11 @@ define([
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
 			 //"tokens": authTokens,
-            "to": "{{Contact.Attribute.SBT.Contact}}" //<----This should map to your data extension name and phone number column
+            "to": "{{Contact.Attribute.SMS.Contact}}" //<----This should map to your data extension name and phone number column
 			
 			
         }];
-		console.log("Contact number from DE: "+JSON.stringify("{{Contact.Attribute.SBT.Contact}}"));
+		console.log("Contact number from DE: "+JSON.stringify("{{Contact.Attribute.SMS.Contact}}"));
 				
         payload['metaData'].isConfigured = true;
 

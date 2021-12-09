@@ -18,7 +18,7 @@
             "inArguments": [
                 {
 					"email": "{{Contact.Default.Email}}",
-					"to": "{{Contact.Attribute.SBT.Contact}}" 
+					"to": "{{Contact.Attribute.SMS.Contact}}" 
 				 }               
             ],
             "outArguments": [],
