@@ -19,7 +19,7 @@ public class CorsConfig {
 
         config.setAllowedOrigins(Collections.singletonList("http://localhost:8080"));
         config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept"));
-        config.setAllowedOrigins(Collections.singletonList("*"));
+        //config.setAllowedOrigins(Collections.singletonList("*"));
         //config.setAllowedHeaders(Arrays.asList("*"));
         config.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "OPTIONS", "DELETE", "PATCH"));
         source.registerCorsConfiguration("/**", config);
