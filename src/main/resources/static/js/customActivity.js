@@ -85,23 +85,19 @@ define([
 		console.log("Calling save function: "+JSON.stringify(save));
         var SMSidValue = $('#SMSid').val();
         var TemplateIDValue = $('#TemplateID').val();
-        //var messagingService = $('#messagingService').val();
-       // var body = $('#messageBody').val();
-
+        
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
 			 //"tokens": authTokens,
-            //"messagingService": messagingService,
-            //"body": body,
-            "to": "{{Contact.Attribute.SBT.Contact}}", //<----This should map to your data extension name and phone number column
+            "to": "{{Contact.Attribute.SBT.Contact}}" //<----This should map to your data extension name and phone number column
 			
 			
         }];
 		console.log("Contact number from DE: "+JSON.stringify("{{Contact.Attribute.SBT.Contact}}"));
-		//console.log("Contact number from DE: "+JSON.stringify(Contact.Attribute.SBT.Contact));
-		
+				
         payload['metaData'].isConfigured = true;
+
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
 		
