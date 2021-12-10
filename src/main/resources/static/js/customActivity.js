@@ -31,7 +31,7 @@ define([
     }
 
   function initialize(data) {
-        console.log("***Initialize  " + data);
+        //console.log("***Initialize  " + data);
         if (data) {
             payload = data;
         }    
@@ -45,7 +45,7 @@ define([
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
-         console.log('Has In arguments: '+JSON.stringify(inArguments));
+         //console.log('Has In arguments: '+JSON.stringify(inArguments));
 
          $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
@@ -71,18 +71,18 @@ define([
 
     function onGetTokens (tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-        console.log("Tokens function: "+JSON.stringify(tokens));
+        //console.log("Tokens function: "+JSON.stringify(tokens));
         //authTokens = tokens;
     }
 
     function onGetEndpoints (endpoints) {
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
-        console.log("Get End Points function: "+JSON.stringify(endpoints));
+        //console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
 
     function save() {
 		//alert($('#SMSid').val());
-		console.log("Calling save function: ");
+		console.log("***Calling save function: ");
         var SMSidValue = $('#SMSid').val();
         var TemplateIDValue = $('#TemplateID').val();
         
@@ -94,12 +94,12 @@ define([
 			
 			
         }];
-		console.log("Contact number from DE: "+JSON.stringify("{{Contact.Attribute.SMS.Contact}}"));
+		//console.log("Contact number from DE: "+JSON.stringify("{{Contact.Attribute.SMS.Contact}}"));
 				
         payload['metaData'].isConfigured = true;
 
-        console.log("Payload on SAVE function: "+JSON.stringify(payload));
-        //connection.trigger('updateActivity', payload);
+        console.log("***Payload on SAVE function: ");
+        connection.trigger('updateActivity', payload);
 		
 		/*fetch('https://jsonplaceholder.typicode.com/posts', {
   		method: "POST",
