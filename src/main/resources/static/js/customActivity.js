@@ -16,7 +16,7 @@ define([
 	//var authTokens = {};
     $(window).ready(onRender);
 
-    //connection.on('initActivity', initialize);
+    connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
     //connection.on('clickedNext', save);
@@ -31,7 +31,7 @@ define([
     }
 
   function initialize(data) {
-        console.log(data);
+        console.log("***Initialize  " + data);
         if (data) {
             payload = data;
         }    
@@ -82,7 +82,7 @@ define([
 
     function save() {
 		//alert($('#SMSid').val());
-		console.log("Calling save function: "+JSON.stringify(save));
+		console.log("Calling save function: ");
         var SMSidValue = $('#SMSid').val();
         var TemplateIDValue = $('#TemplateID').val();
         
@@ -99,7 +99,7 @@ define([
         payload['metaData'].isConfigured = true;
 
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
-        connection.trigger('updateActivity', payload);
+        //connection.trigger('updateActivity', payload);
 		
 		/*fetch('https://jsonplaceholder.typicode.com/posts', {
   		method: "POST",
