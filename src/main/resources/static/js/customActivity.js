@@ -98,7 +98,7 @@ define([
 				
         payload['metaData'].isConfigured = true;
 
-        console.log("***Payload on SAVE function: ");
+        console.log("***Payload on SAVE function: " +JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
 		
 		/*fetch('https://jsonplaceholder.typicode.com/posts', {
