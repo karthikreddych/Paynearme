@@ -32,7 +32,7 @@
         }
     },
 	"configurationArguments": {
-      "applicationExtensionKey": "c4e307d2-7680-4e5b-b741-fde5c3528ff0",
+      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
        "save": {
            "url": "https://mbo-sfmc-sms-febe.herokuapp.com/save",
             "verb": "POST",
