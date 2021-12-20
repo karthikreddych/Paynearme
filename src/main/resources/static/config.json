@@ -18,6 +18,13 @@
             "inArguments": [
                 {
 					"email": "{{Contact.Default.Email}}",
+					"loanId": "{{Contact.Attribute.SMS.loanId}}",
+					"eventType": "{{Contact.Attribute.SMS.eventType}}",
+					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+					"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+					"vendor": "{{Contact.Attribute.SMS.vendor}}",
 					"to": "{{Contact.Attribute.SMS.Contact}}" 
 				 }               
             ],

@@ -90,9 +90,16 @@ define([
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
 			 //"tokens": authTokens,
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			"eventType": "{{Contact.Attribute.SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute.SMS.vendor}}",
             "to": "{{Contact.Attribute.SMS.Contact}}" //<----This should map to your data extension name and phone number column
 			
-			
+		
         }];
 		//console.log("Contact number from DE: "+JSON.stringify("{{Contact.Attribute.SMS.Contact}}"));
 				
