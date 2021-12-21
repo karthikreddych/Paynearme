@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "MBO-GATEWAY",
+           "name": "MBO-SMS",
            "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
            
        }
@@ -18,11 +18,18 @@
             "inArguments": [
                 {
 					"email": "{{Contact.Default.Email}}",
+					"loanId": "{{Contact.Attribute.SMS.loanId}}",
+					"eventType": "{{Contact.Attribute.SMS.eventType}}",
+					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+					"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+					"vendor": "{{Contact.Attribute.SMS.vendor}}",
 					"to": "{{Contact.Attribute.SMS.Contact}}" 
 				 }               
             ],
             "outArguments": [],
-            "url": "https://sbt-sms-febe.herokuapp.com/execute",
+            "url": "https://mbo-sfmc-sms-febe.herokuapp.com/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -32,9 +39,9 @@
         }
     },
 	"configurationArguments": {
-      "applicationExtensionKey": "c4e307d2-7680-4e5b-b741-fde5c3528ff0",
+      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
        "save": {
-           "url": "https://sbt-sms-febe.herokuapp.com/save",
+           "url": "https://mbo-sfmc-sms-febe.herokuapp.com/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -44,7 +51,7 @@
        },
         
        "publish": {
-           "url": "https://sbt-sms-febe.herokuapp.com/publish",
+           "url": "https://mbo-sfmc-sms-febe.herokuapp.com/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -53,7 +60,7 @@
             "timeout": 8000
        },
        "validate": {
-           "url": "https://sbt-sms-febe.herokuapp.com/validate",
+           "url": "https://mbo-sfmc-sms-febe.herokuapp.com/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -62,7 +69,7 @@
             "timeout": 8000
        },
 	"stop": {
-           "url": "https://sbt-sms-febe.herokuapp.com/stop",
+           "url": "https://mbo-sfmc-sms-febe.herokuapp.com/stop",
             "verb": "POST",
             "body": "",
             "format": "json",

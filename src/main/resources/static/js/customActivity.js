@@ -15,23 +15,32 @@ define([
     var currentStep = steps[0].key;
 	//var authTokens = {};
     $(window).ready(onRender);
-
+    
+    try {
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
     connection.on('clickedNext', save);
     //connection.on('clickedBack', onClickedBack);
     //connection.on('gotoStep', onGotoStep);
+    } catch(err) {
+        console.log(err);
+    }
 
     function onRender() {
+        try {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
+        } catch(err) {
+            throw(err);
+            //console.log(err);
+        }
     }
 
   function initialize(data) {
-        console.log("***Initialize  " + data);
+        //console.log("***Initialize  " + data);
         if (data) {
             payload = data;
         }    
@@ -46,7 +55,7 @@ define([
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
          console.log('Has In arguments: '+JSON.stringify(inArguments));
-
+        try {
          $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
@@ -66,21 +75,31 @@ define([
             text: 'done',
             visible: true
         });
+    } catch(err) {
+         throw(err);
+       // console.log(err);
+    }
 
     }
 
     function onGetTokens (tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-        console.log("Tokens function: "+JSON.stringify(tokens));
+        //console.log("Tokens function: "+JSON.stringify(tokens));
         //authTokens = tokens;
+        console.log(tokens);
+        authTokens = tokens;
+
     }
+    
 
     function onGetEndpoints (endpoints) {
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
-        console.log("Get End Points function: "+JSON.stringify(endpoints));
+        //console.log("Get End Points function: "+JSON.stringify(endpoints));
+        console.log(endpoints);
     }
 
     function save() {
+        try {
 		//alert($('#SMSid').val());
 		console.log("***Calling save function: ");
         var SMSidValue = $('#SMSid').val();
@@ -90,9 +109,16 @@ define([
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
 			 //"tokens": authTokens,
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			"eventType": "{{Contact.Attribute.SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute.SMS.vendor}}",
             "to": "{{Contact.Attribute.SMS.Contact}}" //<----This should map to your data extension name and phone number column
 			
-			
+		
         }];
 		//console.log("Contact number from DE: "+JSON.stringify("{{Contact.Attribute.SMS.Contact}}"));
 				
@@ -100,14 +126,18 @@ define([
 
         console.log("***Payload on SAVE function: " +JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
-		return 'Success';
-		/*fetch('https://jsonplaceholder.typicode.com/posts', {
+        return 'Success';
+        } catch(err) {
+            documnet.getElement("error").style.display = "block";
+            documnet.getElement("error").innerHtml = err;
+        }
+		fetch('https://demo-default.uw2.customer-messaging-gateway-nprd.lendingcloud.us/api/customer-messaging-gateway/v1/message', {
   		method: "POST",
-  		body: JSON.stringify(payload),
+  		body: JSON.stringify(payload['arguments'].execute.inArguments),
   		headers: {"Content-type": "application/json; charset=UTF-8"}
 		})
-		.then(response => response.json()) 
-		.then(json => console.log(json));*/
+		.then(response => response.json()).catch(err => console.log(err)) 
+        .then(json => console.log(json)).catch(err => console.log(err)); 
     }                    
 
 });
