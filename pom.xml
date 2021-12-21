@@ -12,9 +12,9 @@
 	</parent>
 	
 	<groupId>LendingClub</groupId>
-	<artifactId>sbt-sms-febe</artifactId>
+	<artifactId>mbo-sfmc-sms-febe</artifactId>
 	<version>0.0.1-ETM-4612-SNAPSHOT</version>
-	<name>sbt-sms-febe</name>
+	<name>mbo-sfmc-sms-febe</name>
 	<description>Custom Activity for Journey Builder to send the Template and SMS ID to SBT</description>
 	<properties>
 		<java.version>8</java.version>
