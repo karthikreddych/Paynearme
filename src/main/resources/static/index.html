@@ -10,7 +10,30 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/require.js"></script>
+	<!--<script type="text/javascript" src="//unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
+	<!--<link type="alert" href="alert.html">-->
+	<!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/sweetalert2@9"></script> -->
+	<!--<script type="text/javascript" src="//sweetalert2.all.min.js"></script>-->
+	<!--<link rel="import" href="/path/to/imports/alert.html"> -->
     
+	<style>
+	#step2{
+       	color: red;
+		text-align:center;
+		padding-top:10px;
+		font-family: sans-serif;
+    	font-size: x-large;
+	}
+	.iconDetails{
+        margin-left:10%;
+        float:left; 
+       height:30px;
+       width:30px;
+   }
+   	</style>
+
+
+
 	<script type="text/javascript">
         (function() {
             var config = {
@@ -32,16 +55,19 @@
          <div class="logo">
            <img class="lending_logo" src="images/lending_logo.jpg" alt=""></img>
         </div>
+		<div id="step2"> 
+		<img class="iconDetails" src="images/alert.png" alt="" /> 
+		</div>
 		<p class="idselection_mainheading">Select the TEMPLATE ID from the drop down</p>
         <p class="idselection_heading">TEMPLATE ID </p>
 		<select id="TemplateID" defaultValue="">
-        <option value="" disabled selected>Select</option>
+        <option value="" selected>Select</option>
         </select>
 
         <p class="idselection_mainheading">Select the SMS ID from the drop down</p>
         <p class="idselection_heading">SMS ID</p>
 		<select id="SMSid" defaultValue="">
-        <option value="" disabled selected>Select</option>
+        <option value="" selected>Select</option>
 		</select>
     </div>
     <div id="error" style="display: none;"> this is an error </div>

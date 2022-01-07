@@ -25,11 +25,11 @@
 					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
 					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 					"vendor": "{{Contact.Attribute.SMS.vendor}}",
-					"to": "{{Contact.Attribute.SMS.Contact}}" 
+					"Contact": "{{Contact.Attribute.SMS.Contact}}" 
 				 }               
             ],
             "outArguments": [],
-            "url": "https://sbt-sms-febe.herokuapp.com/execute",
+            "url": "https://sbt-sms-febe.herokuapp.com//execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -39,9 +39,9 @@
         }
     },
 	"configurationArguments": {
-      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
+      "applicationExtensionKey": "1ce1cb6a-05e3-4212-9d53-40834e24d32d",
        "save": {
-           "url": "https://sbt-sms-febe.herokuapp.com/save",
+           "url": "https://sbt-sms-febe.herokuapp.com//save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -51,7 +51,7 @@
        },
         
        "publish": {
-           "url": "https://sbt-sms-febe.herokuapp.com/publish",
+           "url": "https://sbt-sms-febe.herokuapp.com//publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -60,7 +60,7 @@
             "timeout": 8000
        },
        "validate": {
-           "url": "https://sbt-sms-febe.herokuapp.com/validate",
+           "url": "https://sbt-sms-febe.herokuapp.com//validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -69,7 +69,7 @@
             "timeout": 8000
        },
 	"stop": {
-           "url": "https://sbt-sms-febe.herokuapp.com/stop",
+           "url": "https://sbt-sms-febe.herokuapp.com//stop",
             "verb": "POST",
             "body": "",
             "format": "json",
