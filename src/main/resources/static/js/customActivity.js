@@ -125,8 +125,8 @@ define([
 				
             //throw "exit"
 			//sleep(1);
-			
-			document.getElementById("step2").innerHTML = "Select ID from the Dropdown!";
+			document.getElementById("step2").style.display="block"
+			//document.getElementById("step2").innerHTML = "Select ID from the Dropdown!";
 			return;
             }
             		
