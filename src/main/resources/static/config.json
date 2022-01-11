@@ -31,8 +31,8 @@
             "outArguments": [],
             "url": "https://sbt-sms-febe.herokuapp.com//execute",
             "verb": "POST",
-            "body": "{{Contact.Attribute.SMS.loanId}}",
- 			"header": {"Content-type": "application/json"},
+            "body": "",
+ 			"header": "",
             "format": "json",
             "useJwt": false,
 			
@@ -54,7 +54,7 @@
        "publish": {
            "url": "https://sbt-sms-febe.herokuapp.com/activity/publish",
             "verb": "POST",
-            "body": "{{Contact.Attribute.SMS.loanId}}",
+            "body": "",
             "format": "json",
             "useJwt": false,
 			
@@ -96,7 +96,85 @@
 	"schema": {
         "arguments": {
             "execute": {
-                "inArguments": [],
+                "inArguments": [
+	
+	{
+                        "SMSid_Value": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "TemplateID_Value": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "loanId": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "eventType": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },
+                    {
+                        "communicationChannel": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "primaryActorId": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+	
+					{
+                        "businessUnit": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "scheduleDate": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "vendor": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "Contact": {
+                            "dataType": "Phone",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    }
+	
+	
+],
+
+
+
 				"outArguments": []
 			}
 		}	
