@@ -124,7 +124,7 @@ function(eventDefinitionModel) {
     function save() {
         console.log('save');
     connection.trigger('requestSchema'); //NOT SHOWN IN CONSOLE
-    console.log("DE NAME " + deName);
+    //console.log("DE NAME " + deName);
     payload['arguments'] = payload['arguments'] || {};
     payload['arguments'].execute = payload['arguments'].execute || {};
 
