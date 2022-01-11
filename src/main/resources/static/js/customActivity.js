@@ -13,7 +13,7 @@ define([
     {"key": "step1", "label": "MBO Gayeway Template and SMS ID Selection	"}
     ];
     var currentStep = steps[0].key;
-    var deName;
+    var deName = {};
 	var authTokens = {};
     $(window).ready(onRender);
     
