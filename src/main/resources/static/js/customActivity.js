@@ -13,10 +13,25 @@ define([
     {"key": "step1", "label": "MBO Gayeway Template and SMS ID Selection	"}
     ];
     var currentStep = steps[0].key;
-    var deName = {};
+    //var deName{};
 	var authTokens = {};
     $(window).ready(onRender);
-    
+
+    var eventDefinitionKey={};
+connection.trigger('requestTriggerEventDefinition');
+
+connection.on('requestedTriggerEventDefinition',
+function(eventDefinitionModel) {
+    if(eventDefinitionModel){
+
+        eventDefinitionKey = eventDefinitionModel.eventDefinitionKey;
+        console.log(">>>Event Definition Key " + eventDefinitionKey);
+        /*If you want to see all*/
+        console.log('>>>Request Trigger', 
+        JSON.stringify(eventDefinitionModel));
+    }
+
+});
     try {
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
@@ -104,9 +119,10 @@ define([
         console.log("Get End Points function: "+JSON.stringify(endpoints));
         //console.log(endpoints);
     }
+    
 
     function save() {
-    console.log('save');
+        console.log('save');
     connection.trigger('requestSchema'); //NOT SHOWN IN CONSOLE
     console.log("DE NAME " + deName);
     payload['arguments'] = payload['arguments'] || {};
@@ -131,14 +147,14 @@ define([
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
 			 //"tokens": authTokens,
-			"loanId": "{{Contact.Attribute." + deName +".SMS.loanId}}",
-			"eventType": "{{Contact.Attribute." + deName + ".SMS.eventType}}",
-			"communicationChannel": "{{Contact.Attribute."+ deName + ".SMS.communicationChannel}}",
-			"primaryActorId": "{{Contact.Attribute."+ deName + ".SMS.primaryActorId}}",
-			"businessUnit": "{{Contact.Attribute."+ deName +".SMS.businessUnit}}",
-			"scheduleDate": "{{Contact.Attribute."+ deName +".SMS.scheduleDate}}",
-			"vendor": "{{Contact.Attribute."+ deName +".SMS.vendor}}",
-            "Contact": "{{Contact.Attribute."+ deName +".SMS.Contact}}" //<----This should map to your data extension name and phone number column
+			"loanId": "{{Contact.Attribute." + eventDefinitionKey +".SMS.loanId}}",
+			"eventType": "{{Contact.Attribute." + eventDefinitionKey + ".SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute."+ eventDefinitionKey + ".SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute."+ eventDefinitionKey + ".SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute."+ eventDefinitionKey +".SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute."+ eventDefinitionKey +".SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute."+ eventDefinitionKey +".SMS.vendor}}",
+            "Contact": "{{Contact.Attribute."+ eventDefinitionKey +".SMS.Contact}}" //<----This should map to your data extension name and phone number column
 			
 		
         }];
@@ -149,10 +165,8 @@ define([
         console.log("***Payload on SAVE function: " +JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
         
-        connection.on('requestedSchema', function (data) {    //CONNECTION ON
-    // save schema
-    console.log('** Schema **', JSON.stringify(data['schema']));
-    let schema = JSON.stringify(data['schema']);
+        connection.on('requestedInteraction', function(settings){
+    eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
 });
         //return 'Success';
         } catch(err) {
