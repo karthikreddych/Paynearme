@@ -13,6 +13,7 @@ define([
     {"key": "step1", "label": "MBO Gayeway Template and SMS ID Selection	"}
     ];
     var currentStep = steps[0].key;
+    var deName;
 	var authTokens = {};
     $(window).ready(onRender);
     
@@ -105,46 +106,39 @@ define([
     }
 
     function save() {
+    console.log('save');
+    connection.trigger('requestSchema'); //NOT SHOWN IN CONSOLE
+    console.log("DE NAME " + deName);
+    payload['arguments'] = payload['arguments'] || {};
+    payload['arguments'].execute = payload['arguments'].execute || {};
+
 	debugger
         try {
 		//alert($('#SMSid').val());
 		//console.log("***Calling save function: ");
 		var SMSidValue = $('#SMSid').val();
         var TemplateIDValue = $('#TemplateID').val();
-
+        
 
          if( SMSidValue === "" || TemplateIDValue === ""){
-			//functionAlert()
-			//Swal.fire("Select IDs from the Dropdown");
-			//swal("Alert!", "Select IDs from the Dropdown");
-			//alert("Select IDs from the Dropdown");
-			//var element = document.createElement("div");
-    		//	element.appendChild(document.createTextNode('Select IDs from the Dropdown'));
-    		//	document.getElementById('step1').appendChild(element);
-				//alert("Select IDs from the Dropdown");
-				
-            //throw "exit"
-			//sleep(1);
-			document.getElementById("step2").style.display="block"
-			//document.getElementById("step2").innerHTML = "Select ID from the Dropdown!";
+	         document.getElementById("step2").style.display="block"
+			
 			return;
             }
             		
-			
-	    //payload['metaData'].isConfigured = true;
-		//payload.name = name;
+
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
 			 //"tokens": authTokens,
-			"loanId": "{{Contact.Attribute.SMS.loanId}}",
-			"eventType": "{{Contact.Attribute.SMS.eventType}}",
-			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
-			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
-			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
-			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
-			"vendor": "{{Contact.Attribute.SMS.vendor}}",
-            "Contact": "{{Contact.Attribute.SMS.Contact}}" //<----This should map to your data extension name and phone number column
+			"loanId": "{{Contact.Attribute." + deName +".SMS.loanId}}",
+			"eventType": "{{Contact.Attribute." + deName + ".SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute."+ deName + ".SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute."+ deName + ".SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute."+ deName +".SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute."+ deName +".SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute."+ deName +".SMS.vendor}}",
+            "Contact": "{{Contact.Attribute."+ deName +".SMS.Contact}}" //<----This should map to your data extension name and phone number column
 			
 		
         }];
@@ -154,6 +148,12 @@ define([
 
         console.log("***Payload on SAVE function: " +JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
+        
+        connection.on('requestedSchema', function (data) {    //CONNECTION ON
+    // save schema
+    console.log('** Schema **', JSON.stringify(data['schema']));
+    let schema = JSON.stringify(data['schema']);
+});
         //return 'Success';
         } catch(err) {
             documnet.getElement("error").style.display = "block";
@@ -221,12 +221,5 @@ define([
 	console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute.SMS.loanId}}"));}
 
 
-	//	fetch('https://demo-default.uw2.customer-messaging-gateway-nprd.lendingcloud.us/api/customer-messaging-gateway/v1/message', {
-  	//	method: "POST",
-  //		body: JSON.stringify(payload['arguments'].execute.inArguments),
-  //		headers: {"Content-type": "application/json; charset=UTF-8"}
-//		})
-	//	.then(response => response.json()).catch(err => console.log(err)) 
-   //     .then(json => console.log(json)).catch(err => console.log(err)); 
 
 });
