@@ -92,7 +92,7 @@ define([
         console.log("Tokens function: "+JSON.stringify(tokens));
         //authTokens = tokens;
         //console.log(tokens);
-        authTokens = tokens;
+        //authTokens = tokens;
 
     }
     
@@ -218,7 +218,7 @@ define([
     
 	console.log("SMS ID: " +JSON.stringify(SMSidValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
-	console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute.SMS.loanId}}"));}
+	console.log("Loan ID: " +JSON.stringify(loanId));}
 
 
 	//	fetch('https://demo-default.uw2.customer-messaging-gateway-nprd.lendingcloud.us/api/customer-messaging-gateway/v1/message', {
