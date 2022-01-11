@@ -4,7 +4,7 @@ define([
     Postmonger
 ) {
     'use strict';
-
+	var loanId ={};
     var connection = new Postmonger.Session();
 	//var contacts = {};
     var payload = {};
