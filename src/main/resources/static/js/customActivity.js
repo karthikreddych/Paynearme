@@ -91,7 +91,7 @@ define([
 	//debugger
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log("Tokens function: "+JSON.stringify(tokens));
-        //authTokens = tokens;
+        authTokens = tokens;
         //console.log(tokens);
         //authTokens = tokens;
 
@@ -124,12 +124,11 @@ define([
 			
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
-		payload['metaData'].isConfigured = true;
-		connection.trigger('updateActivity', payload);
+		
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
-			 //"tokens": authTokens,
+			 "tokens": authTokens,
 			"loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
@@ -141,8 +140,10 @@ define([
 			
 		
         }];
+		payload['metaData'].isConfigured = true;
+		
 		//console.log("Contact number from DE: "+JSON.stringify("{{Contact.Attribute.SMS.Contact}}"));
-				
+		connection.trigger('updateActivity', payload);		
                
         
         //return 'Success';
