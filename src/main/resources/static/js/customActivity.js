@@ -115,25 +115,17 @@ define([
 
 
          if( SMSidValue === "" || TemplateIDValue === ""){
-			//functionAlert()
-			//Swal.fire("Select IDs from the Dropdown");
-			//swal("Alert!", "Select IDs from the Dropdown");
-			//alert("Select IDs from the Dropdown");
-			//var element = document.createElement("div");
-    		//	element.appendChild(document.createTextNode('Select IDs from the Dropdown'));
-    		//	document.getElementById('step1').appendChild(element);
-				//alert("Select IDs from the Dropdown");
-				
-            //throw "exit"
-			//sleep(1);
+			
 			document.getElementById("step2").style.display="block"
-			//document.getElementById("step2").innerHTML = "Select ID from the Dropdown!";
+			
 			return;
             }
             		
 			
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
+		payload['metaData'].isConfigured = true;
+		connection.trigger('updateActivity', payload);
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
@@ -151,10 +143,8 @@ define([
         }];
 		//console.log("Contact number from DE: "+JSON.stringify("{{Contact.Attribute.SMS.Contact}}"));
 				
-        payload['metaData'].isConfigured = true;
-
-        console.log("***Payload on SAVE function: " +JSON.stringify(payload));
-        connection.trigger('updateActivity', payload);
+               
+        
         //return 'Success';
         } catch(err) {
             documnet.getElement("error").style.display = "block";
