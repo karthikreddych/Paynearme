@@ -92,7 +92,7 @@ define([
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log("Tokens function: "+JSON.stringify(tokens));
         authTokens = tokens;
-        //console.log(tokens);
+        console.log(tokens);
         //authTokens = tokens;
 
     }
