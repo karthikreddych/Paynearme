@@ -29,7 +29,7 @@
 				 }               
             ],
             "outArguments": [],
-            "url": "https://sbt-sms-febe.herokuapp.com//execute",
+            "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
  			"header": "",

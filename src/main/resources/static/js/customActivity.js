@@ -42,9 +42,10 @@ define([
 
   function initialize(data) {
 	//debugger
-        //console.log("***Initialize  " + data);
+        
         if (data) {
             payload = data;
+		console.log("***Initialize  " + data);
         }    
 
         var hasInArguments = Boolean(
