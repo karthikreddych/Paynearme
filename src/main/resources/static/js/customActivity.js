@@ -10,10 +10,10 @@ define([
     var payload = {};
     var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
-    {"key": "step1", "label": "MBO Gayeway Template and SMS ID Selection	"}
+    {"key": "step1", "label": "MBO-SMS"}
     ];
     var currentStep = steps[0].key;
-	var authTokens = {};
+	//var authTokens = {};
     $(window).ready(onRender);
     
     try {
@@ -91,7 +91,7 @@ define([
 	//debugger
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log("Tokens function: "+JSON.stringify(tokens));
-        authTokens = tokens;
+        //authTokens = tokens;
         console.log(tokens);
         //authTokens = tokens;
 
