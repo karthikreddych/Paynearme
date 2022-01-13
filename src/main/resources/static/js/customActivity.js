@@ -193,15 +193,16 @@ define([
      console.log("this is success")
       }
     
-     }).catch(err => console.log(err));
+     }).catch(err => console.log(err));*/
     
 	
 	fetch('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/hub/v1/dataeventsasync/key:AFE77857-1B91-49A9-96B6-C201929888D5/rowset', 
 	{
 	  
 	 method: "POST",
-    //headers: {"Content-type": "application/json, charset=UTF-8",'Authorization': "token", 'Access-Control-Allow-Origin': '*',"Access-Control-Allow-Credentials": "true"},   
-	headers: { "Content-Type": "text/html",'Authorization': "token","Access-Control-Allow-Origin": '*' },	
+    //headers: {"Content-type": "application/json, charset=UTF-8",'Authorization': "tokens", 'Access-Control-Allow-Origin': '*',"Access-Control-Allow-Credentials": "true"},   
+	headers: { 'Content-type': 'application/json','Authorization': "token","Access-Control-Allow-Origin": '*' },	
+	//headers: { 'Content-type': 'application/json'},
 	mode: 'no-cors',
 		
        body: JSON.stringify(
@@ -222,11 +223,11 @@ define([
      console.log("this is success")
       }
     
-     }).catch(err => console.log(err));*/
+     }).catch(err => console.log(err));
     
 	console.log("SMS ID: " +JSON.stringify(SMSidValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
-	console.log("Loan ID: " +JSON.stringify(Contact.Attribute.SMS.loanId));}
+	console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute.SMS.loanId}}"));}
 
 
 	//	fetch('https://demo-default.uw2.customer-messaging-gateway-nprd.lendingcloud.us/api/customer-messaging-gateway/v1/message', {
