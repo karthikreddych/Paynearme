@@ -4,7 +4,7 @@ define([
     Postmonger
 ) {
     'use strict';
-	var loanId ={};
+	//var loanId ={};
     var connection = new Postmonger.Session();
 	//var contacts = {};
     var payload = {};
@@ -20,9 +20,10 @@ define([
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
-    connection.on('clickedNext', save);
-    //connection.on('clickedBack', onClickedBack);
-    //connection.on('gotoStep', onGotoStep);
+    connection.on('requestedInteraction', onRequestedInteraction);
+    connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
+    connection.on('requestedDataSources', onRequestedDataSources);
+ 	connection.on('clickedNext', save);
     } catch(err) {
         console.log(err);
     }
@@ -34,18 +35,36 @@ define([
         connection.trigger('ready');
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
+		connection.trigger('requestInteraction');
+        connection.trigger('requestTriggerEventDefinition');
+        connection.trigger('requestDataSources'); 
         } catch(err) {
             throw(err);
             //console.log(err);
         }
     }
 
+	function onRequestedDataSources(dataSources){
+        console.log('*** requestedDataSources ***');
+        console.log(dataSources);
+    }
+
+    function onRequestedInteraction (interaction) {    
+        console.log('*** requestedInteraction ***');
+        console.log(interaction);
+     }
+
+     function onRequestedTriggerEventDefinition(eventDefinitionModel) {
+        console.log('*** requestedTriggerEventDefinition ***');
+        console.log(eventDefinitionModel);
+    }
+
   function initialize(data) {
 	//debugger
-        
+        console.log(data);
         if (data) {
             payload = data;
-		console.log("***Initialize  " + data);
+		//console.log("***Initialize  " + data);
         }    
 
         var hasInArguments = Boolean(
@@ -91,9 +110,7 @@ define([
 	//debugger
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log("Tokens function: "+JSON.stringify(tokens));
-        //authTokens = tokens;
-        console.log(tokens);
-        //authTokens = tokens;
+        authTokens = tokens;
 
     }
     
@@ -128,21 +145,20 @@ define([
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
-			 //"tokens": authTokens,
-			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			 "loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
 			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
 			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
-            "Contact": "{{Contact.Attribute.SMS.Contact}}" //<----This should map to your data extension name and phone number column
-			
+            "Contact": "{{Contact.Attribute.SMS.Contact}}", //<----This should map to your data extension name and phone number column
+			"tokens": authTokens
 		
         }];
 		payload['metaData'].isConfigured = true;
 		
-		//console.log("Contact number from DE: "+JSON.stringify("{{Contact.Attribute.SMS.Contact}}"));
+		console.log(payload);
 		connection.trigger('updateActivity', payload);		
                
         

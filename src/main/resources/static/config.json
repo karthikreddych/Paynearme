@@ -80,7 +80,7 @@
     },
        
     "wizardSteps": [
-		{"key": "step1", "label": "MBO Gateway Template and SMS ID Selection"}
+		{"key": "step1", "label": "MBO-SMS"}
 		
 	],
 
@@ -150,7 +150,7 @@
                     },
 					{
                         "scheduleDate": {
-                            "dataType": "String",
+                            "dataType": "Date",
                             "isNullable": true,
                             "direction": "out"
                         }
@@ -175,7 +175,9 @@
 
 
 
-				"outArguments": []
+				"outArguments": [
+					
+				]
 			}
 		}	
       }           
