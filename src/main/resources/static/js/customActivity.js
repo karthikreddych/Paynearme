@@ -13,7 +13,7 @@ define([
     {"key": "step1", "label": "MBO-SMS"}
     ];
     var currentStep = steps[0].key;
-	//var authTokens = {};
+	var authTokens = {};
     $(window).ready(onRender);
     
     try {
