@@ -235,7 +235,7 @@ define([
 	  
 	 method: "GET",
     //headers: {"Content-type": "application/json, charset=UTF-8",'Authorization': "token", 'Access-Control-Allow-Origin': '*',"Access-Control-Allow-Credentials": "true"},   
-	headers: { 'Content-type': 'application/json','Authorization': tokens,"Access-Control-Allow-Origin": '*' },	
+	headers: { 'Content-type': 'application/json','Authorization': "tokens","Access-Control-Allow-Origin": '*' },	
 	//headers: { 'Content-type': 'application/json'},
 	mode: 'no-cors',
 	Accept: "*/*",
