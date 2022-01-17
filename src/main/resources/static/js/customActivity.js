@@ -230,16 +230,20 @@ define([
      }).catch(err => console.log(err));*/
     
 	
-	/*fetch('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/hub/v1/dataeventsasync/key:AFE77857-1B91-49A9-96B6-C201929888D5/rowset', 
+	GET ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/hub/v1/dataeventsasync/key/AFE77857-1B91-49A9-96B6-C201929888D5/rowset', 
 	{
 	  
-	 method: "POST",
+	 //method: "GET",
     //headers: {"Content-type": "application/json, charset=UTF-8",'Authorization': "token", 'Access-Control-Allow-Origin': '*',"Access-Control-Allow-Credentials": "true"},   
-	headers: { 'Content-type': 'application/json','Authorization': "tokens","Access-Control-Allow-Origin": '*' },	
+	headers: { 'Content-type': 'application/json','Authorization': tokens,"Access-Control-Allow-Origin": '*' },	
 	//headers: { 'Content-type': 'application/json'},
 	mode: 'no-cors',
+	Accept: "*/*",
+	//Cache-Control: "no-cache",
+	//Accept-Encoding: "gzip", "deflate",
+	Connection: "keep-alive",
 		
-       body: JSON.stringify(
+       /*body: JSON.stringify(
    		{
         "keys": {
             "LoanIDs": "{{Contact.Attribute.SMS.loanId}}"
@@ -248,7 +252,7 @@ define([
             "Template_IDs": TemplateIDValue,
             "SMS_IDs": SMSidValue
         }
-    })
+    })*/
 		}) 
 	.then(response => response.json()) 
     .then(json => {
@@ -258,12 +262,12 @@ define([
       }
     
      }).catch(err => console.log(err));
-    */
+    
 	console.log("SMS ID: " +JSON.stringify(SMSidValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 	console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute.SMS.loanId}}"));
-	console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}"));
-	//console.log("{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}");
+	//console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}"));
+	
 	}
 
 
