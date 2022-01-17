@@ -14,8 +14,6 @@ define([
     ];
     var currentStep = steps[0].key;
 	var authTokens = {};
-    /////////////////////////////////////////
-    var schema = {};
     $(window).ready(onRender);
     
     try {
@@ -25,11 +23,12 @@ define([
     connection.on('requestedInteraction', onRequestedInteraction);
     connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
     connection.on('requestedDataSources', onRequestedDataSources);
+    connection.trigger('requestSchema');
  	connection.on('clickedNext', save);
     } catch(err) {
         console.log(err);
     }
-     
+
     function onRender() {
 	//debugger
         try {
@@ -40,31 +39,24 @@ define([
 		connection.trigger('requestInteraction');
         connection.trigger('requestTriggerEventDefinition');
         connection.trigger('requestDataSources'); 
-        //////////////////////////////////////
-        connection.trigger('requestSchema');
         } catch(err) {
             throw(err);
             //console.log(err);
         }
     }
-    ////////////////////////////////////////////////////////////////
-    connection.on('requestedSchema', function (data) {
-        // save schema
-        console.log('** Schema **', JSON.stringify(data['schema']));
-     });
 
 	function onRequestedDataSources(dataSources){
-        console.log('* requestedDataSources *');
+        console.log('** requestedDataSources **');
         console.log(dataSources);
     }
 
     function onRequestedInteraction (interaction) {    
-        console.log('* requestedInteraction *');
+        console.log('** requestedInteraction **');
         console.log(interaction);
      }
 
      function onRequestedTriggerEventDefinition(eventDefinitionModel) {
-        console.log('* requestedTriggerEventDefinition *');
+        console.log('** requestedTriggerEventDefinition **');
         console.log(eventDefinitionModel);
     }
 
@@ -122,10 +114,7 @@ define([
         authTokens = tokens;
 
     }
-    connection.on('requestedSchema', function (data) {
-   // save schema
-   console.log('** Schema **', JSON.stringify(data['schema']));
-});
+    
 
     function onGetEndpoints (endpoints) {
 	//debugger
@@ -133,27 +122,7 @@ define([
         console.log("Get End Points function: "+JSON.stringify(endpoints));
         //console.log(endpoints);
     }
-/////////////////////////////////////////////////////////////////////////////////////////
-    function extractFields() {
 
-        var formArg = {};
-        console.log('** Schema parsing **', JSON.stringify(schema));
-        if (schema !== 'undefined' && schema.length > 0) {
-            // the array is defined and has at least one element
-            for (var i in schema) {
-                var field = schema[i];
-                var index = field.key.lastIndexOf('.');
-                var name = field.key.substring(index + 1);
-                // save only event data source fields
-                // {"key":"Event.APIEvent-ed211fdf-2260-8057-21b1-a1488f701f6a.offerId","type":"Text",
-                // "length":50,"default":null,"isNullable":null,"isPrimaryKey":null}
-                if (field.key.indexOf("APIEvent") !== -1)
-                    formArg[name] = "{{" + field.key + "}}";
-            }
-        }
-        return formArg;
-    }
-////////////////////////////////////////////////////////////////////////////////////////////
     function save() {
 	debugger
         try {
@@ -161,8 +130,6 @@ define([
 		//console.log("***Calling save function: ");
 		var SMSidValue = $('#SMSid').val();
         var TemplateIDValue = $('#TemplateID').val();
-        ///////////////////////////////////////////////////////////////
-        var fields = extractFields();
 
 
          if( SMSidValue === "" || TemplateIDValue === ""){
@@ -179,9 +146,6 @@ define([
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
-            /////////////////////////////////////////////////////////////
-            "fields": fields,
-
 			 "loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
@@ -205,6 +169,12 @@ define([
             documnet.getElement("error").innerHtml = err;
         }
 
+
+		connection.on('requestedSchema', function (data) {
+   		// save schema
+   		console.log('*** Schema ***', JSON.stringify(data['schema']));
+   		
+});
 
 	/*fetch('https://mc-260crls51zy9yd64d27td22t8.auth.marketingcloudapis.com/v2/token', 
 	{
@@ -233,7 +203,7 @@ define([
      }).catch(err => console.log(err));*/
     
 	
-	fetch('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/hub/v1/dataeventsasync/key:AFE77857-1B91-49A9-96B6-C201929888D5/rowset', 
+	/*fetch('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/hub/v1/dataeventsasync/key:AFE77857-1B91-49A9-96B6-C201929888D5/rowset', 
 	{
 	  
 	 method: "POST",
@@ -261,7 +231,7 @@ define([
       }
     
      }).catch(err => console.log(err));
-    
+    */
 	console.log("SMS ID: " +JSON.stringify(SMSidValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 	console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute.SMS.loanId}}"));
