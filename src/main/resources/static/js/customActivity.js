@@ -259,6 +259,8 @@ define([
 	console.log("SMS ID: " +JSON.stringify(SMSidValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 	console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute.SMS.loanId}}"));
+	console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}"));
+	//console.log("{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}");
 	}
 
 
