@@ -29,8 +29,8 @@ public class ActivityController {
     public ResponseEntity<String> stop (@RequestBody Map<String, Object> payload) {
         return new ResponseEntity<>("Stop", HttpStatus.OK);
     }
-	@CrossOrigin
-    @PostMapping("/execute")
+	/*  @CrossOrigin
+ @PostMapping("/execute")
     public ActivityResult execute (@RequestBody ExecutePayload payload) {
         for (Map<String, String> inArgument : payload.getInArguments()) {
             if(inArgument.containsKey("status") && inArgument.get("status").equals("true")){
@@ -38,5 +38,5 @@ public class ActivityController {
             }
         }
         return new ActivityResult("false");
-    }
+    }*/
 }
