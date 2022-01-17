@@ -14,6 +14,7 @@ define([
     ];
     var currentStep = steps[0].key;
 	var authTokens = {};
+	var eventDefinitionKey = {};
     $(window).ready(onRender);
     
     try {
@@ -23,8 +24,7 @@ define([
     connection.on('requestedInteraction', onRequestedInteraction);
     connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
     connection.on('requestedDataSources', onRequestedDataSources);
-    connection.trigger('requestSchema');
- 	connection.on('clickedNext', save);
+    connection.on('clickedNext', save);
     } catch(err) {
         console.log(err);
     }
@@ -39,12 +39,30 @@ define([
 		connection.trigger('requestInteraction');
         connection.trigger('requestTriggerEventDefinition');
         connection.trigger('requestDataSources'); 
+        connection.trigger('requestTriggerEventDefinition');
+        connection.trigger('requestSchema');
         } catch(err) {
             throw(err);
             //console.log(err);
         }
     }
+	connection.on('requestedTriggerEventDefinition',
+	function(eventDefinitionModel) {
+    if(eventDefinitionModel){
 
+        eventDefinitionKey = eventDefinitionModel.eventDefinitionKey;
+        console.log(">>>Event Definition Key " + eventDefinitionKey);
+        /*If you want to see all*/
+        console.log('>>>Request Trigger', 
+        JSON.stringify(eventDefinitionModel));
+    }
+
+});
+	connection.on('requestedSchema', function (data) {
+   		// save schema
+   	console.log('*** Schema ***', JSON.stringify(data['schema']));
+   		
+}); 
 	function onRequestedDataSources(dataSources){
         console.log('** requestedDataSources **');
         console.log(dataSources);
@@ -66,7 +84,8 @@ define([
         if (data) {
             payload = data;
 		//console.log("***Initialize  " + data);
-        }    
+        }   
+        
 
         var hasInArguments = Boolean(
             payload['arguments'] &&
@@ -146,7 +165,15 @@ define([
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
-			 "loanId": "{{Contact.Attribute.SMS.loanId}}",
+            "loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
+            "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
+            "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
+            "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
+            "businessUnit": "{{Contact.Attribute." + eventDefinitionKey+".\"businessUnit\"}}",
+            "scheduleDate": "{{Contact.Attribute." + eventDefinitionKey+".\"scheduleDate\"}}",
+            "vendor": "{{Contact.Attribute." + eventDefinitionKey+".\"vendor\"}}",
+             "Contact": "{{Contact.Attribute." + eventDefinitionKey+".\"Contact\"}}",
+			/*"loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
@@ -154,6 +181,7 @@ define([
 			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
             "Contact": "{{Contact.Attribute.SMS.Contact}}", //<----This should map to your data extension name and phone number column
+            */
 			"tokens": authTokens
 		
         }];
@@ -170,11 +198,7 @@ define([
         }
 
 
-		connection.on('requestedSchema', function (data) {
-   		// save schema
-   		console.log('*** Schema ***', JSON.stringify(data['schema']));
-   		
-});
+		
 
 	/*fetch('https://mc-260crls51zy9yd64d27td22t8.auth.marketingcloudapis.com/v2/token', 
 	{
