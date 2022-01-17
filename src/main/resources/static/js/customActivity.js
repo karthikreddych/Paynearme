@@ -41,6 +41,7 @@ define([
         connection.trigger('requestDataSources'); 
         connection.trigger('requestTriggerEventDefinition');
         connection.trigger('requestSchema');
+        connection.trigger('requestdata');
         } catch(err) {
             throw(err);
             //console.log(err);
@@ -61,6 +62,7 @@ define([
 	connection.on('requestedSchema', function (data) {
    		// save schema
    	console.log('*** Schema ***', JSON.stringify(data['schema']));
+   	
    		
 }); 
 	function onRequestedDataSources(dataSources){
@@ -172,7 +174,8 @@ define([
             "businessUnit": "{{Contact.Attribute." + eventDefinitionKey+".\"businessUnit\"}}",
             "scheduleDate": "{{Contact.Attribute." + eventDefinitionKey+".\"scheduleDate\"}}",
             "vendor": "{{Contact.Attribute." + eventDefinitionKey+".\"vendor\"}}",
-             "Contact": "{{Contact.Attribute." + eventDefinitionKey+".\"Contact\"}}",
+            "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
+            "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
 			/*"loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
@@ -180,7 +183,7 @@ define([
 			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
 			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
-            "Contact": "{{Contact.Attribute.SMS.Contact}}", //<----This should map to your data extension name and phone number column
+            "ContactNo": "{{Contact.Attribute.SMS.ContactNo}}", //<----This should map to your data extension name and phone number column
             */
 			"tokens": authTokens
 		

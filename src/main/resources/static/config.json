@@ -17,7 +17,7 @@
         "execute": {
             "inArguments": [
                 {
-					"email": "{{Contact.Default.Email}}",
+					"EmailAddress": "{{Contact.key}}",
 					"loanId": "{{Contact.Attribute.SMS.loanId}}",
 					"eventType": "{{Contact.Attribute.SMS.eventType}}",
 					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
@@ -25,7 +25,7 @@
 					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
 					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 					"vendor": "{{Contact.Attribute.SMS.vendor}}",
-					"Contact": "{{Contact.Attribute.SMS.Contact}}" 
+					"ContactNo": "{{Contact.Attribute.SMS.ContactNo}}" 
 				 }               
             ],
             "outArguments": [],
@@ -163,11 +163,20 @@
                         }
                     },
 					{
-                        "Contact": {
+                        "ContactNo": {
                             "dataType": "Phone",
-                            "isNullable": true,
+                            "isNullable": false,
                             "direction": "out"
                         }
+                        
+                    },
+                    {
+                        "EmailAddress": {
+                            "dataType": "email",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                        
                     }
 	
 	
