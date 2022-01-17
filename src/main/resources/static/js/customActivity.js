@@ -235,7 +235,7 @@ define([
 	  
 	 method: "GET",
     //headers: {"Content-type": "application/json, charset=UTF-8",'Authorization': "token", 'Access-Control-Allow-Origin': '*',"Access-Control-Allow-Credentials": "true"},   
-	headers: { 'Content-type': 'application/json','Authorization': "tokens","Access-Control-Allow-Origin": '*' },	
+	headers: { 'Content-type': 'application/json','Authorization': "authTokens","Access-Control-Allow-Origin": '*' },	
 	//headers: { 'Content-type': 'application/json'},
 	mode: 'no-cors',
 	Accept: "*/*",
@@ -265,7 +265,7 @@ define([
     
 	console.log("SMS ID: " +JSON.stringify(SMSidValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
-	console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute.SMS.loanId}}"));
+	//console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute.SMS.loanId}}"));
 	//console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}"));
 	
 	}
