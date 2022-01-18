@@ -185,7 +185,7 @@ define([
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
             "ContactNo": "{{Contact.Attribute.SMS.ContactNo}}", //<----This should map to your data extension name and phone number column
             */
-			"tokens": authTokens
+			"token": authTokens
 		
         }];
 		payload['metaData'].isConfigured = true;
@@ -231,12 +231,12 @@ define([
     
 	
 	//fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/customobjectdata/key/4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset?$filter=EmailAddress%20eq%20,sample@gmail.com', 
-	fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/customobjectdata/key/4A2BD790-C652-4A58-B0DC-90FCFD0429C4',
+	fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/contacts/key:4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset',
 	{
 	 
 	 method: "GET",
     //headers: {"Content-type": "application/json, charset=UTF-8",'Authorization': "token", 'Access-Control-Allow-Origin': '*',"Access-Control-Allow-Credentials": "true"},   
-	headers: { 'Content-type': 'application/json','Authorization':tokens,'Access-Control-Allow-Origin': '*' },	
+	headers: { 'Content-type': 'application/json','Authorization':'eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiI4NnR4Uzdtb0RYMGxXYTdLQjlMcDRhamMiLCJjbGllbnRfaWQiOiJjYTF4cDRwaDY1ZGw5bnhmZ2NibmplbGsiLCJlaWQiOjUxNzAwNTIzMywic3RhY2tfa2V5IjoiUzgiLCJwbGF0Zm9ybV92ZXJzaW9uIjoyLCJjbGllbnRfdHlwZSI6IlNlcnZlclRvU2VydmVyIn0.VgdtJh3vOZ5Yt990abPZxJRozS8z0ieWSo0tKGu7S8M.bpF8qyeiI0E-atmCJIIT5_l8bAYNcxyI9eorFgEWsW8QVHFYeX2c-JQVP3RN6nA9WL4t8LSu_Pp19LY9dw1AKLlqcs8Ru21733Rx-DSnOgp57b5D6MG7YVh244XHXoGH1Ba743igLJ1QshBAPAPGzrmrw4lP_UD3rhB3m9fotIHy6iMe61eS','Access-Control-Allow-Origin': '*' },	
 	//headers: { 'Content-type': 'application/json'},
 	mode: 'no-cors',
 	
