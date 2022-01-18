@@ -275,10 +275,9 @@ define([
             'Accept-Language': 'en-GB',
             'Accept-Encoding': 'gzip, deflate',
             'Connection': 'Keep-alive',
-            'Content-Length': Content.length                
+            //'Content-Length': Content.length                
             }),
-            
-            
+                   
             }) 
 	.then(response => response.json()) 
     .then(json => {
