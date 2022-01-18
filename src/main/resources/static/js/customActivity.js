@@ -238,7 +238,7 @@ define([
 	 
 	 method: "POST",
     //headers: {"Content-type": "application/json, charset=UTF-8",'Authorization': "token", 'Access-Control-Allow-Origin': '*',"Access-Control-Allow-Credentials": "true"},   
-	headers: { 'Content-type': 'application/json','Authorization':'KSSbmK9T-7KPiYuiN6FG2qCwSozWmmJHQUPw','Access-Control-Allow-Origin': '*' },	
+	headers: { 'Content-type': 'application/json','Authorization':authTokens,'Access-Control-Allow-Origin': '*' },	
 	//headers: { 'Content-type': 'application/json'},
 	mode: 'no-cors',
 	
