@@ -232,11 +232,11 @@ define([
 	
 	//fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/customobjectdata/key/4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset?$filter=EmailAddress%20eq%20,sample@gmail.com', 
 	//fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/contacts/key:4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset',
-	fetch ('https://mc-260crls51zy9yd64d27td22t8.auth.marketingcloudapis.com/v2/key/4A2BD790-C652-4A58-B0DC-90FCFD0429C4/userinfo',
+	fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/contacts/v1/attributes/search',
 	
 	{
 	 
-	 method: "GET",
+	 method: "POST",
     //headers: {"Content-type": "application/json, charset=UTF-8",'Authorization': "token", 'Access-Control-Allow-Origin': '*',"Access-Control-Allow-Credentials": "true"},   
 	headers: { 'Content-type': 'application/json','Authorization':'authTokens','Access-Control-Allow-Origin': '*' },	
 	//headers: { 'Content-type': 'application/json'},
@@ -246,17 +246,35 @@ define([
 	//Accept-Encoding: "gzip", "deflate",
 	Connection: "keep-alive",
 		
-       /*body: JSON.stringify(
+       body: JSON.stringify(
    		{
-        "keys": {
-            "LoanIDs": "{{Contact.Attribute.SMS.loanId}}"
-        },
-        "values": {
-            "Template_IDs": TemplateIDValue,
-            "SMS_IDs": SMSidValue
+    "request": {
+        "attributes": [
+            {
+                "key": "SMS.FirstName"
+            },
+            {
+                "key": "SMS.LastName"
+            }]
+
+    },
+    "conditionSet": {
+        "operator": "And",
+        "conditionSets": [],
+        "conditions": [{
+            "attribute": {
+                "key": "Email Addresses.EmailAddress"
+            },
+            "operator": "Equals",
+            "value": {
+                "items": ["sample@gmail.com"]
+            }
         }
-    })*/
-		}) 
+       ] }
+    })
+}
+        
+		) 
 	.then(response => response.json()) 
     .then(json => {
      if(json.statusCode >= 300) { console.log("this is error")
