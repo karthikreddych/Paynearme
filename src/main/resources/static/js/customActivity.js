@@ -230,7 +230,7 @@ define([
      }).catch(err => console.log(err));*/
     
 	
-	fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/customobjectdata/key/AFE77857-1B91-49A9-96B6-C201929888D5', 
+	fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/customobjectdata/key/AFE77857-1B91-49A9-96B6-C201929888D5/rowset?$filter=EmailAddress%20eq%20','im.tabrez@gmail.com', 'HTTP/1.1', 
 	{
 	 
 	 method: "GET",
