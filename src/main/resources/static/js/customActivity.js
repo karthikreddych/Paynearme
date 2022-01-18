@@ -227,21 +227,21 @@ define([
      console.log("this is success")
       }
     
-     }).catch(err => console.log(err));*/
+     }).catch(err => console.log(err));
     
 	
-	fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/customobjectdata/key/AFE77857-1B91-49A9-96B6-C201929888D5/rowset', 
+	fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/contacts/v1/key/AFE77857-1B91-49A9-96B6-C201929888D5/schema', 
 	{
 	  
 	 method: "GET",
     //headers: {"Content-type": "application/json, charset=UTF-8",'Authorization': "token", 'Access-Control-Allow-Origin': '*',"Access-Control-Allow-Credentials": "true"},   
-	headers: { 'Content-type': 'application/json','Authorization': "authTokens","Access-Control-Allow-Origin": '*' },	
+	headers: { 'Content-type': 'application/json','Authorization': 'Bearer <authToken>','Access-Control-Allow-Origin': '*' },	
 	//headers: { 'Content-type': 'application/json'},
 	mode: 'no-cors',
-	Accept: "*/*",
+	
 	//Cache-Control: "no-cache",
 	//Accept-Encoding: "gzip", "deflate",
-	Connection: "keep-alive",
+	//Connection: "keep-alive",
 		
        /*body: JSON.stringify(
    		{
@@ -252,8 +252,34 @@ define([
             "Template_IDs": TemplateIDValue,
             "SMS_IDs": SMSidValue
         }
-    })*/
+    })
 		}) 
+	.then(response => response.json()) 
+    .then(json => {
+     if(json.statusCode >= 300) { console.log("this is error")
+     } else {
+     console.log("this is success")
+      }
+    
+     }).catch(err => console.log(err));*/
+    
+    fetch ('https://mc-260crls51zy9yd64d27td22t8..soap.marketingcloudapis.com/Service.asmx/key:AFE77857-1B91-49A9-96B6-C201929888D5', 
+   // https://{{et_subdomain}}.soap.marketingcloudapis.com/Service.asmx
+	{
+	  
+	 method: "GET",
+     mode: 'no-cors',
+           headers: new Headers(
+           {'Content-Type': 'text/xml; charset=utf-8',
+            'Accept': '*/*',
+            'Accept-Language': 'en-GB',
+            'Accept-Encoding': 'gzip, deflate',
+            'Connection': 'Keep-alive',
+            'Content-Length': Content.length                
+            }),
+            
+            
+            }) 
 	.then(response => response.json()) 
     .then(json => {
      if(json.statusCode >= 300) { console.log("this is error")
