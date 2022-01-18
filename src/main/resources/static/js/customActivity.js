@@ -231,7 +231,9 @@ define([
     
 	
 	//fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/customobjectdata/key/4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset?$filter=EmailAddress%20eq%20,sample@gmail.com', 
-	fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/contacts/key:4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset',
+	//fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/contacts/key:4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset',
+	fetch ('https://mc-260crls51zy9yd64d27td22t8.auth.marketingcloudapis.com/v2/userinfo/key:4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset',
+	
 	{
 	 
 	 method: "GET",
