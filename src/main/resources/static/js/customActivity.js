@@ -232,7 +232,7 @@ define([
 	
 	//fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/customobjectdata/key/4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset?$filter=EmailAddress%20eq%20,sample@gmail.com', 
 	//fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/contacts/key:4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset',
-	fetch ('https://www.exacttargetapis.com/contacts/v1/attributes/search',
+	/*fetch ('https://www.exacttargetapis.com/contacts/v1/attributes/search',
 	
 	{
 	 
@@ -283,6 +283,7 @@ define([
       }
     
      }).catch(err => console.log(err));
+     */
     
     //fetch ('https://mc-260crls51zy9yd64d27td22t8..soap.marketingcloudapis.com/Service.asmx/key:AFE77857-1B91-49A9-96B6-C201929888D5', 
    // https://{{et_subdomain}}.soap.marketingcloudapis.com/Service.asmx
