@@ -63,12 +63,7 @@ define([
    		// save schema
    	console.log('*** Schema ***', JSON.stringify(data['schema']));
    	}); 
-   	connection.on('requestdDataSources', function (data) {
-   		// save Data
-   	console.log('*** Data ***', JSON.stringify(data['Data']));
-   	
-   		
-}); 
+   	 
 	function onRequestedDataSources(dataSources){
         console.log('** requestedDataSources **');
         //console.log(dataSources);
@@ -173,7 +168,7 @@ define([
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
-            "loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
+            "loanId": "{{Event." + eventDefinitionKey+".\"loanId\"}}",
             "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
             "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
             "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
