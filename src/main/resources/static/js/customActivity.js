@@ -63,6 +63,10 @@ define([
    		// save schema
    	console.log('*** Schema ***', JSON.stringify(data['schema']));
    	
+   	connection.on('requestdDataSources', function (data) {
+   		// save Data
+   	console.log('*** Data ***', JSON.stringify(data['Data']));
+   	
    		
 }); 
 	function onRequestedDataSources(dataSources){
