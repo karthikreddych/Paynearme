@@ -168,7 +168,7 @@ define([
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
-            "loanId": "{{Event." + eventDefinitionKey+".\"loanId\"}}",
+            "loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
             "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
             "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
             "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
