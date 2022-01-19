@@ -168,24 +168,24 @@ define([
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
-            "loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
-            "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
-            "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
-            "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
-            "businessUnit": "{{Contact.Attribute." + eventDefinitionKey+".\"businessUnit\"}}",
-            "scheduleDate": "{{Contact.Attribute." + eventDefinitionKey+".\"scheduleDate\"}}",
-            "vendor": "{{Contact.Attribute." + eventDefinitionKey+".\"vendor\"}}",
-            "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
-            "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
-			/*"loanId": "{{Contact.Attribute.SMS.loanId}}",
+            //"loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
+           // "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
+           // "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
+           // "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
+          //  "businessUnit": "{{Contact.Attribute." + eventDefinitionKey+".\"businessUnit\"}}",
+           // "scheduleDate": "{{Contact.Attribute." + eventDefinitionKey+".\"scheduleDate\"}}",
+           // "vendor": "{{Contact.Attribute." + eventDefinitionKey+".\"vendor\"}}",
+           // "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
+          //  "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
 			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
 			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
-            "ContactNo": "{{Contact.Attribute.SMS.ContactNo}}", //<----This should map to your data extension name and phone number column
-            */
+            "ContactNo": "{{Contact.Attribute.SMS.ContactNo}}", 
+            "EmailAddress": "{{Contact.Attribute.SMS.EmailAddress}}",//<----This should map to your data extension name and Email Address column
 			"token": authTokens
 		
         }];
