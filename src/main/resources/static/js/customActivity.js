@@ -82,7 +82,8 @@ define([
 
   function initialize(data) {
 	//debugger
-        console.log(data);
+        //console.log(data);
+        console.log('Data from DE: '+JSON.stringify(data));
         if (data) {
             payload = data;
 		//console.log("***Initialize  " + data);
