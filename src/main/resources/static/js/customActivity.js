@@ -68,7 +68,7 @@ define([
 	function onRequestedDataSources(dataSources){
         console.log('** requestedDataSources **');
         //console.log(dataSources);
-        console.log('*** dataSources ***', JSON.stringify(data['dataSources']));
+        console.log('*** dataSources ***', JSON.stringify(dataSources));
     }
 
     function onRequestedInteraction (interaction) {    
