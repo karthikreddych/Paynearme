@@ -83,7 +83,7 @@ define([
   function initialize(data) {
 	//debugger
         //console.log(data);
-        console.log('Data from DE: '+JSON.stringify(data));
+        console.log('Data: '+JSON.stringify(data));
         if (data) {
             payload = data;
 		//console.log("***Initialize  " + data);
@@ -185,7 +185,7 @@ define([
 			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
             "ContactNo": "{{Contact.Attribute.SMS.ContactNo}}", 
-            "EmailAddress": "{{Contact.Attribute.SMS.EmailAddress}}",//<----This should map to your data extension name and Email Address column
+            "EmailAddress": "{Contact.key}}",//<----This should map to your data extension name and Email Address column
 			"token": authTokens
 		
         }];
