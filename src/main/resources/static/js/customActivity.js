@@ -177,6 +177,7 @@ define([
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
+            //"loanId": "{{Contact.Attribute.SMS.loanId}}"
             "loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
            "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
             "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
@@ -186,6 +187,7 @@ define([
             "vendor": "{{Contact.Attribute." + eventDefinitionKey+".\"vendor\"}}",
             "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
             "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
+            "loanId": "{{\"Contact.Attribute.SMS.loanId\"}}",
 			/*"loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
