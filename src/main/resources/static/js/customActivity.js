@@ -14,7 +14,7 @@ define([
     ];
     var currentStep = steps[0].key;
 	var authTokens = {};
-	var eventDefinitionKey = "";
+	var eventDefinitionKey = {};
     $(window).ready(onRender);
     
     try {
