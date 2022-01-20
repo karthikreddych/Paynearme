@@ -14,14 +14,15 @@ define([
     ];
     var currentStep = steps[0].key;
 	var authTokens = {};
-	var eventDefinitionKey = {};
+	var eventDefinitionKey;
     $(window).ready(onRender);
     
     try {
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
-    connection.on('requestedInteraction', onRequestedInteraction);
+    //connection.on('requestedInteraction', onRequestedInteraction);
+      
     connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
     connection.on('requestedDataSources', onRequestedDataSources);
     connection.on('clickedNext', save);
@@ -70,15 +71,20 @@ define([
         console.log('*** dataSources ***', JSON.stringify(dataSources));
     }
 
-    function onRequestedInteraction (interaction) {    
+    /*function onRequestedInteraction (interaction) {    
         console.log('** requestedInteraction **');
         console.log(interaction);
-     }
+     }*/
+     
 
      function onRequestedTriggerEventDefinition(eventDefinitionModel) {
         console.log('** requestedTriggerEventDefinition **');
         console.log(eventDefinitionModel);
     }
+    
+    connection.on('requestedInteraction', function(settings){
+    eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
+	});
 
   function initialize(data) {
 	//debugger
@@ -165,6 +171,9 @@ define([
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
 		
+		payload['arguments'] = payload['arguments'] || {};
+    	payload['arguments'].execute = payload['arguments'].execute || {};
+    	
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
