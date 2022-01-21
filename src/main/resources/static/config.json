@@ -29,7 +29,7 @@
 				 }               
             ],
             "outArguments": [],
-            "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
+            "url": "https://sbt-sms-febe.herokuapp.com/execute",
             "verb": "POST",
             "body": "",
  			"header": "",
@@ -42,7 +42,7 @@
 	"configurationArguments": {
       "applicationExtensionKey": "1ce1cb6a-05e3-4212-9d53-40834e24d32d",
        "save": {
-           "url": "https://sbt-sms-febe.herokuapp.com/activity/save",
+           "url": "https://sbt-sms-febe.herokuapp.com/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -52,7 +52,7 @@
        },
         
        "publish": {
-           "url": "https://sbt-sms-febe.herokuapp.com/activity/publish",
+           "url": "https://sbt-sms-febe.herokuapp.com/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -61,7 +61,7 @@
             "timeout": 8000
        },
        "validate": {
-           "url": "https://sbt-sms-febe.herokuapp.com/activity/validate",
+           "url": "https://sbt-sms-febe.herokuapp.com/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -70,7 +70,7 @@
             "timeout": 8000
        },
 	"stop": {
-           "url": "https://sbt-sms-febe.herokuapp.com/activity/stop",
+           "url": "https://sbt-sms-febe.herokuapp.com/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
