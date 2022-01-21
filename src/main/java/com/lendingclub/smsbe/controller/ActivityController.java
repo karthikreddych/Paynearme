@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-//@RequestMapping("/activity")
+@RequestMapping("/activity")
 public class ActivityController {
 	@CrossOrigin
     @PostMapping("/save")
