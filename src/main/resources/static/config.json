@@ -17,7 +17,7 @@
         "execute": {
             "inArguments": [
                 {
-					"EmailAddress": "{{Contact.key}}",
+					"EmailAddress": "{{Contact.Attribute.SMS.EmailAddress}}",
 					"loanId": "{{Contact.Attribute.SMS.loanId}}",
 					"eventType": "{{Contact.Attribute.SMS.eventType}}",
 					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
@@ -98,21 +98,8 @@
             "execute": {
                 "inArguments": [
 	
-	{
-                        "SMSid_Value": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
-                        "TemplateID_Value": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
+					{
+                       
                         "loanId": {
                             "dataType": "String",
                             "isNullable": true,
