@@ -102,21 +102,21 @@
                        
                         "loanId": {
                             "dataType": "String",
-                            "isNullable": true,
+                            "isNullable": false,
                             "direction": "out"   
                         }
                     },                    
                     {
                         "eventType": {
                             "dataType": "String",
-                            "isNullable": false,
+                            "isNullable": true,
                             "direction": "out"   
                         }
                     },
                     {
                         "communicationChannel": {
                             "dataType": "String",
-                            "isNullable": false,
+                            "isNullable": true,
                             "direction": "out"   
                         }
                     },                    
@@ -158,9 +158,42 @@
                         
                     },
                     {
+                        "FirstName": {
+                            "dataType": "Text",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    {
+                        "LastName": {
+                            "dataType": "Text",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    
+                    {
+                        "CountryCode": {
+                            "dataType": "Locale",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    {
+                        "status": {
+                            "dataType": "text",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    {
                         "EmailAddress": {
-                            "dataType": "email",
-                            "isNullable": false,
+                            "dataType": "EmailAddress",
+                            "isNullable": true,
                             "direction": "out"
                         }
                         

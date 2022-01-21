@@ -187,6 +187,12 @@ define([
             "vendor": "{{Contact.Attribute." + eventDefinitionKey+".\"vendor\"}}",
             "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
             "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
+            "Status": "{{Contact.Attribute." + eventDefinitionKey+".\"Status\"}}",
+            "FirstName": "{{Contact.Attribute." + eventDefinitionKey+".\"FirstName\"}}",
+            "LastName": "{{Contact.Attribute." + eventDefinitionKey+".\"LastName\"}}",
+            "CountryCode": "{{Contact.Attribute." + eventDefinitionKey+".\"CountryCode\"}}",
+            
+            
             
 			/*"loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
