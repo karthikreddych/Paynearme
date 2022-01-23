@@ -15,7 +15,7 @@ define([
     var currentStep = steps[0].key;
 	var authTokens = {};
 	var eventDefinitionKey='';
-	var deFields = [];
+	//var deFields = [];
     $(window).ready(onRender);
     
     try {
@@ -152,8 +152,8 @@ define([
         //console.log(endpoints);
     }
     
-   function requestedInteractionHandler (settings) {
-		try {
+    /*function requestedInteractionHandler (settings) {
+		debugger
 			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
 			$('#select-entryevent-defkey').val(eventDefinitionKey);
 
@@ -173,25 +173,10 @@ define([
 					}));
 				});
 
-				deFields.forEach((option) => {
-					$('#select-id-dropdown').append($('<option>', {
-						value: option,
-						text: option
-					}));
-				});
-
-				$('#select-id').hide();
-				$('#select-id-dropdown').show();
-			} else {
-				$('#select-id-dropdown').hide();
-				$('#select-id').show();
-			}
-		} catch (e) {
-			console.error(e);
-			$('#select-id-dropdown').hide();
-			$('#select-id').show();
-		}
-	}
+				
+				}};
+    console.log("deFields: " +JSON.stringify(deFields));
+    */
 
     function save() {
 	debugger
@@ -213,15 +198,14 @@ define([
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
 		
-		payload['arguments'] = payload['arguments'] || {};
-    	payload['arguments'].execute = payload['arguments'].execute || {};
-    	var idField = deFields.length > 0 ? $('#select-id-dropdown').val() : $('#select-id').val();
+		//payload['arguments'] = payload['arguments'] || {};
+    	//payload['arguments'].execute = payload['arguments'].execute || {};
     	
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
-            'serviceCloudId': '{{Contact.Attribute.' + eventDefinitionKey + '.\"' + idField + '\"}}',
-            "loanId": "{{Contact.Attribute." + eventDefinitionKey+".loanId}}",
+            
+            "loanId": "{{Event." + eventDefinitionKey+".loanId}}",
            "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
             "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
            "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
@@ -231,7 +215,7 @@ define([
             "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
             "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
             "Status": "{{Contact.Attribute." + eventDefinitionKey+".\"Status\"}}",
-            "FirstName": "{{Contact.Attribute." + eventDefinitionKey+".\"FirstName\"}}",
+            "FirstName": "{{Event." + eventDefinitionKey+".\"FirstName\"}}",
             "LastName": "{{Contact.Attribute." + eventDefinitionKey+".\"LastName\"}}",
             "CountryCode": "{{Contact.Attribute." + eventDefinitionKey+".\"CountryCode\"}}",
             
