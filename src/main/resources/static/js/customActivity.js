@@ -14,7 +14,8 @@ define([
     ];
     var currentStep = steps[0].key;
 	var authTokens = {};
-	var eventDefinitionKey;
+	var eventDefinitionKey='';
+	var deFields = [];
     $(window).ready(onRender);
     
     try {
@@ -150,6 +151,32 @@ define([
         console.log("Get End Points function: "+JSON.stringify(endpoints));
         //console.log(endpoints);
     }
+    
+    function requestedInteractionHandler (settings) {
+		
+			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
+			$('#select-entryevent-defkey').val(eventDefinitionKey);
+
+			if (settings.triggers[0].type === 'SalesforceObjectTriggerV2' &&
+					settings.triggers[0].configurationArguments &&
+					settings.triggers[0].configurationArguments.eventDataConfig) {
+
+				// This workaround is necessary as Salesforce occasionally returns the eventDataConfig-object as string
+				if (typeof settings.triggers[0].configurationArguments.eventDataConfig === 'string' ||
+							!settings.triggers[0].configurationArguments.eventDataConfig.objects) {
+						settings.triggers[0].configurationArguments.eventDataConfig = JSON.parse(settings.triggers[0].configurationArguments.eventDataConfig);
+				}
+
+				settings.triggers[0].configurationArguments.eventDataConfig.objects.forEach((obj) => {
+					deFields = deFields.concat(obj.fields.map((fieldName) => {
+						return obj.dePrefix + fieldName;
+					}));
+				});
+
+				
+				}};
+    
+    
 
     function save() {
 	debugger
