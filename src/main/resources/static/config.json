@@ -18,14 +18,15 @@
             "inArguments": [
                 {
 					"EmailAddress": "{{Contact.Attribute.SMS.EmailAddress}}",
-					"loanId": "{{Contact.Attribute.SMS.loanId}}",
+					"loanId": "{{Event.ContactEvent-79d2314e-b3e9-b24d-b5cb-57f516f849a2.loanId}}",
 					"eventType": "{{Contact.Attribute.SMS.eventType}}",
 					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 					"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
 					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
 					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 					"vendor": "{{Contact.Attribute.SMS.vendor}}",
-					"ContactNo": "{{Contact.Attribute.SMS.ContactNo}}" 
+					"ContactNo": "{{Contact.Attribute.SMS.ContactNo}}",
+					 "FirstName": "{{Event.ContactEvent-79d2314e-b3e9-b24d-b5cb-57f516f849a2.FirstName}}"
 				 }               
             ],
             "outArguments": [],
