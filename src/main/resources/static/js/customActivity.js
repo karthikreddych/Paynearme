@@ -152,8 +152,8 @@ define([
         //console.log(endpoints);
     }
     
-    function requestedInteractionHandler (settings) {
-		debugger
+   function requestedInteractionHandler (settings) {
+		try {
 			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
 			$('#select-entryevent-defkey').val(eventDefinitionKey);
 
@@ -173,10 +173,25 @@ define([
 					}));
 				});
 
-				
-				}};
-    console.log("deFields: " +JSON.stringify(deFields));
-    
+				deFields.forEach((option) => {
+					$('#select-id-dropdown').append($('<option>', {
+						value: option,
+						text: option
+					}));
+				});
+
+				$('#select-id').hide();
+				$('#select-id-dropdown').show();
+			} else {
+				$('#select-id-dropdown').hide();
+				$('#select-id').show();
+			}
+		} catch (e) {
+			console.error(e);
+			$('#select-id-dropdown').hide();
+			$('#select-id').show();
+		}
+	}
 
     function save() {
 	debugger
@@ -198,13 +213,14 @@ define([
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
 		
-		//payload['arguments'] = payload['arguments'] || {};
-    	//payload['arguments'].execute = payload['arguments'].execute || {};
+		payload['arguments'] = payload['arguments'] || {};
+    	payload['arguments'].execute = payload['arguments'].execute || {};
+    	var idField = deFields.length > 0 ? $('#select-id-dropdown').val() : $('#select-id').val();
     	
         payload['arguments'].execute.inArguments = [{
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
-            
+            'serviceCloudId': '{{Contact.Attribute.' + eventDefinitionKey + '.\"' + idField + '\"}}',
             "loanId": "{{Contact.Attribute." + eventDefinitionKey+".loanId}}",
            "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
             "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
