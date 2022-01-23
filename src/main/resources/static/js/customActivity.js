@@ -153,7 +153,7 @@ define([
     }
     
     function requestedInteractionHandler (settings) {
-		
+		debugger
 			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
 			$('#select-entryevent-defkey').val(eventDefinitionKey);
 
@@ -175,7 +175,7 @@ define([
 
 				
 				}};
-    
+    console.log("deFields: " +JSON.stringify(deFields));
     
 
     function save() {
