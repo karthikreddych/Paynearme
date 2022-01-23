@@ -18,7 +18,7 @@
             "inArguments": [
                 {
 					"EmailAddress": "{{Contact.Attribute.SMS.EmailAddress}}",
-					"loanId": "{{Event.ContactEvent-79d2314e-b3e9-b24d-b5cb-57f516f849a2.loanId}}",
+					"loanId": "{{Contact.Attribute.SMS.loanId}}",
 					"eventType": "{{Contact.Attribute.SMS.eventType}}",
 					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 					"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
@@ -26,7 +26,10 @@
 					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 					"vendor": "{{Contact.Attribute.SMS.vendor}}",
 					"ContactNo": "{{Contact.Attribute.SMS.ContactNo}}",
-					 "FirstName": "{{Event.ContactEvent-79d2314e-b3e9-b24d-b5cb-57f516f849a2.FirstName}}"
+					 "FirstName": "{{Contact.Attribute.SMS.FirstName}}",
+					 "LastName": "{{Contact.Attribute.SMS.LastName}}",
+					 "Status": "{{Contact.Attribute.SMS.Status}}",
+					 "CountryCode": "{{Contact.Attribute.SMS.CountryCode}}"
 				 }               
             ],
             "outArguments": [],
