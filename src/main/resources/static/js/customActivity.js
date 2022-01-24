@@ -205,7 +205,7 @@ define([
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
             
-            "loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
+            //"loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
            "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
             "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
            "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
@@ -221,8 +221,8 @@ define([
             
             
             
-			/*"loanId": "{{Contact.Attribute.SMS.loanId}}",
-			"eventType": "{{Contact.Attribute.SMS.eventType}}",
+			"loanId": "{{Contact.Attribute.SMS.loanId}}"
+			/*"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
 			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
