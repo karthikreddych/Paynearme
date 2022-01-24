@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "MBO-SMS",
+           "name": "SMS-FEBE",
            "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
            
        }
@@ -33,7 +33,7 @@
 				 }               
             ],
             "outArguments": [],
-            "url": "https://sbt-sms-febe.herokuapp.com/execute",
+            "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
  			"header": "",

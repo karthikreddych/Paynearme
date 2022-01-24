@@ -205,7 +205,7 @@ define([
             "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
             
-            "loanId": "{{Event." + eventDefinitionKey+".loanId}}",
+            "loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
            "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
             "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
            "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
@@ -215,7 +215,7 @@ define([
             "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
             "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
             "Status": "{{Contact.Attribute." + eventDefinitionKey+".\"Status\"}}",
-            "FirstName": "{{Event." + eventDefinitionKey+".\"FirstName\"}}",
+            "FirstName": "{{Contact.Attribute." + eventDefinitionKey+".\"FirstName\"}}",
             "LastName": "{{Contact.Attribute." + eventDefinitionKey+".\"LastName\"}}",
             "CountryCode": "{{Contact.Attribute." + eventDefinitionKey+".\"CountryCode\"}}",
             
@@ -230,7 +230,7 @@ define([
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
             "ContactNo": "{{Contact.Attribute.SMS.ContactNo}}", 
             "EmailAddress": "{Contact.key}}",//<----This should map to your data extension name and Email Address column*/
-			"token": authTokens
+			
 			
         }];
         

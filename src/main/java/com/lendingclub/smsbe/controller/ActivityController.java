@@ -29,14 +29,15 @@ public class ActivityController {
     public ResponseEntity<String> stop (@RequestBody Map<String, Object> payload) {
         return new ResponseEntity<>("Stop", HttpStatus.OK);
     }
-	/*  @CrossOrigin
- @PostMapping("/execute")
-    public ActivityResult execute (@RequestBody ExecutePayload payload) {
-        for (Map<String, String> inArgument : payload.getInArguments()) {
+	  @CrossOrigin
+	  @PostMapping("/execute")
+    public String execute (@RequestBody ExecutePayload payload) {
+        /*for (Map<String, String> inArgument : payload.getInArguments()) {
             if(inArgument.containsKey("status") && inArgument.get("status").equals("true")){
                 return new ActivityResult("true");
             }
-        }
-        return new ActivityResult("false");
-    }*/
+        }*/
+		System.out.println("Payload "+payload.toString());  
+        return "Print is Working";
+    }
 }
