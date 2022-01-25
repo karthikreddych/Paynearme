@@ -32,12 +32,14 @@ public class ActivityController {
 	  @CrossOrigin
 	  @PostMapping("/execute")
     public String execute (@RequestBody ExecutePayload payload) {
+		  
         /*for (Map<String, String> inArgument : payload.getInArguments()) {
             if(inArgument.containsKey("status") && inArgument.get("status").equals("true")){
                 return new ActivityResult("true");
             }
         }*/
-		System.out.println("Payload "+payload.toString());  
+		System.out.println("Payload "+payload.toString());
+		
         return "Print is Working";
     }
 }

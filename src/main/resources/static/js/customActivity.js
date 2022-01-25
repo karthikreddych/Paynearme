@@ -181,8 +181,7 @@ define([
     function save() {
 	debugger
         try {
-		//alert($('#SMSid').val());
-		//console.log("***Calling save function: ");
+		
 		var SMSidValue = $('#SMSid').val();
         var TemplateIDValue = $('#TemplateID').val();
 
@@ -244,130 +243,16 @@ define([
 		
 		console.log(payload);
 		connection.trigger('updateActivity', payload);		
-               
-        
-        //return 'Success';
+           
         } catch(err) {
             documnet.getElement("error").style.display = "block";
             documnet.getElement("error").innerHtml = err;
         }
 
-
-		
-
-	/*fetch('https://mc-260crls51zy9yd64d27td22t8.auth.marketingcloudapis.com/v2/token', 
-	{
-		  
-	 method: "POST",
-    // headers: {"Content-Type": "application/json; charset=utf8","Access-Control-Allow-Origin": "https://mc.s8.exacttarget.com","Access-Control-Allow-Credentials": "true"},   
-	headers: { 'Content-type': 'application/json'},
-	mode: 'no-cors',
-		
-       body: JSON.stringify(
-   		{
-    "grant_type": "client_credentials",
-    "client_id": "ca1xp4ph65dl9nxfgcbnjelk",
-    "client_secret": "5B4zhj2pTWzvjAEqImLPrttU",
-    "account_id": "517005233"
-	})
-    
-		}) 
-	.then(response => response.json()) 
-    .then(json => {
-     if(json.statusCode >= 300) { console.log("this is error")
-     } else {
-     console.log("this is success")
-      }
-    
-     }).catch(err => console.log(err));*/
-    
-	
-	//fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/customobjectdata/key/4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset?$filter=EmailAddress%20eq%20,sample@gmail.com', 
-	//fetch ('https://mc-260crls51zy9yd64d27td22t8.rest.marketingcloudapis.com/data/v1/contacts/key:4A2BD790-C652-4A58-B0DC-90FCFD0429C4/rowset',
-	/*fetch ('https://www.exacttargetapis.com/contacts/v1/attributes/search',
-	
-	{
-	 
-	 method: "POST",
-    //headers: {"Content-type": "application/json, charset=UTF-8",'Authorization': "token", 'Access-Control-Allow-Origin': '*',"Access-Control-Allow-Credentials": "true"},   
-	headers: { 'Content-type': 'application/json','Authorization':authTokens,'Access-Control-Allow-Origin': '*' },	
-	//headers: { 'Content-type': 'application/json'},
-	mode: 'no-cors',
-	
-	//Cache-Control: 'no-cache',
-	//Accept-Encoding: "gzip", "deflate",
-	Connection: "keep-alive",
-		
-       body: JSON.stringify(
-   		{
-    "request": {
-        "attributes": [
-            {
-                "key": "SMS.FirstName"
-            },
-            {
-                "key": "SMS.LastName"
-            }]
-
-    },
-    "conditionSet": {
-        "operator": "And",
-        "conditionSets": [],
-        "conditions": [{
-            "attribute": {
-                "key": "Email Addresses.EmailAddress"
-            },
-            "operator": "Equals",
-            "value": {
-                "items": ["sample@gmail.com"]
-            }
-        }
-       ] }
-    })
-}
-        
-		) 
-	.then(response => response.json()) 
-    .then(json => {
-     if(json.statusCode >= 300) { console.log("this is error")
-     } else {
-     console.log("this is success")
-      }
-    
-     }).catch(err => console.log(err));
-     */
-    
-    //fetch ('https://mc-260crls51zy9yd64d27td22t8..soap.marketingcloudapis.com/Service.asmx/key:AFE77857-1B91-49A9-96B6-C201929888D5', 
-   // https://{{et_subdomain}}.soap.marketingcloudapis.com/Service.asmx
-	//{
-	  
-	// method: "GET",
-    // mode: 'no-cors',
-     //      headers: new Headers(
-     //      {'Content-Type': 'text/xml; charset=utf-8',
-      //      'Accept': '*/*',
-      //      'Accept-Language': 'en-GB',
-      //      'Accept-Encoding': 'gzip, deflate',
-       //     'Connection': 'Keep-alive',
-            //'Content-Length': Content.length                
-      //      }),
-                   
-      //      }) 
-	//.then(response => response.json()) 
-    //.then(json => {
-    // if(json.statusCode >= 300) { console.log("this is error")
-    // } else {
-    // console.log("this is success")
-    //  }
-    
-    // }).catch(err => console.log(err));
-     
     
 	console.log("SMS ID: " +JSON.stringify(SMSidValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
-	//console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute.SMS.loanId}}"));
-	//console.log("Loan ID: " +JSON.stringify("{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}"));
-	
+		
 	}
 
 

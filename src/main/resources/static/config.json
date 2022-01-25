@@ -197,7 +197,7 @@
                     {
                         "EmailAddress": {
                             "dataType": "EmailAddress",
-                            "isNullable": true,
+                            "isNullable": false,
                             "direction": "out"
                         }
                         
