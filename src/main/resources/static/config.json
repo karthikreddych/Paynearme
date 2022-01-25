@@ -189,7 +189,7 @@
                     {
                         "status": {
                             "dataType": "String",
-                            "isNullable": true,
+                            "isNullable": "true",
                             "direction": "out"
                         }
                         
