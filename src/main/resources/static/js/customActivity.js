@@ -233,7 +233,7 @@ define([
             "FirstName": "{{Contact.Attribute.SMS.FirstName}}",
             "LastName": "{{Contact.Attribute.SMS.LastName}}",
             "CountryCode": "{{Contact.Attribute.SMS.CountryCode}}",
-			
+			 "Status": "{{Contact.Attribute.SMS.Status}}",
 			
         }];
         
