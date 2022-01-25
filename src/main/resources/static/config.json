@@ -188,7 +188,7 @@
                     },
                     {
                         "status": {
-                            "dataType": "text",
+                            "dataType": "String",
                             "isNullable": true,
                             "direction": "out"
                         }
