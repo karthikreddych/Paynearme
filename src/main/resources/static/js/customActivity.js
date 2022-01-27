@@ -229,7 +229,7 @@ define([
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
             "ContactNo": "{{Contact.Attribute.SMS.ContactNo}}", 
             "EmailAddress": "{{Contact.Attribute.SMS.EmailAddress}}",
-            "Status": "{{Contact.Attribute.SMS.Status}}",
+            "status": "{{Contact.Attribute.SMS.status}}",
             "FirstName": "{{Contact.Attribute.SMS.FirstName}}",
             "LastName": "{{Contact.Attribute.SMS.LastName}}",
             "CountryCode": "{{Contact.Attribute.SMS.CountryCode}}",
