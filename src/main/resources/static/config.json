@@ -28,7 +28,7 @@
 					"ContactNo": "{{Contact.Attribute.SMS.ContactNo}}",
 					 "FirstName": "{{Contact.Attribute.SMS.FirstName}}",
 					 "LastName": "{{Contact.Attribute.SMS.LastName}}",
-					 "Status": "{{Contact.Attribute.SMS.Status}}",
+					 "status": "{{Contact.Attribute.SMS.status}}",
 					 "CountryCode": "{{Contact.Attribute.SMS.CountryCode}}"
 				 }               
             ],
