@@ -44,7 +44,7 @@
         }
     },
 	"configurationArguments": {
-      "applicationExtensionKey": "1ce1cb6a-05e3-4212-9d53-40834e24d32d",
+      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
        "save": {
            "url": "https://sbt-sms-febe.herokuapp.com/activity/save",
             "verb": "POST",
