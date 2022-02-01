@@ -104,7 +104,7 @@
 					{
                        
                         "loanId": {
-                            "dataType": "String",
+                            "dataType": "Number",
                             "isNullable": false,
                             "direction": "out"   
                         }
@@ -112,21 +112,21 @@
                     {
                         "eventType": {
                             "dataType": "String",
-                            "isNullable": true,
+                            "isNullable": false,
                             "direction": "out"   
                         }
                     },
                     {
                         "communicationChannel": {
                             "dataType": "String",
-                            "isNullable": true,
+                            "isNullable": false,
                             "direction": "out"   
                         }
                     },                    
                     {
                         "primaryActorId": {
-                            "dataType": "String",
-                            "isNullable": true,
+                            "dataType": "Number",
+                            "isNullable": false,
                             "direction": "out"
                         }
                     },
@@ -134,7 +134,7 @@
 					{
                         "businessUnit": {
                             "dataType": "String",
-                            "isNullable": true,
+                            "isNullable": false,
                             "direction": "out"
                         }
                     },
@@ -148,7 +148,7 @@
 					{
                         "vendor": {
                             "dataType": "String",
-                            "isNullable": true,
+                            "isNullable": false,
                             "direction": "out"
                         }
                     },
@@ -181,7 +181,7 @@
                     {
                         "EmailAddress": {
                             "dataType": "email",
-                            "isNullable": false,
+                            "isNullable": true,
                             "direction": "out"
                         }
                         
