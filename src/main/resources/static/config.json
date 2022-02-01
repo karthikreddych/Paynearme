@@ -23,13 +23,12 @@
 					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 					"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
 					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+					"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+					"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 					"vendor": "{{Contact.Attribute.SMS.vendor}}",
-					"ContactNo": "{{Contact.Attribute.SMS.ContactNo}}",
-					 "FirstName": "{{Contact.Attribute.SMS.FirstName}}",
-					 "LastName": "{{Contact.Attribute.SMS.LastName}}",
-					 "status": "{{Contact.Attribute.SMS.status}}",
-					 "CountryCode": "{{Contact.Attribute.SMS.CountryCode}}"
+					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}"
+					 
 				 }               
             ],
             "outArguments": [],
@@ -154,15 +153,15 @@
                         }
                     },
 					{
-                        "ContactNo": {
-                            "dataType": "Phone",
-                            "isNullable": false,
+                        "doNotCheckDNC": {
+                            "dataType": "Boolean",
+                            "isNullable": true,
                             "direction": "out"
                         }
                         
                     },
                     {
-                        "FirstName": {
+                        "messageParams": {
                             "dataType": "String",
                             "isNullable": true,
                             "direction": "out"
@@ -170,7 +169,7 @@
                         
                     },
                     {
-                        "LastName": {
+                        "messageContent": {
                             "dataType": "String",
                             "isNullable": true,
                             "direction": "out"
@@ -178,22 +177,7 @@
                         
                     },
                     
-                    {
-                        "CountryCode": {
-                            "dataType": "Locale",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                        
-                    },
-                    {
-                        "status": {
-                            "dataType": "String",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                        
-                    },
+                                      
                     {
                         "EmailAddress": {
                             "dataType": "email",
