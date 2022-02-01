@@ -43,7 +43,7 @@ public class ActivityController {
         return "Print is Working";
     }
 	  
-	  @CrossOrigin
+	 /* @CrossOrigin
 	  @PostMapping("/https://demo-default.uw2.customer-messaging-gateway-nprd.lendingcloud.us/api/customer-messaging-gateway/v1/message")
 	  @ResponseStatus(HttpStatus.ACCEPTED)
 	  public String RequestToCommsGatewayBeans () {
@@ -56,6 +56,6 @@ public class ActivityController {
 	  public String MessageOptionsBeans() {
 		  
 		  return "Comms Gateway responded2";
-	 }
+	 }*/
 	  
 }
