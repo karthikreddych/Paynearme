@@ -27,6 +27,8 @@
 					"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 					"vendor": "{{Contact.Attribute.SMS.vendor}}",
+					"contacts": "{{Contact.Attribute.SMS.contacts}}",
+					"countrycode": "{{Contact.Attribute.SMS.countrycode}}",
 					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}"
 					 
 				 }               
@@ -112,14 +114,14 @@
                     {
                         "eventType": {
                             "dataType": "String",
-                            "isNullable": false,
+                            "isNullable": true,
                             "direction": "out"   
                         }
                     },
                     {
                         "communicationChannel": {
                             "dataType": "String",
-                            "isNullable": false,
+                            "isNullable": true,
                             "direction": "out"   
                         }
                     },                    
@@ -134,7 +136,7 @@
 					{
                         "businessUnit": {
                             "dataType": "String",
-                            "isNullable": false,
+                            "isNullable": true,
                             "direction": "out"
                         }
                     },
@@ -177,6 +179,23 @@
                         
                     },
                     
+                    {
+                        "contacts": {
+                            "dataType": "Phone",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    
+                    {
+                        "countrycode": {
+                            "dataType": "Local",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
                                       
                     {
                         "emailaddress": {

@@ -227,14 +227,14 @@ define([
 			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
 			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
-            //"ContactNo": "{{Contact.Attribute.SMS.ContactNo}}", 
+            "ContactNo": "{{Contact.Attribute.SMS.ContactNo}}", 
             "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
             //"status": "{{Contact.Attribute.SMS.status}}",
             //"FirstName": "{{Contact.Attribute.SMS.FirstName}}",
             //"LastName": "{{Contact.Attribute.SMS.LastName}}",
-            //"CountryCode": "{{Contact.Attribute.SMS.CountryCode}}",
+            "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
 			 "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
-			  "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
         }];
         
