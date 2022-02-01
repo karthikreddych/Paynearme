@@ -17,7 +17,7 @@
         "execute": {
             "inArguments": [
                 {
-					"EmailAddress": "{{Contact.Attribute.SMS.EmailAddress}}",
+					"emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
 					"loanId": "{{Contact.Attribute.SMS.loanId}}",
 					"eventType": "{{Contact.Attribute.SMS.eventType}}",
 					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
@@ -104,7 +104,7 @@
 					{
                        
                         "loanId": {
-                            "dataType": "Number",
+                            "dataType": "String",
                             "isNullable": false,
                             "direction": "out"   
                         }
@@ -125,7 +125,7 @@
                     },                    
                     {
                         "primaryActorId": {
-                            "dataType": "Number",
+                            "dataType": "String",
                             "isNullable": false,
                             "direction": "out"
                         }
@@ -179,7 +179,7 @@
                     
                                       
                     {
-                        "EmailAddress": {
+                        "emailaddress": {
                             "dataType": "email",
                             "isNullable": true,
                             "direction": "out"

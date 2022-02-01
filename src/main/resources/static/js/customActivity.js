@@ -228,7 +228,7 @@ define([
 			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
             //"ContactNo": "{{Contact.Attribute.SMS.ContactNo}}", 
-            //"EmailAddress": "{{Contact.Attribute.SMS.EmailAddress}}",
+            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
             //"status": "{{Contact.Attribute.SMS.status}}",
             //"FirstName": "{{Contact.Attribute.SMS.FirstName}}",
             //"LastName": "{{Contact.Attribute.SMS.LastName}}",
