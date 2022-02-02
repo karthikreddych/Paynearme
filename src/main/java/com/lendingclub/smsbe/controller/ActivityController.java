@@ -44,7 +44,7 @@ public class ActivityController {
             }
         }*/
 		System.out.println("Payload "+payload.toString());
-		RequestToCommsGatewayBeans requestToCommsGatewayBeans = new RequestToCommsGatewayBeans();
+		/*RequestToCommsGatewayBeans requestToCommsGatewayBeans = new RequestToCommsGatewayBeans();
 		MessageOptionsBeans messageOptionsBeans = new MessageOptionsBeans();
 		messageOptionsBeans.setDoNotCheckDNC(false);
 		requestToCommsGatewayBeans.setLoanId("193205598");
@@ -66,7 +66,7 @@ public class ActivityController {
 		//ResponseFromCommsGateway responseFromCommsGateway = new ResponseFromCommsGateway();
 		ResponseEntity<String> response
 		  = restTemplate.postForEntity(Url,requestToCommsGatewayBeans, String.class);
-		System.out.println("Response "+response.toString());
+		System.out.println("Response "+response.toString());*/
         return "Print is Working";
     }
 	  
