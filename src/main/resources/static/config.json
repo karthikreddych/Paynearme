@@ -200,7 +200,7 @@
                     {
                         "emailaddress": {
                             "dataType": "email",
-                            "isNullable": true,
+                            "isNullable": false,
                             "direction": "out"
                         }
                         

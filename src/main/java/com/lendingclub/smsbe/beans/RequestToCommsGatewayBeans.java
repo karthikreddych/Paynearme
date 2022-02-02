@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class RequestToCommsGatewayBeans {
 
-	private int loanId;
+	private String loanId;
 
     private String eventType;
 
@@ -19,81 +19,91 @@ public class RequestToCommsGatewayBeans {
 
     private String messageParams;
     
-    private LocalDate scheduleDate;
+    private String scheduleDate;
     
     private String vendor;
     
-    public int getloanId() {
-        return loanId;
-    }
-    
-    public void setloanId(final int loanId) {
-        this.loanId = loanId;
-    }
-    
-    public String geteventType() {
-        return eventType;
-    }
-    
-    public void seteventType(final String eventType) {
-        this.eventType = eventType;
-    }
-    
-    public String getcommunicationChannel() {
-        return eventType;
-    }
-    
-    public void setcommunicationChannel(final String communicationChannel) {
-        this.communicationChannel = communicationChannel;
-    }
-    
-    public int getprimaryActorId() {
-        return primaryActorId;
-    }
-    
-    public void setprimaryActorId(final int primaryActorId) {
-        this.primaryActorId = primaryActorId;
-    }
-    
-    public String getbusinessUnit() {
-        return eventType;
-    }
-    
-    public void setbusinessUnit(final String businessUnit) {
-        this.businessUnit = businessUnit;
-    }
-    
-    public String getmessageContent() {
-        return messageContent;
-    }
-    
-    public void setmessageContent(final String messageContent) {
-        this.messageContent = messageContent;
-    }
-    
-    public String getmessageParams() {
-        return messageParams;
-    }
-    
-    public void setmessageParams(final String messageParams) {
-        this.messageParams = messageParams;
-    }
-    
-    public LocalDate getscheduleDate() {
-        return scheduleDate;
-    }
-    
-    public void setmessageParams(final LocalDate scheduleDate) {
-        this.scheduleDate = scheduleDate;
-    }
-    
-    public String getvendor() {
-        return messageParams;
-    }
-    
-    public void setvendor(final String vendor) {
-        this.vendor = vendor;
-    }
-    
+    private MessageOptionsBeans messageOptionsBeans;
+
+	public String getLoanId() {
+		return loanId;
+	}
+
+	public void setLoanId(String loanId) {
+		this.loanId = loanId;
+	}
+
+	public String getEventType() {
+		return eventType;
+	}
+
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
+	}
+
+	public String getCommunicationChannel() {
+		return communicationChannel;
+	}
+
+	public void setCommunicationChannel(String communicationChannel) {
+		this.communicationChannel = communicationChannel;
+	}
+
+	public int getPrimaryActorId() {
+		return primaryActorId;
+	}
+
+	public void setPrimaryActorId(int primaryActorId) {
+		this.primaryActorId = primaryActorId;
+	}
+
+	public String getBusinessUnit() {
+		return businessUnit;
+	}
+
+	public void setBusinessUnit(String businessUnit) {
+		this.businessUnit = businessUnit;
+	}
+
+	public String getMessageContent() {
+		return messageContent;
+	}
+
+	public void setMessageContent(String messageContent) {
+		this.messageContent = messageContent;
+	}
+
+	public String getMessageParams() {
+		return messageParams;
+	}
+
+	public void setMessageParams(String messageParams) {
+		this.messageParams = messageParams;
+	}
+
+	public String getScheduleDate() {
+		return scheduleDate;
+	}
+
+	public void setScheduleDate(String scheduleDate) {
+		this.scheduleDate = scheduleDate;
+	}
+
+	public String getVendor() {
+		return vendor;
+	}
+
+	public void setVendor(String vendor) {
+		this.vendor = vendor;
+	}
+
+	public MessageOptionsBeans getMessageOptionsBeans() {
+		return messageOptionsBeans;
+	}
+
+	public void setMessageOptionsBeans(MessageOptionsBeans messageOptionsBeans) {
+		this.messageOptionsBeans = messageOptionsBeans;
+	}
+   
         
 }

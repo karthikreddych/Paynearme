@@ -3,6 +3,10 @@ package com.lendingclub.smsbe.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+import com.lendingclub.smsbe.beans.RequestToCommsGatewayBeans;
+import com.lendingclub.smsbe.beans.ResponseFromCommsGateway;
 
 import java.util.Map;
 
@@ -40,22 +44,17 @@ public class ActivityController {
         }*/
 		System.out.println("Payload "+payload.toString());
 		
+		RestTemplate restTemplate = new RestTemplate();
+		// define URL to post
+		String Url
+		  = "https://demo-default.uw2.customer-messaging-gateway-nprd.lendingcloud.us/api/customer-messaging-gateway/v1/message";
+		// create object to responseFromCommsGateway
+		ResponseFromCommsGateway responseFromCommsGateway = new ResponseFromCommsGateway();
+		ResponseEntity<ResponseFromCommsGateway> response
+		  = restTemplate.postForEntity(Url,responseFromCommsGateway, ResponseFromCommsGateway.class);
+		
         return "Print is Working";
     }
 	  
-	 /* @CrossOrigin
-	  @PostMapping("/https://demo-default.uw2.customer-messaging-gateway-nprd.lendingcloud.us/api/customer-messaging-gateway/v1/message")
-	  @ResponseStatus(HttpStatus.ACCEPTED)
-	  public String RequestToCommsGatewayBeans () {
-	       
-			//System.out.println("Payload "+payload.toString());
-			
-		  return "Comms GAteway responded1";
-	 }
-	  
-	  public String MessageOptionsBeans() {
 		  
-		  return "Comms Gateway responded2";
-	 }*/
-	  
 }
