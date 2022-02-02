@@ -11,7 +11,7 @@ public class RequestToCommsGatewayBeans {
 
     private String communicationChannel;
 
-    private int primaryActorId;
+    private String primaryActorId;
 
     private String businessUnit;
 
@@ -49,11 +49,11 @@ public class RequestToCommsGatewayBeans {
 		this.communicationChannel = communicationChannel;
 	}
 
-	public int getPrimaryActorId() {
+	public String getPrimaryActorId() {
 		return primaryActorId;
 	}
 
-	public void setPrimaryActorId(int primaryActorId) {
+	public void setPrimaryActorId(String primaryActorId) {
 		this.primaryActorId = primaryActorId;
 	}
 

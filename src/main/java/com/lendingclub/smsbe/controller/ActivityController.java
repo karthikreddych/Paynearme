@@ -5,8 +5,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import com.lendingclub.smsbe.beans.MessageOptionsBeans;
 import com.lendingclub.smsbe.beans.RequestToCommsGatewayBeans;
-import com.lendingclub.smsbe.beans.ResponseFromCommsGateway;
+
 
 import java.util.Map;
 
@@ -43,16 +44,29 @@ public class ActivityController {
             }
         }*/
 		System.out.println("Payload "+payload.toString());
+		RequestToCommsGatewayBeans requestToCommsGatewayBeans = new RequestToCommsGatewayBeans();
+		MessageOptionsBeans messageOptionsBeans = new MessageOptionsBeans();
+		messageOptionsBeans.setDoNotCheckDNC(false);
+		requestToCommsGatewayBeans.setLoanId("193205598");
+		requestToCommsGatewayBeans.setMessageOptionsBeans(messageOptionsBeans);
+		requestToCommsGatewayBeans.setEventType("DQ_NOTICE");
+		requestToCommsGatewayBeans.setCommunicationChannel("SMS");
+		requestToCommsGatewayBeans.setPrimaryActorId("248116371");
+		requestToCommsGatewayBeans.setBusinessUnit("PL");
+		requestToCommsGatewayBeans.setMessageContent("Hello, LC COMMS 2.");
+		requestToCommsGatewayBeans.setMessageParams("{}");
+		requestToCommsGatewayBeans.setScheduleDate(null);
+		requestToCommsGatewayBeans.setVendor("SBT");
 		
 		RestTemplate restTemplate = new RestTemplate();
 		// define URL to post
 		String Url
 		  = "https://demo-default.uw2.customer-messaging-gateway-nprd.lendingcloud.us/api/customer-messaging-gateway/v1/message";
 		// create object to responseFromCommsGateway
-		ResponseFromCommsGateway responseFromCommsGateway = new ResponseFromCommsGateway();
-		ResponseEntity<ResponseFromCommsGateway> response
-		  = restTemplate.postForEntity(Url,responseFromCommsGateway, ResponseFromCommsGateway.class);
-		
+		//ResponseFromCommsGateway responseFromCommsGateway = new ResponseFromCommsGateway();
+		ResponseEntity<String> response
+		  = restTemplate.postForEntity(Url,requestToCommsGatewayBeans, String.class);
+		System.out.println("Response "+response.toString());
         return "Print is Working";
     }
 	  

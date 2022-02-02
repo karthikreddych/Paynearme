@@ -2,14 +2,14 @@ package com.lendingclub.smsbe.beans;
 
 public class MessageOptionsBeans {
 
-	private String doNotCheckDNC;
+	private Boolean doNotCheckDNC;
+
+	public Boolean isDoNotCheckDNC() {
+		return doNotCheckDNC;
+	}
+
+	public void setDoNotCheckDNC(Boolean doNotCheckDNC) {
+		this.doNotCheckDNC = doNotCheckDNC;
+	}
 	
-	public String getdoNotCheckDNC() {
-        return doNotCheckDNC;
-    }
-    
-    public void setdoNotCheckDNC(final String doNotCheckDNC) {
-        this.doNotCheckDNC = doNotCheckDNC;
-    }
-    
 }
