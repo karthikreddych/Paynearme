@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@Import({RequestLoggingFilterConfig.class})
+//@Import({RequestLoggingFilterConfig.class})
 public class SbtSmsFebeApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
