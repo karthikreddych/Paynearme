@@ -111,8 +111,8 @@ define([
          $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'SMSid_Value') {
-                    $('#SMSid').val(val);
+                if (key === 'TemplateName_Value') {
+                    $('#TemplateName').val(val);
                 }
 
                 if (key === 'TemplateID_Value') {
@@ -182,11 +182,11 @@ define([
 	debugger
         try {
 		
-		var SMSidValue = $('#SMSid').val();
+		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
 
 
-         if( SMSidValue === "" || TemplateIDValue === ""){
+         if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
 			document.getElementById("step2").style.display="block"
 			
@@ -201,7 +201,7 @@ define([
     	//payload['arguments'].execute = payload['arguments'].execute || {};
     	
         payload['arguments'].execute.inArguments = [{
-            "SMSid_Value": SMSidValue,
+            "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
             
             /*"loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
@@ -251,7 +251,7 @@ define([
         }
 
     
-	console.log("SMS ID: " +JSON.stringify(SMSidValue));
+	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 		
 	}

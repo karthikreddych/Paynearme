@@ -38,8 +38,23 @@ public class DatabaseLoader implements CommandLineRunner { // <2>
 	@Override
 	public void run(String...strings) throws Exception { // <4>
 		System.out.println(">>>>>>inserting data");
-		for(int i = 1; i <= 10; i++){
-			this.repository.save(new SbtId("T00"+i, "S00"+i));
+		{
+			this.repository.save(new SbtId("1", "Payment Reminder"));
+			this.repository.save(new SbtId("2", "Delinquency Notice"));
+			this.repository.save(new SbtId("3", "Opt-in Confirmation Message"));
+			this.repository.save(new SbtId("4", "Scheduled Payment Reminder"));
+			this.repository.save(new SbtId("5", "Payment Reminders With No Payment Link"));
+			this.repository.save(new SbtId("6", "PDQ Limited Content – Option 1"));
+			this.repository.save(new SbtId("7", "DQ Limited Content – Option 2"));
+			this.repository.save(new SbtId("8", "DPD 111"));
+			this.repository.save(new SbtId("9", "DPD 13"));
+			this.repository.save(new SbtId("10", "DPD 21"));
+			this.repository.save(new SbtId("11", "DPD 28"));
+			this.repository.save(new SbtId("12", "DPD 36"));
+			this.repository.save(new SbtId("13", "DPD 43"));
+			this.repository.save(new SbtId("55", "DPD 13 - With PNM Debit Payment Link (Mini-Miranda)"));
+			this.repository.save(new SbtId("56", "Payment Reminders With PNM Debit Payment Link"));
+			
 		}
 
 		System.out.println(">>>>>>insertion done");

@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -32,7 +32,35 @@
        height:15px;
        width:15px;
    }
-   	</style>
+   
+   select[disabled] > option {
+    color: currentColor;
+}
+
+select:disabled {
+    color: currentColor;
+    opacity: 0.7;
+    border-color: currentColor;
+}
+
+.idselection_heading
+{
+width:150px;
+font-family:sans-serif;
+font-weight:normal;
+}
+
+.main-div
+{
+margin-bottom:18%;
+}
+
+#TemplateID, #TemplateName
+{
+width:371px;
+}
+
+</style>
 
 
 
@@ -59,18 +87,31 @@
         </div>
 		<div id="step2"> <img class="iconDetails" src="images/alert.png" alt="" /> Select ID from the Dropdown!</div>
 		<p class="idselection_mainheading">Select the TEMPLATE ID from the drop down</p>
-        <p class="idselection_heading">TEMPLATE ID </p>
-		<select id="TemplateID" defaultValue="">
+        
+		<div class="main-div">
+		<div class="idselection_heading" style="float: left; line-height: 35px;">TEMPLATE ID</div>
+		<div style="float:left;">
+		<select id="TemplateID" defaultValue="" onchange="myFunction()">
         <option value="" selected>Select</option>
+		
         </select>
-
-        <p class="idselection_mainheading">Select the SMS ID from the drop down</p>
-        <p class="idselection_heading">SMS ID</p>
-		<select id="SMSid" defaultValue="">
+		</div>
+		
+		</div>
+		
+        <div class="main-div">
+        <div class="idselection_heading" style="float: left; line-height: 35px;">TEMPLATE NAME</div>
+		<div style="float:left;">
+		<select id="TemplateName" defaultValue="" disabled="disabled">
         <option value="" selected>Select</option>
+		 
 		</select>
+		</div>
+		</div>
+		
     </div>
     <div id="error" style="display: none;"> this is an error </div>
+	
 
 </body>
 </html>
