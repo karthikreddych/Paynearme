@@ -1,6 +1,6 @@
 const userAction = async () => {
     console.log('reaching')
-  const response = await fetch('/sbtIds');
+  const response = await fetch('api/sbtIds');
   const myJson = await response.json(); //extract JSON from the http response
   // do something with myJson
   let data = myJson;
