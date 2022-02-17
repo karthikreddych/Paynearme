@@ -41,7 +41,7 @@ import java.util.Map;
 
 @RestController
 
-@RequestMapping("/api/sbt-sms-febe/activity")
+@RequestMapping("/activity")
 
 @Api
 
