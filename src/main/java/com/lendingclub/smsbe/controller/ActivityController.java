@@ -8,7 +8,7 @@ import com.lendingclub.smsbe.controller.ExecutePayload;
 
 import com.lendingclub.smsbe.beans.CommsGatewayRequest;
 
-import com.lendingclub.smsbe.util.SmsRestClient;
+//import com.lendingclub.smsbe.util.SmsRestClient;
 
 import io.swagger.annotations.Api;
 
@@ -33,14 +33,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 
-
-import com.lendingclub.smsbe.beans.MessageOptionsBeans;
-
-
-
-
-
-import javax.inject.Inject;
+//import javax.inject.Inject;
 
 import java.util.Map;
 
@@ -58,7 +51,7 @@ public class ActivityController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ActivityController.class);
 
-	@Autowired
+	/*@Autowired
 
 	SmsRestClient smsRestClient;
 
@@ -93,7 +86,7 @@ public class ActivityController {
     }
 
 	  
-
+*/
 		  
 
 }
