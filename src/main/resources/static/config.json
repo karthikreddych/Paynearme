@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "SMS Heroku",
+           "name": "SMS-Heroku",
            "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
            
        }
