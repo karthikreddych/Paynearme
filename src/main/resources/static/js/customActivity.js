@@ -179,7 +179,7 @@ define([
     */
 
     function save() {
-	debugger
+	//debugger
         try {
 		
 		var TemplateNameValue = $('#TemplateName').val();
