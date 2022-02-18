@@ -44,7 +44,7 @@ public class DatabaseLoader implements CommandLineRunner { // <2>
 			this.repository.save(new SbtId("3", "Opt-in Confirmation Message"));
 			this.repository.save(new SbtId("4", "Scheduled Payment Reminder"));
 			this.repository.save(new SbtId("5", "Payment Reminders With No Payment Link"));
-			this.repository.save(new SbtId("6", "PDQ Limited Content – Option 1"));
+			this.repository.save(new SbtId("6", "DQ Limited Content – Option 1"));
 			this.repository.save(new SbtId("7", "DQ Limited Content – Option 2"));
 			this.repository.save(new SbtId("8", "DPD 111"));
 			this.repository.save(new SbtId("9", "DPD 13"));
