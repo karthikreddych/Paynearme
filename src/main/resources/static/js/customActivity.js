@@ -189,8 +189,8 @@ define([
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
 			document.getElementById("step2").style.display="block"
-			
-			return 0;
+			document.getElementsByClassName("loader").style.display="none";
+			return;
             }
             		
 			
