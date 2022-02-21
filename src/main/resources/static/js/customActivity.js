@@ -196,7 +196,7 @@ define([
 			document.getElementById("TemplateID").focus();
 		    // connection.trigger('ready');
 
-		 return;
+		 return TemplateNameValue;
 		 document.getElementsByClassName("loader").style.visibility="hidden";
             }
             		
