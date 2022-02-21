@@ -185,7 +185,8 @@ if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
 			document.getElementById("step2").style.display="block"
 			
-			return;
+		    connection.trigger("nextStep");
+
             }
 			else
 			{
