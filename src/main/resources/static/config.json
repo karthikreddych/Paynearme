@@ -41,7 +41,7 @@
             "format": "json",
             "useJwt": false,
 			
-            "timeout": 1000
+            "timeout": 8000
         }
     },
 	"configurationArguments": {
