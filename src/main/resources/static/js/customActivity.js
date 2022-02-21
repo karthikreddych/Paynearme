@@ -190,8 +190,7 @@ define([
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
 			document.getElementById("step2").style.display="block"
-			document.getElementsByClassName("loader-overlay").style.display="none"
-			document.getElementsByClassName("loader").style.display="none"
+			
 			return;
             }
             		
@@ -248,6 +247,8 @@ define([
 		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
+	    document.getElementsByClassName("loader-overlay").style.display="none";
+	    document.getElementsByClassName("loader").style.display="none";
             document.getElementById("error").style.display = "block";
             document.getElementById("error").innerHtml = err;
         }
