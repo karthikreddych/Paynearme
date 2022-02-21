@@ -194,7 +194,7 @@ define([
 		 //$('.fuelux .loader, .fuelux-icon-loader, .glyphicon-loader').hide();
 		  //$('.loader-overlay').hide();
 			
-			return;
+			return false;
             }
             		
 			
