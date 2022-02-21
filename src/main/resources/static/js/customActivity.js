@@ -179,8 +179,9 @@ define([
     */
 
     function save() {
-	    alert("Hi");
-	    parent.getElementsByClassName("loader-overlay").style.display="none";
+	    alert("test");
+	    //parent.getElementsByClassName("loader-overlay").style.display="none";
+	    $('.loader-overlay').hide();
 	//debugger
         try {
 		
