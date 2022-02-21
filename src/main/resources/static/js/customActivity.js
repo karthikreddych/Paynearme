@@ -178,8 +178,9 @@ define([
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			alert("test");
 			document.getElementById("step2").style.display="block";
-			
-			document.getElementsByTagName("div.loader::after").style.display="none";
+			$("div.loader").css({"display": "none"});
+			$("div.loader-overlay").css({"display": "none"});
+			//document.getElementsByTagName("div.loader::after").style.display="none";
 			//window.parent.$('.loader-overlay').css({"display": "none"});
 			return;
             }
