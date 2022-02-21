@@ -98,7 +98,6 @@ define([
 			alert("test");
 			document.getElementById("step2").style.display="block";
 			
-			return;
             }
             	
 
