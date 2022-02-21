@@ -179,8 +179,10 @@ define([
     */
 	function errorfunction()
 	{
+		if( TemplateNameValue === "" || TemplateIDValue === ""){
 	document.getElementById("step2").style.display="block";
-	break;
+	return false;
+		}
 	}
 
     function save() {
@@ -191,10 +193,10 @@ define([
         var TemplateIDValue = $('#TemplateID').val();
 
 
-         if( TemplateNameValue === "" || TemplateIDValue === ""){
+         
 			
 			errorfunction();
-            }
+            
             		
 			
 	    //payload['metaData'].isConfigured = true;
