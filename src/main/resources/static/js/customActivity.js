@@ -182,16 +182,18 @@ define([
 	//debugger
         try {
 		
-		var TemplateNameValue = $('#TemplateName').val();
+	var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
 
 
          if( TemplateNameValue == "" || TemplateIDValue == ""){
 			
 			document.getElementById("step2").style.display="block"
-			//return true;
+			return false;
 			
             }
+		else
+		{
             		
 			
 	    //payload['metaData'].isConfigured = true;
@@ -243,7 +245,9 @@ define([
 		payload['metaData'].isConfigured = true;
 		
 		console.log(payload);
-		connection.trigger('updateActivity', payload);		
+		connection.trigger('updateActivity', payload);	
+			return true;
+		}
            
         } catch(err) {
             documnet.getElement("error").style.display = "block";
