@@ -179,7 +179,7 @@ define([
 			
 			document.getElementById("step2").style.display="block";
 			
-			//document.getElementsByClassName('.loader-overlay')..style.display="none";
+			document.getElementsByTagName("div.loader::after").style.display="none";
 			//window.parent.$('.loader-overlay').css({"display": "none"});
 			return;
             }
