@@ -179,9 +179,9 @@ define([
     */
 
     function save() {
-	    alert("test");
+	    alert("testing");
 	    //parent.getElementsByClassName("loader-overlay").style.display="none";
-	    $('.loader-overlay').hide();
+	   // $('.loader-overlay').hide();
 	//debugger
         try {
 		
@@ -192,7 +192,7 @@ define([
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
 			document.getElementById("step2").style.display="block"
-			
+			window.parent.$('.loader-overlay').css({"display": "none"});
 			return;
             }
             		
