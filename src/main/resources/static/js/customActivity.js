@@ -189,7 +189,7 @@ define([
          if( TemplateNameValue == "" || TemplateIDValue == ""){
 			
 			document.getElementById("step2").style.display="block"
-			//return;
+			return false;
 			
             }
             		
