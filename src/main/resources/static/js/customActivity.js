@@ -177,13 +177,6 @@ define([
 				}};
     console.log("deFields: " +JSON.stringify(deFields));
     */
-	function errorfunction()
-	{
-		
-	document.getElementById("step2").style.display="block";
-	return false;
-		
-	}
 
     function save() {
 	//debugger
@@ -193,11 +186,12 @@ define([
         var TemplateIDValue = $('#TemplateID').val();
 
 
-         
-		if( TemplateNameValue === "" || TemplateIDValue === ""){	
-			errorfunction();
-		}
-            
+         if( TemplateNameValue === "" || TemplateIDValue === ""){
+			
+			document.getElementById("step2").style.display="block"
+			
+			return;
+            }
             		
 			
 	    //payload['metaData'].isConfigured = true;
