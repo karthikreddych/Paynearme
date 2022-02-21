@@ -182,18 +182,14 @@ function onClickedNext() {
 var TemplateNameValue = $('#TemplateName').val();
 var TemplateIDValue = $('#TemplateID').val();
 if( TemplateNameValue === "" || TemplateIDValue === ""){
-	alert("Testing");
-			
-			document.getElementById("step2").style.display="block"
-			
-		    connection.trigger("nextStep");
-
-            }
-			else
-			{
-				save();
-			}
-  }
+document.getElementById("step2").style.display="block"
+connection.trigger("nextStep");
+}
+else
+{
+save();
+}
+}
 
     function save() {
 	//debugger
