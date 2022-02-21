@@ -190,7 +190,7 @@ define([
 			
 			document.getElementById("step2").style.display="block"
 			
-			return;
+			break;
             }
             		
 			
