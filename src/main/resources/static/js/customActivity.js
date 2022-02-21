@@ -180,6 +180,7 @@ define([
 
     function save() {
 	    alert("Hi");
+	    document.getElementsByClassName("loader-overlay").style.display="none";
 	//debugger
         try {
 		
@@ -247,8 +248,8 @@ define([
 		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
-	    document.getElementsByClassName("loader-overlay").style.display="none";
-	    document.getElementsByClassName("loader").style.display="none";
+	   // document.getElementsByClassName("loader-overlay").style.display="none";
+	    //document.getElementsByClassName("loader").style.display="none";
             document.getElementById("error").style.display = "block";
             document.getElementById("error").innerHtml = err;
         }
