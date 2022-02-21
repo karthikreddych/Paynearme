@@ -193,7 +193,8 @@ define([
 		 $("#modalRegion > div > div > div > div > div.modal-body > div > div.step-content.multi-view-wizard-views > div > div.loader").hide();
 			
 			$("#modalRegion > div > div > div > div > div.modal-body > div > div.step-content.multi-view-wizard-views > div > div.loader-overlay").hide();
-			return;
+			document.getElementById("TemplateID").focus();
+		 return;
             }
             		
 			
