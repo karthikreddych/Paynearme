@@ -191,7 +191,7 @@ define([
 
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
-			document.getElementById("step2").style.display="block"
+			document.getElementById("step2").style.display="block";
 			window.parent.$('.loader-overlay').css({"display": "none"});
 			return;
             }
