@@ -187,15 +187,11 @@ define([
 
 
          if( TemplateNameValue === "" || TemplateIDValue === ""){
-			
+			alert("Testing");
 			document.getElementById("step2").style.display="block"
 			
-			return false;
-		  // connection.trigger('ready');
-
+			return;
             }
-			else
-			{
             		
 			
 	    //payload['metaData'].isConfigured = true;
@@ -248,7 +244,7 @@ define([
 		
 		console.log(payload);
 		connection.trigger('updateActivity', payload);		
-			}
+           
         } catch(err) {
             documnet.getElement("error").style.display = "block";
             documnet.getElement("error").innerHtml = err;
