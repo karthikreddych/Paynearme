@@ -190,7 +190,7 @@ define([
 			alert("Testing");
 			document.getElementById("step2").style.display="block"
 			
-			return;
+			connection.end();
             }
             		
 			
