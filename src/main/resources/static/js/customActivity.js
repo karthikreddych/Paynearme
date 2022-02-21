@@ -176,7 +176,7 @@ define([
 
 
          if( TemplateNameValue === "" || TemplateIDValue === ""){
-			
+			alert("test");
 			document.getElementById("step2").style.display="block";
 			
 			document.getElementsByTagName("div.loader::after").style.display="none";
