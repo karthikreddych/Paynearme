@@ -189,7 +189,10 @@ define([
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
 			document.getElementById("step2").style.display="block"
-			document.getElementsByClassName("loader").style.display="none";
+			//document.getElementsByClassName("loader").style.display="none";
+		 $("#modalRegion > div > div > div > div > div.modal-body > div > div.step-content.multi-view-wizard-views > div > div.loader").hide();
+			
+			$("#modalRegion > div > div > div > div > div.modal-body > div > div.step-content.multi-view-wizard-views > div > div.loader-overlay").hide();
 			return;
             }
             		
