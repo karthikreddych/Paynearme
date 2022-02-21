@@ -170,7 +170,8 @@ define([
     */
 
     function save() {
-	  
+	  $("div.loader").css({"display": "none"});
+			$("div.loader-overlay").css({"display": "none"});
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
 
@@ -178,8 +179,7 @@ define([
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			alert("test");
 			document.getElementById("step2").style.display="block";
-			$("div.loader").css({"display": "none"});
-			$("div.loader-overlay").css({"display": "none"});
+			
 			//document.getElementsByTagName("div.loader::after").style.display="none";
 			//window.parent.$('.loader-overlay').css({"display": "none"});
 			return;
