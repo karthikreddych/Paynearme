@@ -188,17 +188,14 @@ define([
 
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
-			document.getElementById("step2").style.display="block";
-		
-		   event.preventDefault();
-
-		 // document.getElementsByClassName("loader").style.display="none";
-		 
-		 //$('.fuelux .loader, .fuelux-icon-loader, .glyphicon-loader').hide();
-		  //$('.loader-overlay').hide();
+			document.getElementById("step2").style.display="block"
 			
-			//return false;
+			return faslse;
+		   connection.trigger('ready');
+
             }
+			else
+			{
             		
 			
 	    //payload['metaData'].isConfigured = true;
@@ -251,7 +248,7 @@ define([
 		
 		console.log(payload);
 		connection.trigger('updateActivity', payload);		
-           
+			}
         } catch(err) {
             documnet.getElement("error").style.display = "block";
             documnet.getElement("error").innerHtml = err;
