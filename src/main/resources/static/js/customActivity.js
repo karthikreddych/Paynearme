@@ -177,7 +177,12 @@ define([
 				}};
     console.log("deFields: " +JSON.stringify(deFields));
     */
-
+function errorfunction()
+	{
+	document.getElementById("step2").style.display="block"
+	return false;
+	}
+	
     function save() {
 	//debugger
         try {
@@ -188,9 +193,7 @@ define([
 
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
-			document.getElementById("step2").style.display="block"
-			
-			return;
+		return errorfunction();
             }
             		
 			
