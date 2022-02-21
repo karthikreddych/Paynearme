@@ -179,10 +179,10 @@ define([
     */
 	function errorfunction()
 	{
-		if( TemplateNameValue === "" || TemplateIDValue === ""){
+		
 	document.getElementById("step2").style.display="block";
 	return false;
-		}
+		
 	}
 
     function save() {
@@ -194,8 +194,9 @@ define([
 
 
          
-			
+		if( TemplateNameValue === "" || TemplateIDValue === ""){	
 			errorfunction();
+		}
             
             		
 			
