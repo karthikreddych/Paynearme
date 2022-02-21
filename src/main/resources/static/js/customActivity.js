@@ -189,12 +189,15 @@ define([
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
 			document.getElementById("step2").style.display="block";
-		 document.getElementsByClassName("loader").style.display="none";
+		
+		   event.preventDefault();
+
+		 // document.getElementsByClassName("loader").style.display="none";
 		 
 		 //$('.fuelux .loader, .fuelux-icon-loader, .glyphicon-loader').hide();
 		  //$('.loader-overlay').hide();
 			
-			return false;
+			//return false;
             }
             		
 			
