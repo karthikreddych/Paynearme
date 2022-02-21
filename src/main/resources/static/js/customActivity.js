@@ -222,8 +222,8 @@ define([
         
 
     
-	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
-	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
+	//console.log("Template Name: " +JSON.stringify(TemplateNameValue));
+	//console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 		
 	}
 
