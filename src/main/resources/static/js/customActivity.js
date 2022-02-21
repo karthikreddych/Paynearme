@@ -194,7 +194,7 @@ define([
 			
 			$("#modalRegion > div > div > div > div > div.modal-body > div > div.step-content.multi-view-wizard-views > div > div.loader-overlay").hide();
 			document.getElementById("TemplateID").focus();
-		 return;
+		// return;
             }
             		
 			
