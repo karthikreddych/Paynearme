@@ -180,7 +180,7 @@ define([
 
     function save() {
 	    alert("Hi");
-	    document.getElementsByClassName("loader-overlay").style.display="none";
+	    parent.getElementsByClassName("loader-overlay").style.display="none";
 	//debugger
         try {
 		
