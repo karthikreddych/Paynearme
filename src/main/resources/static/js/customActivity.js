@@ -186,10 +186,10 @@ define([
         var TemplateIDValue = $('#TemplateID').val();
 
 
-         if( TemplateNameValue === "" || TemplateIDValue === ""){
-			return;
-			document.getElementById("step2").style.display="block"
+         if( TemplateNameValue == "" || TemplateIDValue == ""){
 			
+			document.getElementById("step2").style.display="block"
+			return;
 			
             }
             		
