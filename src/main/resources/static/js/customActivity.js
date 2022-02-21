@@ -190,7 +190,8 @@ define([
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
 			document.getElementById("step2").style.display="block"
-			
+			document.getElementsByClassName("loader-overlay").style.display="none"
+			document.getElementsByClassName("loader").style.display="none"
 			return;
             }
             		
