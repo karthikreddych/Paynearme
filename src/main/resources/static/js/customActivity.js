@@ -189,7 +189,7 @@ define([
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			
 			document.getElementById("step2").style.display="block";
-		 $('.loader').hide();
+		 $('.fuelux .loader, .fuelux-icon-loader, .glyphicon-loader').hide();
 		  $('.loader-overlay').hide();
 			
 			return;
