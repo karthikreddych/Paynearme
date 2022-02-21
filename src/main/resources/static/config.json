@@ -1,130 +1,224 @@
 {
     "workflowApiVersion": "1.1",
-    "metaData": {
-       "icon": "images/iconSmall.png",
+	"metaData": {
+       "icon": "images/icon.png",
+	   "iconSmall": "images/icon_small.png",
        "category": "message"
     },
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "Twilio SMS",
-           "description": "Send Twilio SMS with Journey Builder",
-           "TwilioMessage":"test"
+           "name": "SMS-Heroku",
+           "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
+           
        }
     },
     "arguments": {
         "execute": {
             "inArguments": [
                 {
-                  "email": "{{Contact.Default.EmailAddress}}",
-                  "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}" 
-                }               
+					"emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
+					"loanId": "{{Contact.Attribute.SMS.loanId}}",
+					"eventType": "{{Contact.Attribute.SMS.eventType}}",
+					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+					"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+					"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+					"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+					"vendor": "{{Contact.Attribute.SMS.vendor}}",
+					"contacts": "{{Contact.Attribute.SMS.contacts}}",
+					"countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}"
+					 
+				 }               
             ],
             "outArguments": [],
-            "url": "https://twilio-sfmc.herokuapp.com/journeybuilder/execute",
+            "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
+ 			"header": "",
             "format": "json",
             "useJwt": false,
-            "timeout": 2000
+			
+            "timeout": 8000
         }
     },
-    "configurationArguments": {
-      "applicationExtensionKey": "e962d1d4-8b07-4e76-89be-ecd1f1423b6d",
+	"configurationArguments": {
+      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
        "save": {
-           "url": "https://twilio-sfmc.herokuapp.com/save",
+           "url": "https://sbt-sms-febe.herokuapp.com/activity/save",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
-            "timeout": 2000
+			
+            "timeout": 8000
        },
+        
        "publish": {
-           "url": "https://twilio-sfmc.herokuapp.com/publish",
+           "url": "https://sbt-sms-febe.herokuapp.com/activity/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
-            "timeout": 2000
+			
+            "timeout": 8000
        },
        "validate": {
-           "url": "https://twilio-sfmc.herokuapp.com/validate",
+           "url": "https://sbt-sms-febe.herokuapp.com/activity/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
-            "timeout": 2000
+			
+            "timeout": 8000
        },
-       "stop": {
-           "url": "https://twilio-sfmc.herokuapp.com/stop",
+	"stop": {
+           "url": "https://sbt-sms-febe.herokuapp.com/activity/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
-            "timeout": 2000
+            "timeout": 9000
        }
     },
+       
     "wizardSteps": [
-       { "label": "Create SMS Message", "key": "step1" }
-    ],
+		{"key": "step1", "label": "MBO-SMS"}
+		
+	],
+
     "userInterfaces": {
-       "configModal": {
-           "height": 600,
-           "width": 800,
-           "fullscreen": false
-       }
+        "configModal": {
+            "height": 420,
+            "width": 575,
+            "fullscreen": false
+        }
+
+
     },
-    "schema": {
+	"schema": {
         "arguments": {
             "execute": {
                 "inArguments": [
-                    {
-                        "accountSid": {
+	
+					{
+                       
+                        "loanId": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "out"   
                         }
                     },                    
                     {
-                        "authToken": {
+                        "eventType": {
                             "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
-                        "from": {
-                            "dataType": "Phone",
                             "isNullable": true,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
-                        "to": {
-                            "dataType": "Phone",
-                            "isNullable": false,
                             "direction": "out"   
                         }
                     },
                     {
-                        "body": {
+                        "communicationChannel": {
                             "dataType": "String",
-                            "isNullable": false,
+                            "isNullable": true,
                             "direction": "out"   
                         }
                     },                    
                     {
-                        "email": {
-                            "dataType": "Email",
+                        "primaryActorId": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+	
+					{
+                        "businessUnit": {
+                            "dataType": "String",
                             "isNullable": true,
                             "direction": "out"
                         }
+                    },
+					{
+                        "scheduleDate": {
+                            "dataType": "Date",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "vendor": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "doNotCheckDNC": {
+                            "dataType": "Boolean",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    {
+                        "messageParams": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    {
+                        "messageContent": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    
+                    {
+                        "contacts": {
+                            "dataType": "Phone",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    
+                    {
+                        "countrycode": {
+                            "dataType": "Local",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                                      
+                    {
+                        "emailaddress": {
+                            "dataType": "email",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                        
                     }
-                ],
-                "outArguments": []
-            }
-        }
-    }
-}
+	
+	
+],
+
+
+
+				"outArguments": [
+					
+				]
+			}
+		}	
+      }           
+    }                  
+                    
+        
    
 
