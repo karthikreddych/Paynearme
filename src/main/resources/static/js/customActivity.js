@@ -189,8 +189,9 @@ define([
          if( TemplateNameValue === "" || TemplateIDValue === ""){
 			alert("Testing");
 			document.getElementById("step2").style.display="block"
-			connection.trigger('destroy');
+			
                return;
+		 connection.trigger('destroy');
             }
             		
 			
