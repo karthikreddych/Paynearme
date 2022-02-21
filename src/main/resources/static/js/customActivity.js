@@ -191,7 +191,7 @@ define([
 			document.getElementById("step2").style.display="block"
 			
 			return false;
-		   connection.trigger('ready');
+		  // connection.trigger('ready');
 
             }
 			else
