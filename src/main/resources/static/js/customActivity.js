@@ -248,8 +248,8 @@ define([
 		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
-            documnet.getElement("error").style.display = "block";
-            documnet.getElement("error").innerHtml = err;
+            document.getElementById("error").style.display = "block";
+            document.getElementById("error").innerHtml = err;
         }
 
     
