@@ -18,7 +18,6 @@ define([
 	//var deFields = [];
     $(window).ready(onRender);
     
-    try {
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
@@ -27,13 +26,9 @@ define([
     connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
     connection.on('requestedDataSources', onRequestedDataSources);
     connection.on('clickedNext', save);
-    } catch(err) {
-        console.log(err);
-    }
-
+   
     function onRender() {
 	//debugger
-        try {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
         connection.trigger('requestTokens');
@@ -44,10 +39,6 @@ define([
         connection.trigger('requestTriggerEventDefinition');
         connection.trigger('requestSchema');
         //connection.trigger('requestdata');
-        } catch(err) {
-            throw(err);
-            //console.log(err);
-        }
     }
 	connection.on('requestedTriggerEventDefinition',
 	function(eventDefinitionModel) {
