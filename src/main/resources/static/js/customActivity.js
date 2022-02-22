@@ -196,66 +196,82 @@ save();
 	//debugger
         try {
 		
-		var settings = {
-  "url": "https://sbt-sms-febe.demo-default.pf-nonprod.us-west-2.int.lendingcloud.us/api/sbt-sms-febe/activity/execute",
-  "method": "POST",
-  "timeout": 0,
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "data": JSON.stringify({
-    "activityObjectID": "c39732ac-6b0f-48a7-aef2-a3753a4b6c68",
-    "journeyId": "66ddb188-e854-4894-bd6a-0fad02e062bc",
-    "activityId": "c39732ac-6b0f-48a7-aef2-a3753a4b6c68",
-    "definitionInstanceId": "c4bb3b47-3cbb-43cf-a536-531f4ab68c06",
-    "activityInstanceId": "1d15e099-80e2-4a02-8317-9c0e8ec91081",
-    "keyValue": "248116371",
-    "mode": 0,
-    "inArguments": [
-      {
-        "SMSid_Value": "S003",
-        "TemplateID_Value": "T005",
-        "loanId": "193205598",
-        "eventType": "DQ_NOTICE",
-        "communicationChannel": "SMS",
-        "primaryActorId": "248116371",
-        "businessUnit": "PL",
-        "scheduleDate": "",
-        "vendor": "SBT",
-        "contacts": "9560011220",
-        "emailaddress": "im.tabrez@gmail.com",
-        "countrycode": "IN",
-        "messageContent": "Hello, LC COMMS 2.",
-        "messageParams": "{}",
-        "doNotCheckDNC": "False"
-      }
-    ],
-    "outArguments": []
-  }),
-};
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
+	
 		
+		var TemplateNameValue = $('#TemplateName').val();
+        var TemplateIDValue = $('#TemplateID').val();
+
+
+        
+	    //payload['metaData'].isConfigured = true;
+		//payload.name = name;
+		
+		//payload['arguments'] = payload['arguments'] || {};
+    	//payload['arguments'].execute = payload['arguments'].execute || {};
+    	
+        payload['arguments'].execute.inArguments = [{
+            "TemplateName_Value": TemplateNameValue,
+            "TemplateID_Value": TemplateIDValue,
+            
+            /*"loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
+           "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
+            "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
+           "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
+          "businessUnit": "{{Contact.Attribute." + eventDefinitionKey+".\"businessUnit\"}}",
+           "scheduleDate": "{{Contact.Attribute." + eventDefinitionKey+".\"scheduleDate\"}}",
+            "vendor": "{{Contact.Attribute." + eventDefinitionKey+".\"vendor\"}}",
+            "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
+            "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
+            "Status": "{{Contact.Attribute." + eventDefinitionKey+".\"Status\"}}",
+            "FirstName": "{{Contact.Attribute." + eventDefinitionKey+".\"FirstName\"}}",
+            "LastName": "{{Contact.Attribute." + eventDefinitionKey+".\"LastName\"}}",
+            "CountryCode": "{{Contact.Attribute." + eventDefinitionKey+".\"CountryCode\"}}",
+            */
+            
+            
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			"eventType": "{{Contact.Attribute.SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute.SMS.vendor}}",
+            "contacts": "{{Contact.Attribute.SMS.contacts}}", 
+            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
+            //"status": "{{Contact.Attribute.SMS.status}}",
+            //"FirstName": "{{Contact.Attribute.SMS.FirstName}}",
+            //"LastName": "{{Contact.Attribute.SMS.LastName}}",
+            "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+			 "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
+        }];
+        
+        
+        
+		payload['metaData'].isConfigured = true;
+		
+		console.log(payload);
+		connection.trigger('updateActivity', payload);		
+           
         } catch(err) {
             documnet.getElementById("error").style.display = "block";
             documnet.getElementById("error").innerHtml = err;
         }
 
     
-	//console.log("Template Name: " +JSON.stringify(TemplateNameValue));
-	//console.log("Template ID: " +JSON.stringify(TemplateIDValue));
+	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
+	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 		
 	}
 
 
-	//	fetch('https://demo-default.uw2.customer-messaging-gateway-nprd.lendingcloud.us/api/customer-messaging-gateway/v1/message', {
-  	//	method: "POST",
-  //		body: JSON.stringify(payload['arguments'].execute.inArguments),
-  //		headers: {"Content-type": "application/json; charset=UTF-8"}
-//		})
-	//	.then(response => response.json()).catch(err => console.log(err)) 
-   //     .then(json => console.log(json)).catch(err => console.log(err)); 
+	fetch('https://sbt-sms-febe.demo-default.pf-nonprod.us-west-2.int.lendingcloud.us/api/sbt-sms-febe/activity/execute', {
+  	method: "POST",
+  	body: JSON.stringify(payload['arguments'].execute.inArguments),
+  	headers: {"Content-type": "application/json; charset=UTF-8"}
+})
+	.then(response => response.json()).catch(err => console.log(err)) 
+     .then(json => console.log(json)).catch(err => console.log(err)); 
 
 });
