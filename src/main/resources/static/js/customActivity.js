@@ -4,9 +4,9 @@ define([
     Postmonger
 ) {
     'use strict';
-	//var loanId ={};
+	
     var connection = new Postmonger.Session();
-	//var contacts = {};
+	
     var payload = {};
     var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
@@ -15,14 +15,14 @@ define([
     var currentStep = steps[0].key;
 	var authTokens = {};
 	var eventDefinitionKey='';
-	//var deFields = [];
+	
     $(window).ready(onRender);
     
     try {
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
-    //connection.on('requestedInteraction', onRequestedInteraction);
+   
       
     connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
     connection.on('requestedDataSources', onRequestedDataSources);
@@ -193,7 +193,8 @@ save();
     function save() {
 	//debugger
       try {  
-            		
+        var TemplateNameValue = $('#TemplateName').val();
+        var TemplateIDValue = $('#TemplateID').val();  		
 			
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
