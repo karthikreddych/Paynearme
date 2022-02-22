@@ -26,7 +26,7 @@ define([
       
     connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
     connection.on('requestedDataSources', onRequestedDataSources);
-    connection.on('clickedNext', OnClickedNext);
+    connection.on('clickedNext', onClickedNext);
     } catch(err) {
         console.log(err);
     }
