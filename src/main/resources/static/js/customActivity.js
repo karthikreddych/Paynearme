@@ -26,7 +26,7 @@ define([
       
     connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
     connection.on('requestedDataSources', onRequestedDataSources);
-    connection.on('clickedNext', onClickedNext);
+    connection.on('clickedNext', OnClickedNext);
     } catch(err) {
         console.log(err);
     }
@@ -63,23 +63,23 @@ define([
 });
 	connection.on('requestedSchema', function (data) {
    		// save schema
-   	console.log('*** Schema ***', JSON.stringify(data['schema']));
+   	console.log('** Schema **', JSON.stringify(data['schema']));
    	}); 
    	 
 	function onRequestedDataSources(dataSources){
-        console.log('** requestedDataSources **');
+        console.log('* requestedDataSources *');
         //console.log(dataSources);
-        console.log('*** dataSources ***', JSON.stringify(dataSources));
+        console.log('** dataSources **', JSON.stringify(dataSources));
     }
 
     /*function onRequestedInteraction (interaction) {    
-        console.log('** requestedInteraction **');
+        console.log('* requestedInteraction *');
         console.log(interaction);
      }*/
      
 
      function onRequestedTriggerEventDefinition(eventDefinitionModel) {
-        console.log('** requestedTriggerEventDefinition **');
+        console.log('* requestedTriggerEventDefinition *');
         console.log(eventDefinitionModel);
     }
     
@@ -177,12 +177,12 @@ define([
 				}};
     console.log("deFields: " +JSON.stringify(deFields));
     */
-
 function onClickedNext() {
 var TemplateNameValue = $('#TemplateName').val();
 var TemplateIDValue = $('#TemplateID').val();
-if( TemplateNameValue === "" || TemplateIDValue === ""){
-document.getElementById("step2").style.display="block"
+if( TemplateNameValue === "" || TemplateIDValue === "")
+{
+document.getElementById("step2").style.display="block";
 connection.trigger("nextStep");
 }
 else
@@ -190,16 +190,11 @@ else
 save();
 }
 }
-
     function save() {
 	//debugger
-        try {
-		
-		var TemplateNameValue = $('#TemplateName').val();
-        var TemplateIDValue = $('#TemplateID').val();
-
-
-        
+      try {  
+            		
+			
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
 		
