@@ -196,6 +196,48 @@ save();
 	//debugger
         try {
 		
+		var settings = {
+  "url": "https://sbt-sms-febe.demo-default.pf-nonprod.us-west-2.int.lendingcloud.us/api/sbt-sms-febe/activity/execute",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "activityObjectID": "c39732ac-6b0f-48a7-aef2-a3753a4b6c68",
+    "journeyId": "66ddb188-e854-4894-bd6a-0fad02e062bc",
+    "activityId": "c39732ac-6b0f-48a7-aef2-a3753a4b6c68",
+    "definitionInstanceId": "c4bb3b47-3cbb-43cf-a536-531f4ab68c06",
+    "activityInstanceId": "1d15e099-80e2-4a02-8317-9c0e8ec91081",
+    "keyValue": "248116371",
+    "mode": 0,
+    "inArguments": [
+      {
+        "SMSid_Value": "S003",
+        "TemplateID_Value": "T005",
+        "loanId": "193205598",
+        "eventType": "DQ_NOTICE",
+        "communicationChannel": "SMS",
+        "primaryActorId": "248116371",
+        "businessUnit": "PL",
+        "scheduleDate": "",
+        "vendor": "SBT",
+        "contacts": "9560011220",
+        "emailaddress": "im.tabrez@gmail.com",
+        "countrycode": "IN",
+        "messageContent": "Hello, LC COMMS 2.",
+        "messageParams": "{}",
+        "doNotCheckDNC": "False"
+      }
+    ],
+    "outArguments": []
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+		
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
 
