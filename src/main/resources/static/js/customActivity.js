@@ -297,7 +297,7 @@ var raw = JSON.stringify({
       "businessUnit": "PL",
       "scheduleDate": "",
       "vendor": "SBT",
-      "contacts": "9560011220",
+      "contacts": "9560011220"
       "emailaddress": "im.tabrez@gmail.com",
       "countrycode": "IN",
       "messageContent": "Hello, LC COMMS 2.",
