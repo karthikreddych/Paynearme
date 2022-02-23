@@ -209,7 +209,7 @@ save();
     	
         payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
-            "TemplateID_Value": TemplateIDValue
+            "TemplateID_Value": TemplateIDValue,
             
             /*"loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
            "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
