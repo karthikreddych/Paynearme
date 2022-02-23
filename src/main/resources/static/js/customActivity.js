@@ -245,7 +245,7 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", */
         }];
         
-        alert("Testing payload");
+        alert("Testing");
 		alert(payload['arguments'].execute.inArguments.TemplateName_Value);
         
 		payload['metaData'].isConfigured = true;
