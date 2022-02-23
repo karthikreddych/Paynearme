@@ -246,7 +246,7 @@ save();
         
         
 		payload['metaData'].isConfigured = true;
-		
+		console.log("payload start");
 		console.log(payload);
 		connection.trigger('updateActivity', payload);		
            
