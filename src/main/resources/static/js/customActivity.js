@@ -222,7 +222,7 @@ save();
 			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
         }];
-		//payloaddata.push() 
+		payloaddata.push(payload);
 		
 		})
         
