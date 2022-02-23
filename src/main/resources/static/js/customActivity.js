@@ -246,7 +246,7 @@ save();
         }];
         
         alert("Testing");
-		alert(payload[0].TemplateName_Value);
+		alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
         
 		payload['metaData'].isConfigured = true;
 		
