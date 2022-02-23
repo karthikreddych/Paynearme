@@ -196,36 +196,16 @@ save();
 		
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
-
-
         
-	    //payload['metaData'].isConfigured = true;
-		//payload.name = name;
-		
-		//payload['arguments'] = payload['arguments'] || {};
-    	//payload['arguments'].execute = payload['arguments'].execute || {};
+		let payloaddata = [];
+             
+	payloaddata.forEach(loanId =>{
+
     	
-        payload['arguments'].execute.inArguments = [{
-            "TemplateName_Value": TemplateNameValue,
+       // payload['arguments'].execute.inArguments = [
+	  payloaddata.push("TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
-            
-            /*"loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
-           "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
-            "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
-           "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
-          "businessUnit": "{{Contact.Attribute." + eventDefinitionKey+".\"businessUnit\"}}",
-           "scheduleDate": "{{Contact.Attribute." + eventDefinitionKey+".\"scheduleDate\"}}",
-            "vendor": "{{Contact.Attribute." + eventDefinitionKey+".\"vendor\"}}",
-            "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
-            "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
-            "Status": "{{Contact.Attribute." + eventDefinitionKey+".\"Status\"}}",
-            "FirstName": "{{Contact.Attribute." + eventDefinitionKey+".\"FirstName\"}}",
-            "LastName": "{{Contact.Attribute." + eventDefinitionKey+".\"LastName\"}}",
-            "CountryCode": "{{Contact.Attribute." + eventDefinitionKey+".\"CountryCode\"}}",
-            */
-            
-            
-			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+            "loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
@@ -234,29 +214,39 @@ save();
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
             "contacts": "{{Contact.Attribute.SMS.contacts}}", 
             "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
-            //"status": "{{Contact.Attribute.SMS.status}}",
-            //"FirstName": "{{Contact.Attribute.SMS.FirstName}}",
-            //"LastName": "{{Contact.Attribute.SMS.LastName}}",
             "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
-			 "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
-			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
-        }];
+        )
+		
+		//];
+		
+	});
         
         
         
+		
+		//console.log("payload start");
+		console.log(payloaddata);
+		
+		if(payloaddata.length>=30)
+		{
 		payload['metaData'].isConfigured = true;
-		console.log("payload start");
-		console.log(payload);
-		connection.trigger('updateActivity', payload);		
-           
+		connection.trigger('updateActivity', payloaddata);		
+		}
+		else
+		{
+		alert("Hi");
+        save();		
+		}
+		
         } catch(err) {
             documnet.getElementById("error").style.display = "block";
             documnet.getElementById("error").innerHtml = err;
         }
 
-    console.log("payload start");
-	console.log(payload);
+    
 	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 		
