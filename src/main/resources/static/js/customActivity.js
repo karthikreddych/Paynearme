@@ -246,7 +246,7 @@ save();
         }];
         
         alert("Testing");
-		alert(payload);
+		alert(payload.json());
         
 		payload['metaData'].isConfigured = true;
 		
