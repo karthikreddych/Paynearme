@@ -199,7 +199,7 @@ save();
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
 
-
+        alert("Testing");
         
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
@@ -250,7 +250,7 @@ save();
 		payload['metaData'].isConfigured = true;
 		
 		console.log(payload);
-		alert("Testing");
+		
 		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
