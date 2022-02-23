@@ -246,7 +246,7 @@ save();
         }];
         
         alert("Testing");
-		alert(payload['arguments'].execute.inArguments[0].countrycode);
+		//alert(payload['arguments'].execute.inArguments[0].countrycode);
         
 		payload['metaData'].isConfigured = true;
 		
