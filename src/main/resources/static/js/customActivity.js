@@ -199,7 +199,7 @@ save();
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
 
-        alert("Testing");
+        
         
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
@@ -245,7 +245,7 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
         }];
         
-        
+        alert("Testing");
         
 		payload['metaData'].isConfigured = true;
 		
