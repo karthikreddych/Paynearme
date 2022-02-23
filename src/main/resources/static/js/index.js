@@ -14,8 +14,7 @@ const userAction = async () => {
                  templateIds.push(sbtId.templateId);
                  smsIds.push(sbtId.smsId);                 
             });
-	console.log(templateIds)
-	console.log(smsIds)
+	
             templateIds.forEach(templateId =>{
                 var option = document.createElement("option");
                 option.text = templateId;
@@ -28,6 +27,8 @@ const userAction = async () => {
                 option.value = smsId;
                 document.getElementById("TemplateName").appendChild(option);  
             })
+	console.log(templateIds)
+	console.log(smsIds)
 }
 function myFunction() {
 if($('#TemplateID').val() == '')
