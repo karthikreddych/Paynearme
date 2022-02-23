@@ -14,6 +14,8 @@ const userAction = async () => {
                  templateIds.push(sbtId.templateId);
                  smsIds.push(sbtId.smsId);                 
             });
+	console.log(templateIds)
+	console.log(smsIds)
             templateIds.forEach(templateId =>{
                 var option = document.createElement("option");
                 option.text = templateId;
