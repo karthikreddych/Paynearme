@@ -27,8 +27,8 @@ const userAction = async () => {
                 option.value = smsId;
                 document.getElementById("TemplateName").appendChild(option);  
             })
-	console.log(templateIds)
-	console.log(smsIds)
+	console.log(templateIds.length)
+	console.log(smsIds.length)
 }
 function myFunction() {
 if($('#TemplateID').val() == '')
