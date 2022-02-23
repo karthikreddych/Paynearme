@@ -207,7 +207,11 @@ save();
 		//payload['arguments'] = payload['arguments'] || {};
     	//payload['arguments'].execute = payload['arguments'].execute || {};
     	
-        payload['arguments'].execute.inArguments = [{
+		let payloaddata = [];
+		
+		payloaddata.forEach(loanId =>{
+		
+        payloaddata.push(payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
             
@@ -243,13 +247,15 @@ save();
 			 "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
 			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
-        }];
+        }];)
+		
+		});
         
         
         
 		payload['metaData'].isConfigured = true;
 		
-		console.log(payload);
+		console.log(payloaddata);
 		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
