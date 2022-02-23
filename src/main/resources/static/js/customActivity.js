@@ -255,7 +255,8 @@ save();
             documnet.getElementById("error").innerHtml = err;
         }
 
-    
+    console.log("payload start");
+	console.log(payload);
 	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 		
