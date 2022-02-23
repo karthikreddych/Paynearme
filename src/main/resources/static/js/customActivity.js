@@ -199,7 +199,12 @@ save();
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
 
-        
+        /* var contacts = []
+		
+		contacts.forEach
+		{
+		alert(Contact.Attribute.SMS.loanId[i])
+		} */
         
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
@@ -245,8 +250,8 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
         }];
         
-        alert("Testing");
-		alert(payload['arguments'].execute.inArguments[0].countrycode);
+        alert("Testing payload");
+		alert(payload['arguments'].execute.inArguments[0]);
         
 		payload['metaData'].isConfigured = true;
 		
