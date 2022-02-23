@@ -250,6 +250,7 @@ save();
 		payload['metaData'].isConfigured = true;
 		
 		console.log(payload);
+		alert("Testing");
 		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
