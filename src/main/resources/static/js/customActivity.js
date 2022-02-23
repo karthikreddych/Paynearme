@@ -227,7 +227,7 @@ save();
             */
             
             
-			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			/* "loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
@@ -235,17 +235,17 @@ save();
 			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
             "contacts": "{{Contact.Attribute.SMS.contacts}}", 
-            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
+            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}", */
             //"status": "{{Contact.Attribute.SMS.status}}",
             //"FirstName": "{{Contact.Attribute.SMS.FirstName}}",
             //"LastName": "{{Contact.Attribute.SMS.LastName}}",
-            "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+            /* "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
 			 "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
 			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
-			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", */
         }];
         
-        alert("Testing");
+        alert("Testing payload");
         
 		payload['metaData'].isConfigured = true;
 		
