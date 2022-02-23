@@ -1,6 +1,6 @@
 define([
     'postmonger'
-], function(
+],function(
     Postmonger
 ) {
     'use strict';
@@ -10,7 +10,7 @@ define([
     var payload = {};
     var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
-    {"key": "step1", "label": "MBO-SMS"}
+    {"key": "step1","label": "MBO-SMS"}
     ];
     var currentStep = steps[0].key;
 	var authTokens = {};
@@ -19,14 +19,14 @@ define([
     $(window).ready(onRender);
     
     try {
-    connection.on('initActivity', initialize);
-    connection.on('requestedTokens', onGetTokens);
-    connection.on('requestedEndpoints', onGetEndpoints);
-    //connection.on('requestedInteraction', onRequestedInteraction);
+    connection.on('initActivity',initialize);
+    connection.on('requestedTokens',onGetTokens);
+    connection.on('requestedEndpoints',onGetEndpoints);
+    //connection.on('requestedInteraction',onRequestedInteraction);
       
-    connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
-    connection.on('requestedDataSources', onRequestedDataSources);
-    connection.on('clickedNext', onClickedNext);
+    connection.on('requestedTriggerEventDefinition',onRequestedTriggerEventDefinition);
+    connection.on('requestedDataSources',onRequestedDataSources);
+    connection.on('clickedNext',onClickedNext);
     } catch(err) {
         console.log(err);
     }
@@ -56,20 +56,20 @@ define([
         eventDefinitionKey = eventDefinitionModel.eventDefinitionKey;
         console.log(">>>Event Definition Key " + eventDefinitionKey);
         /*If you want to see all*/
-        console.log('>>>Request Trigger', 
+        console.log('>>>Request Trigger',
         JSON.stringify(eventDefinitionModel));
     }
 
 });
-	connection.on('requestedSchema', function (data) {
+	connection.on('requestedSchema',function (data) {
    		// save schema
-   	console.log('*** Schema ***', JSON.stringify(data['schema']));
+   	console.log('*** Schema ***',JSON.stringify(data['schema']));
    	}); 
    	 
 	function onRequestedDataSources(dataSources){
         console.log('** requestedDataSources **');
         //console.log(dataSources);
-        console.log('*** dataSources ***', JSON.stringify(dataSources));
+        console.log('*** dataSources ***',JSON.stringify(dataSources));
     }
 
     /*function onRequestedInteraction (interaction) {    
@@ -83,7 +83,7 @@ define([
         console.log(eventDefinitionModel);
     }
     
-    connection.on('requestedInteraction', function(settings){
+    connection.on('requestedInteraction',function(settings){
     eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
 	});
 
@@ -108,8 +108,8 @@ define([
 
          console.log('Has In arguments: '+JSON.stringify(inArguments));
         try {
-         $.each(inArguments, function (index, inArgument) {
-            $.each(inArgument, function (key, val) {
+         $.each(inArguments,function (index,inArgument) {
+            $.each(inArgument,function (key,val) {
 
                 if (key === 'TemplateName_Value') {
                     $('#TemplateName').val(val);
@@ -123,7 +123,7 @@ define([
         });
 
    
-        connection.trigger('updateButton', {
+        connection.trigger('updateButton',{
             button: 'next',
             text: 'Done',
             visible: true
@@ -138,7 +138,7 @@ define([
 
     function onGetTokens (tokens) {
 	//debugger
-        // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
+        // Response: tokens = { token: <legacy token>,fuel2token: <fuel api token> }
         console.log("Tokens function: "+JSON.stringify(tokens));
         authTokens = tokens;
 
@@ -194,8 +194,8 @@ save();
 		
 	
 		
-		var TemplateNameValue = $('#TemplateName').val();
-        var TemplateIDValue = $('#TemplateID').val();
+		//var TemplateNameValue = 
+       // var TemplateIDValue = 
         
 		let payloaddata = [];
              
@@ -203,7 +203,7 @@ save();
 
     	
        // payload['arguments'].execute.inArguments = [
-	  payloaddata.push("TemplateName_Value": TemplateNameValue, "TemplateID_Value": TemplateIDValue, "loanId": "{{Contact.Attribute.SMS.loanId}}", "eventType": "{{Contact.Attribute.SMS.eventType}}", "communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}", "primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}", "businessUnit": "{{Contact.Attribute.SMS.businessUnit}}", "scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}", "vendor": "{{Contact.Attribute.SMS.vendor}}", "contacts": "{{Contact.Attribute.SMS.contacts}}", "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}", "countrycode": "{{Contact.Attribute.SMS.countrycode}}", "messageContent": "{{Contact.Attribute.SMS.messageContent}}", "messageParams": "{{Contact.Attribute.SMS.messageParams}}", "doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}");
+	  payloaddata.push("TemplateName_Value": $('#TemplateName').val();,"TemplateID_Value": $('#TemplateID').val();,"loanId": "{{Contact.Attribute.SMS.loanId}}","eventType": "{{Contact.Attribute.SMS.eventType}}","communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}","primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}","businessUnit": "{{Contact.Attribute.SMS.businessUnit}}","scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}","vendor": "{{Contact.Attribute.SMS.vendor}}","contacts": "{{Contact.Attribute.SMS.contacts}}","emailaddress": "{{Contact.Attribute.SMS.emailaddress}}","countrycode": "{{Contact.Attribute.SMS.countrycode}}","messageContent": "{{Contact.Attribute.SMS.messageContent}}","messageParams": "{{Contact.Attribute.SMS.messageParams}}","doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}");
 		
 		//];
 		
@@ -218,7 +218,7 @@ save();
 		if(payloaddata.length>=30)
 		{
 		payload['metaData'].isConfigured = true;
-		connection.trigger('updateActivity', payloaddata);		
+		connection.trigger('updateActivity',payloaddata);		
 		}
 		else
 		{
@@ -238,7 +238,7 @@ save();
 	}
 
 
-	/* fetch('https://sbt-sms-febe.demo-default.pf-nonprod.us-west-2.int.lendingcloud.us/api/sbt-sms-febe/activity/execute', {
+	/* fetch('https://sbt-sms-febe.demo-default.pf-nonprod.us-west-2.int.lendingcloud.us/api/sbt-sms-febe/activity/execute',{
   	method: "POST",
   	body: JSON.stringify(payload['arguments'].execute.inArguments),
   	headers: {"Content-type": "application/json; charset=UTF-8"}
