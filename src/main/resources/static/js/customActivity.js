@@ -223,29 +223,31 @@ save();
         alert("Testing");
 		alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
          
-		 /* let payloaddata = [];
+		let payloaddata = [];
 		 
 		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
 			
-			var d1 = TemplateName_Value.TemplateID_Value;
-			var d2 = "loanId:"+TemplateName_Value.loanId;
-                payloaddata.push(d1,d2);                 
+			var d1 = "TemplateName_Value:"+TemplateName_Value.TemplateNameValue;
+			var d2 = "TemplateID_Value:"+TemplateName_Value.TemplateIDValue;
+			var d3 = "loanId:"+TemplateName_Value.loanId;
+			
+                payloaddata.push(d1,d2,d3);                 
             });  
-		 */
+		
 		 
-		const payloaddata = {};
+		/* const payloaddata = {};
 		 
 		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
 			
-			payloaddata[TemplateName_Value] = {
+			payloaddata[0] = {
 			"TemplateName_Value": TemplateNameValue.TemplateNameValue,
             "TemplateID_Value": TemplateNameValue.TemplateIDValue,
 			"loanId": "5050505"
-               // payloaddata.push(d1,d2); 
+               
 			}			   
-           }); 
+           });  */
 		
-		console.log(Object.values(payloaddata));
+		console.log(payloaddata.toString());
 		payload['metaData'].isConfigured = true;
 		
 		//console.log(payload);
