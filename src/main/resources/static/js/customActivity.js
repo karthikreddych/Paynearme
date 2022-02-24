@@ -224,9 +224,9 @@ save();
          
 		 let payloaddata = [];
 		// let loan = payload.loanId
-		 payload.forEach(inArguments => {
+		 /* payload.forEach(inArguments => {
                 payloaddata.push(payload['arguments'].execute.inArguments[0].TemplateName_Value);                 
-            }); 
+            });  */
 		
 		payload['metaData'].isConfigured = true;
 		
