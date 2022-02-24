@@ -225,10 +225,10 @@ save();
 		 let payloaddata = ["test"];
 		 
 		/*  inArguments.forEach(loanId => {
-                payloaddata.push("test1");                 
+                payloaddata.push(Object.values(payload['arguments'].execute.inArguments));                 
             }); */  
 		
-		console.log(Object.values(inArguments));
+		console.log(Object.values(payload['arguments'].execute.inArguments));
 		
 		payload['metaData'].isConfigured = true;
 		
