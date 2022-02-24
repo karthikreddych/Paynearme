@@ -228,7 +228,7 @@ save();
                 payloaddata.push("test1");                 
             });  */
 		
-		alert(payload['arguments'].execute.inArguments.TemplateName_Value);
+		alert(payload['arguments'].execute.inArguments);
 		
 		payload['metaData'].isConfigured = true;
 		
