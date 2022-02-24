@@ -228,7 +228,7 @@ save();
                 payloaddata.push("test1");                 
             });  */
 		
-		alert(Object.values(inArguments));
+		console.log(Object.values(inArguments));
 		
 		payload['metaData'].isConfigured = true;
 		
