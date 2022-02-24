@@ -204,6 +204,7 @@ save();
 		payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
+			"loanId": "5050505"
             /* "loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
@@ -225,7 +226,7 @@ save();
 		 let payloaddata = [];
 		 
 		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
-                payloaddata.push(TemplateName_Value.TemplateID_Value, TemplateName_Value.TemplateID_Value);                 
+                payloaddata.push(TemplateName_Value.TemplateID_Value, TemplateName_Value.loanId);                 
             });  
 		
 		
