@@ -228,6 +228,8 @@ save();
                 payloaddata.push(loanId);                 
             }); 
 		
+		alert(payloaddata);
+		
 		payload['metaData'].isConfigured = true;
 		
 		console.log(payload);
