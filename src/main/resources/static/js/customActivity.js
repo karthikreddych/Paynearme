@@ -198,7 +198,7 @@ save();
 		
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
-        alert("Testing");
+       
 		
 		
 		payload['arguments'].execute.inArguments = [{
@@ -219,14 +219,14 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
         }];
         
-        
+        alert("Testing");
 		alert(payload[0].TemplateName_Value);
          
-		 /* let payloaddata = [];
-		 payload.forEach(payload.loanId => {
-                 
-                 payloaddata.push(payload['arguments'].execute.inArguments);                 
-            });  */
+		 let payloaddata = [];
+		 let loan = payload.loanId
+		 payload.forEach(loan => {
+                payloaddata.push(payload['arguments'].execute.inArguments);                 
+            });  
 		
 		payloaddata['metaData'].isConfigured = true;
 		
@@ -235,8 +235,8 @@ save();
 		connection.trigger('updateActivity', payloaddata);		
            
         } catch(err) {
-            documnet.getElementById("error").style.display = "block";
-            documnet.getElementById("error").innerHtml = err;
+            document.getElementById("error").style.display = "block";
+            document.getElementById("error").innerHtml = err;
         }
 
     
