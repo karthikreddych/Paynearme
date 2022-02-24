@@ -224,9 +224,9 @@ save();
          
 		 let payloaddata = ["test"];
 		 
-		/*  inArguments.forEach(loanId => {
-                payloaddata.push(Object.values(payload['arguments'].execute.inArguments));                 
-            }); */  
+		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
+                payloaddata.push(Object.values(TemplateName_Value));                 
+            });  
 		
 		
 		
@@ -234,7 +234,7 @@ save();
 		
 		console.log(payload);
 		
-		connection.trigger('updateActivity', payload);		
+		connection.trigger('updateActivity', payloaddata);		
            
         } catch(err) {
             document.getElementById("error").style.display = "block";
