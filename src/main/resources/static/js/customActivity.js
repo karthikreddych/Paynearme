@@ -229,7 +229,7 @@ save();
             });  
 		
 		
-		
+		console.log(payloaddata[0]);
 		payload['metaData'].isConfigured = true;
 		
 		console.log(payload);
@@ -242,7 +242,7 @@ save();
         }
 
    // console.log(Object.values(payload['arguments'].execute.inArguments[0])); 
-   console.log(payloaddata[0]);
+   
 	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 		
