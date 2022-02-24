@@ -1,4 +1,4 @@
- define([
+define([
     'postmonger'
 ], function(
     Postmonger
@@ -222,10 +222,10 @@ save();
         alert("Testing");
 		alert(payload[0].TemplateName_Value);
         
-		/* payload.forEach(payload['arguments'].execute.inArguments.TemplateName_Value => {
+		 payload.forEach(payload[0].loanId => {
                  
                  payloaddata.push(payload['arguments'].execute.inArguments);                 
-            }); */
+            }); 
 		
 		payloaddata['metaData'].isConfigured = true;
 		
