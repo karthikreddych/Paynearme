@@ -201,7 +201,7 @@ save();
        
 		
 		
-		let payload['arguments'].execute.inArguments = [{
+		payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
             /* "loanId": "{{Contact.Attribute.SMS.loanId}}",
