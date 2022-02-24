@@ -201,7 +201,7 @@ save();
        
 		
 		
-		payload['arguments'].execute.inArguments = [{
+		let payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
             /* "loanId": "{{Contact.Attribute.SMS.loanId}}",
@@ -228,7 +228,7 @@ save();
                 payloaddata.push("test1");                 
             });  */
 		
-		console.log(Object.values(payload['arguments'].execute.inArguments[0]));
+		console.log(Object.values(payload['arguments'].execute.inArguments));
 		
 		payload['metaData'].isConfigured = true;
 		
