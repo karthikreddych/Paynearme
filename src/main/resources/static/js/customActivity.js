@@ -219,8 +219,8 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
         }];
         
-        alert("Testing");
-		alert(payload[0].TemplateName_Value);
+        alert("Testing payload");
+		alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
          
 		 /* let payloaddata = [];
 		 let loan = payload.loanId
