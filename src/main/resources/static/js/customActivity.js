@@ -219,8 +219,8 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
         }];
         
-        alert("Testing payload");
-		alert(inArguments[0].TemplateName_Value);
+        alert("Testing");
+		alert(payload[0].TemplateName_Value);
         
 		/* payload.forEach(payload['arguments'].execute.inArguments.TemplateName_Value => {
                  
