@@ -204,8 +204,7 @@ save();
 		payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
-			"loanId": "5050505"
-            /* "loanId": "{{Contact.Attribute.SMS.loanId}}",
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
@@ -217,7 +216,7 @@ save();
             "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
 			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
 			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
-			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", */
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
         }];
         
         alert("Testing");
@@ -225,7 +224,7 @@ save();
          
 		let payloaddata = [];
 		 
-		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
+		(payload['arguments'].execute.inArguments).forEach(loanId => {
 			
 			var d1 = "TemplateName_Value:"+TemplateNameValue;
 			var d2 = "TemplateID_Value:"+TemplateIDValue;
@@ -254,7 +253,7 @@ save();
 		
 		connection.trigger('updateActivity', payloaddata);		
            
-         } catch(err) {
+        } catch(err) {
             document.getElementById("error").style.display = "block";
             document.getElementById("error").innerHtml = err;
         }
