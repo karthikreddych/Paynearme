@@ -199,7 +199,7 @@ save();
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
         
-		let payloaddata = [];
+		
 		
 		payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
@@ -221,11 +221,12 @@ save();
         
         alert("Testing");
 		alert(payload[0].TemplateName_Value);
-        
-		 payload.forEach(payload[0].loanId => {
+         
+		 /* let payloaddata = [];
+		 payload.forEach(payload.loanId => {
                  
                  payloaddata.push(payload['arguments'].execute.inArguments);                 
-            }); 
+            });  */
 		
 		payloaddata['metaData'].isConfigured = true;
 		
@@ -234,8 +235,8 @@ save();
 		connection.trigger('updateActivity', payloaddata);		
            
         } catch(err) {
-            documnet.getElement("error").style.display = "block";
-            documnet.getElement("error").innerHtml = err;
+            documnet.getElementById("error").style.display = "block";
+            documnet.getElementById("error").innerHtml = err;
         }
 
     
