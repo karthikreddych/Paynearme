@@ -222,17 +222,17 @@ save();
         alert("Testing");
 		alert(payload[0].TemplateName_Value);
          
-		 let payloaddata = [];
+		 /* let payloaddata = [];
 		 let loan = payload.loanId
 		 payload.forEach(loan => {
                 payloaddata.push(payload['arguments'].execute.inArguments);                 
-            });  
+            });   */
 		
-		payloaddata['metaData'].isConfigured = true;
+		payload['metaData'].isConfigured = true;
 		
-		console.log(payloaddata);
+		console.log(payload);
 		
-		connection.trigger('updateActivity', payloaddata);		
+		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
             document.getElementById("error").style.display = "block";
