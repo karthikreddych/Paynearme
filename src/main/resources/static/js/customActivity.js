@@ -225,7 +225,7 @@ save();
 		 let payloaddata = [];
 		 
 		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
-                payloaddata.push(Object.values(TemplateName_Value));                 
+                payloaddata.push(TemplateName_Value.payload['arguments'].execute.inArguments);                 
             });  
 		
 		
