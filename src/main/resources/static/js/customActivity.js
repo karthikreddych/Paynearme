@@ -222,16 +222,16 @@ save();
         //alert("Testing");
 		//alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
          
-		let payloaddata = [];
+		/* let payloaddata = [];
 		 
 		(payload['arguments'].execute.inArguments).forEach(loanId => {
 			
 			var d1 = "TemplateName_Value:"+TemplateNameValue;
 			var d2 = "TemplateID_Value:"+TemplateIDValue;
-			//var d3 = "loanId:"+TemplateName_Value.loanId;
+			var d3 = "loanId:"+TemplateName_Value.loanId;
 			
                 payloaddata.push(d1,d2);                 
-            });  
+            });   */
 		
 		 
 		/* const payloaddata = {};
@@ -246,12 +246,12 @@ save();
 			}			   
            });  */
 		
-		console.log(payloaddata.toString());
+		//console.log(payloaddata.toString());
 		payload['metaData'].isConfigured = true;
 		
 		//console.log(payload);
 		
-		connection.trigger('updateActivity', payloaddata);		
+		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
             document.getElementById("error").style.display = "block";
