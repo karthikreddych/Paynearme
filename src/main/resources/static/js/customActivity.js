@@ -254,7 +254,7 @@ save();
 		
 		connection.trigger('updateActivity', payloaddata);		
            
-        } catch(err) {
+         } catch(err) {
             document.getElementById("error").style.display = "block";
             document.getElementById("error").innerHtml = err;
         }
