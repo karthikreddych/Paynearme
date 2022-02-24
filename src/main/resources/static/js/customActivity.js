@@ -204,7 +204,7 @@ save();
 		payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
-            "loanId": "{{Contact.Attribute.SMS.loanId}}",
+            /* "loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
@@ -216,16 +216,16 @@ save();
             "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
 			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
 			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
-			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", */
         }];
         
-        alert("Testing");
+        alert("payload Testing");
 		alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
          
 		 let payloaddata = [];
 		 
-		inArguments.forEach(loanId => {
-                payloaddata.push(loanId.TemplateNameValue);                 
+		inArguments.forEach(TemplateName_Value => {
+                payloaddata.push("test");                 
             }); 
 		
 		alert(payloaddata);
