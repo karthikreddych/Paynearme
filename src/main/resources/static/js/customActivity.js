@@ -241,7 +241,7 @@ save();
             document.getElementById("error").innerHtml = err;
         }
 
-    console.log(Object.values(payload['arguments'].execute.inArguments));
+    console.log(Object.values(payload['arguments'].execute.inArguments[0]));
 	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 		
