@@ -245,7 +245,7 @@ save();
 			}			   
            }); 
 		
-		console.log(payloaddata[1]);
+		console.log(payloaddata);
 		payload['metaData'].isConfigured = true;
 		
 		//console.log(payload);
