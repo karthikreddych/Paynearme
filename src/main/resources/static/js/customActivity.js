@@ -232,7 +232,7 @@ save();
 		
 		console.log(payload);
 		
-		connection.trigger('updateActivity', payload);		
+		connection.trigger('updateActivity', payloaddata);		
            
         } catch(err) {
             document.getElementById("error").style.display = "block";
