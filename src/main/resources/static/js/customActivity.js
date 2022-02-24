@@ -198,21 +198,10 @@ save();
 		
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
-
-        /* var contacts = []
-		
-		contacts.forEach
-		{
-		alert(Contact.Attribute.SMS.loanId[i])
-		} */
         
-	    //payload['metaData'].isConfigured = true;
-		//payload.name = name;
+		let payloaddata = [];
 		
-		//payload['arguments'] = payload['arguments'] || {};
-    	//payload['arguments'].execute = payload['arguments'].execute || {};
-    	
-        payload['arguments'].execute.inArguments = [{
+		payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
             "loanId": "{{Contact.Attribute.SMS.loanId}}",
@@ -231,13 +220,18 @@ save();
         }];
         
         alert("Testing payload");
-		alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
+		alert(inArguments[0].TemplateName_Value);
         
-		payload['metaData'].isConfigured = true;
+		/* payload.forEach(payload['arguments'].execute.inArguments.TemplateName_Value => {
+                 
+                 payloaddata.push(payload['arguments'].execute.inArguments);                 
+            }); */
 		
-		console.log(payload);
+		payloaddata['metaData'].isConfigured = true;
 		
-		connection.trigger('updateActivity', payload);		
+		console.log(payloaddata);
+		
+		connection.trigger('updateActivity', payloaddata);		
            
         } catch(err) {
             documnet.getElement("error").style.display = "block";
