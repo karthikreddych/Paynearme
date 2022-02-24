@@ -223,7 +223,7 @@ save();
         alert("Testing");
 		alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
          
-		 let payloaddata = [];
+		 /* let payloaddata = [];
 		 
 		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
 			
@@ -231,7 +231,19 @@ save();
 			var d2 = "loanId:"+TemplateName_Value.loanId;
                 payloaddata.push(d1,d2);                 
             });  
-		
+		 */
+		 
+		const payloaddata = {};
+		 
+		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
+			
+			objects[x] = {
+			 "TemplateName_Value": TemplateNameValue.TemplateNameValue,
+            "TemplateID_Value": TemplateNameValue.TemplateIDValue,
+			"loanId": "5050505"
+               // payloaddata.push(d1,d2); 
+			}			   
+           }); 
 		
 		console.log(payloaddata[1]);
 		payload['metaData'].isConfigured = true;
