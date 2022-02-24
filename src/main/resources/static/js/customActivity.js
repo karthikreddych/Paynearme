@@ -237,8 +237,8 @@ save();
 		 
 		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
 			
-			objects[x] = {
-			 "TemplateName_Value": TemplateNameValue.TemplateNameValue,
+			payloaddata[TemplateName_Value] = {
+			"TemplateName_Value": TemplateNameValue.TemplateNameValue,
             "TemplateID_Value": TemplateNameValue.TemplateIDValue,
 			"loanId": "5050505"
                // payloaddata.push(d1,d2); 
