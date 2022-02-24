@@ -1,4 +1,3 @@
-
 define([
     'postmonger'
 ], function(
@@ -199,7 +198,7 @@ save();
 		
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
-        
+        alert("Testing");
 		
 		
 		payload['arguments'].execute.inArguments = [{
@@ -220,7 +219,7 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
         }];
         
-        alert("Testing");
+        
 		alert(payload[0].TemplateName_Value);
          
 		 /* let payloaddata = [];
