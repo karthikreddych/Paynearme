@@ -228,20 +228,20 @@ save();
                 payloaddata.push(Object.values(payload['arguments'].execute.inArguments));                 
             }); */  
 		
-		console.log(Object.values(payload['arguments'].execute.inArguments));
+		
 		
 		payload['metaData'].isConfigured = true;
 		
 		console.log(payload);
 		
-		connection.trigger('updateActivity', payloaddata);		
+		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
             document.getElementById("error").style.display = "block";
             document.getElementById("error").innerHtml = err;
         }
 
-    
+    console.log(Object.values(payload['arguments'].execute.inArguments));
 	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 		
