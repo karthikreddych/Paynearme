@@ -222,7 +222,7 @@ save();
         alert("Testing");
 		alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
          
-		 let payloaddata = ["test"];
+		 let payloaddata = [];
 		 
 		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
                 payloaddata.push(Object.values(TemplateName_Value));                 
@@ -241,7 +241,8 @@ save();
             document.getElementById("error").innerHtml = err;
         }
 
-    console.log(Object.values(payload['arguments'].execute.inArguments[0]));
+   // console.log(Object.values(payload['arguments'].execute.inArguments[0])); 
+   console.log(payloaddata[0]);
 	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 		
