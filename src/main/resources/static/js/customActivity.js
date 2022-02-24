@@ -220,7 +220,7 @@ save();
         }];
         
         alert("Testing payload");
-		alert(inArguments[0].TemplateName_Value);
+		alert(payload[0].TemplateName_Value);
          
 		/* let payloaddata = [];
 		 let loan = payload.loanId
