@@ -1,4 +1,4 @@
-define([
+ define([
     'postmonger'
 ], function(
     Postmonger
