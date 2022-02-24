@@ -229,10 +229,10 @@ save();
             });  
 		
 		
-		console.log(payloaddata[0]);
+		console.log("payloaddta" + payloaddata[0]);
 		payload['metaData'].isConfigured = true;
 		
-		console.log(payload);
+		//console.log(payload);
 		
 		connection.trigger('updateActivity', payloaddata);		
            
