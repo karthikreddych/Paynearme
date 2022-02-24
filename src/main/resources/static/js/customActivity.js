@@ -219,8 +219,8 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
         }];
         
-        alert("Testing");
-		alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
+        //alert("Testing");
+		//alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
          
 		let payloaddata = [];
 		 
@@ -228,9 +228,9 @@ save();
 			
 			var d1 = "TemplateName_Value:"+TemplateNameValue;
 			var d2 = "TemplateID_Value:"+TemplateIDValue;
-			var d3 = "loanId:"+TemplateName_Value.loanId;
+			//var d3 = "loanId:"+TemplateName_Value.loanId;
 			
-                payloaddata.push(d1,d2,d3);                 
+                payloaddata.push(d1,d2);                 
             });  
 		
 		 
