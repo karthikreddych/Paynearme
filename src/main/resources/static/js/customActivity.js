@@ -227,8 +227,8 @@ save();
 		 
 		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
 			
-			var d1 = "TemplateName_Value:"+TemplateName_Value.TemplateNameValue;
-			var d2 = "TemplateID_Value:"+TemplateName_Value.TemplateIDValue;
+			var d1 = "TemplateName_Value:"+TemplateNameValue;
+			var d2 = "TemplateID_Value:"+TemplateIDValue;
 			var d3 = "loanId:"+TemplateName_Value.loanId;
 			
                 payloaddata.push(d1,d2,d3);                 
