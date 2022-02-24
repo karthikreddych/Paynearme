@@ -225,10 +225,10 @@ save();
 		 let payloaddata = ["test"];
 		 
 		/* inArguments.forEach(TemplateName_Value => {
-                payloaddata.push("test");                 
+                payloaddata.push("test1");                 
             });  */
 		
-		alert(payloaddata[0]);
+		alert(payload['arguments'].execute.inArguments[0]);
 		
 		payload['metaData'].isConfigured = true;
 		
