@@ -219,14 +219,14 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
         }];
         
-        alert("Testing payload");
-		alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
+        alert("Testing");
+		alert(payload['arguments'].execute.inArguments.TemplateName_Value);
          
-		 /* let payloaddata = [];
+		/* let payloaddata = [];
 		 let loan = payload.loanId
 		 payload.forEach(loan => {
                 payloaddata.push(payload['arguments'].execute.inArguments);                 
-            });   */
+            });  */ 
 		
 		payload['metaData'].isConfigured = true;
 		
