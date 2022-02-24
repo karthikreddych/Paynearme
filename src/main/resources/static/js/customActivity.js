@@ -222,11 +222,11 @@ save();
         alert("Testing payload");
 		alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
          
-		/* let payloaddata = [];
-		 let loan = payload.loanId
-		 payload.forEach(loan => {
+		 let payloaddata = [];
+		// let loan = payload.loanId
+		 payload.forEach(payload['arguments'].execute.inArguments => {
                 payloaddata.push(payload['arguments'].execute.inArguments);                 
-            });  */ 
+            }); 
 		
 		payload['metaData'].isConfigured = true;
 		
