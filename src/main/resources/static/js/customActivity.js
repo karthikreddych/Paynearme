@@ -224,7 +224,7 @@ save();
          
 		 let payloaddata = [];
 		 //let inArguments = [{"TemplateName_Value": TemplateNameValue,"TemplateID_Value": TemplateIDValue},{"TemplateName_Value": TemplateNameValue,"TemplateID_Value": TemplateIDValue}]
-		payload['arguments'].execute.inArguments.forEach(loanId => {
+		inArguments.forEach(loanId => {
                 payloaddata.push(loanId.payload['arguments'].execute.inArguments);                 
             }); 
 		
