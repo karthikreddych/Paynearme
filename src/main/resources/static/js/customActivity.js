@@ -225,11 +225,11 @@ save();
 		 let payloaddata = [];
 		 
 		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
-                payloaddata.push(TemplateName_Value.payload['arguments'].execute.inArguments);                 
+                payloaddata.push(TemplateName_Value.TemplateID_Value);                 
             });  
 		
 		
-		console.log("payloaddta" + payloaddata[0]);
+		console.log(payloaddata[0]);
 		payload['metaData'].isConfigured = true;
 		
 		//console.log(payload);
