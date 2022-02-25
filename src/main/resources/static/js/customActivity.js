@@ -101,12 +101,14 @@ define([
             payload['arguments'] &&
             payload['arguments'].execute &&
             payload['arguments'].execute.inArguments &&
-            payload['arguments'].execute.inArguments.length > 3
+            payload['arguments'].execute.inArguments.length > 0
          );
 
 //alert(hasInArguments);
+    
+	(payload['arguments'].execute.inArguments).forEach(contactID => {
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
-
+	});
          console.log('Has In arguments: '+JSON.stringify(inArguments));
         try {
          $.each(inArguments, function (index, inArgument) {
