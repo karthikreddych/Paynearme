@@ -204,8 +204,9 @@ save();
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
        
-	   for(i=0;i<=10;i++)
-	   {
+	   payload['arguments'].execute.inArguments = [];
+	   
+	   inArguments.forEach(loanId => {
 	   payload['arguments'].execute.inArguments.push({
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
