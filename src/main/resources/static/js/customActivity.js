@@ -204,7 +204,9 @@ save();
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
        
-	    payload['arguments'].execute.inArguments = [{
+	   
+	   inArguments.forEach(loanId => {
+	     payload['arguments'].execute.inArguments.push({
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
 			"loanId": "{{Contact.Attribute.SMS.loanId}}",
@@ -220,7 +222,10 @@ save();
 			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
 			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
-        }]; 
+        }); 
+		
+		return inArguments;
+	   });
 		
 		
 		
