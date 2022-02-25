@@ -113,7 +113,7 @@ define([
 	     var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
          console.log('Has In arguments: '+JSON.stringify(inArguments));
         try {
-         $(payload['arguments'].execute.inArguments.contactID).each(inArguments, function (index, inArgument) {
+         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
                 if (key === 'TemplateName_Value') {
