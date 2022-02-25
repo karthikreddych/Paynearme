@@ -201,8 +201,8 @@ save();
 	//debugger
         try {
 		
-		var TemplateNameValue = $('#TemplateName').val();
-        var TemplateIDValue = $('#TemplateID').val();
+		//var TemplateNameValue = $('#TemplateName').val();
+        //var TemplateIDValue = $('#TemplateID').val();
        
 	   payload['arguments'].execute.inArguments = [{
 		    "TemplateName_Value": TemplateNameValue,
