@@ -104,6 +104,7 @@ define([
             payload['arguments'].execute.inArguments.length > 0
          );
 
+alert(hasInArguments);
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
          console.log('Has In arguments: '+JSON.stringify(inArguments));
