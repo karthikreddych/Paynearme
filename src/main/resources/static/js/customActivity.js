@@ -224,9 +224,9 @@ save();
          
 		 //let payloaddata = [];
 		 
-		payload.forEach(loanId => {
+		//payload.forEach(loanId => {
 			
-			payload['arguments'].execute.inArguments = [{
+			/* payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
 			"loanId": "{{Contact.Attribute.SMS.loanId}}",
@@ -242,14 +242,14 @@ save();
 			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
 			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
-        }];
+        }]; */
 			
 			/* var d1 = "TemplateName_Value:"+TemplateNameValue;
 			var d2 = "TemplateID_Value:"+TemplateIDValue;
 			var d3 = "loanId:"+TemplateName_Value.loanId;
 			
                 payload.push(d1,d2);  */                
-            });   
+         //   });   
 		
 		 
 		/* const payloaddata = {};
