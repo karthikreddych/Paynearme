@@ -205,6 +205,9 @@ save();
 		//const myJson = await payload.json();
 		
 		//myJson.forEach(loanId => {
+		initialize();
+		(payload['arguments'].execute.inArguments).forEach(loanId => {	
+			
 		payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
@@ -222,6 +225,8 @@ save();
 			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
         }]; 
+		
+		});
 		//});
 		
         
