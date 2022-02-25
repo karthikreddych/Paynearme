@@ -95,16 +95,16 @@ define([
             payload = data;
 		//console.log("***Initialize  " + data);
         }   
-        
+        alert(payload);
 
         var hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
             payload['arguments'].execute.inArguments &&
-            payload['arguments'].execute.inArguments.length > 1
+            payload['arguments'].execute.inArguments.length > 3
          );
 
-alert(hasInArguments);
+//alert(hasInArguments);
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
          console.log('Has In arguments: '+JSON.stringify(inArguments));
