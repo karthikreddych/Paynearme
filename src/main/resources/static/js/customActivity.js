@@ -206,7 +206,7 @@ save();
        
 	   payload['arguments'].execute.inArguments = [];
 	   
-	   inArguments.forEach(loanId => {
+	   /* inArguments.forEach(loanId => {
 	   payload['arguments'].execute.inArguments.push({
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
@@ -225,7 +225,7 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
         });
 	   });
-		
+		 */
 	   
 	   /* inArguments.forEach(loanId => {
 	    inArguments.push({
