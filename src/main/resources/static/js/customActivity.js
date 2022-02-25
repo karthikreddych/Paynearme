@@ -106,12 +106,14 @@ define([
 
 //alert(hasInArguments);
     
-	(payload['arguments'].execute.inArguments).forEach(contactID => {
-        var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
-	});
+	//(payload['arguments'].execute.inArguments.contactID).forEach(contactID => {
+       // 
+	//});
+	
+	     var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
          console.log('Has In arguments: '+JSON.stringify(inArguments));
         try {
-         $.each(inArguments, function (index, inArgument) {
+         $(payload['arguments'].execute.inArguments.contactID).each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
                 if (key === 'TemplateName_Value') {
@@ -202,11 +204,29 @@ save();
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
        
+	   payload['arguments'].execute.inArguments = [{
+		    "TemplateName_Value": TemplateNameValue,
+            "TemplateID_Value": TemplateIDValue,
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			"eventType": "{{Contact.Attribute.SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute.SMS.vendor}}",
+            "contacts": "{{Contact.Attribute.SMS.contacts}}", 
+            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}", 
+            "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
+        }]; 
+		
 		//const myJson = await payload.json();
 		
 		//myJson.forEach(loanId => {
-		initialize();
-		(payload['arguments'].execute.inArguments).forEach(loanId => {	
+		
+		/* (payload['arguments'].execute.inArguments).forEach(loanId => {	
 			
 		payload['arguments'].execute.inArguments.push({
             "TemplateName_Value": TemplateNameValue,
@@ -226,7 +246,7 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
         });
 		
-		});
+		}); */
 		//});
 		
         
