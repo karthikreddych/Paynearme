@@ -224,15 +224,15 @@ save();
          
 		 //let payloaddata = [];
 		 
-		(payload['arguments'].execute.inArguments).forEach(loanId => {
+		/* (payload['arguments'].execute.inArguments).forEach(loanId => {
 			
 			var d1 = "TemplateName_Value:"+TemplateNameValue;
 			var d2 = "TemplateID_Value:"+TemplateIDValue;
 			var d3 = "loanId:"+TemplateName_Value.loanId;
 			
-               // payload.push(d1,d2);                 
+                payload.push(d1,d2);                 
             });   
-		
+		 */
 		 
 		/* const payloaddata = {};
 		 
