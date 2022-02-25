@@ -89,7 +89,7 @@ define([
 
   function initialize(data) {
 	//debugger
-        //console.log(data);
+        //console.log(data);  
         console.log('Data: '+JSON.stringify(data));
         if (data) {
             payload = data;
@@ -101,7 +101,7 @@ define([
             payload['arguments'] &&
             payload['arguments'].execute &&
             payload['arguments'].execute.inArguments &&
-            payload['arguments'].execute.inArguments.length > 0
+            payload['arguments'].execute.inArguments.length > 2000
          );
 
 alert(hasInArguments);
