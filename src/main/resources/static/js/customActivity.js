@@ -199,9 +199,9 @@ save();
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
        
+		//const myJson = await payload.json();
 		
-		for(i=0;i<=10;i++)
-		{
+		//myJson.forEach(loanId => {
 		payload['arguments'].execute.inArguments = [{
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
@@ -219,7 +219,8 @@ save();
 			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
         }]; 
-		}
+		//});
+		
         
         //alert("Testing");
 		//alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
