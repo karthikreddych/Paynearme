@@ -224,7 +224,7 @@ save();
 			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
         });
-	   })
+	   });
 		
 	   
 	   /* inArguments.forEach(loanId => {
