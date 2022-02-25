@@ -95,7 +95,7 @@ define([
             payload = data;
 		//console.log("***Initialize  " + data);
         }   
-        alert(payload);
+        console.log('payloaddata: '+payload);
 
         var hasInArguments = Boolean(
             payload['arguments'] &&
