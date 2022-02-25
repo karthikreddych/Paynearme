@@ -204,9 +204,9 @@ save();
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
        
-	   payload['arguments'].execute.inArguments = [];
+	   //payload['arguments'].execute.inArguments = [];
 	   
-	   payload.inArguments.forEach(loanId => {
+	   payload.forEach(activityInstanceId => {
 	   
 	  payload['arguments'].execute.inArguments.push({
             "TemplateName_Value": TemplateNameValue,
@@ -229,7 +229,7 @@ save();
 	   });
 	   
 	   
-	   console.log('payload------'+payload.inArguments)
+	   //console.log('payload------'+payload.inArguments)
 	   
 	   /* inArguments.forEach(loanId => {
 	   payload['arguments'].execute.inArguments.push({
