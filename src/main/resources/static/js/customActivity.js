@@ -101,7 +101,7 @@ define([
             payload['arguments'] &&
             payload['arguments'].execute &&
             payload['arguments'].execute.inArguments &&
-            payload['arguments'].execute.inArguments.length > 2000
+            payload['arguments'].execute.inArguments.length > 1
          );
 
 alert(hasInArguments);
