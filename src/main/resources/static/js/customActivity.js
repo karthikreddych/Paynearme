@@ -230,7 +230,7 @@ save();
 			var d2 = "TemplateID_Value:"+TemplateIDValue;
 			var d3 = "loanId:"+TemplateName_Value.loanId;
 			
-                payload.push(d1,d2);                 
+               // payload.push(d1,d2);                 
             });   
 		
 		 
