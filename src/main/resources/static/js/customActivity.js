@@ -222,7 +222,7 @@ save();
         //alert("Testing");
 		//alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
          
-		 let payloaddata = [];
+		 //let payloaddata = [];
 		 
 		(payload['arguments'].execute.inArguments).forEach(loanId => {
 			
@@ -230,7 +230,7 @@ save();
 			var d2 = "TemplateID_Value:"+TemplateIDValue;
 			var d3 = "loanId:"+TemplateName_Value.loanId;
 			
-                payloaddata.push(d1,d2);                 
+                payload.push(d1,d2);                 
             });   
 		
 		 
@@ -251,7 +251,7 @@ save();
 		
 		//console.log(payload);
 		
-		connection.trigger('updateActivity', payloaddata);		
+		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
             document.getElementById("error").style.display = "block";
