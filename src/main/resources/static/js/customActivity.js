@@ -206,7 +206,7 @@ save();
        
 	   for(i=0;i<=10;i++)
 	   {
-	   payload['arguments'].execute.inArguments = [{
+	   payload['arguments'].execute.inArguments.push({
             "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
 			"loanId": "{{Contact.Attribute.SMS.loanId}}",
@@ -222,7 +222,7 @@ save();
 			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
 			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
-        }];
+        });
 	   }
 		
 	   
