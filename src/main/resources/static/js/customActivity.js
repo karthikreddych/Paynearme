@@ -201,11 +201,11 @@ save();
 	//debugger
         try {
 		
-		//var TemplateNameValue = $('#TemplateName').val();
-        //var TemplateIDValue = $('#TemplateID').val();
+		var TemplateNameValue = $('#TemplateName').val();
+        var TemplateIDValue = $('#TemplateID').val();
        
-	   payload['arguments'].execute.inArguments = [{
-		    "TemplateName_Value": TemplateNameValue,
+	    payload['arguments'].execute.inArguments = [{
+            "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
 			"loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
@@ -222,7 +222,7 @@ save();
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
         }]; 
 		
-		//const myJson = await payload.json();
+		
 		
 		//myJson.forEach(loanId => {
 		
