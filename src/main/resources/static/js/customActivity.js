@@ -88,6 +88,7 @@ define([
 	});
 
   function initialize(data) {
+	  alert("initialize");
 	//debugger
         //console.log(data);  
         console.log('Data: '+JSON.stringify(data));
