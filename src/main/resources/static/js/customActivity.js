@@ -1,4 +1,3 @@
-
 define([
     'postmonger'
 ], function(
@@ -89,14 +88,15 @@ define([
 	});
 
   function initialize(data) {
+	  alert("initialize");
 	//debugger
-        //console.log(data);
+        //console.log(data);  
         console.log('Data: '+JSON.stringify(data));
         if (data) {
             payload = data;
 		//console.log("***Initialize  " + data);
         }   
-        
+        console.log('payloaddata: '+payload);
 
         var hasInArguments = Boolean(
             payload['arguments'] &&
@@ -105,15 +105,20 @@ define([
             payload['arguments'].execute.inArguments.length > 0
          );
 
-        var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
-
+//alert(hasInArguments);
+    
+	//(payload['arguments'].execute.inArguments.contactID).forEach(contactID => {
+       // 
+	//});
+	
+	     var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
          console.log('Has In arguments: '+JSON.stringify(inArguments));
         try {
          $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'SMSid_Value') {
-                    $('#SMSid').val(val);
+                if (key === 'TemplateName_Value') {
+                    $('#TemplateName').val(val);
                 }
 
                 if (key === 'TemplateID_Value') {
@@ -178,6 +183,7 @@ define([
 				}};
     console.log("deFields: " +JSON.stringify(deFields));
     */
+
 function onClickedNext() {
 var TemplateNameValue = $('#TemplateName').val();
 var TemplateIDValue = $('#TemplateID').val();
@@ -191,42 +197,22 @@ else
 save();
 }
 }
+
+/* if(onClickedNext() != true || initialize() != true)
+{
+alert("select dropdown values");	
+} */
+
     function save() {
-	debugger
+	//debugger
         try {
 		
-		var SMSidValue = $('#SMSid').val();
+		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
-
-
-         		
-			
-	    //payload['metaData'].isConfigured = true;
-		//payload.name = name;
-		
-		//payload['arguments'] = payload['arguments'] || {};
-    	//payload['arguments'].execute = payload['arguments'].execute || {};
-    	
-        payload['arguments'].execute.inArguments = [{
-            "SMSid_Value": SMSidValue,
+       
+	   payload['arguments'].execute.inArguments = [{
+            "TemplateName_Value": TemplateNameValue,
             "TemplateID_Value": TemplateIDValue,
-            
-            /*"loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
-           "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
-            "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
-           "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
-          "businessUnit": "{{Contact.Attribute." + eventDefinitionKey+".\"businessUnit\"}}",
-           "scheduleDate": "{{Contact.Attribute." + eventDefinitionKey+".\"scheduleDate\"}}",
-            "vendor": "{{Contact.Attribute." + eventDefinitionKey+".\"vendor\"}}",
-            "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
-            "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
-            "Status": "{{Contact.Attribute." + eventDefinitionKey+".\"Status\"}}",
-            "FirstName": "{{Contact.Attribute." + eventDefinitionKey+".\"FirstName\"}}",
-            "LastName": "{{Contact.Attribute." + eventDefinitionKey+".\"LastName\"}}",
-            "CountryCode": "{{Contact.Attribute." + eventDefinitionKey+".\"CountryCode\"}}",
-            */
-            
-            
 			"loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
@@ -235,30 +221,173 @@ save();
 			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
 			"vendor": "{{Contact.Attribute.SMS.vendor}}",
             "contacts": "{{Contact.Attribute.SMS.contacts}}", 
-            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
-            //"status": "{{Contact.Attribute.SMS.status}}",
-            //"FirstName": "{{Contact.Attribute.SMS.FirstName}}",
-            //"LastName": "{{Contact.Attribute.SMS.LastName}}",
+            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}", 
             "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
-			 "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
-			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
-			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
+			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
         }];
+	   
+	   
+	   //payload['arguments'].execute.inArguments = [];
+	   
+	/*    payload.forEach(activityInstanceId => {
+	   
+	  payload['arguments'].execute.inArguments.push({
+            "TemplateName_Value": TemplateNameValue,
+            "TemplateID_Value": TemplateIDValue,
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			"eventType": "{{Contact.Attribute.SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute.SMS.vendor}}",
+            "contacts": "{{Contact.Attribute.SMS.contacts}}", 
+            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}", 
+            "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
+        });
+	   
+	   }); */
+	   
+	   //payload['arguments'].execute.inArguments;
+	   
+	   //console.log('payload------'+payload.inArguments)
+	   
+	   /* inArguments.forEach(loanId => {
+	   payload['arguments'].execute.inArguments.push({
+            "TemplateName_Value": TemplateNameValue,
+            "TemplateID_Value": TemplateIDValue,
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			"eventType": "{{Contact.Attribute.SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute.SMS.vendor}}",
+            "contacts": "{{Contact.Attribute.SMS.contacts}}", 
+            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}", 
+            "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
+        });
+	   });
+		 */
+	   
+	   /* inArguments.forEach(loanId => {
+	    inArguments.push({
+            "TemplateName_Value": TemplateNameValue,
+            "TemplateID_Value": TemplateIDValue,
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			"eventType": "{{Contact.Attribute.SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute.SMS.vendor}}",
+            "contacts": "{{Contact.Attribute.SMS.contacts}}", 
+            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}", 
+            "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
+        }); 
+		
+		return payload['arguments'].execute.inArguments;
+	   }); */
+		
+		
+		
+		//myJson.forEach(loanId => {
+		
+		/* (payload['arguments'].execute.inArguments).forEach(loanId => {	
+			
+		payload['arguments'].execute.inArguments.push({
+            "TemplateName_Value": TemplateNameValue,
+            "TemplateID_Value": TemplateIDValue,
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			"eventType": "{{Contact.Attribute.SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute.SMS.vendor}}",
+            "contacts": "{{Contact.Attribute.SMS.contacts}}", 
+            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}", 
+            "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
+        });
+		
+		}); */
+		//});
+		
         
-        
-        
+        //alert("Testing");
+		//alert(payload['arguments'].execute.inArguments[0].TemplateName_Value);
+         
+		 //let payloaddata = [];
+		 
+		//payload.forEach(loanId => {
+			
+			/* payload['arguments'].execute.inArguments = [{
+            "TemplateName_Value": TemplateNameValue,
+            "TemplateID_Value": TemplateIDValue,
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			"eventType": "{{Contact.Attribute.SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute.SMS.vendor}}",
+            "contacts": "{{Contact.Attribute.SMS.contacts}}", 
+            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}", 
+            "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+			"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+			"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}", 
+        }]; */
+			
+			/* var d1 = "TemplateName_Value:"+TemplateNameValue;
+			var d2 = "TemplateID_Value:"+TemplateIDValue;
+			var d3 = "loanId:"+TemplateName_Value.loanId;
+			
+                payload.push(d1,d2);  */                
+         //   });   
+		
+		 
+		/* const payloaddata = {};
+		 
+		(payload['arguments'].execute.inArguments).forEach(TemplateName_Value => {
+			
+			payloaddata[0] = {
+			"TemplateName_Value": TemplateNameValue.TemplateNameValue,
+            "TemplateID_Value": TemplateNameValue.TemplateIDValue,
+			"loanId": "5050505"
+               
+			}			   
+           });  */
+		
+		//console.log(payloaddata.toString());
 		payload['metaData'].isConfigured = true;
 		
-		console.log(payload);
+		//console.log(payload);
+		
 		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
-            documnet.getElement("error").style.display = "block";
-            documnet.getElement("error").innerHtml = err;
+            document.getElementById("error").style.display = "block";
+            document.getElementById("error").innerHtml = err;
         }
 
-    
-	console.log("SMS ID: " +JSON.stringify(SMSidValue));
+   // console.log(Object.values(payload['arguments'].execute.inArguments[0])); 
+   
+	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 		
 	}
