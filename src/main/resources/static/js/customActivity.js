@@ -197,10 +197,10 @@ save();
 }
 }
 
-if(onClickedNext() == false || initialize() == false)
+/* if(onClickedNext() != true || initialize() != true)
 {
 alert("select dropdown values");	
-}
+} */
 
     function save() {
 	//debugger
