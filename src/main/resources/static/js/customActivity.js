@@ -193,7 +193,7 @@ save();
     function save() {
 	//debugger
       try {  
-            		
+            alert("save function running");		
 			
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
