@@ -26,7 +26,7 @@ define([
       
     connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
     connection.on('requestedDataSources', onRequestedDataSources);
-    connection.on('clickedNext', OnClickedNext);
+    connection.on('clickedNext', save);
     } catch(err) {
         console.log(err);
     }
@@ -63,23 +63,23 @@ define([
 });
 	connection.on('requestedSchema', function (data) {
    		// save schema
-   	console.log('** Schema **', JSON.stringify(data['schema']));
+   	console.log('*** Schema ***', JSON.stringify(data['schema']));
    	}); 
    	 
 	function onRequestedDataSources(dataSources){
-        console.log('* requestedDataSources *');
+        console.log('** requestedDataSources **');
         //console.log(dataSources);
-        console.log('** dataSources **', JSON.stringify(dataSources));
+        console.log('*** dataSources ***', JSON.stringify(dataSources));
     }
 
     /*function onRequestedInteraction (interaction) {    
-        console.log('* requestedInteraction *');
+        console.log('** requestedInteraction **');
         console.log(interaction);
      }*/
      
 
      function onRequestedTriggerEventDefinition(eventDefinitionModel) {
-        console.log('* requestedTriggerEventDefinition *');
+        console.log('** requestedTriggerEventDefinition **');
         console.log(eventDefinitionModel);
     }
     
@@ -111,8 +111,8 @@ define([
          $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'TemplateName_Value') {
-                    $('#TemplateName').val(val);
+                if (key === 'SMSid_Value') {
+                    $('#SMSid').val(val);
                 }
 
                 if (key === 'TemplateID_Value') {
@@ -177,23 +177,22 @@ define([
 				}};
     console.log("deFields: " +JSON.stringify(deFields));
     */
-function onClickedNext() {
-var TemplateNameValue = $('#TemplateName').val();
-var TemplateIDValue = $('#TemplateID').val();
-if( TemplateNameValue === "" || TemplateIDValue === "")
-{
-document.getElementById("step2").style.display="block";
-connection.trigger("nextStep");
-}
-else
-{
-save();
-}
-}
+
     function save() {
-	//debugger
-      try {  
-            alert("save function running");		
+	debugger
+        try {
+		
+		var SMSidValue = $('#SMSid').val();
+        var TemplateIDValue = $('#TemplateID').val();
+
+
+         if( SMSidValue === "" || TemplateIDValue === ""){
+			
+			document.getElementById("step2").style.display="block"
+			
+			return;
+            }
+            		
 			
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
@@ -202,7 +201,7 @@ save();
     	//payload['arguments'].execute = payload['arguments'].execute || {};
     	
         payload['arguments'].execute.inArguments = [{
-            "TemplateName_Value": TemplateNameValue,
+            "SMSid_Value": SMSidValue,
             "TemplateID_Value": TemplateIDValue,
             
             /*"loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
@@ -252,7 +251,7 @@ save();
         }
 
     
-	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
+	console.log("SMS ID: " +JSON.stringify(SMSidValue));
 	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
 		
 	}
