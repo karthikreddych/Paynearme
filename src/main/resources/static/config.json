@@ -45,43 +45,8 @@
         }
     },
 	"configurationArguments": {
-      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
-       "save": {
-           "url": "https://sbt-sms-febe.herokuapp.com/activity/save",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-			
-            "timeout": 8000
-       },
-        
-       "publish": {
-           "url": "https://sbt-sms-febe.herokuapp.com/activity/publish",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-			
-            "timeout": 8000
-       },
-       "validate": {
-           "url": "https://sbt-sms-febe.herokuapp.com/activity/validate",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-			
-            "timeout": 8000
-       },
-	"stop": {
-           "url": "https://sbt-sms-febe.herokuapp.com/activity/stop",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-            "timeout": 9000
-       }
+      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501"
+       
     },
        
     "wizardSteps": [
