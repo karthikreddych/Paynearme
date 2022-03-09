@@ -36,7 +36,7 @@ requirejs.onError = function (err) {
 
 (function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
-		define('postmonger', [], function () { console.log(factory(root)); return factory(root); });
+		define('postmonger', [], function () { return factory(root); });
 	} else if (typeof exports === 'object') {
 		module.exports = factory(root);
 	} else {
@@ -60,7 +60,6 @@ requirejs.onError = function (err) {
 	}
 	Postmonger.noConflict = function () {
 		root.Postmonger = previous;
-		console.log(this);
 		return this;
 	};
 	Postmonger.version = '0.0.14';
@@ -77,19 +76,16 @@ requirejs.onError = function (err) {
 		//If string, grab based on id
 		if (typeof(connect) === 'string') {
 			connect = document.getElementById(connect);
-			console.log(connect);
 		}
 
 		//If no connection, check for jquery object
 		if (connect && !connect.postMessage && connect.jquery) {
 			connect = connect.get(0);
-			console.log(connect);
 		}
 
 		//If still no connection, check for iframe
 		if (connect && !connect.postMessage && (connect.contentWindow || connect.contentDocument)) {
 			connect = connect.contentWindow || connect.contentDocument;
-			console.log(connect);
 		}
 
 		//Throw warning if connection could not be made
@@ -103,7 +99,7 @@ requirejs.onError = function (err) {
 		self.connect = connect;
 		self.to = to;
 		self.from = from;
-        console.log(self);
+
 		return self;
 	};
 
@@ -115,15 +111,11 @@ requirejs.onError = function (err) {
 		self._callbacks = {};
 
 		self._has = function (obj, key) {
-			
-			console.log(Object.prototype.hasOwnProperty.call(obj, key));
 			return Object.prototype.hasOwnProperty.call(obj, key);
 		};
 
 		self._keys = function (obj) {
 			if (Object.keys) {
-				
-				console.log(Object.keys(obj));
 				return Object.keys(obj);
 			}
 
@@ -138,8 +130,7 @@ requirejs.onError = function (err) {
 					keys[keys.length] = key;
 				}
 			}
-           
-		    console.log(keys);
+
 			return keys;
 		};
 
@@ -147,8 +138,6 @@ requirejs.onError = function (err) {
 			var calls, event, node, tail, list;
 
 			if (!callback) {
-				
-				console.log(self);
 				return self;
 			}
 
@@ -172,8 +161,7 @@ requirejs.onError = function (err) {
 					next: (list) ? list.next : node
 				};
 			}
-           
-		   console.log(events);
+
 			return self;
 		};
 
@@ -187,8 +175,6 @@ requirejs.onError = function (err) {
 
 			if (!(events || callback || context)) {
 				delete self._callbacks;
-				
-				console.log(self);
 				return self;
 			}
 
@@ -210,17 +196,14 @@ requirejs.onError = function (err) {
 					}
 				}
 			}
-           
-		   console.log(events);
-		   return self;
+
+			return self;
 		};
 
 		self.trigger = function (events) {
 			var event, node, calls, tail, args, all, rest;
 
 			if (!(calls = self._callbacks)) {
-				
-				console.log(self);
 				return self;
 			}
 
@@ -243,12 +226,10 @@ requirejs.onError = function (err) {
 					}
 				}
 			}
-            
-			console.log(events);
+
 			return self;
 		};
-        
-		console.log(self);
+
 		return self;
 	};
 
@@ -273,8 +254,6 @@ requirejs.onError = function (err) {
 			} else if (_window.detachEvent) {
 				_window.detachEvent('onmessage', postMessageListener);
 			}
-			
-			console.log(self);
 			return self;
 		};
 
@@ -297,9 +276,6 @@ requirejs.onError = function (err) {
 				}
 			}
 		}
-		
-		console.log(connections);
-
 
 		//Listener for incoming messages
 		postMessageListener = function(event){
@@ -345,8 +321,6 @@ requirejs.onError = function (err) {
 
 			//Send the message
 			incoming['trigger'].apply(root, message);
-			
-			console.log(data);
 		};
 
 		//Add the listener
@@ -376,11 +350,10 @@ requirejs.onError = function (err) {
 			for (k=0, len=connections.length; k<len; k++) {
 				connections[k].connect.postMessage(JSON.stringify(message), connections[k].to);
 			}
-			console.log(connections);
 		});
-console.log(self);
+
 		return self;
 	};
-console.log(Postmonger);
+
 	return Postmonger;
 }));
