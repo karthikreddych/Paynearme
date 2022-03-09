@@ -60,6 +60,7 @@ requirejs.onError = function (err) {
 	}
 	Postmonger.noConflict = function () {
 		root.Postmonger = previous;
+		console.log(this);
 		return this;
 	};
 	Postmonger.version = '0.0.14';
@@ -111,11 +112,15 @@ requirejs.onError = function (err) {
 		self._callbacks = {};
 
 		self._has = function (obj, key) {
+			
+			console.log(Object.prototype.hasOwnProperty.call(obj, key));
 			return Object.prototype.hasOwnProperty.call(obj, key);
 		};
 
 		self._keys = function (obj) {
 			if (Object.keys) {
+				
+				console.log(Object.keys(obj));
 				return Object.keys(obj);
 			}
 
@@ -130,7 +135,8 @@ requirejs.onError = function (err) {
 					keys[keys.length] = key;
 				}
 			}
-
+           
+		    console.log(keys);
 			return keys;
 		};
 
@@ -138,6 +144,8 @@ requirejs.onError = function (err) {
 			var calls, event, node, tail, list;
 
 			if (!callback) {
+				
+				console.log(self);
 				return self;
 			}
 
@@ -161,7 +169,8 @@ requirejs.onError = function (err) {
 					next: (list) ? list.next : node
 				};
 			}
-
+           
+		   console.log(self);
 			return self;
 		};
 
@@ -175,6 +184,8 @@ requirejs.onError = function (err) {
 
 			if (!(events || callback || context)) {
 				delete self._callbacks;
+				
+				console.log(self);
 				return self;
 			}
 
@@ -196,14 +207,17 @@ requirejs.onError = function (err) {
 					}
 				}
 			}
-
-			return self;
+           
+		   console.log(self);
+		   return self;
 		};
 
 		self.trigger = function (events) {
 			var event, node, calls, tail, args, all, rest;
 
 			if (!(calls = self._callbacks)) {
+				
+				console.log(self);
 				return self;
 			}
 
@@ -226,10 +240,12 @@ requirejs.onError = function (err) {
 					}
 				}
 			}
-
+            
+			console.log(self);
 			return self;
 		};
-
+        
+		console.log(self);
 		return self;
 	};
 
@@ -254,6 +270,8 @@ requirejs.onError = function (err) {
 			} else if (_window.detachEvent) {
 				_window.detachEvent('onmessage', postMessageListener);
 			}
+			
+			console.log(self);
 			return self;
 		};
 
@@ -351,9 +369,9 @@ requirejs.onError = function (err) {
 				connections[k].connect.postMessage(JSON.stringify(message), connections[k].to);
 			}
 		});
-
+console.log(self);
 		return self;
 	};
-
+console.log(Postmonger);
 	return Postmonger;
 }));
