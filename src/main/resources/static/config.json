@@ -46,42 +46,7 @@
     },
 	"configurationArguments": {
       "applicationExtensionKey": "2686fa49-3b16-4bb1-ad35-0ceea0e57e43",
-       "save": {
-           "url": "https://lc-sms.herokuapp.com/activity/save",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-			
-            "timeout": 8000
-       },
-        
-       "publish": {
-           "url": "https://lc-sms.herokuapp.com/activity/publish",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-			
-            "timeout": 8000
-       },
-       "validate": {
-           "url": "https://lc-sms.herokuapp.com/activity/validate",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-			
-            "timeout": 8000
-       },
-	"stop": {
-           "url": "https://lc-sms.herokuapp.com/activity/stop",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-            "timeout": 9000
-       }
+      
     },
        
     "wizardSteps": [
@@ -221,4 +186,3 @@
                     
         
    
-
