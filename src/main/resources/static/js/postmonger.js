@@ -173,7 +173,7 @@ requirejs.onError = function (err) {
 				};
 			}
            
-		   console.log(self);
+		   console.log(events);
 			return self;
 		};
 
@@ -211,7 +211,7 @@ requirejs.onError = function (err) {
 				}
 			}
            
-		   console.log(self);
+		   console.log(events);
 		   return self;
 		};
 
@@ -244,7 +244,7 @@ requirejs.onError = function (err) {
 				}
 			}
             
-			console.log(self);
+			console.log(events);
 			return self;
 		};
         
@@ -297,6 +297,9 @@ requirejs.onError = function (err) {
 				}
 			}
 		}
+		
+		console.log(connections);
+
 
 		//Listener for incoming messages
 		postMessageListener = function(event){
@@ -343,7 +346,7 @@ requirejs.onError = function (err) {
 			//Send the message
 			incoming['trigger'].apply(root, message);
 			
-			console.log(postMessageListener);
+			console.log(data);
 		};
 
 		//Add the listener
@@ -374,7 +377,7 @@ requirejs.onError = function (err) {
 				connections[k].connect.postMessage(JSON.stringify(message), connections[k].to);
 			}
 		});
-console.log(self);
+console.log(message);
 		return self;
 	};
 console.log(Postmonger);
