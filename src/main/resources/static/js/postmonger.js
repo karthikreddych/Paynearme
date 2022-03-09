@@ -376,8 +376,9 @@ requirejs.onError = function (err) {
 			for (k=0, len=connections.length; k<len; k++) {
 				connections[k].connect.postMessage(JSON.stringify(message), connections[k].to);
 			}
+			console.log(connections);
 		});
-console.log(message);
+console.log(self);
 		return self;
 	};
 console.log(Postmonger);
