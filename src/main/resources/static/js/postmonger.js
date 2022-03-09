@@ -36,7 +36,7 @@ requirejs.onError = function (err) {
 
 (function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
-		define('postmonger', [], function () { return factory(root); });
+		define('postmonger', [], function () { console.log(factory(root)); return factory(root); });
 	} else if (typeof exports === 'object') {
 		module.exports = factory(root);
 	} else {
@@ -77,16 +77,19 @@ requirejs.onError = function (err) {
 		//If string, grab based on id
 		if (typeof(connect) === 'string') {
 			connect = document.getElementById(connect);
+			console.log(connect);
 		}
 
 		//If no connection, check for jquery object
 		if (connect && !connect.postMessage && connect.jquery) {
 			connect = connect.get(0);
+			console.log(connect);
 		}
 
 		//If still no connection, check for iframe
 		if (connect && !connect.postMessage && (connect.contentWindow || connect.contentDocument)) {
 			connect = connect.contentWindow || connect.contentDocument;
+			console.log(connect);
 		}
 
 		//Throw warning if connection could not be made
@@ -100,7 +103,7 @@ requirejs.onError = function (err) {
 		self.connect = connect;
 		self.to = to;
 		self.from = from;
-
+        console.log(self);
 		return self;
 	};
 
@@ -339,6 +342,8 @@ requirejs.onError = function (err) {
 
 			//Send the message
 			incoming['trigger'].apply(root, message);
+			
+			console.log(postMessageListener);
 		};
 
 		//Add the listener
