@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "LC_SMS",
+           "name": "SMS-Heroku",
            "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
            
        }
@@ -45,8 +45,43 @@
         }
     },
 	"configurationArguments": {
-      "applicationExtensionKey": "de2fda67-10d8-4a0f-b002-c8bbbf281487"
-       
+      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
+       "save": {
+           "url": "https://lc-sms.herokuapp.com/activity/save",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+			
+            "timeout": 8000
+       },
+        
+       "publish": {
+           "url": "https://lc-sms.herokuapp.com/activity/publish",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+			
+            "timeout": 8000
+       },
+       "validate": {
+           "url": "https://lc-sms.herokuapp.com/activity/validate",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+			
+            "timeout": 8000
+       },
+	"stop": {
+           "url": "https://lc-sms.herokuapp.com/activity/stop",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 9000
+       }
     },
        
     "wizardSteps": [
