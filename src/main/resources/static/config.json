@@ -45,7 +45,7 @@
         }
     },
 	"configurationArguments": {
-      "applicationExtensionKey": "dc4f8958-cf38-4a85-a19e-4e05a4d14ad3",
+      "applicationExtensionKey": "2686fa49-3b16-4bb1-ad35-0ceea0e57e43",
        "save": {
            "url": "https://lc-sms.herokuapp.com/activity/save",
             "verb": "POST",
