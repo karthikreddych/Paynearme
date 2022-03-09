@@ -54,9 +54,7 @@
             "useJwt": false,
 			
             "timeout": 8000
-       },
-        
-       
+       }
     },
        
     "wizardSteps": [
