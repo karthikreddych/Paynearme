@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "LC SMS",
+           "name": "SMS-Heroku",
            "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
            
        }
@@ -45,7 +45,7 @@
         }
     },
 	"configurationArguments": {
-      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
+      "applicationExtensionKey": "de2fda67-10d8-4a0f-b002-c8bbbf281487",
        "save": {
            "url": "https://lc-sms.herokuapp.com/activity/save",
             "verb": "POST",
