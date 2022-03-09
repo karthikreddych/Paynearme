@@ -34,7 +34,7 @@
 				 }               
             ],
             "outArguments": [],
-            "url": "https://bt-sms-febe.herokuapp.com/activity/execute",
+            "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
  			"header": "",
@@ -66,7 +66,7 @@
             "timeout": 8000
        },
        "validate": {
-           "url": "https://bt-sms-febe.herokuapp.com/activity/validate",
+           "url": "https://sbt-sms-febe.herokuapp.com/activity/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
