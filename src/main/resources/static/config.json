@@ -50,6 +50,7 @@
            "url": "https://sbt-sms-febe.herokuapp.com/activity/save",
             "verb": "POST",
             "body": "",
+            "header": "",
             "format": "json",
             "useJwt": false,
 			
@@ -60,6 +61,7 @@
            "url": "https://sbt-sms-febe.herokuapp.com/activity/publish",
             "verb": "POST",
             "body": "",
+            "header": "",
             "format": "json",
             "useJwt": false,
 			
@@ -69,6 +71,7 @@
            "url": "https://sbt-sms-febe.herokuapp.com/activity/validate",
             "verb": "POST",
             "body": "",
+            "header": "",
             "format": "json",
             "useJwt": false,
 			
@@ -78,6 +81,7 @@
            "url": "https://sbt-sms-febe.herokuapp.com/activity/stop",
             "verb": "POST",
             "body": "",
+            "header": "",
             "format": "json",
             "useJwt": false,
             "timeout": 9000
