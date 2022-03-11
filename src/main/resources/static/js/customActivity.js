@@ -224,7 +224,7 @@ save();
   "vendorTemplateId": TemplateIDValue,
   "messageParams": {
     "key1": "",
-    "key2": ""
+    "key2": "",
   },
   "messageOptions": {
     "doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
