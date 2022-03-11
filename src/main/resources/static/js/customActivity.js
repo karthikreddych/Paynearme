@@ -206,37 +206,43 @@ save();
 		//payload['arguments'] = payload['arguments'] || {};
     	//payload['arguments'].execute = payload['arguments'].execute || {};
     	
-     payload['arguments'].execute.inArguments = [{
-           
-			
- "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
-  "eventType": "{{Contact.Attribute.LCSMS.eventType}}",
-  "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
-  "primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
-  "externalReferences": [],
-  "businessUnit": "{{Contact.Attribute.LCSMS.businessUnit}}",
-  "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
-  "messageSubjectLine": "{{Contact.Attribute.LCSMS.messageSubjectLine}}",
-  "note": "{{Contact.Attribute.LCSMS.note}}",
-  "source": "{{Contact.Attribute.LCSMS.source}}",
-  "sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
-  "vendor": "{{Contact.Attribute.LCSMS.vendor}}",
-  "vendorTemplateId": TemplateIDValue,
-  "messageParams": {
-    "key1": "",
-    "key2": "",
-  },
-  "messageOptions": {
-    "doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
-    "channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
-    "doNotCheckLCSMSCompliance": "{{Contact.Attribute.LCSMS.doNotCheckLCSMSCompliance}}",
-  },
-  "messageSchedulingOptionsList": [{
-      "scheduleTime": "{{Contact.Attribute.LCSMS.scheduleTime}}",
-      "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
-    }]
-
-}];
+    payload['arguments'].execute.inArguments = [{
+            "TemplateName_Value": TemplateNameValue,
+            "TemplateID_Value": TemplateIDValue,
+            
+            /*"loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
+           "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
+            "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
+           "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
+          "businessUnit": "{{Contact.Attribute." + eventDefinitionKey+".\"businessUnit\"}}",
+           "scheduleDate": "{{Contact.Attribute." + eventDefinitionKey+".\"scheduleDate\"}}",
+            "vendor": "{{Contact.Attribute." + eventDefinitionKey+".\"vendor\"}}",
+            "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
+            "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
+            "Status": "{{Contact.Attribute." + eventDefinitionKey+".\"Status\"}}",
+            "FirstName": "{{Contact.Attribute." + eventDefinitionKey+".\"FirstName\"}}",
+            "LastName": "{{Contact.Attribute." + eventDefinitionKey+".\"LastName\"}}",
+            "CountryCode": "{{Contact.Attribute." + eventDefinitionKey+".\"CountryCode\"}}",
+            */
+            
+            
+			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			"eventType": "{{Contact.Attribute.SMS.eventType}}",
+			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+			"vendor": "{{Contact.Attribute.SMS.vendor}}",
+            "contacts": "{{Contact.Attribute.SMS.contacts}}", 
+            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
+            //"status": "{{Contact.Attribute.SMS.status}}",
+            //"FirstName": "{{Contact.Attribute.SMS.FirstName}}",
+            //"LastName": "{{Contact.Attribute.SMS.LastName}}",
+            "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+			 "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
+        }];
         
         
         
