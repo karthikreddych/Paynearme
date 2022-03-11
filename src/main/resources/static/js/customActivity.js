@@ -209,31 +209,31 @@ save();
      payload['arguments'].execute.inArguments = [{
            
 			
-  "loanId": "{{Contact.Attribute.SMS.loanId}}",
-  "eventType": "{{Contact.Attribute.SMS.eventType}}",
-  "communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
-  "primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+ "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
+  "eventType": "{{Contact.Attribute.LCSMS.eventType}}",
+  "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
+  "primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
   "externalReferences": [],
-  "businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
-  "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
-  "messageSubjectLine": "{{Contact.Attribute.SMS.messageSubjectLine}}",
-  "note": "",
-  "source": "ZENDESK",
-  "sourceMessageId": "",
-  "vendor": "{{Contact.Attribute.SMS.vendor}}",
+  "businessUnit": "{{Contact.Attribute.LCSMS.businessUnit}}",
+  "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
+  "messageSubjectLine": "{{Contact.Attribute.LCSMS.messageSubjectLine}}",
+  "note": "{{Contact.Attribute.LCSMS.note}}",
+  "source": "{{Contact.Attribute.LCSMS.source}}",
+  "sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
+  "vendor": "{{Contact.Attribute.LCSMS.vendor}}",
   "vendorTemplateId": TemplateIDValue,
   "messageParams": {
-    "key1": "value1",
-    "key2": "value2"
+    "key1": "",
+    "key2": ""
   },
   "messageOptions": {
-    "doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
-    "channelAddress": "{{Contact.Attribute.SMS.contacts}}",
-    "doNotCheckSmsCompliance": false
+    "doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
+    "channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
+    "doNotCheckLCSMSCompliance": "{{Contact.Attribute.LCSMS.doNotCheckLCSMSCompliance}}",
   },
   "messageSchedulingOptionsList": [{
-      "scheduleTime": "{{Contact.Attribute.SMS.scheduleDate}}",
-      "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+      "scheduleTime": "{{Contact.Attribute.LCSMS.scheduleTime}}",
+      "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
     }]
 
 }];
