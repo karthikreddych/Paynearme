@@ -45,16 +45,8 @@
         }
     },
 	"configurationArguments": {
-      "applicationExtensionKey": "de2fda67-10d8-4a0f-b002-c8bbbf281487",
-       "publish": {
-           "url": "https://lc-sms.herokuapp.com/activity/publish",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-			
-            "timeout": 8000
-       }
+      "applicationExtensionKey": "de2fda67-10d8-4a0f-b002-c8bbbf281487"
+      
     },
        
     "wizardSteps": [
