@@ -26,7 +26,7 @@ define([
       
     connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
     connection.on('requestedDataSources', onRequestedDataSources);
-    connection.on('clickedNext', save);
+    connection.on('clickedNext', onClickedNext);
     } catch(err) {
         console.log(err);
     }
@@ -177,6 +177,20 @@ define([
 				}};
     console.log("deFields: " +JSON.stringify(deFields));
     */
+	
+function onClickedNext() {
+var TemplateNameValue = $('#TemplateName').val();
+var TemplateIDValue = $('#TemplateID').val();
+if( TemplateNameValue === "" || TemplateIDValue === "")
+{
+document.getElementById("step2").style.display="block";
+connection.trigger("nextStep");
+}
+else
+{
+save();
+}
+}
 
     function save() {
 	//debugger
@@ -185,15 +199,7 @@ define([
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
 
-
-         if( TemplateNameValue === "" || TemplateIDValue === ""){
-			
-			document.getElementById("step2").style.display="block"
-			
-			return;
-            }
-            		
-			
+	
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
 		
