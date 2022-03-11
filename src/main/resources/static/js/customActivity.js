@@ -226,22 +226,51 @@ save();
             */
             
             
-			"loanId": "{{Contact.Attribute.SMS.loanId}}",
+			/*"loanId": "{{Contact.Attribute.SMS.loanId}}",
 			"eventType": "{{Contact.Attribute.SMS.eventType}}",
 			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
 			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
 			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
 			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
-			"vendor": "{{Contact.Attribute.SMS.vendor}}",
+			"vendor": "{{Contact.Attribute.SMS.vendor}}",*/
             "contacts": "{{Contact.Attribute.SMS.contacts}}", 
             "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
             //"status": "{{Contact.Attribute.SMS.status}}",
             //"FirstName": "{{Contact.Attribute.SMS.FirstName}}",
             //"LastName": "{{Contact.Attribute.SMS.LastName}}",
             "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
-			 "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+			/* "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
 			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
-			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
+			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",*/
+		
+		 "loanId": "{{Contact.Attribute.SMS.loanId}}",
+  "eventType": "{{Contact.Attribute.SMS.eventType}}",
+  "communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+  "primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+  "externalReferences": [],
+  "businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+  "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+  "messageSubjectLine": "{{Contact.Attribute.SMS.messageSubjectLine}}",
+  "note": "",
+  "source": "ZENDESK",
+  "sourceMessageId": "",
+  "vendor": "{{Contact.Attribute.SMS.vendor}}",
+  "vendorTemplateId": TemplateIDValue,
+  "messageParams": {
+    "key1": "value1",
+    "key2": "value2"
+  },
+  "messageOptions": {
+    "doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
+    "channelAddress": "{{Contact.Attribute.SMS.contacts}}",
+    "doNotCheckSmsCompliance": false
+  },
+  "messageSchedulingOptionsList": [
+    {
+      "scheduleTime": "{{Contact.Attribute.SMS.scheduleDate}}",
+      "messageContent" "{{Contact.Attribute.SMS.messageContent}}",
+    }
+  ]
         }];
         
         
