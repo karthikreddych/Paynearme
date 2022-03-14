@@ -45,7 +45,7 @@
         }
     },
 	"configurationArguments": {
-     "applicationExtensionKey": "5cdaf8b3-e2aa-4ddc-94ad-b660ce27b63f",
+    // "applicationExtensionKey": "5cdaf8b3-e2aa-4ddc-94ad-b660ce27b63f",
 	    "save": {
            "url": "https://lc-sms.herokuapp.com/activity/save",
             "verb": "POST",
@@ -63,7 +63,7 @@
             "useJwt": true,
 			
             "timeout": 8000
-       }
+       },
 	"validate": {
            "url": "https://lc-sms.herokuapp.com/activity/validate",
             "verb": "POST",
