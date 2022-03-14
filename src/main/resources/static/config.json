@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "LC SMS",
+           "name": "LC--SMS",
            "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
            
        }
@@ -34,28 +34,54 @@
 				 }               
             ],
             "outArguments": [],
-            "url": "https://lc-sms.herokuapp.com/activity/execute",
+            "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/execute",
             "verb": "POST",
             "body": "",
- 	    "header": "",
+ 			"header": "",
             "format": "json",
             "useJwt": true,
-	    "customerKey": "697b124d-16bf-46d1-9044-d3959c48b30d",		
+			
             "timeout": 8000
         }
     },
 	"configurationArguments": {
-	"publish": {
-           "url": "https://lc-sms.herokuapp.com/activity/publish",
+      "applicationExtensionKey": "5cdaf8b3-e2aa-4ddc-94ad-b660ce27b63f",
+       "save": {
+           "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/save",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": true,
-	    "customerKey": "697b124d-16bf-46d1-9044-d3959c48b30d",	
+			
             "timeout": 8000
+       },
+        
+       "publish": {
+           "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/publish",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+			
+            "timeout": 8000
+       },
+       "validate": {
+           "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/validate",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+			
+            "timeout": 8000
+       },
+	"stop": {
+           "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/stop",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 9000
        }
-	
-      
     },
        
     "wizardSteps": [
@@ -195,3 +221,4 @@
                     
         
    
+
