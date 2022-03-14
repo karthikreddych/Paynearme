@@ -39,7 +39,7 @@
             "body": "",
  	    "header": "",
             "format": "json",
-            "useJwt": false,
+            "useJwt": true,
 			
             "timeout": 8000
         }
@@ -51,7 +51,7 @@
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": false,
+            "useJwt": true,
 			
             "timeout": 8000
        }
