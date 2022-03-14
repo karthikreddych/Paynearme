@@ -45,7 +45,6 @@
         }
     },
 	"configurationArguments": {
-      "applicationExtensionKey": "5cdaf8b3-e2aa-4ddc-94ad-b660ce27b63f",
        "save": {
            "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/save",
             "verb": "POST",
