@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "LCSMS",
+           "name": "LC-SMS",
            "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
            
        }
