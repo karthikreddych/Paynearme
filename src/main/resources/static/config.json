@@ -37,10 +37,10 @@
             "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/execute",
             "verb": "POST",
             "body": "",
- 			"header": "",
+            "header": "",
             "format": "json",
             "useJwt": true,
-			
+	    "customerKey": "697b124d-16bf-46d1-9044-d3959c48b30d",	
             "timeout": 8000
         }
     },
@@ -52,7 +52,7 @@
             "body": "",
             "format": "json",
             "useJwt": true,
-			
+	    "customerKey": "697b124d-16bf-46d1-9044-d3959c48b30d",	
             "timeout": 8000
        },
         
@@ -62,7 +62,7 @@
             "body": "",
             "format": "json",
             "useJwt": true,
-			
+	    "customerKey": "697b124d-16bf-46d1-9044-d3959c48b30d",		
             "timeout": 8000
        },
        "validate": {
@@ -71,7 +71,7 @@
             "body": "",
             "format": "json",
             "useJwt": true,
-			
+	    "customerKey": "697b124d-16bf-46d1-9044-d3959c48b30d",		
             "timeout": 8000
        },
 	"stop": {
@@ -80,6 +80,7 @@
             "body": "",
             "format": "json",
             "useJwt": true,
+	    "customerKey": "697b124d-16bf-46d1-9044-d3959c48b30d",
             "timeout": 9000
        }
     },
