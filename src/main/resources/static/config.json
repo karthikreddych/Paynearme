@@ -40,7 +40,6 @@
             "header": "",
             "format": "json",
             "useJwt": true,
-	    "customerKey": "697b124d-16bf-46d1-9044-d3959c48b30d",
 	    "timeout": 8000
         }
     },
@@ -48,11 +47,8 @@
            "publish": {
            "url": "https://lc-sms.herokuapp.com/activity/publish",
             "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": true,
-            "customerKey": "697b124d-16bf-46d1-9044-d3959c48b30d",
-	    "timeout": 8000
+            "useJwt": true
+            
        }
        
     },
