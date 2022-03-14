@@ -34,7 +34,7 @@
 				 }               
             ],
             "outArguments": [],
-            "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/execute",
+            "url": "https://lc-sms.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -46,7 +46,7 @@
     },
 	"configurationArguments": {
        "save": {
-           "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/save",
+           "url": "https://lc-sms.herokuapp.com/activity/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -56,7 +56,7 @@
        },
         
        "publish": {
-           "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/publish",
+           "url": "https://lc-sms.herokuapp.com/activity/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -65,7 +65,7 @@
             "timeout": 8000
        },
        "validate": {
-           "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/validate",
+           "url": "https://lc-sms.herokuapp.com/activity/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -74,7 +74,7 @@
             "timeout": 8000
        },
 	"stop": {
-           "url": "https://api-demo.tlcinternal.com/api/sbt-sms-febe/activity/stop",
+           "url": "https://lc-sms.herokuapp.com/activity/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
