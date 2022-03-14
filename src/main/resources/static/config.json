@@ -39,7 +39,7 @@
             "body": "",
  			"header": "",
             "format": "json",
-            "useJwt": false,
+            "useJwt": true,
 			
             "timeout": 8000
         }
@@ -52,7 +52,7 @@
             "body": "",
             "header": "",
             "format": "json",
-            "useJwt": false,
+            "useJwt": true,
 			
             "timeout": 8000
        },
@@ -63,7 +63,7 @@
             "body": "",
             "header": "",
             "format": "json",
-            "useJwt": false,
+            "useJwt": true,
 			
             "timeout": 8000
        },
@@ -73,7 +73,7 @@
             "body": "",
             "header": "",
             "format": "json",
-            "useJwt": false,
+            "useJwt": true,
 			
             "timeout": 8000
        },
@@ -83,7 +83,7 @@
             "body": "",
             "header": "",
             "format": "json",
-            "useJwt": false,
+            "useJwt": true,
             "timeout": 9000
        }
     },
