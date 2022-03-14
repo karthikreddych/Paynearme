@@ -49,7 +49,7 @@
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
 			
             "timeout": 8000
        }
