@@ -55,7 +55,7 @@
             "useJwt": true,
 	    "customerKey": "697b124d-16bf-46d1-9044-d3959c48b30d",		
             "timeout": 8000
-       },
+       }
        
     },
        
