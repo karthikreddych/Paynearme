@@ -39,7 +39,7 @@
             "body": "",
             "header": "",
             "format": "json",
-            "useJwt": false,
+            "useJwt": true,
 	    "timeout": 8000
         }
     },
@@ -48,7 +48,7 @@
            "publish": {
            "url": "https://lc-sms.herokuapp.com/activity/publish",
             "verb": "POST",
-            "useJwt": false
+            "useJwt": true
             
        }
        
