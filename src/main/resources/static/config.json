@@ -38,9 +38,9 @@
             "verb": "POST",
             "body": "",
  			"header": "",
-            "format": "jwt",
+            "format": "json",
             "useJwt": true,
-			"customerKey" : "aeae8d68-e277-4bb9-a682-f61d7df23571",
+			"customerKey" : "79f9536e-b3fc-4a22-8d27-b1ed2cd1ee27",
             "timeout": 8000
         }
     },
