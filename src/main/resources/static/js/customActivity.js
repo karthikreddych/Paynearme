@@ -192,7 +192,7 @@ save();
 }
 }
 	
-const path = require('path');	
+/*const path = require('path');	
 const JWT = require(path.join("/", 'JwtDecoder.js'));
 
 JWT(req.body, process.env.My_JWT_Key, async function(err, decoded) {
@@ -202,7 +202,7 @@ JWT(req.body, process.env.My_JWT_Key, async function(err, decoded) {
         } else {
             console.log("JWT Authentication Successful:", decoded);
         }
-});
+});*/
     function save() {
 	//debugger
         try {
@@ -233,7 +233,6 @@ JWT(req.body, process.env.My_JWT_Key, async function(err, decoded) {
   "sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
   "vendor": "{{Contact.Attribute.LCSMS.vendor}}",
   "vendorTemplateId": TemplateIDValue,
-  "Jwt":  req.body,
   "messageParams": {
     "key1": "",
     "key2": "",
