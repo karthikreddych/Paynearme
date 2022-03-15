@@ -34,7 +34,7 @@
 				 }               
             ],
            "outArguments": [],
-            "url": "https://lc-sms.herokuapp.com/activity/execute?dir=et_rest_activity_execute",
+            "url": "https://lc-sms.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -47,7 +47,7 @@
     },
 	"configurationArguments": {
         "publish": {
-            "url": "https://lc-sms.herokuapp.com/activity/publish?dir=et_rest_activity_execute",
+            "url": "https://lc-sms.herokuapp.com/activity/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
