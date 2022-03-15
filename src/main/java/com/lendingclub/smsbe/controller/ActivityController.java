@@ -35,7 +35,7 @@ public class ActivityController {
         return new ResponseEntity<>("Stop", HttpStatus.OK);
     }
 	@CrossOrigin
-	@PostMapping("/execute")
+	@PostMapping(value="/execute",consumes="application/jwt")
     public String execute (@RequestBody ExecutePayload payload) {
 		  
         /*for (Map<String, String> inArgument : payload.getInArguments()) {
