@@ -38,7 +38,7 @@
             "verb": "POST",
             "body": "",
  			"header": "",
-            "format": "json",
+            "format": "jwt",
             "useJwt": true,
 			"customerKey" : "aeae8d68-e277-4bb9-a682-f61d7df23571",
             "timeout": 8000
@@ -51,7 +51,7 @@
             "verb": "POST",
             "body": "",
             "header": "",
-            "format": "jwt",
+            "format": "json",
             "useJwt": false,
 			
             "timeout": 8000
