@@ -40,7 +40,7 @@
             "header": "",
             "format": "json",
             "useJwt": true,
-	    "customerKey": "LCSMS",
+	    "customerKey": "0x48656c6c6f20776f726c64",
 	    "timeout": 8000
 	    
         }
@@ -53,7 +53,7 @@
             "body": "",
             "format": "json",
             "useJwt": true,
-	    "customerKey": "LCSMS",	
+	    "customerKey": "0x48656c6c6f20776f726c64",	
             "timeout": 8000
        }
        
