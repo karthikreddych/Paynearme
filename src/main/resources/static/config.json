@@ -52,7 +52,7 @@
             "body": "",
             "header": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
 			
             "timeout": 8000
        },
@@ -63,7 +63,7 @@
             "body": "",
             "header": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
 			
             "timeout": 8000
        },
@@ -72,7 +72,7 @@
             "verb": "POST",
             "body": "",
             "header": "",
-            "format": "json",
+            "format": "false",
             "useJwt": true,
 			
             "timeout": 8000
@@ -83,7 +83,7 @@
             "body": "",
             "header": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 9000
        }
     },
