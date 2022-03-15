@@ -33,11 +33,14 @@
 					 
 				 }               
             ],
-            "outArguments": [],
+           "outArguments": [],
             "url": "https://lc-sms.herokuapp.com/activity/execute",
+            "verb": "POST",
             "body": "",
             "header": "",
-            "useJwt": true
+            "format": "json",
+            "useJwt": true,
+	    "timeout": 8000
 	    
         }
     },
@@ -45,10 +48,12 @@
          "applicationExtensionKey": "5cdaf8b3-e2aa-4ddc-94ad-b660ce27b63f",		
 	 "publish": {
             "url": "https://lc-sms.herokuapp.com/activity/publish",
+            "verb": "POST",
             "body": "",
-            "header": "",
-            "useJwt": false
-		
+            "format": "json",
+            "useJwt": false,
+			
+            "timeout": 8000
        }
        
     },
