@@ -37,9 +37,9 @@
             "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
- 			"header": "",
+ 			"header": "50ZB43uWSQPzOiAVk5BAlagE5tDB143EtLu9_mPU1VYRcz82-ncHmOSGOEpDskKBsVBO8BD-c_qzqwWQz_aN8pN3zJ73sUMi_OTRbAXkeeDJQK9oTZ6w6qbctkG1kXViwoMz30NXc9QRHh6iBaBHn1ookgaWyooMIMqz08ZUN-2sbgyN0cr1tR5PUUU9EU6oRvq6FFoP2l3O3QTlpA0XZSZmsg88ugbN90F9GAf78D7eRiOyruf1k_cbrGrr7w2",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
 			
             "timeout": 8000
         }
