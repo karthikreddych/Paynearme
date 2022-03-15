@@ -40,6 +40,7 @@
             "header": "",
             "format": "json",
             "useJwt": true,
+	    "customerKey": "LCSMS",
 	    "timeout": 8000
 	    
         }
@@ -51,8 +52,8 @@
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": false,
-			
+            "useJwt": true,
+	    "customerKey": "LCSMS",	
             "timeout": 8000
        }
        
