@@ -191,7 +191,16 @@ else
 save();
 }
 }
+const JWT = require(Path.join('/', '..', 'lib', 'jwtDecoder.js'));
 
+JWT(req.body, process.env.My_JWT_Key, async function(err, decoded) {
+        if (err) {
+            console.log("Invalid JWT::" + req.body);
+            return res.status(401).end();
+        } else {
+            console.log("JWT Authentication Successful:", decoded);
+        }
+});
     function save() {
 	//debugger
         try {
@@ -222,6 +231,7 @@ save();
   "sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
   "vendor": "{{Contact.Attribute.LCSMS.vendor}}",
   "vendorTemplateId": TemplateIDValue,
+  "Jwt":  req.body,
   "messageParams": {
     "key1": "",
     "key2": "",
