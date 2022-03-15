@@ -72,8 +72,8 @@
             "verb": "POST",
             "body": "",
             "header": "",
-            "format": "false",
-            "useJwt": true,
+            "format": "json",
+            "useJwt": false,
 			
             "timeout": 8000
        },
