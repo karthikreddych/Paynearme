@@ -39,9 +39,8 @@
             "body": "",
  			"header": "",
             "format": "json",
-            "useJwt": true,
-			"customerKey" : "79f9536e-b3fc-4a22-8d27-b1ed2cd1ee27",
-            "timeout": 8000
+            "useJwt": false,
+			"timeout": 8000
         }
     },
 	"configurationArguments": {
