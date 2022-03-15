@@ -1,0 +1,23 @@
+{
+	"name": "LC SMS",
+	"version": "0.0.2",
+	"description": "Backend for the Salesforce Service Cloud custom split activity",
+	"main": "js/server.js",
+	"scripts": {
+		"start": "js/server.js"
+	},
+	"dependencies": {
+		"body-parser": "^1.17.1",
+		"express": "^4.15.2",
+		"jsforce": "^1.7.1",
+		"jsonwebtoken": "^7.4.0"
+	},
+	"options": {
+		"salesforce": {
+			
+			"marketingCloud": {
+				"jwtSecret": "LCSMS"
+			}
+		}
+	}
+}
