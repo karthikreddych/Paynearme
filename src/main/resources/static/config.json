@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "SMS Heroku",
+           "name": "SMSHeroku",
            "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
            
        }
@@ -37,10 +37,10 @@
             "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
- 			"header": "50ZB43uWSQPzOiAVk5BAlagE5tDB143EtLu9_mPU1VYRcz82-ncHmOSGOEpDskKBsVBO8BD-c_qzqwWQz_aN8pN3zJ73sUMi_OTRbAXkeeDJQK9oTZ6w6qbctkG1kXViwoMz30NXc9QRHh6iBaBHn1ookgaWyooMIMqz08ZUN-2sbgyN0cr1tR5PUUU9EU6oRvq6FFoP2l3O3QTlpA0XZSZmsg88ugbN90F9GAf78D7eRiOyruf1k_cbrGrr7w2",
+ 			"header": "",
             "format": "json",
-            "useJwt": false,
-			
+            "useJwt": true,
+			"customerKey" : "aeae8d68-e277-4bb9-a682-f61d7df23571",
             "timeout": 8000
         }
     },
