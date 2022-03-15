@@ -12,7 +12,7 @@ import com.lendingclub.smsbe.beans.RequestToCommsGatewayBeans;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/activity")
+@RequestMapping(value="/activity",consumes={"application/json", "application/jwt"})
 public class ActivityController {
 	@CrossOrigin
     @PostMapping("/save")
