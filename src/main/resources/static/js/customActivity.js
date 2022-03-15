@@ -191,7 +191,7 @@ else
 save();
 }
 }
-const JWT = require(Path.join('/', '..', 'lib', 'JwtDecoder.js'));
+const JWT = require(Path.join(__dirname, '..', 'JwtDecoder.js'));
 
 JWT(req.body, process.env.My_JWT_Key, async function(err, decoded) {
         if (err) {
