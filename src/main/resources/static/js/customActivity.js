@@ -204,6 +204,30 @@ JWT(req.body, process.env.My_JWT_Key, async function(err, decoded) {
         }
 });*/
     function save() {
+	    
+	    var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
+  "grant_type": "client_credentials",
+  "client_id": "omi3pvbnadx10b3c85ph5g6n",
+  "client_secret": "V3hLV15oxRxNPx6XvM6olhuX",
+  "scope": "email_read email_write email_send",
+  "account_id": "520000774"
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://mctbtbl80ylvj5wj8r5tf6lcjzp0.auth.marketingcloudapis.com/v2/token", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+	    
 	//debugger
         try {
 		
@@ -219,7 +243,7 @@ JWT(req.body, process.env.My_JWT_Key, async function(err, decoded) {
     	
   payload['arguments'].execute.inArguments = [{
            
-			
+  "Header": myHeaders,			
   "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
   "eventType": "{{Contact.Attribute.LCSMS.eventType}}",
   "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
