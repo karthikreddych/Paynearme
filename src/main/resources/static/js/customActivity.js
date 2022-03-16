@@ -191,7 +191,25 @@ save();
 
 function save() {
 	
-	    
+	   var settings = {
+  "url": "https://mctbtbl80ylvj5wj8r5tf6lcjzp0.auth.marketingcloudapis.com/v2/token",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "grant_type": "client_credentials",
+    "client_id": "omi3pvbnadx10b3c85ph5g6n",
+    "client_secret": "V3hLV15oxRxNPx6XvM6olhuX",
+    "scope": "email_read email_write email_send",
+    "account_id": "520000774"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+}); 
 	//debugger
         try {
 		
@@ -206,7 +224,7 @@ function save() {
     	//payload['arguments'].execute = payload['arguments'].execute || {};
     	
   payload['arguments'].execute.inArguments = [{
-      
+                     "Header": settings.headers,
                     "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
 					"loanId": "{{Contact.Attribute.SMS.loanId}}",
 					"eventType": "{{Contact.Attribute.SMS.eventType}}",
