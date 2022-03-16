@@ -281,8 +281,8 @@ fetch("https://mctbtbl80ylvj5wj8r5tf6lcjzp0.auth.marketingcloudapis.com/v2/token
 		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
-            document.getElement("error").style.display = "block";
-            document.getElement("error").innerHtml = err;
+            document.getElementById("error").style.display = "block";
+            document.getElementById("error").innerHtml = err;
         }
 
     
