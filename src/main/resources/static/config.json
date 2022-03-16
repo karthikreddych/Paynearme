@@ -50,19 +50,19 @@
            "url": "https://lc-sms.herokuapp.com/activity/save?dir=et_rest_activity_save",
            "body": "",
             "header": "",
-            "useJwt": true
+            "useJwt": false
        },
         "validate": {
            "url": "https://lc-sms.herokuapp.com/activity/validate?dir=et_rest_activity_validate",
             "body": "",
             "header": "",
-            "useJwt": true
+            "useJwt": false
        },
 	  "publish": {
            "url": "https://lc-sms.herokuapp.com/activity/publish?dir=et_rest_activity_publish",
             "body": "",
             "header": "",
-            "useJwt": true
+            "useJwt": false
        }
     },
        
