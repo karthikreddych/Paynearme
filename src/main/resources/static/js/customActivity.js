@@ -156,23 +156,19 @@ define([
 		debugger
 			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
 			$('#select-entryevent-defkey').val(eventDefinitionKey);
-
 			if (settings.triggers[0].type === 'SalesforceObjectTriggerV2' &&
 					settings.triggers[0].configurationArguments &&
 					settings.triggers[0].configurationArguments.eventDataConfig) {
-
 				// This workaround is necessary as Salesforce occasionally returns the eventDataConfig-object as string
 				if (typeof settings.triggers[0].configurationArguments.eventDataConfig === 'string' ||
 							!settings.triggers[0].configurationArguments.eventDataConfig.objects) {
 						settings.triggers[0].configurationArguments.eventDataConfig = JSON.parse(settings.triggers[0].configurationArguments.eventDataConfig);
 				}
-
 				settings.triggers[0].configurationArguments.eventDataConfig.objects.forEach((obj) => {
 					deFields = deFields.concat(obj.fields.map((fieldName) => {
 						return obj.dePrefix + fieldName;
 					}));
 				});
-
 				
 				}};
     console.log("deFields: " +JSON.stringify(deFields));
@@ -192,41 +188,9 @@ save();
 }
 }
 	
-/*const path = require('path');	
-const JWT = require(path.join("/", 'JwtDecoder.js'));
 
-JWT(req.body, process.env.My_JWT_Key, async function(err, decoded) {
-        if (err) {
-            console.log("Invalid JWT::" + req.body);
-            return res.status(401).end();
-        } else {
-            console.log("JWT Authentication Successful:", decoded);
-        }
-});*/
-    function save() {
-	    
-	/*    var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
-var raw = JSON.stringify({
-  "grant_type": "client_credentials",
-  "client_id": "omi3pvbnadx10b3c85ph5g6n",
-  "client_secret": "V3hLV15oxRxNPx6XvM6olhuX",
-  "scope": "email_read email_write email_send",
-  "account_id": "520000774"
-});
-
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
-
-fetch("https://mctbtbl80ylvj5wj8r5tf6lcjzp0.auth.marketingcloudapis.com/v2/token", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));*/
+function save() {
+	
 	    
 	//debugger
         try {
@@ -242,8 +206,21 @@ fetch("https://mctbtbl80ylvj5wj8r5tf6lcjzp0.auth.marketingcloudapis.com/v2/token
     	//payload['arguments'].execute = payload['arguments'].execute || {};
     	
   payload['arguments'].execute.inArguments = [{
-           
-  "Header": myHeaders,			
+      
+                    "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
+					"loanId": "{{Contact.Attribute.SMS.loanId}}",
+					"eventType": "{{Contact.Attribute.SMS.eventType}}",
+					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+					"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+					"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+					"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+					"vendor": "{{Contact.Attribute.SMS.vendor}}",
+					"contacts": "{{Contact.Attribute.SMS.contacts}}",
+					"countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}"	  
+ /*  "Header": myHeaders,			
   "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
   "eventType": "{{Contact.Attribute.LCSMS.eventType}}",
   "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
@@ -269,7 +246,7 @@ fetch("https://mctbtbl80ylvj5wj8r5tf6lcjzp0.auth.marketingcloudapis.com/v2/token
   "messageSchedulingOptionsList": [{
       "scheduleTime": "{{Contact.Attribute.LCSMS.scheduleTime}}",
       "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
-    }]
+    }] */
 
 }];
         
