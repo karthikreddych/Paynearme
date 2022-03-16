@@ -208,7 +208,7 @@ function save() {
 };
 
 $.ajax(settings).done(function (response) {
-  console.log(response);
+  console.log("Response:"+response);
 }); 
 	//debugger
         try {
