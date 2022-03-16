@@ -15,8 +15,7 @@
     },
     "arguments": {
         "execute": {
-            "url": "https://lc-sms.herokuapp.com/activity/execute",
-	    "headers": "",
+            
             "inArguments": [
                 {
 					"emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
@@ -36,7 +35,9 @@
 				 }               
             ],
             "outArguments": [],
-            "method": "POST",
+	    "url": "https://lc-sms.herokuapp.com/activity/execute",
+	    "headers": "",	
+            "verb": "POST",
             "body": "Hello",
             "useJwt": true,
 	    "timeout": 8000
