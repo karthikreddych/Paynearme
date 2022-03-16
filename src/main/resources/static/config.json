@@ -51,8 +51,8 @@
             "url": "https://lc-sms.herokuapp.com/activity/publish",
             "verb": "POST",
             "useJwt": false,
-	    "timeout": 8000,
-	    "headers": "https://lc-sms.herokuapp.com/activity/publish"
+	    "timeout": 8000
+	   
             
        }
        
