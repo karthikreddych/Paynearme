@@ -8,43 +8,12 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "LC--SMS",
+           "name": "LC SMS",
            "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
            
        }
     },
-    "arguments": {
-        "execute": {
-            "inArguments": [
-                {
-					"emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
-					"loanId": "{{Contact.Attribute.SMS.loanId}}",
-					"eventType": "{{Contact.Attribute.SMS.eventType}}",
-					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
-					"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
-					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
-					"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
-					"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
-					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
-					"vendor": "{{Contact.Attribute.SMS.vendor}}",
-					"contacts": "{{Contact.Attribute.SMS.contacts}}",
-					"countrycode": "{{Contact.Attribute.SMS.countrycode}}",
-					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}"
-					 
-				 }               
-            ],
-            "outArguments": [],
-            "url": "https://lc-sms.herokuapp.com/activity/execute",
-            "verb": "POST",
-            "body": "",
- 	    "header": "",
-            "format": "json",
-            "useJwt": true,
-	    "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",	
-            "timeout": 8000
-        }
-    },
-	"configurationArguments": {
+   "configurationArguments": {
       "applicationExtensionKey": "5cdaf8b3-e2aa-4ddc-94ad-b660ce27b63f",
        "save": {
            "url": "https://lc-sms.herokuapp.com/activity/save",
@@ -98,6 +67,37 @@
         }
 
 
+    },
+	 "arguments": {
+        "execute": {
+            "inArguments": [
+                {
+					"emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
+					"loanId": "{{Contact.Attribute.SMS.loanId}}",
+					"eventType": "{{Contact.Attribute.SMS.eventType}}",
+					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
+					"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
+					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
+					"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
+					"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
+					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
+					"vendor": "{{Contact.Attribute.SMS.vendor}}",
+					"contacts": "{{Contact.Attribute.SMS.contacts}}",
+					"countrycode": "{{Contact.Attribute.SMS.countrycode}}",
+					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}"
+					 
+				 }               
+            ],
+            "outArguments": [],
+            "url": "https://lc-sms.herokuapp.com/activity/execute",
+            "verb": "POST",
+            "body": "",
+ 	    "header": "",
+            "format": "json",
+            "useJwt": true,
+	    "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",	
+            "timeout": 8000
+        }
     },
 	"schema": {
         "arguments": {
