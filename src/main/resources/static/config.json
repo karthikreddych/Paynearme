@@ -15,6 +15,8 @@
     },
     "arguments": {
         "execute": {
+            "url": "https://lc-sms.herokuapp.com/activity/execute",
+	    "headers": "",
             "inArguments": [
                 {
 					"emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
@@ -33,13 +35,10 @@
 					 
 				 }               
             ],
-           "outArguments": [],
-            "url": "https://lc-sms.herokuapp.com/activity/execute",
-            "verb": "POST",
-            "body": "",
-            "header": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiI2UEd2RE03TGNTVldqajg1aWZQb1Z4WXAiLCJjbGllbnRfaWQiOiJvbWkzcHZibmFkeDEwYjNjODVwaDVnNm4iLCJlaWQiOjUyMDAwMDI5MSwic3RhY2tfa2V5IjoiUzYiLCJwbGF0Zm9ybV92ZXJzaW9uIjoyLCJjbGllbnRfdHlwZSI6IlNlcnZlclRvU2VydmVyIn0.xNeCP912X0EzMB0bmwVUdL1cF_YTjerFvsmFW6Ot6Yo.Jy4rvdoObA32oZsgcTr6Y986Ov6yD9_3YiYban4KTK8eyZpvqEyTK_8y9jNVqW8nw7b6Fr5pCxhONFqz8wGO7FTsAaifiruTpg7_gBirobm29KbIDzXwtb6CIXTx4Dj9owrfaajHiDj7Z3CwaYoAo5Kh_P5bxtwe-0vpHWlHocbWAd0OzDgR",
-            "format": "json",
-            "useJwt": false,
+            "outArguments": [],
+            "method": "POST",
+            "body": "Hello",
+            "useJwt": true,
 	    "timeout": 8000
 	    
         }
@@ -49,7 +48,9 @@
         "publish": {
             "url": "https://lc-sms.herokuapp.com/activity/publish",
             "verb": "POST",
-            "useJwt": false
+            "useJwt": false,
+	    "timeout": 8000,
+	    "headers": "https://lc-sms.herokuapp.com/activity/publish",
             
        }
        
