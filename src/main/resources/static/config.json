@@ -40,7 +40,7 @@
             "body": "",
  	    "header": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
 	    "timeout": 8000
 	    
         }
