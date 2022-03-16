@@ -71,7 +71,7 @@
 	 "arguments": {
         "execute": {
             "inArguments": [
-                {
+                /*{
 					"emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
 					"loanId": "{{Contact.Attribute.SMS.loanId}}",
 					"eventType": "{{Contact.Attribute.SMS.eventType}}",
@@ -86,7 +86,7 @@
 					"countrycode": "{{Contact.Attribute.SMS.countrycode}}",
 					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}"
 					 
-				 }               
+				 }*/               
             ],
             "outArguments": [],
             "url": "https://lc-sms.herokuapp.com/activity/execute",
