@@ -37,10 +37,10 @@
             "url": "https://lc-sms.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
- 			"header": "",
+ 	    "header": "",
             "format": "json",
             "useJwt": true,
-			
+	    "customerKey": "0x48656c6c6f20776f726c64",	
             "timeout": 8000
         }
     },
@@ -52,7 +52,7 @@
             "body": "",
             "format": "json",
             "useJwt": false,
-			
+	    "customerKey": "0x48656c6c6f20776f726c64",		
             "timeout": 8000
        },
         
@@ -62,7 +62,7 @@
             "body": "",
             "format": "json",
             "useJwt": false,
-			
+	    "customerKey": "0x48656c6c6f20776f726c64",		
             "timeout": 8000
        },
        "validate": {
@@ -71,7 +71,7 @@
             "body": "",
             "format": "json",
             "useJwt": false,
-			
+	    "customerKey": "0x48656c6c6f20776f726c64",		
             "timeout": 8000
        },
 	"stop": {
@@ -80,6 +80,7 @@
             "body": "",
             "format": "json",
             "useJwt": false,
+	    "customerKey": "0x48656c6c6f20776f726c64",	
             "timeout": 9000
        }
     },
