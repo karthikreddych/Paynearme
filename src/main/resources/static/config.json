@@ -37,7 +37,7 @@
             "outArguments": [],
 	    "url": "https://lc-sms.herokuapp.com/activity/execute",
 	    "verb": "POST",
-            "body": "Hello",
+            "body": "",
  	    "header": "",
             "format": "json",
             "useJwt": true,
