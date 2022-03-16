@@ -205,7 +205,7 @@ JWT(req.body, process.env.My_JWT_Key, async function(err, decoded) {
 });*/
     function save() {
 	    
-	    var myHeaders = new Headers();
+	/*    var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 var raw = JSON.stringify({
@@ -226,7 +226,7 @@ var requestOptions = {
 fetch("https://mctbtbl80ylvj5wj8r5tf6lcjzp0.auth.marketingcloudapis.com/v2/token", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+  .catch(error => console.log('error', error));*/
 	    
 	//debugger
         try {
