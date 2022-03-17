@@ -191,25 +191,6 @@ save();
 
 function save() {
 	
-	   var settings = {
-  "url": "https://mctbtbl80ylvj5wj8r5tf6lcjzp0.auth.marketingcloudapis.com/v2/token",
-  "method": "POST",
-  "timeout": 0,
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "data": JSON.stringify({
-    "grant_type": "client_credentials",
-    "client_id": "omi3pvbnadx10b3c85ph5g6n",
-    "client_secret": "V3hLV15oxRxNPx6XvM6olhuX",
-    "scope": "email_read email_write email_send",
-    "account_id": "520000774"
-  }),
-};
-
-$.ajax(settings).done(function (response) {
-  console.log("Response:"+response);
-}); 
 	//debugger
         try {
 		
@@ -224,47 +205,32 @@ $.ajax(settings).done(function (response) {
     	//payload['arguments'].execute = payload['arguments'].execute || {};
     	
   payload['arguments'].execute.inArguments = [{
-                   /* "jwt": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiI2UEd2RE03TGNTVldqajg1aWZQb1Z4WXAiLCJjbGllbnRfaWQiOiJvbWkzcHZibmFkeDEwYjNjODVwaDVnNm4iLCJlaWQiOjUyMDAwMDI5MSwic3RhY2tfa2V5IjoiUzYiLCJwbGF0Zm9ybV92ZXJzaW9uIjoyLCJjbGllbnRfdHlwZSI6IlNlcnZlclRvU2VydmVyIn0.xNeCP912X0EzMB0bmwVUdL1cF_YTjerFvsmFW6Ot6Yo.Jy4rvdoObA32oZsgcTr6Y986Ov6yD9_3YiYban4KTK8eyZpvqEyTK_8y9jNVqW8nw7b6Fr5pCxhONFqz8wGO7FTsAaifiruTpg7_gBirobm29KbIDzXwtb6CIXTx4Dj9owrfaajHiDj7Z3CwaYoAo5Kh_P5bxtwe-0vpHWlHocbWAd0OzDgR",
-                    "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
-					"loanId": "{{Contact.Attribute.SMS.loanId}}",
-					"eventType": "{{Contact.Attribute.SMS.eventType}}",
-					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
-					"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
-					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
-					"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
-					"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
-					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
-					"vendor": "{{Contact.Attribute.SMS.vendor}}",
-					"contacts": "{{Contact.Attribute.SMS.contacts}}",
-					"countrycode": "{{Contact.Attribute.SMS.countrycode}}",
-					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}"*/	  
- /*  "Header": myHeaders,			
-  "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
-  "eventType": "{{Contact.Attribute.LCSMS.eventType}}",
-  "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
-  "primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
-  "externalReferences": [],
-  "businessUnit": "{{Contact.Attribute.LCSMS.businessUnit}}",
-  "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
-  "messageSubjectLine": "{{Contact.Attribute.LCSMS.messageSubjectLine}}",
-  "note": "{{Contact.Attribute.LCSMS.note}}",
-  "source": "{{Contact.Attribute.LCSMS.source}}",
-  "sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
-  "vendor": "{{Contact.Attribute.LCSMS.vendor}}",
-  "vendorTemplateId": TemplateIDValue,
-  "messageParams": {
-    "key1": "",
-    "key2": "",
-  },
-  "messageOptions": {
-    "doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
-    "channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
-    "doNotCheckLCSMSCompliance": "{{Contact.Attribute.LCSMS.doNotCheckLCSMSCompliance}}",
-  },
-  "messageSchedulingOptionsList": [{
-      "scheduleTime": "{{Contact.Attribute.LCSMS.scheduleTime}}",
-      "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
-    }] */
+                  "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
+				"eventType": TemplateNameValue,
+				"communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
+				"primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
+				"externalReferences": [],
+				"businessUnit": "{{Contact.Attribute.LCSMS.businessUnit}}",
+				"messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
+				"messageSubjectLine": "{{Contact.Attribute.LCSMS.messageSubjectLine}}",
+				"note": "{{Contact.Attribute.LCSMS.note}}",
+				"source": "{{Contact.Attribute.LCSMS.source}}",
+				"sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
+				"vendor": "{{Contact.Attribute.LCSMS.vendor}}",
+				"vendorTemplateId": TemplateIDValue,
+				"messageParams": {
+					"key1": "",
+					"key2": ""
+				},
+				"messageOptions": {
+					"doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
+					"channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
+					"doNotCheckLCSMSCompliance": "{{Contact.Attribute.LCSMS.doNotCheckLCSMSCompliance}}"
+				},
+				"messageSchedulingOptionsList": [{
+					"scheduleTime": "{{Contact.Attribute.LCSMS.scheduleTime}}",
+					"messageContent": "{{Contact.Attribute.LCSMS.messageContent}}"
+				}]
 
 }];
         
