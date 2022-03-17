@@ -225,7 +225,7 @@ function save() {
 				"messageOptions": {
 					"doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
 					"channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
-					"doNotCheckLCSMSCompliance": "{{Contact.Attribute.LCSMS.doNotCheckLCSMSCompliance}}"
+					"doNotCheckSmsCompliance": "{{Contact.Attribute.LCSMS.doNotCheckSmsCompliance}}"
 				},
 				"messageSchedulingOptionsList": [{
 					"scheduleTime": "{{Contact.Attribute.LCSMS.scheduleTime}}",
