@@ -22,7 +22,7 @@
 			"body": "",
 			"header": "",
 			"format": "json",
-			"useJwt": true,
+			"useJwt": false,
 			"customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
 			"timeout": 8000
 		}
@@ -33,26 +33,26 @@
 			"url": "https://lc-sms.herokuapp.com/activity/save",
 			"verb": "POST",
                         "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
-                        "useJwt": true
+                        "useJwt": false
 		},
 
 		"publish": {
 			"url": "https://lc-sms.herokuapp.com/activity/publish",
 			"verb": "POST",
                         "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
-                        "useJwt": true
+                        "useJwt": false
 		},
 		"validate": {
 			"url": "https://lc-sms.herokuapp.com/activity/validate",
 			"verb": "POST",
                         "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
-                        "useJwt": true
+                        "useJwt": false
 		},
 		"stop": {
 			"url": "https://lc-sms.herokuapp.com/activity/stop",
 			"verb": "POST",
                         "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
-                        "useJwt": true
+                        "useJwt": false
 		}
 	},
 
