@@ -17,7 +17,7 @@
 		"execute": {
 			"inArguments": [],
 			"outArguments": [],
-			"url": "https://lc-sms.herokuapp.com/activity/execute",
+			"url": "https://lc-sms.herokuapp.com/journeybuilder/execute",
 			"verb": "POST",
 			"body": "",
 			"header": "",
@@ -30,26 +30,26 @@
 	"configurationArguments": {
 		"applicationExtensionKey": "5cdaf8b3-e2aa-4ddc-94ad-b660ce27b63f",
 		"save": {
-			"url": "https://lc-sms.herokuapp.com/activity/save",
+			"url": "https://lc-sms.herokuapp.com/journeybuilder/save",
 			"verb": "POST",
                         "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
                         "useJwt": true
 		},
 
 		"publish": {
-			"url": "https://lc-sms.herokuapp.com/activity/publish",
+			"url": "https://lc-sms.herokuapp.com/journeybuilder/publish",
 			"verb": "POST",
                         "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
                         "useJwt": true
 		},
 		"validate": {
-			"url": "https://lc-sms.herokuapp.com/activity/validate",
+			"url": "https://lc-sms.herokuapp.com/journeybuilder/validate",
 			"verb": "POST",
                         "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
                         "useJwt": true
 		},
 		"stop": {
-			"url": "https://lc-sms.herokuapp.com/activity/stop",
+			"url": "https://lc-sms.herokuapp.com/journeybuilder/stop",
 			"verb": "POST",
                         "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
                         "useJwt": true
