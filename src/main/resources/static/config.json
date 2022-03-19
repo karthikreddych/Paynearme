@@ -13,44 +13,46 @@
 
 		}
 	},
+	"arguments": {
+		"execute": {
+			"inArguments": [],
+			"outArguments": [],
+			"url": "https://lc-sms.herokuapp.com/activity/execute",
+			"verb": "POST",
+			"body": "",
+			"header": "",
+			"format": "json",
+			"useJwt": true,
+			"customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
+			"timeout": 8000
+		}
+	},
 	"configurationArguments": {
 		"applicationExtensionKey": "5cdaf8b3-e2aa-4ddc-94ad-b660ce27b63f",
 		"save": {
 			"url": "https://lc-sms.herokuapp.com/activity/save",
 			"verb": "POST",
-			"body": "",
-			"format": "json",
-			"useJwt": false,
-			"customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
-			"timeout": 8000
+                        "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
+                        "useJwt": true
 		},
 
 		"publish": {
 			"url": "https://lc-sms.herokuapp.com/activity/publish",
 			"verb": "POST",
-			"body": "",
-			"format": "json", 
-			"useJwt": false,
-			"customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
-			"timeout": 8000
+                        "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
+                        "useJwt": true
 		},
 		"validate": {
 			"url": "https://lc-sms.herokuapp.com/activity/validate",
 			"verb": "POST",
-			"body": "",
-			"format": "json",
-			"useJwt": false,
-			"customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
-			"timeout": 8000
+                        "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
+                        "useJwt": true
 		},
 		"stop": {
 			"url": "https://lc-sms.herokuapp.com/activity/stop",
 			"verb": "POST",
-			"body": "",
-			"format": "json",
-			"useJwt": false,
-			"customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
-			"timeout": 9000
+                        "customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
+                        "useJwt": true
 		}
 	},
 
@@ -70,49 +72,7 @@
 
 
 	},
-	"arguments": {
-		"execute": {
-			"inArguments": [{
-
-				"loanId": "{{Contact.Attribute.LCSMS.loanId}}",
-				"eventType": "TemplateNameValue",
-				"communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
-				"primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
-				"externalReferences": [],
-				"businessUnit": "{{Contact.Attribute.LCSMS.businessUnit}}",
-				"messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
-				"messageSubjectLine": "{{Contact.Attribute.LCSMS.messageSubjectLine}}",
-				"note": "{{Contact.Attribute.LCSMS.note}}",
-				"source": "{{Contact.Attribute.LCSMS.source}}",
-				"sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
-				"vendor": "{{Contact.Attribute.LCSMS.vendor}}",
-				"vendorTemplateId": "TemplateIDValue",
-				"messageParams": {
-					"key1": "",
-					"key2": ""
-				},
-				"messageOptions": {
-					"doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
-					"channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
-					"doNotCheckSmsCompliance": "{{Contact.Attribute.LCSMS.doNotCheckSmsCompliance}}"
-				},
-				"messageSchedulingOptionsList": [{
-					"scheduleTime": "{{Contact.Attribute.LCSMS.scheduleTime}}",
-					"messageContent": "{{Contact.Attribute.LCSMS.messageContent}}"
-				}]
-
-			}],
-			"outArguments": [],
-			"url": "https://lc-sms.herokuapp.com/activity/execute",
-			"verb": "POST",
-			"body": "",
-			"header": "",
-			"format": "json",
-			"useJwt": false,
-			"customerKey": "c28122fe-4a15-47e8-8d99-1c8ec49072b0",
-			"timeout": 8000
-		}
-	},
+	
 	"schema": {
 		"arguments": {
 			"execute": {
