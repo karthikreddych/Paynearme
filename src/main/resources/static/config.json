@@ -37,9 +37,9 @@
             "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
- 			"header": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDczNTYwNDksImp0aSI6IjZYUldEdmlnR0RkV3lsbEFONFQ3aE1WU2MzOCIsInJlcXVlc3QiOnsiY2xhaW1zVmVyc2lvbiI6MiwidXNlciI6eyJpZCI6NzE4MDg5NzY2LCJlbWFpbCI6Im1rYXJpbWVlQGxlbmRpbmdjbHViLmNvbSIsImN1bHR1cmUiOiJlbi1VUyIsInRpbWV6b25lIjp7ImxvbmdOYW1lIjoiKEdNVC0wODowMCkgUGFjaWZpYyBUaW1lIChVUyAmIENhbmFkYSkgKiIsInNob3J0TmFtZSI6IkdNVC04Iiwib2Zmc2V0IjotOCwiZHN0Ijp0cnVlfX0sInJlc3QiOnsiYXV0aEVuZHBvaW50IjoiaHR0cHM6Ly9tY3RidGJsODB5bHZqNXdqOHI1dGY2bGNqenAwLmF1dGgubWFya2V0aW5nY2xvdWRhcGlzLmNvbS92MS9yZXF1ZXN0VG9rZW4iLCJhcGlFbmRwb2ludEJhc2UiOiJodHRwczovL21jdGJ0Ymw4MHlsdmo1d2o4cjV0ZjZsY2p6cDAucmVzdC5tYXJrZXRpbmdjbG91ZGFwaXMuY29tLyIsInJlZnJlc2hUb2tlbiI6IjZTNXJ0T3h0VFJSdGFhY0RQdXhiOXR0YSJ9LCJvcmdhbml6YXRpb24iOnsiaWQiOjUyMDAwMDc3NCwiZW50ZXJwcmlzZUlkIjo1MjAwMDAyOTEsImRhdGFDb250ZXh0IjoiZW50ZXJwcmlzZSIsInN0YWNrS2V5IjoiUzYiLCJyZWdpb24iOiJOQTEifSwiYXBwbGljYXRpb24iOnsiaWQiOiI4ZDA4YTI2Mi1hNDgwLTRlNDItYWFmMy1mN2Q5NjdmYWQ2MjIiLCJwYWNrYWdlIjoiOGQwOGEyNjItYTQ4MC00ZTQyLWFhZjMtZjdkOTY3ZmFkNjIyLjhkMDhhMjYyLWE0ODAtNGU0Mi1hYWYzLWY3ZDk2N2ZhZDYyMiIsInJlZGlyZWN0VXJsIjoiaHR0cHM6Ly9lbWkudXMuc2ZtYy1laW5zdGVpbi5jb20vdWkvIiwiZmVhdHVyZXMiOnt9LCJ1c2VyUGVybWlzc2lvbnMiOltdfSwicXVlcnkiOnsiZGVlcExpbmsiOiIvbm90aWZpY2F0aW9ucz9jb3VudD10cnVlIn19fQ.d9844_on2bi_GSBPcsFX574mXKQNuC4jxs09tIdonE8",
+ 			"header": "",
             "format": "json",
-            "useJwt": false,
+            "useJwt": true,
 			
             "timeout": 8000
         }
