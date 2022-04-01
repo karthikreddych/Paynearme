@@ -244,7 +244,8 @@ save();
         
         //payload['arguments'].execute.headers = "{\"authorization\":\"LC-API2TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
         payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
-        payload['configurationArguments'].save.headers = `{"Authorization":"authOne"}`.replace("authOne", authOne);
+        payload['configurationArguments'].save.headers = `{"Authorization":"` + authOne +`"}`;
+        //payload['configurationArguments'].save.headers = `{"Authorization":"authOne"}`.replace("authOne", authOne);
         //payload['configurationArguments'].save.headers = saveauth;
 		//payload['configurationArguments'].save.headers = JSON.stringify({ Authorization: authone});
        // payload['configurationArguments'].validate.headers = `{"Authorization":"${auth}"}`;
