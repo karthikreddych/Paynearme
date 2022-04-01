@@ -252,8 +252,8 @@ save();
 		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
-            documnet.getElementById("error").style.display = "block";
-            documnet.getElementById("error").innerHtml = err;
+            document.getElementById("error").style.display = "block";
+            document.getElementById("error").innerHtml = err;
         }
 
     
