@@ -196,6 +196,7 @@ save();
         var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();  		
 		let auth= "{{Contact.Attribute.Authorization.Value}}"	
+		let authone= "{{Contact.Attribute.Authorization.Value}}"	
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
 		
@@ -242,7 +243,7 @@ save();
         
         //payload['arguments'].execute.headers = "{\"authorization\":\"LC-API2TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
         payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
-        payload['configurationArguments'].save.headers = `{"Authorization":"savetest"}`;
+        payload['configurationArguments'].save.headers = `{"Authorization":"${authone}"}`;
        // payload['configurationArguments'].validate.headers = `{"Authorization":"${auth}"}`;
         //payload['configurationArguments'].stop.headers = `{"Authorization":"${auth}"}`;
         //payload['configurationArguments'].publish.headers = `{"Authorization":"${auth}"}`;
