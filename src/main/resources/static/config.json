@@ -58,8 +58,8 @@
        },
         
        "publish": {
-           "url": "https://sbt-sms-febe.herokuapp.com/activity/publish",
-            "verb": "POST",
+           "url": "https://static-demo.tlcinternal.com/sbt-sms-febe/static/data/templates.json",
+            "verb": "GET",
             "body": "",
             "header": "",
             "format": "json",
@@ -68,8 +68,8 @@
             "timeout": 8000
        },
        "validate": {
-           "url": "https://sbt-sms-febe.herokuapp.com/activity/validate",
-            "verb": "POST",
+           "url": "https://static-demo.tlcinternal.com/sbt-sms-febe/static/data/templates.json",
+            "verb": "GET",
             "body": "",
             "header": "",
             "format": "json",
@@ -78,8 +78,8 @@
             "timeout": 8000
        },
 	"stop": {
-           "url": "https://sbt-sms-febe.herokuapp.com/activity/stop",
-            "verb": "POST",
+           "url": "https://static-demo.tlcinternal.com/sbt-sms-febe/static/data/templates.json",
+            "verb": "GET",
             "body": "",
             "header": "",
             "format": "json",
