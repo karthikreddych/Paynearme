@@ -48,16 +48,16 @@
      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
       
       "save": {
-			"url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json/save"
+			"url": "https://sbt-sms-febe.herokuapp.com/activity/save"
 		},
 		"publish": {
-			"url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json/publish"
+			"url": "https://sbt-sms-febe.herokuapp.com/activity/publish"
 		},
 		"validate": {
-			"url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json/validate"
+			"url": "https://sbt-sms-febe.herokuapp.com/activity/validate"
 		},
 		"stop": {
-			"url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json/stop"
+			"url": "https://sbt-sms-febe.herokuapp.com/activity/stop"
 		} 
     },
        
