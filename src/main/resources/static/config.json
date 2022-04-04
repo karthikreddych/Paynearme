@@ -29,8 +29,8 @@
 					"vendor": "{{Contact.Attribute.SMS.vendor}}",
 					"contacts": "{{Contact.Attribute.SMS.contacts}}",
 					"countrycode": "{{Contact.Attribute.SMS.countrycode}}",
-					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
-					"auth" : "{{Contact.Attribute.Authorization.Value}}"
+					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}"
+					
 					 
 				 }               
             ],
@@ -38,7 +38,7 @@
             "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
- 			"headers": "",
+ 			"header": "",
             "format": "json",
             "useJwt": false,
 			
@@ -52,7 +52,7 @@
 			"url": "https://sbt-sms-febe.herokuapp.com/activity/save",
 			 "verb": "POST",
             "body": "",
- 			"headers": "",
+ 			"header": "",
             "format": "json",
             "useJwt": false,
 			
@@ -62,7 +62,7 @@
 			"url": "https://sbt-sms-febe.herokuapp.com/activity/publish",
 			 "verb": "POST",
             "body": "",
- 			"headers": "",
+ 			"header": "",
             "format": "json",
             "useJwt": false,
 			
@@ -72,7 +72,7 @@
 			"url": "https://sbt-sms-febe.herokuapp.com/activity/validate",
 			 "verb": "POST",
             "body": "",
- 			"headers": "",
+ 			"header": "",
             "format": "json",
             "useJwt": false,
 			
@@ -82,7 +82,7 @@
 			"url": "https://sbt-sms-febe.herokuapp.com/activity/stop",
 			 "verb": "POST",
             "body": "",
- 			"headers": "",
+ 			"header": "",
             "format": "json",
             "useJwt": false,
 			
