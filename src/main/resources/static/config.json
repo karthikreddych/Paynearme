@@ -29,7 +29,8 @@
 					"vendor": "{{Contact.Attribute.SMS.vendor}}",
 					"contacts": "{{Contact.Attribute.SMS.contacts}}",
 					"countrycode": "{{Contact.Attribute.SMS.countrycode}}",
-					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}"
+					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
+					"auth" : "{{Contact.Attribute.Authorization.Value}}"
 					 
 				 }               
             ],
