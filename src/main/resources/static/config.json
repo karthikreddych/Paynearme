@@ -45,8 +45,20 @@
         }
     },
 	"configurationArguments": {
-     "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501"
-       
+     "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
+      
+      "save": {
+			"url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json/save"
+		},
+		"publish": {
+			"url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json/publish"
+		},
+		"validate": {
+			"url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json/validate"
+		},
+		"stop": {
+			"url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json/stop"
+		} 
     },
        
     "wizardSteps": [
