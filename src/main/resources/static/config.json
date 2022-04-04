@@ -48,7 +48,7 @@
      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
        "save": {
            "url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json",
-            "verb": "GET",
+            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
@@ -59,7 +59,7 @@
         
        "publish": {
            "url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json",
-            "verb": "GET",
+            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
@@ -69,7 +69,7 @@
        },
        "validate": {
            "url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json",
-            "verb": "GET",
+            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
@@ -79,7 +79,7 @@
        },
 	"stop": {
            "url": "https://d30kb3imei2geq.cloudfront.net/sbt-sms-febe/static/data/templates.json",
-            "verb": "GET",
+            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
