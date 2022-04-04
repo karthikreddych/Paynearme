@@ -45,47 +45,8 @@
         }
     },
 	"configurationArguments": {
-     "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
-       "save": {
-           "url": "",
-            "verb": "POST",
-            "body": "",
-            "header": "",
-            "format": "json",
-            "useJwt": false,
-			
-            "timeout": 8000
-       },
-        
-       "publish": {
-           "url": "",
-            "verb": "POST",
-            "body": "",
-            "header": "",
-            "format": "json",
-            "useJwt": false,
-			
-            "timeout": 8000
-       },
-       "validate": {
-           "url": "",
-            "verb": "POST",
-            "body": "",
-            "header": "",
-            "format": "json",
-            "useJwt": false,
-			
-            "timeout": 8000
-       },
-	"stop": {
-           "url": "",
-            "verb": "POST",
-            "body": "",
-            "header": "",
-            "format": "json",
-            "useJwt": false,
-            "timeout": 9000
-       }
+     "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501"
+       
     },
        
     "wizardSteps": [
