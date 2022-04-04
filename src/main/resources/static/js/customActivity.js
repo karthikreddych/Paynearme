@@ -195,9 +195,8 @@ save();
       try {  
         var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();  		
-		//let auth= "{{Contact.Attribute.Authorization.Value}}"
-		var auth = "{{Event." + eventDefinitionKey + '."Value"}}'
-		alert(auth);
+		let auth= "{{Contact.Attribute.Authorization.Value}}"
+		
 		//let saveauth = "{'Authorization':'"+auth+"'}"
 		//let authOne= "{{Contact.Attribute.Authorization.Value}}"	
 	    //payload['metaData'].isConfigured = true;
