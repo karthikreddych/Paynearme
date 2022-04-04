@@ -240,15 +240,15 @@ save();
 			 "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
 			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
-			"auth" : "{{Contact.Attribute.Authorization.Value}}",
+			//"auth" : "{{Contact.Attribute.Authorization.Value}}",
         }];
         
         //payload['arguments'].execute.headers = "{\"authorization\":\"LC-API2TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
         payload['arguments'].execute.header = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
-        payload['configurationArguments'].save.header = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
-        payload['configurationArguments'].validate.header = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
-        payload['configurationArguments'].publish.header = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
-        payload['configurationArguments'].stop.header = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
+        payload['configurationArguments'].save.headers = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
+        payload['configurationArguments'].validate.headers = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
+        payload['configurationArguments'].publish.headers = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
+        payload['configurationArguments'].stop.headers = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
                 
         
         //payload['configurationArguments'].save.headers = `{"Authorization":"` + authOne +`"}`;
