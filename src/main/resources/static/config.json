@@ -37,7 +37,7 @@
             "outArguments": [],
             "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/execute",
             "verb": "POST",
-            "body": "Authorization:{{auth}}",
+            "body": "",
  			"header": "",
             "format": "json",
             "useJwt": false,
@@ -49,7 +49,7 @@
      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
       
       "save": {
-			"url": "https://jsonplaceholder.typicode.com/posts",
+			"url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/save",
 			 "verb": "POST",
             "body": "",
  			"header": "",
@@ -59,7 +59,7 @@
             "timeout": 8000
 		},
 		"publish": {
-			"url": "https://jsonplaceholder.typicode.com/posts",
+			"url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/publish",
 			 "verb": "POST",
             "body": "",
  			"header": "",
@@ -69,7 +69,7 @@
             "timeout": 8000
 		},
 		"validate": {
-			"url": "https://jsonplaceholder.typicode.com/posts",
+			"url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/validate",
 			 "verb": "POST",
             "body": "",
  			"header": "",
@@ -79,7 +79,7 @@
             "timeout": 8000
 		},
 		"stop": {
-			"url": "https://jsonplaceholder.typicode.com/posts",
+			"url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/stop",
 			 "verb": "POST",
             "body": "",
  			"header": "",
