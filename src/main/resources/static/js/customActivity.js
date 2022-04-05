@@ -234,7 +234,8 @@ define([
 			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
         }];
-   payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
+   
+   		//payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
         
 
         
