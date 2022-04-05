@@ -181,7 +181,7 @@ define([
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
         let auth= "{{Contact.Attribute.Authorization.Value}}"
-         let auth1= "configargument"
+         let auth1= "LC-API2 U0VCN0Y0Nk9ORFNGMUIyNEowVTA6NkExMTNDRTRBODA3RTBFMzkwRTI2NEQ4NzFDNDUwNzhERTUyQUU3N0E2ODg1M0QyOUFEQTYyNEY1MTkwMTg4QjUzQkQxMTVCQTEzNzFCNEI0NDIxQkUwODBERTVFNzlENkY4NUVBQjdBNjAzMDc1REQ1QjFCQTAwOTI1RkMxQkQwMTJGNENBRDJCRjhBMTE2NjA3RkFERkQ3MEEzM0ZBNEQyNTA3N0UxQzEzMkUyNzVBMkRCNjUwNjc1RkY5RDQ1NTdBOUQ2NzRGNEQ5Q0FDNkVDRkVDQjM2NTk0MzQwOTVCOThEMzc0NjMwREMwODMz"
 
 
          if( TemplateNameValue === "" || TemplateIDValue === ""){
