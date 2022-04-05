@@ -35,10 +35,10 @@
 				 }               
             ],
             "outArguments": [],
-            "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
+            "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/execute",
             "verb": "POST",
             "body": "",
- 			"header": "Authorization:{{auth}}",
+ 			"header": "",
             "format": "json",
             "useJwt": false,
 			
