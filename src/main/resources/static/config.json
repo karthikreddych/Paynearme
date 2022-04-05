@@ -37,7 +37,7 @@
             "outArguments": [],
             "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/execute",
             "verb": "POST",
-            "body": "",
+            "body": "Authorization:{{auth}}",
  			"header": "",
             "format": "json",
             "useJwt": false,
