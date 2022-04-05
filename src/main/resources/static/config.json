@@ -35,7 +35,7 @@
 				 }               
             ],
             "outArguments": [],
-            "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/execute",
+            "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
  			"header": "",
@@ -49,7 +49,7 @@
      "applicationExtensionKey": "8e305c98-0dba-488f-b37c-8a34add50501",
       
       "save": {
-			"url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/save",
+			"url": "https://sbt-sms-febe.herokuapp.com/activity/save",
 			 "verb": "POST",
             "body": "",
  			"header": "",
@@ -59,7 +59,7 @@
             "timeout": 8000
 		},
 		"publish": {
-			"url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/publish",
+			"url": "https://sbt-sms-febe.herokuapp.com/activity/publish",
 			 "verb": "POST",
             "body": "",
  			"header": "",
@@ -69,7 +69,7 @@
             "timeout": 8000
 		},
 		"validate": {
-			"url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/validate",
+			"url": "https://sbt-sms-febe.herokuapp.com/activity/validate",
 			 "verb": "POST",
             "body": "",
  			"header": "",
@@ -79,7 +79,7 @@
             "timeout": 8000
 		},
 		"stop": {
-			"url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/stop",
+			"url": "https://sbt-sms-febe.herokuapp.com/activity/stop",
 			 "verb": "POST",
             "body": "",
  			"header": "",
