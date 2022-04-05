@@ -74,7 +74,7 @@
 			
             "timeout": 8000
        },
-	"stop": {
+		"stop": {
            "url": "https://sbt-sms-febe.herokuapp.com/activity/stop",
             "verb": "POST",
             "body": "",
@@ -98,7 +98,128 @@
         }
 
 
-    },
+     },
+     
+	"schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [
+	
+					{
+                       
+                        "loanId": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "eventType": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"   
+                        }
+                    },
+                    {
+                        "communicationChannel": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "primaryActorId": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+	
+					{
+                        "businessUnit": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "scheduleDate": {
+                            "dataType": "Date",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "vendor": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "doNotCheckDNC": {
+                            "dataType": "Boolean",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    {
+                        "messageParams": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    {
+                        "messageContent": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    
+                    {
+                        "contacts": {
+                            "dataType": "Phone",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                    
+                    {
+                        "countrycode": {
+                            "dataType": "Local",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+                                      
+                    {
+                        "emailaddress": {
+                            "dataType": "email",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                        
+                    }
+	
+	
+],
+
+
+
+				"outArguments": [
+					
+				]
+			}
+		}	
+      }           
+    }                  
 	
 
 
