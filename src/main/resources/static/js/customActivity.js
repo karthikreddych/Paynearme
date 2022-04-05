@@ -244,10 +244,10 @@ save();
 			//"auth" : "{{Contact.Attribute.Authorization.Value}}",
         }];
         
-        payload['configurationArguments'].save.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
-        payload['configurationArguments'].publish.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
-        payload['configurationArguments'].stop.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
-        payload['configurationArguments'].validate.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
+        //payload['configurationArguments'].save.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
+        //payload['configurationArguments'].publish.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
+        //payload['configurationArguments'].stop.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
+        //payload['configurationArguments'].validate.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
         payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
         //payload['configurationArguments'].save.headers = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
         //payload['configurationArguments'].validate.headers = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
