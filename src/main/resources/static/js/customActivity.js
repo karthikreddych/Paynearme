@@ -4,9 +4,9 @@ define([
     Postmonger
 ) {
     'use strict';
-	
+	//var loanId ={};
     var connection = new Postmonger.Session();
-	
+	//var contacts = {};
     var payload = {};
     var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
@@ -15,18 +15,18 @@ define([
     var currentStep = steps[0].key;
 	var authTokens = {};
 	var eventDefinitionKey='';
-	
+	//var deFields = [];
     $(window).ready(onRender);
     
     try {
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
-   
+    //connection.on('requestedInteraction', onRequestedInteraction);
       
     connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
     connection.on('requestedDataSources', onRequestedDataSources);
-    connection.on('clickedNext', onClickedNext);
+    connection.on('clickedNext', save);
     } catch(err) {
         console.log(err);
     }
@@ -156,49 +156,41 @@ define([
 		debugger
 			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
 			$('#select-entryevent-defkey').val(eventDefinitionKey);
-
 			if (settings.triggers[0].type === 'SalesforceObjectTriggerV2' &&
 					settings.triggers[0].configurationArguments &&
 					settings.triggers[0].configurationArguments.eventDataConfig) {
-
 				// This workaround is necessary as Salesforce occasionally returns the eventDataConfig-object as string
 				if (typeof settings.triggers[0].configurationArguments.eventDataConfig === 'string' ||
 							!settings.triggers[0].configurationArguments.eventDataConfig.objects) {
 						settings.triggers[0].configurationArguments.eventDataConfig = JSON.parse(settings.triggers[0].configurationArguments.eventDataConfig);
 				}
-
 				settings.triggers[0].configurationArguments.eventDataConfig.objects.forEach((obj) => {
 					deFields = deFields.concat(obj.fields.map((fieldName) => {
 						return obj.dePrefix + fieldName;
 					}));
 				});
-
 				
 				}};
     console.log("deFields: " +JSON.stringify(deFields));
     */
-function onClickedNext() {
-var TemplateNameValue = $('#TemplateName').val();
-var TemplateIDValue = $('#TemplateID').val();
-if( TemplateNameValue === "" || TemplateIDValue === "")
-{
-document.getElementById("step2").style.display="block";
-connection.trigger("nextStep");
-}
-else
-{
-save();
-}
-}
+
     function save() {
 	//debugger
-      try {  
-        var TemplateNameValue = $('#TemplateName').val();
-        var TemplateIDValue = $('#TemplateID').val();  		
-		let auth= "{{Contact.Attribute.Authorization.Value}}"
+        try {
 		
-		//let saveauth = "{'Authorization':'"+auth+"'}"
-		//let authOne= "{{Contact.Attribute.Authorization.Value}}"	
+		var TemplateNameValue = $('#TemplateName').val();
+        var TemplateIDValue = $('#TemplateID').val();
+        let auth= "{{Contact.Attribute.Authorization.Value}}"
+
+
+         if( TemplateNameValue === "" || TemplateIDValue === ""){
+			
+			document.getElementById("step2").style.display="block"
+			
+			return;
+            }
+            		
+			
 	    //payload['metaData'].isConfigured = true;
 		//payload.name = name;
 		
@@ -241,35 +233,19 @@ save();
 			 "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
 			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
 			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
-			//"auth" : "{{Contact.Attribute.Authorization.Value}}",
         }];
+   payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
         
-        //payload['configurationArguments'].save.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
-        //payload['configurationArguments'].publish.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
-        //payload['configurationArguments'].stop.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
-        //payload['configurationArguments'].validate.headers = "{\"authorization\":\"LC-API2 TUM5NzdWSFJGQ0pFVUkzVTg2Vkc6dllPUGtqZzkyY21oeWVHTFlZZGtLT1ZOZmI3bGRzL2dxaitrUHFFSHZweGpnZWEvbFE=\", \"x-lc-client-ip\":\"192.158.1.38\"}";
-        payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
-        //payload['configurationArguments'].save.headers = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
-        //payload['configurationArguments'].validate.headers = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
-        //payload['configurationArguments'].publish.headers = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
-        //payload['configurationArguments'].stop.headers = "{\"Authorization\":\"{{Contact.Attribute.Authorization.Value}}\"}";
-                
+
         
-        //payload['configurationArguments'].save.headers = `{"Authorization":"` + authOne +`"}`;
-        //payload['configurationArguments'].save.headers = `{"Authorization":"authOne"}`.replace("authOne", authOne);
-        //payload['configurationArguments'].save.headers = saveauth;
-		//payload['configurationArguments'].save.headers = JSON.stringify({ Authorization: authone});
-       // payload['configurationArguments'].validate.headers = `{"Authorization":"${auth}"}`;
-        //payload['configurationArguments'].stop.headers = `{"Authorization":"${auth}"}`;
-        //payload['configurationArguments'].publish.headers = `{"Authorization":"${auth}"}`;
 		payload['metaData'].isConfigured = true;
 		
 		console.log(payload);
 		connection.trigger('updateActivity', payload);		
            
         } catch(err) {
-            document.getElementById("error").style.display = "block";
-            document.getElementById("error").innerHtml = err;
+            documnet.getElement("error").style.display = "block";
+            documnet.getElement("error").innerHtml = err;
         }
 
     
