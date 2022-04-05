@@ -181,6 +181,7 @@ define([
 		var TemplateNameValue = $('#TemplateName').val();
         var TemplateIDValue = $('#TemplateID').val();
         let auth= "{{Contact.Attribute.Authorization.Value}}"
+         let auth1= "configargument"
 
 
          if( TemplateNameValue === "" || TemplateIDValue === ""){
@@ -236,10 +237,12 @@ define([
         }];
    
    	payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
-    payload['configurationArguments'].save.headers = "{\"Authorization\":\"save\"}";
-    payload['configurationArguments'].publish.headers = "{\"Authorization\":\"LC-API2 U0VCN0Y0Nk9ORFNGMUIyNEowVTA6NkExMTNDRTRBODA3RTBFMzkwRTI2NEQ4NzFDNDUwNzhERTUyQUU3N0E2ODg1M0QyOUFEQTYyNEY1MTkwMTg4QjUzQkQxMTVCQTEzNzFCNEI0NDIxQkUwODBERTVFNzlENkY4NUVBQjdBNjAzMDc1REQ1QjFCQTAwOTI1RkMxQkQwMTJGNENBRDJCRjhBMTE2NjA3RkFERkQ3MEEzM0ZBNEQyNTA3N0UxQzEzMkUyNzVBMkRCNjUwNjc1RkY5RDQ1NTdBOUQ2NzRGNEQ5Q0FDNkVDRkVDQjM2NTk0MzQwOTVCOThEMzc0NjMwREMwODMz\"}";
-    payload['configurationArguments'].validate.headers = "{\"Authorization\":\"LC-API2 U0VCN0Y0Nk9ORFNGMUIyNEowVTA6NkExMTNDRTRBODA3RTBFMzkwRTI2NEQ4NzFDNDUwNzhERTUyQUU3N0E2ODg1M0QyOUFEQTYyNEY1MTkwMTg4QjUzQkQxMTVCQTEzNzFCNEI0NDIxQkUwODBERTVFNzlENkY4NUVBQjdBNjAzMDc1REQ1QjFCQTAwOTI1RkMxQkQwMTJGNENBRDJCRjhBMTE2NjA3RkFERkQ3MEEzM0ZBNEQyNTA3N0UxQzEzMkUyNzVBMkRCNjUwNjc1RkY5RDQ1NTdBOUQ2NzRGNEQ5Q0FDNkVDRkVDQjM2NTk0MzQwOTVCOThEMzc0NjMwREMwODMz\"}";
-    payload['configurationArguments'].stop.headers = "{\"Authorization\":\"LC-API2 U0VCN0Y0Nk9ORFNGMUIyNEowVTA6NkExMTNDRTRBODA3RTBFMzkwRTI2NEQ4NzFDNDUwNzhERTUyQUU3N0E2ODg1M0QyOUFEQTYyNEY1MTkwMTg4QjUzQkQxMTVCQTEzNzFCNEI0NDIxQkUwODBERTVFNzlENkY4NUVBQjdBNjAzMDc1REQ1QjFCQTAwOTI1RkMxQkQwMTJGNENBRDJCRjhBMTE2NjA3RkFERkQ3MEEzM0ZBNEQyNTA3N0UxQzEzMkUyNzVBMkRCNjUwNjc1RkY5RDQ1NTdBOUQ2NzRGNEQ5Q0FDNkVDRkVDQjM2NTk0MzQwOTVCOThEMzc0NjMwREMwODMz\"}";
+    payload['configurationArguments'].save.headers = `{"Authorization":"${auth1}"}`;
+    payload['configurationArguments'].publish.headers = `{"Authorization":"${auth1}"}`;
+    payload['configurationArguments'].validate.headers = `{"Authorization":"${auth1}"}`;
+    payload['configurationArguments'].stop.headers = `{"Authorization":"${auth1}"}`;
+    //payload['configurationArguments'].validate.headers = "{\"Authorization\":\"LC-API2 U0VCN0Y0Nk9ORFNGMUIyNEowVTA6NkExMTNDRTRBODA3RTBFMzkwRTI2NEQ4NzFDNDUwNzhERTUyQUU3N0E2ODg1M0QyOUFEQTYyNEY1MTkwMTg4QjUzQkQxMTVCQTEzNzFCNEI0NDIxQkUwODBERTVFNzlENkY4NUVBQjdBNjAzMDc1REQ1QjFCQTAwOTI1RkMxQkQwMTJGNENBRDJCRjhBMTE2NjA3RkFERkQ3MEEzM0ZBNEQyNTA3N0UxQzEzMkUyNzVBMkRCNjUwNjc1RkY5RDQ1NTdBOUQ2NzRGNEQ5Q0FDNkVDRkVDQjM2NTk0MzQwOTVCOThEMzc0NjMwREMwODMz\"}";
+    //payload['configurationArguments'].stop.headers = "{\"Authorization\":\"LC-API2 U0VCN0Y0Nk9ORFNGMUIyNEowVTA6NkExMTNDRTRBODA3RTBFMzkwRTI2NEQ4NzFDNDUwNzhERTUyQUU3N0E2ODg1M0QyOUFEQTYyNEY1MTkwMTg4QjUzQkQxMTVCQTEzNzFCNEI0NDIxQkUwODBERTVFNzlENkY4NUVBQjdBNjAzMDc1REQ1QjFCQTAwOTI1RkMxQkQwMTJGNENBRDJCRjhBMTE2NjA3RkFERkQ3MEEzM0ZBNEQyNTA3N0UxQzEzMkUyNzVBMkRCNjUwNjc1RkY5RDQ1NTdBOUQ2NzRGNEQ5Q0FDNkVDRkVDQjM2NTk0MzQwOTVCOThEMzc0NjMwREMwODMz\"}";
         
 		payload['metaData'].isConfigured = true;
 		
