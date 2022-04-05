@@ -38,7 +38,7 @@
             "url": "https://sbt-sms-febe.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
- 			"header": "",
+ 			"header": "Authorization:{{auth}}",
             "format": "json",
             "useJwt": false,
 			
