@@ -17,19 +17,30 @@
         "execute": {
             "inArguments": [
                 {
-					"emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
-					"loanId": "{{Contact.Attribute.SMS.loanId}}",
-					"eventType": "{{Contact.Attribute.SMS.eventType}}",
-					"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
-					"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
-					"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
-					"messageContent": "{{Contact.Attribute.SMS.messageContent}}",
-					"messageParams": "{{Contact.Attribute.SMS.messageParams}}",
-					"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
-					"vendor": "{{Contact.Attribute.SMS.vendor}}",
-					"contacts": "{{Contact.Attribute.SMS.contacts}}",
-					"countrycode": "{{Contact.Attribute.SMS.countrycode}}",
-					"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}"
+				"loanId": "{{Contact.Attribute.LCSMS.loanId}}",
+				"communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
+				"primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
+				"externalReferences": [],
+				"businessUnit": "{{Contact.Attribute.LCSMS.businessUnit}}",
+				"messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
+				"messageSubjectLine": "{{Contact.Attribute.LCSMS.messageSubjectLine}}",
+				"note": "{{Contact.Attribute.LCSMS.note}}",
+				"source": "{{Contact.Attribute.LCSMS.source}}",
+				"sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
+				"vendor": "{{Contact.Attribute.LCSMS.vendor}}",
+				"messageParams": {
+					"key1": "",
+					"key2": ""
+				},
+				"messageOptions": {
+					"doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
+					"channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
+					"doNotCheckSmsCompliance": "{{Contact.Attribute.LCSMS.doNotCheckSmsCompliance}}"
+				},
+				"messageSchedulingOptionsList": [{
+					"scheduleTime": "{{Contact.Attribute.LCSMS.scheduleTime}}",
+					"messageContent": "{{Contact.Attribute.LCSMS.messageContent}}"
+				}]
 					 
 				 }               
             ],

@@ -1,272 +1,198 @@
 define([
     'postmonger'
-], function(
+], function (
     Postmonger
 ) {
     'use strict';
-	//var loanId ={};
     var connection = new Postmonger.Session();
-	//var contacts = {};
     var payload = {};
     var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
-    {"key": "step1", "label": "MBO-SMS"}
+        { "key": "step1", "label": "MBO-SMS" }
     ];
     var currentStep = steps[0].key;
-	var authTokens = {};
-	var eventDefinitionKey='';
-	//var deFields = [];
+    var authTokens = {};
+    var eventDefinitionKey = '';
     $(window).ready(onRender);
-    
+
     try {
-    connection.on('initActivity', initialize);
-    connection.on('requestedTokens', onGetTokens);
-    connection.on('requestedEndpoints', onGetEndpoints);
-    //connection.on('requestedInteraction', onRequestedInteraction);
-      
-    connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
-    connection.on('requestedDataSources', onRequestedDataSources);
-    connection.on('clickedNext', save);
-    } catch(err) {
+        connection.on('initActivity', initialize);
+        connection.on('requestedTokens', onGetTokens);
+        connection.on('requestedEndpoints', onGetEndpoints);
+        connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
+        connection.on('requestedDataSources', onRequestedDataSources);
+        connection.on('clickedNext', save);
+    } catch (err) {
         console.log(err);
     }
 
     function onRender() {
-	//debugger
         try {
-        // JB will respond the first time 'ready' is called with 'initActivity'
-        connection.trigger('ready');
-        connection.trigger('requestTokens');
-        connection.trigger('requestEndpoints');
-		connection.trigger('requestInteraction');
-        connection.trigger('requestTriggerEventDefinition');
-        connection.trigger('requestDataSources'); 
-        connection.trigger('requestTriggerEventDefinition');
-        connection.trigger('requestSchema');
-        //connection.trigger('requestdata');
-        } catch(err) {
-            throw(err);
-            //console.log(err);
+            // JB will respond the first time 'ready' is called with 'initActivity'
+            connection.trigger('ready');
+            connection.trigger('requestTokens');
+            connection.trigger('requestEndpoints');
+            connection.trigger('requestInteraction');
+            connection.trigger('requestTriggerEventDefinition');
+            connection.trigger('requestDataSources');
+            connection.trigger('requestTriggerEventDefinition');
+            connection.trigger('requestSchema');
+        } catch (err) {
+            throw (err);
         }
     }
-	connection.on('requestedTriggerEventDefinition',
-	function(eventDefinitionModel) {
-    if(eventDefinitionModel){
+    connection.on('requestedTriggerEventDefinition',
+        function (eventDefinitionModel) {
+            if (eventDefinitionModel) {
 
-        eventDefinitionKey = eventDefinitionModel.eventDefinitionKey;
-        console.log(">>>Event Definition Key " + eventDefinitionKey);
-        /*If you want to see all*/
-        console.log('>>>Request Trigger', 
-        JSON.stringify(eventDefinitionModel));
-    }
+                eventDefinitionKey = eventDefinitionModel.eventDefinitionKey;
+                console.log(">>>Event Definition Key " + eventDefinitionKey);
+                /*If you want to see all*/
+                console.log('>>>Request Trigger',
+                    JSON.stringify(eventDefinitionModel));
+            }
 
-});
-	connection.on('requestedSchema', function (data) {
-   		// save schema
-   	console.log('*** Schema ***', JSON.stringify(data['schema']));
-   	}); 
-   	 
-	function onRequestedDataSources(dataSources){
+        });
+    connection.on('requestedSchema', function (data) {
+        console.log('*** Schema ***', JSON.stringify(data['schema']));
+    });
+
+    function onRequestedDataSources(dataSources) {
         console.log('** requestedDataSources **');
-        //console.log(dataSources);
         console.log('*** dataSources ***', JSON.stringify(dataSources));
     }
 
-    /*function onRequestedInteraction (interaction) {    
-        console.log('** requestedInteraction **');
-        console.log(interaction);
-     }*/
-     
-
-     function onRequestedTriggerEventDefinition(eventDefinitionModel) {
+    function onRequestedTriggerEventDefinition(eventDefinitionModel) {
         console.log('** requestedTriggerEventDefinition **');
         console.log(eventDefinitionModel);
     }
-    
-    connection.on('requestedInteraction', function(settings){
-    eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
-	});
 
-  function initialize(data) {
-	//debugger
-        //console.log(data);
-        console.log('Data: '+JSON.stringify(data));
+    connection.on('requestedInteraction', function (settings) {
+        eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
+    });
+
+    function initialize(data) {
+
+        console.log('Data: ' + JSON.stringify(data));
         if (data) {
             payload = data;
-		//console.log("***Initialize  " + data);
-        }   
-        
+
+        }
+
 
         var hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
             payload['arguments'].execute.inArguments &&
             payload['arguments'].execute.inArguments.length > 0
-         );
+        );
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
-         console.log('Has In arguments: '+JSON.stringify(inArguments));
+        console.log('Has In arguments: ' + JSON.stringify(inArguments));
         try {
-         $.each(inArguments, function (index, inArgument) {
-            $.each(inArgument, function (key, val) {
+            $.each(inArguments, function (index, inArgument) {
+                $.each(inArgument, function (key, val) {
 
-                if (key === 'TemplateName_Value') {
-                    $('#TemplateName').val(val);
-                }
+                    if (key === 'TemplateName_Value') {
+                        $('#TemplateName').val(val);
+                    }
 
-                if (key === 'TemplateID_Value') {
-                    $('#TemplateID').val(val);
-                }
+                    if (key === 'TemplateID_Value') {
+                        $('#TemplateID').val(val);
+                    }
 
-               })
-        });
+                })
+            });
 
-   
-        connection.trigger('updateButton', {
-            button: 'next',
-            text: 'Done',
-            visible: true
-       
-    });
-}   catch(err) {
-         throw(err);
-       // console.log(err);
+
+            connection.trigger('updateButton', {
+                button: 'next',
+                text: 'Done',
+                visible: true
+
+            });
+        } catch (err) {
+            throw (err);
+
+        }
     }
-}
-   
 
-    function onGetTokens (tokens) {
-	//debugger
-        // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-        console.log("Tokens function: "+JSON.stringify(tokens));
+
+    function onGetTokens(tokens) {
+
+        console.log("Tokens function: " + JSON.stringify(tokens));
         authTokens = tokens;
 
     }
-    
 
-    function onGetEndpoints (endpoints) {
-	//debugger
-        // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
-        console.log("Get End Points function: "+JSON.stringify(endpoints));
-        //console.log(endpoints);
+
+    function onGetEndpoints(endpoints) {
+        console.log("Get End Points function: " + JSON.stringify(endpoints));
+
     }
-    
-    /*function requestedInteractionHandler (settings) {
-		debugger
-			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
-			$('#select-entryevent-defkey').val(eventDefinitionKey);
-			if (settings.triggers[0].type === 'SalesforceObjectTriggerV2' &&
-					settings.triggers[0].configurationArguments &&
-					settings.triggers[0].configurationArguments.eventDataConfig) {
-				// This workaround is necessary as Salesforce occasionally returns the eventDataConfig-object as string
-				if (typeof settings.triggers[0].configurationArguments.eventDataConfig === 'string' ||
-							!settings.triggers[0].configurationArguments.eventDataConfig.objects) {
-						settings.triggers[0].configurationArguments.eventDataConfig = JSON.parse(settings.triggers[0].configurationArguments.eventDataConfig);
-				}
-				settings.triggers[0].configurationArguments.eventDataConfig.objects.forEach((obj) => {
-					deFields = deFields.concat(obj.fields.map((fieldName) => {
-						return obj.dePrefix + fieldName;
-					}));
-				});
-				
-				}};
-    console.log("deFields: " +JSON.stringify(deFields));
-    */
 
     function save() {
-	//debugger
         try {
-		
-		var TemplateNameValue = $('#TemplateName').val();
-        var TemplateIDValue = $('#TemplateID').val();
-        let auth= "{{Contact.Attribute.Authorization.Value}}"
-         let auth1= "LC-API2 SFBTU0c0SjZIVFI4OUVHVDA3MzA6ZURUSzd6M3JDNkgxZjdRZHNrenFTN1hxT0gzWWhQK1FobHM5Z3p0OC9BRzF5ZTByM1E="
+
+            var TemplateNameValue = $('#TemplateName').val();
+            var TemplateIDValue = $('#TemplateID').val();
+            let auth = "{{Contact.Attribute.Authorization.Value}}"
+            let auth1 = "LC-API2 SFBTU0c0SjZIVFI4OUVHVDA3MzA6ZURUSzd6M3JDNkgxZjdRZHNrenFTN1hxT0gzWWhQK1FobHM5Z3p0OC9BRzF5ZTByM1E="
 
 
-         if( TemplateNameValue === "" || TemplateIDValue === ""){
-			
-			document.getElementById("step2").style.display="block"
-			
-			return;
+            if (TemplateNameValue === "" || TemplateIDValue === "") {
+
+                document.getElementById("step2").style.display = "block"
+
+                return;
             }
-            		
-			
-	    //payload['metaData'].isConfigured = true;
-		//payload.name = name;
-		
-		//payload['arguments'] = payload['arguments'] || {};
-    	//payload['arguments'].execute = payload['arguments'].execute || {};
-    	
-        payload['arguments'].execute.inArguments = [{
-            "TemplateName_Value": TemplateNameValue,
-            "TemplateID_Value": TemplateIDValue,
-            
-            /*"loanId": "{{Contact.Attribute." + eventDefinitionKey+".\"loanId\"}}",
-           "eventType": "{{Contact.Attribute." + eventDefinitionKey+".\"eventType\"}}",
-            "communicationChannel": "{{Contact.Attribute." + eventDefinitionKey+".\"communicationChannel\"}}",
-           "primaryActorId": "{{Contact.Attribute." + eventDefinitionKey+".\"primaryActorId\"}}",
-          "businessUnit": "{{Contact.Attribute." + eventDefinitionKey+".\"businessUnit\"}}",
-           "scheduleDate": "{{Contact.Attribute." + eventDefinitionKey+".\"scheduleDate\"}}",
-            "vendor": "{{Contact.Attribute." + eventDefinitionKey+".\"vendor\"}}",
-            "EmailAddress": "{{Contact.Attribute." + eventDefinitionKey+".\"EmailAddress\"}}",
-            "ContactNo": "{{Contact.Attribute." + eventDefinitionKey+".\"ContactNo\"}}",
-            "Status": "{{Contact.Attribute." + eventDefinitionKey+".\"Status\"}}",
-            "FirstName": "{{Contact.Attribute." + eventDefinitionKey+".\"FirstName\"}}",
-            "LastName": "{{Contact.Attribute." + eventDefinitionKey+".\"LastName\"}}",
-            "CountryCode": "{{Contact.Attribute." + eventDefinitionKey+".\"CountryCode\"}}",
-            */
-            
-            
-			"loanId": "{{Contact.Attribute.SMS.loanId}}",
-			"eventType": "{{Contact.Attribute.SMS.eventType}}",
-			"communicationChannel": "{{Contact.Attribute.SMS.communicationChannel}}",
-			"primaryActorId": "{{Contact.Attribute.SMS.primaryActorId}}",
-			"businessUnit": "{{Contact.Attribute.SMS.businessUnit}}",
-			"scheduleDate": "{{Contact.Attribute.SMS.scheduleDate}}",
-			"vendor": "{{Contact.Attribute.SMS.vendor}}",
-            "contacts": "{{Contact.Attribute.SMS.contacts}}", 
-            "emailaddress": "{{Contact.Attribute.SMS.emailaddress}}",
-            //"status": "{{Contact.Attribute.SMS.status}}",
-            //"FirstName": "{{Contact.Attribute.SMS.FirstName}}",
-            //"LastName": "{{Contact.Attribute.SMS.LastName}}",
-            "countrycode": "{{Contact.Attribute.SMS.countrycode}}",
-			 "messageContent": "{{Contact.Attribute.SMS.messageContent}}",
-			 "messageParams": "{{Contact.Attribute.SMS.messageParams}}",
-			"doNotCheckDNC": "{{Contact.Attribute.SMS.doNotCheckDNC}}",
-        }];
-   
-   	payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
-    payload['configurationArguments'].save.headers = `{"Authorization":"${auth1}"}`;
-    payload['configurationArguments'].publish.headers = `{"Authorization":"${auth1}"}`;
-    payload['configurationArguments'].validate.headers = `{"Authorization":"${auth1}"}`;
-    payload['configurationArguments'].stop.headers = `{"Authorization":"${auth1}"}`;
-    //payload['configurationArguments'].validate.headers = "{\"Authorization\":\"LC-API2 U0VCN0Y0Nk9ORFNGMUIyNEowVTA6NkExMTNDRTRBODA3RTBFMzkwRTI2NEQ4NzFDNDUwNzhERTUyQUU3N0E2ODg1M0QyOUFEQTYyNEY1MTkwMTg4QjUzQkQxMTVCQTEzNzFCNEI0NDIxQkUwODBERTVFNzlENkY4NUVBQjdBNjAzMDc1REQ1QjFCQTAwOTI1RkMxQkQwMTJGNENBRDJCRjhBMTE2NjA3RkFERkQ3MEEzM0ZBNEQyNTA3N0UxQzEzMkUyNzVBMkRCNjUwNjc1RkY5RDQ1NTdBOUQ2NzRGNEQ5Q0FDNkVDRkVDQjM2NTk0MzQwOTVCOThEMzc0NjMwREMwODMz\"}";
-    //payload['configurationArguments'].stop.headers = "{\"Authorization\":\"LC-API2 U0VCN0Y0Nk9ORFNGMUIyNEowVTA6NkExMTNDRTRBODA3RTBFMzkwRTI2NEQ4NzFDNDUwNzhERTUyQUU3N0E2ODg1M0QyOUFEQTYyNEY1MTkwMTg4QjUzQkQxMTVCQTEzNzFCNEI0NDIxQkUwODBERTVFNzlENkY4NUVBQjdBNjAzMDc1REQ1QjFCQTAwOTI1RkMxQkQwMTJGNENBRDJCRjhBMTE2NjA3RkFERkQ3MEEzM0ZBNEQyNTA3N0UxQzEzMkUyNzVBMkRCNjUwNjc1RkY5RDQ1NTdBOUQ2NzRGNEQ5Q0FDNkVDRkVDQjM2NTk0MzQwOTVCOThEMzc0NjMwREMwODMz\"}";
-        
-		payload['metaData'].isConfigured = true;
-		
-		console.log(payload);
-		connection.trigger('updateActivity', payload);		
-           
-        } catch(err) {
+
+            payload['arguments'].execute.inArguments = [{
+                "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
+                "eventType": TemplateNameValue,
+                "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
+                "primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
+                "externalReferences": [],
+                "businessUnit": "{{Contact.Attribute.LCSMS.businessUnit}}",
+                "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
+                "messageSubjectLine": "{{Contact.Attribute.LCSMS.messageSubjectLine}}",
+                "note": "{{Contact.Attribute.LCSMS.note}}",
+                "source": "{{Contact.Attribute.LCSMS.source}}",
+                "sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
+                "vendor": "{{Contact.Attribute.LCSMS.vendor}}",
+                "vendorTemplateId": TemplateIDValue,
+                "messageParams": {
+                    "key1": "",
+                    "key2": ""
+                },
+                "messageOptions": {
+                    "doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
+                    "channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
+                    "doNotCheckSmsCompliance": "{{Contact.Attribute.LCSMS.doNotCheckSmsCompliance}}"
+                },
+                "messageSchedulingOptionsList": [{
+                    "scheduleTime": "{{Contact.Attribute.LCSMS.scheduleTime}}",
+                    "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}"
+                }]
+            }];
+
+            payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
+          
+            payload['metaData'].isConfigured = true;
+
+            console.log(payload);
+            connection.trigger('updateActivity', payload);
+
+        } catch (err) {
             document.getElementById("error").style.display = "block";
             document.getElementById("error").innerHtml = err;
         }
 
-    
-	console.log("Template Name: " +JSON.stringify(TemplateNameValue));
-	console.log("Template ID: " +JSON.stringify(TemplateIDValue));
-		
-	}
 
+        console.log("Template Name: " + JSON.stringify(TemplateNameValue));
+        console.log("Template ID: " + JSON.stringify(TemplateIDValue));
 
-	//	fetch('https://demo-default.uw2.customer-messaging-gateway-nprd.lendingcloud.us/api/customer-messaging-gateway/v1/message', {
-  	//	method: "POST",
-  //		body: JSON.stringify(payload['arguments'].execute.inArguments),
-  //		headers: {"Content-type": "application/json; charset=UTF-8"}
-//		})
-	//	.then(response => response.json()).catch(err => console.log(err)) 
-   //     .then(json => console.log(json)).catch(err => console.log(err)); 
+    }
 
 });
