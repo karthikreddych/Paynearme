@@ -125,13 +125,6 @@
                         }
                     },                    
                     {
-                        "eventType": {
-                            "dataType": "String",
-                            "isNullable": true,
-                            "direction": "out"   
-                        }
-                    },
-                    {
                         "communicationChannel": {
                             "dataType": "String",
                             "isNullable": true,
@@ -140,6 +133,14 @@
                     },                    
                     {
                         "primaryActorId": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+					
+					 {
+                        "externalReferences": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "out"
@@ -154,14 +155,49 @@
                         }
                     },
 					{
-                        "scheduleDate": {
-                            "dataType": "Date",
+                        "messageContent": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "messageSubjectLine": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "note": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "source": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "sourceMessageId": {
+                            "dataType": "String",
                             "isNullable": true,
                             "direction": "out"
                         }
                     },
 					{
                         "vendor": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "messageParams": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "out"
@@ -175,9 +211,25 @@
                         }
                         
                     },
-                    {
-                        "messageParams": {
+					{
+                        "channelAddress": {
                             "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+					{
+                        "doNotCheckSmsCompliance": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+					{
+                        "scheduleTime": {
+                            "dataType": "Date",
                             "isNullable": true,
                             "direction": "out"
                         }
@@ -190,36 +242,7 @@
                             "direction": "out"
                         }
                         
-                    },
-                    
-                    {
-                        "contacts": {
-                            "dataType": "Phone",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                        
-                    },
-                    
-                    {
-                        "countrycode": {
-                            "dataType": "Local",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                        
-                    },
-                                      
-                    {
-                        "emailaddress": {
-                            "dataType": "email",
-                            "isNullable": false,
-                            "direction": "out"
-                        }
-                        
                     }
-	
-	
 ],
 
 
