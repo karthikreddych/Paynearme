@@ -1,0 +1,219 @@
+{
+    "workflowApiVersion": "1.1",
+	"metaData": {
+       "icon": "images/icon.png",
+	   "iconSmall": "images/icon_small.png",
+       "category": "message"
+    },
+    "type": "REST",
+    "lang": {
+       "en-US": {
+           "name": "SMS-Heroku",
+           "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
+           
+       }
+    },
+    "arguments": {
+        "execute": {
+            "inArguments": [
+                {
+				"loanId": "{{Contact.Attribute.LCSMS.loanId}}",
+				"communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
+				"primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
+				"businessUnit": "{{Contact.Attribute.LCSMS.businessUnit}}",
+				"messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
+				"messageSubjectLine": "{{Contact.Attribute.LCSMS.messageSubjectLine}}",
+				"note": "{{Contact.Attribute.LCSMS.note}}",
+				"source": "{{Contact.Attribute.LCSMS.source}}",
+				"sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
+				"vendor": "{{Contact.Attribute.LCSMS.vendor}}",
+				"messageOptions": {
+					"doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
+					"channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
+					"doNotCheckSmsCompliance": "{{Contact.Attribute.LCSMS.doNotCheckSmsCompliance}}"
+				},
+				"messageSchedulingOptionsList": [{
+					"messageContent": "{{Contact.Attribute.LCSMS.messageContent}}"
+				}]
+					 
+				 }               
+            ],
+            "outArguments": [],
+            "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/execute",
+            "verb": "POST",
+            "body": "",
+ 			"header": "",
+            "format": "json",
+            "useJwt": false,
+			
+            "timeout": 8000
+        }
+    },
+	"configurationArguments": {
+      
+       "save": {
+           "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/save",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+			 
+            "timeout": 8000
+       },
+        
+       "publish": {
+           "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/publish",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+			
+            "timeout": 8000
+       },
+       "validate": {
+           "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/validate",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+			
+            "timeout": 8000
+       },
+		"stop": {
+           "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/stop",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            
+            "timeout": 8000
+       }
+    },
+       
+    "wizardSteps": [
+		{"key": "step1", "label": "MBO-SMS"}
+		
+	],
+
+    "userInterfaces": {
+        "configModal": {
+            "height": 420,
+            "width": 575,
+            "fullscreen": false
+        }
+
+
+     },
+     
+	"schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [
+	
+					{
+                       
+                        "loanId": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "communicationChannel": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "primaryActorId": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+										 	
+					{
+                        "businessUnit": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "messageContent": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "messageSubjectLine": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "note": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "source": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "sourceMessageId": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "vendor": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "doNotCheckDNC": {
+                            "dataType": "Boolean",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+					{
+                        "channelAddress": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    },
+					{
+                        "doNotCheckSmsCompliance": {
+                             "dataType": "Boolean",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                        
+                    }
+					 
+],
+
+				"outArguments": [
+					
+				]
+			}
+		}	
+      }           
+    }                  
+		    
