@@ -127,7 +127,7 @@
                     {
                         "communicationChannel": {
                             "dataType": "String",
-                            "isNullable": true,
+                            "isNullable": false,
                             "direction": "out"   
                         }
                     },                    
@@ -138,19 +138,11 @@
                             "direction": "out"
                         }
                     },
-					
-					 {
-                        "externalReferences": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"
-                        }
-                    },
-	
+										 	
 					{
                         "businessUnit": {
                             "dataType": "String",
-                            "isNullable": true,
+                            "isNullable": false,
                             "direction": "out"
                         }
                     },
@@ -192,14 +184,7 @@
 					{
                         "vendor": {
                             "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"
-                        }
-                    },
-					{
-                        "messageParams": {
-                            "dataType": "String",
-                            "isNullable": false,
+                            "isNullable": true,
                             "direction": "out"
                         }
                     },
@@ -221,28 +206,13 @@
                     },
 					{
                         "doNotCheckSmsCompliance": {
-                            "dataType": "String",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                        
-                    },
-					{
-                        "scheduleTime": {
-                            "dataType": "Date",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                        
-                    },
-                    {
-                        "messageContent": {
-                            "dataType": "String",
+                             "dataType": "Boolean",
                             "isNullable": true,
                             "direction": "out"
                         }
                         
                     }
+					 
 ],
 
 

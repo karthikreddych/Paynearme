@@ -153,7 +153,6 @@ define([
                 "eventType": TemplateNameValue,
                 "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
                 "primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
-                "externalReferences": [],
                 "businessUnit": "{{Contact.Attribute.LCSMS.businessUnit}}",
                 "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
                 "messageSubjectLine": "{{Contact.Attribute.LCSMS.messageSubjectLine}}",
@@ -162,17 +161,12 @@ define([
                 "sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
                 "vendor": "{{Contact.Attribute.LCSMS.vendor}}",
                 "vendorTemplateId": TemplateIDValue,
-                "messageParams": {
-                    "key1": "",
-                    "key2": ""
-                },
                 "messageOptions": {
                     "doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
                     "channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
                     "doNotCheckSmsCompliance": "{{Contact.Attribute.LCSMS.doNotCheckSmsCompliance}}"
                 },
                 "messageSchedulingOptionsList": [{
-                    "scheduleTime": "{{Contact.Attribute.LCSMS.scheduleTime}}",
                     "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}"
                 }]
             }];
