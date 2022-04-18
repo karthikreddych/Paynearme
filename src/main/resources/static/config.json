@@ -15,29 +15,7 @@
     },
     "arguments": {
         "execute": {
-            "inArguments": [
-                {
-				"loanId": "{{Contact.Attribute.LCSMS.loanId}}",
-				"communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
-				"primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
-				"businessUnit": "{{Contact.Attribute.LCSMS.businessUnit}}",
-				"messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
-				"messageSubjectLine": "{{Contact.Attribute.LCSMS.messageSubjectLine}}",
-				"note": "{{Contact.Attribute.LCSMS.note}}",
-				"source": "{{Contact.Attribute.LCSMS.source}}",
-				"sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
-				"vendor": "{{Contact.Attribute.LCSMS.vendor}}",
-				"messageOptions": {
-					"doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
-					"channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
-					"doNotCheckSmsCompliance": "{{Contact.Attribute.LCSMS.doNotCheckSmsCompliance}}"
-				},
-				"messageSchedulingOptionsList": [{
-					"messageContent": "{{Contact.Attribute.LCSMS.messageContent}}"
-				}]
-					 
-				 }               
-            ],
+            "inArguments": [],
             "outArguments": [],
             "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/execute",
             "verb": "POST",
