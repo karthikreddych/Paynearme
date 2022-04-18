@@ -173,38 +173,37 @@ define([
                 "messageMetadata" : {},   */ 
 
                 
-                {
-  "requester": "SFMC",
-  "jobDescription": "file12345",
+              {
+  "requester": "{{Contact.Attribute.BulkSMS.requester}}",
+  "jobDescription": "{{Contact.Attribute.BulkSMS.jobDescription}}",
   "messages": [
     {
       "messageExtRefs": [
         {
-          "extSrcId": "1000",
-          "extRefId": "32342433",
-          "extEntityName": "loan"
+          "extSrcId": "{{Contact.Attribute.BulkSMS.extSrcId}}",
+          "extRefId": "{{Contact.Attribute.BulkSMS.extRefId}}",
+          "extEntityName": "{{Contact.Attribute.BulkSMS.extEntityName}}"
         },
         {
-          "extSrcId": "1000",
-          "extRefId": "2222222",
-          "extEntityName": "actor"  
+          "extSrcId": "{{Contact.Attribute.BulkSMS.extSrcId}}",
+          "extRefId": "{{Contact.Attribute.BulkSMS.extRefId}}",
+          "extEntityName": "{{Contact.Attribute.BulkSMS.extEntityName}}"  
         }
       ],
-      "categoryName": "PAYMENT_REMINDER",
-      "communicationChannel": "SMS",
-      "messageContent": null,
-      "messageSubjectLine": null,
-      "source": "SFMC_JOURNEY_BUILDER",
-      "sourceMessageId": null,
-      "vendor": "SBT",
-      "vendorTemplateId": "4",
+      "categoryName": TemplateNameValue,
+      "communicationChannel": "{{Contact.Attribute.BulkSMS.communicationChannel}}",
+      "messageContent": "{{Contact.Attribute.BulkSMS.messageContent}}",
+      "messageSubjectLine": "{{Contact.Attribute.BulkSMS.messageSubjectLine}}",
+      "source": "{{Contact.Attribute.BulkSMS.source}}",
+      "sourceMessageId": "{{Contact.Attribute.BulkSMS.sourceMessageId}}",
+      "vendor": "{{Contact.Attribute.BulkSMS.vendor}}",
+      "vendorTemplateId": TemplateIDValue,
       "messageOptions": {
-            "channelAddress": "1231231234"
+            "channelAddress": "{{Contact.Attribute.BulkSMS.channelAddress}}"
       }
     }
   ]
-}				
-               	  			 
+}          	  			 
             }];
 
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
