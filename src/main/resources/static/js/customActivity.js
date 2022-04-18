@@ -149,7 +149,7 @@ define([
             }
 
             payload['arguments'].execute.inArguments = [{
-                "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
+               /* "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
                 "eventType": TemplateNameValue,
                 "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
                 "primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
@@ -168,7 +168,40 @@ define([
                 },
                 "messageSchedulingOptionsList": [{
                     "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}"
-                }]
+                }]*/
+                
+                {
+  "requester": "SFMC",
+  "jobDescription": "file12345",
+  "messages": [
+    {
+      "messageExtRefs": [
+        {
+          "extSrcId": "1000",
+          "extRefId": "32342433",
+          "extEntityName": "loan"
+        },
+        {
+          "extSrcId": "1000",
+          "extRefId": "2222222",
+          "extEntityName": "actor"  
+        }
+      ],
+      "categoryName": "PAYMENT_REMINDER",
+      "communicationChannel": "SMS",
+      "messageContent": null,
+      "messageSubjectLine": null,
+      "source": "SFMC_JOURNEY_BUILDER",
+      "sourceMessageId": null,
+      "vendor": "SBT",
+      "vendorTemplateId": "4",
+      "messageOptions": {
+            "channelAddress": "1231231234"
+      }
+    }
+  ]
+}
+                
             }];
 
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
