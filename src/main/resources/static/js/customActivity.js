@@ -21,7 +21,7 @@ define([
         connection.on('requestedEndpoints', onGetEndpoints);
         connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
         connection.on('requestedDataSources', onRequestedDataSources);
-        connection.on('clickedNext', save);
+        connection.on('clickedNext', onClickedNext);
     } catch (err) {
         console.log(err);
     }
@@ -132,24 +132,28 @@ define([
 
     }
 
+	function onClickedNext() {
+			var TemplateNameValue = $('#TemplateName').val();
+			var TemplateIDValue = $('#TemplateID').val();
+			if( TemplateNameValue === "" || TemplateIDValue === "")
+			{
+			document.getElementById("step2").style.display="block";
+			connection.trigger("nextStep");
+			}
+			else
+			{
+			save();
+			}
+			}
     function save() {
         try {
 
             var TemplateNameValue = $('#TemplateName').val();
             var TemplateIDValue = $('#TemplateID').val();
             let auth = "{{Contact.Attribute.Authorization.Value}}"
-            let auth1 = "LC-API2 SFBTU0c0SjZIVFI4OUVHVDA3MzA6ZURUSzd6M3JDNkgxZjdRZHNrenFTN1hxT0gzWWhQK1FobHM5Z3p0OC9BRzF5ZTByM1E="
-
-
-            if (TemplateNameValue === "" || TemplateIDValue === "") {
-
-                document.getElementById("step2").style.display = "block"
-
-                return;
-            }
-
+           
             payload['arguments'].execute.inArguments = [{
-               /* "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
+                /* "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
                 "eventType": TemplateNameValue,
                 "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
                 "primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
@@ -166,9 +170,8 @@ define([
                     "channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
                     "doNotCheckSmsCompliance": "{{Contact.Attribute.LCSMS.doNotCheckSmsCompliance}}"
                 },
-                "messageSchedulingOptionsList": [{
-                    "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}"
-                }]*/
+                "messageMetadata" : {},   */ 
+
                 
                 {
   "requester": "SFMC",
@@ -200,11 +203,15 @@ define([
       }
     }
   ]
-}
-                
+}				
+               	  			 
             }];
 
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
+            payload['configurationArguments'].stop.headers = `{"Authorization":"default"}`;
+  			payload['configurationArguments'].validate.headers = `{"Authorization":"default"}`;
+  			payload['configurationArguments'].publish.headers = `{"Authorization":"default"}`;
+  			payload['configurationArguments'].save.headers = `{"Authorization":"default"}`;
           
             payload['metaData'].isConfigured = true;
 
