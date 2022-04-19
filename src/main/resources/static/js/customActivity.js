@@ -153,57 +153,21 @@ define([
             let auth = "{{Contact.Attribute.Authorization.Value}}"
            
             payload['arguments'].execute.inArguments = [{
-                /* "loanId": "{{Contact.Attribute.LCSMS.loanId}}",
-                "eventType": TemplateNameValue,
-                "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
-                "primaryActorId": "{{Contact.Attribute.LCSMS.primaryActorId}}",
-                "businessUnit": "{{Contact.Attribute.LCSMS.businessUnit}}",
-                "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
-                "messageSubjectLine": "{{Contact.Attribute.LCSMS.messageSubjectLine}}",
-                "note": "{{Contact.Attribute.LCSMS.note}}",
-                "source": "{{Contact.Attribute.LCSMS.source}}",
-                "sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
-                "vendor": "{{Contact.Attribute.LCSMS.vendor}}",
-                "vendorTemplateId": TemplateIDValue,
-                "messageOptions": {
-                    "doNotCheckDNC": "{{Contact.Attribute.LCSMS.doNotCheckDNC}}",
-                    "channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}",
-                    "doNotCheckSmsCompliance": "{{Contact.Attribute.LCSMS.doNotCheckSmsCompliance}}"
-                },
-                "messageMetadata" : {},   */ 
-
-                
-              {
-  "requester": "{{Contact.Attribute.BulkSMS.requester}}",
-  "jobDescription": "{{Contact.Attribute.BulkSMS.jobDescription}}",
-  "messages": [
-    {
-      "messageExtRefs": [
-        {
-          "extSrcId": "{{Contact.Attribute.BulkSMS.extSrcId}}",
-          "extRefId": "{{Contact.Attribute.BulkSMS.extRefId}}",
-          "extEntityName": "{{Contact.Attribute.BulkSMS.extEntityName}}"
-        },
-        {
-          "extSrcId": "{{Contact.Attribute.BulkSMS.extSrcId}}",
-          "extRefId": "{{Contact.Attribute.BulkSMS.extRefId}}",
-          "extEntityName": "{{Contact.Attribute.BulkSMS.extEntityName}}"  
-        }
-      ],
-      "categoryName": TemplateNameValue,
-      "communicationChannel": "{{Contact.Attribute.BulkSMS.communicationChannel}}",
-      "messageContent": "{{Contact.Attribute.BulkSMS.messageContent}}",
-      "messageSubjectLine": "{{Contact.Attribute.BulkSMS.messageSubjectLine}}",
-      "source": "{{Contact.Attribute.BulkSMS.source}}",
-      "sourceMessageId": "{{Contact.Attribute.BulkSMS.sourceMessageId}}",
-      "vendor": "{{Contact.Attribute.BulkSMS.vendor}}",
-      "vendorTemplateId": TemplateIDValue,
-      "messageOptions": {
-            "channelAddress": "{{Contact.Attribute.BulkSMS.channelAddress}}"
-      }
-    }
-  ]
-}          	  			 
+              
+               "requester":"{{Contact.Attribute.LCSMS.requester}}",
+               "jobDescription": "{{Contact.Attribute.LCSMS.jobDescription}}",
+               "loanId" : "{{Contact.Attribute.LCSMS.loanId}}",
+               "actorId": "{{Contact.Attribute.LCSMS.actorId}}",
+			   "categoryName": TemplateNameValue,
+               "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
+               "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
+               "source": "{{Contact.Attribute.LCSMS.source}}",
+               "sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
+               "vendor": "{{Contact.Attribute.LCSMS.vendor}}",
+			   "vendorTemplateId": TemplateIDValue,
+               "channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}"
+               		
+               	  			 
             }];
 
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
