@@ -15,9 +15,22 @@
     },
     "arguments": {
         "execute": {
-            "inArguments": [],
+            "inArguments": [
+               {
+               "requester":"{{Contact.Attribute.LCSMS.requester}}",
+               "jobDescription": "{{Contact.Attribute.LCSMS.jobDescription}}",
+               "loanId" : "{{Contact.Attribute.LCSMS.loanId}}",
+               "actorId": "{{Contact.Attribute.LCSMS.actorId}}",
+			   "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
+               "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
+               "source": "{{Contact.Attribute.LCSMS.source}}",
+               "sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
+               "vendor": "{{Contact.Attribute.LCSMS.vendor}}",
+			   "channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}"
+               }               
+            ],
             "outArguments": [],
-            "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/execute",
+            "url": "https://lc-sms.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
  			"header": "",
@@ -30,7 +43,7 @@
 	"configurationArguments": {
       
        "save": {
-           "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/save",
+           "url": "https://lc-sms.herokuapp.com/activity/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -40,7 +53,7 @@
        },
         
        "publish": {
-           "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/publish",
+           "url": "https://lc-sms.herokuapp.com/activity/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -49,7 +62,7 @@
             "timeout": 8000
        },
        "validate": {
-           "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/validate",
+           "url": "https://lc-sms.herokuapp.com/activity/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -58,7 +71,7 @@
             "timeout": 8000
        },
 		"stop": {
-           "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/stop",
+           "url": "https://lc-sms.herokuapp.com/activity/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -90,31 +103,37 @@
 	
 					{
                        
+                        "requester": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "jobDescription": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
                         "loanId": {
                             "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
-                        "communicationChannel": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
-                        "primaryActorId": {
-                            "dataType": "String",
-                            "isNullable": false,
+                            "isNullable": true,
                             "direction": "out"
                         }
                     },
-										 	
 					{
-                        "businessUnit": {
+                        "actorId": {
                             "dataType": "String",
-                            "isNullable": false,
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+					{
+                        "communicationChannel": {
+                            "dataType": "String",
+                            "isNullable": true,
                             "direction": "out"
                         }
                     },
@@ -126,25 +145,12 @@
                         }
                     },
 					{
-                        "messageSubjectLine": {
-                            "dataType": "String",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                    },
-					{
-                        "note": {
-                            "dataType": "String",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                    },
-					{
                         "source": {
                             "dataType": "String",
                             "isNullable": true,
                             "direction": "out"
                         }
+                        
                     },
 					{
                         "sourceMessageId": {
@@ -152,17 +158,11 @@
                             "isNullable": true,
                             "direction": "out"
                         }
+                        
                     },
 					{
                         "vendor": {
                             "dataType": "String",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                    },
-					{
-                        "doNotCheckDNC": {
-                            "dataType": "Boolean",
                             "isNullable": true,
                             "direction": "out"
                         }
@@ -175,15 +175,9 @@
                             "direction": "out"
                         }
                         
-                    },
-					{
-                        "doNotCheckSmsCompliance": {
-                             "dataType": "Boolean",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                        
                     }
+                    
+                   
 					 
 ],
 
