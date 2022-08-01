@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "PNM",
+            "name": "PNM-K",
             "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
         }
     },
@@ -20,7 +20,7 @@
                 }
             ],
             "outArguments": [],
-            "url": "https://pay-near-me.herokuapp.com/activity/execute",
+            "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/queue",
             "verb": "POST",
             "body": "",
             "header": "",
