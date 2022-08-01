@@ -20,7 +20,7 @@
                 }
             ],
             "outArguments": [],
-            "url": "https://pay-near-me.herokuapp.com/activity/queue",
+            "url": "https://pay-near-me.herokuapp.com/activity/execute",
             "verb": "POST",
             "body": "",
             "header": "",
