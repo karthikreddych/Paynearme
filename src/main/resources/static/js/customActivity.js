@@ -154,16 +154,16 @@ define([
            
             payload['arguments'].execute.inArguments = [{
               
-               "Mobile":"{{Contact.Attribute.PNM-DE.Mobile}}",
-               "FirstName": "{{Contact.Attribute.PNM-DE.FirstName}}",
-               "LastName" : "{{Contact.Attribute.PNM-DE.LastName}}",
-               "Note": "{{Contact.Attribute.PNM-DE.Note}}",
-	       "URL": "{{Contact.Attribute.PNM-DE.URL}}",
-	       "loanId": "{{Contact.Attribute.PNM-DE.loanId}}",
-	       "actorId": "{{Contact.Attribute.PNM-DE.actorId}}",
-	       "campaignId": "{{Contact.Attribute.PNM-DE.campaignId}}",	    
-	       "categoryName": TemplateNameValue,
-               "vendorTemplateId": TemplateIDValue
+ "Mobile":"3219611111",
+"FirstName": "Jose",
+"LastName" : "Thomas",
+"Note": "loanId:63446642 | actorId:67789414 | eventType:PAYMENT_REMINDER | variant:4",
+"URL": "https://www.google.com",
+"loanId": "63446642",
+"actorId": "67789414",
+"campaignId": "SSP-01",	    
+"categoryName": "PAYMENT_REMINDER",
+"vendorTemplateId": "4"
             }];
 
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
