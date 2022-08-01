@@ -150,24 +150,20 @@ define([
 
             var TemplateNameValue = $('#TemplateName').val();
             var TemplateIDValue = $('#TemplateID').val();
-            let auth = "{{Contact.Attribute.Authorization.Value}}"
+            let auth = "{{Contact.Attribute.PNM-DE.Value}}"
            
             payload['arguments'].execute.inArguments = [{
               
-               "requester":"{{Contact.Attribute.LCSMS.requester}}",
-               "jobDescription": "{{Contact.Attribute.LCSMS.jobDescription}}",
-               "loanId" : "{{Contact.Attribute.LCSMS.loanId}}",
-               "actorId": "{{Contact.Attribute.LCSMS.actorId}}",
-			   "categoryName": TemplateNameValue,
-               "communicationChannel": "{{Contact.Attribute.LCSMS.communicationChannel}}",
-               "messageContent": "{{Contact.Attribute.LCSMS.messageContent}}",
-               "source": "{{Contact.Attribute.LCSMS.source}}",
-               "sourceMessageId": "{{Contact.Attribute.LCSMS.sourceMessageId}}",
-               "vendor": "{{Contact.Attribute.LCSMS.vendor}}",
-			   "vendorTemplateId": TemplateIDValue,
-               "channelAddress": "{{Contact.Attribute.LCSMS.channelAddress}}"
-               		
-               	  			 
+               "Mobile":"{{Contact.Attribute.PNM-DE.Mobile}}",
+               "FirstName": "{{Contact.Attribute.PNM-DE.FirstName}}",
+               "LastName" : "{{Contact.Attribute.PNM-DE.LastName}}",
+               "Note": "{{Contact.Attribute.PNM-DE.Note}}",
+	       "URL": "{{Contact.Attribute.PNM-DE.URL}}",
+	       "loanId": "{{Contact.Attribute.PNM-DE.loanId}}",
+	       "actorId": "{{Contact.Attribute.PNM-DE.actorId}}",
+	       "campaignId": "{{Contact.Attribute.PNM-DE.campaignId}}",	    
+	       "categoryName": TemplateNameValue,
+               "vendorTemplateId": TemplateIDValue
             }];
 
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
