@@ -165,7 +165,7 @@ define([
 "vendor": "SBT",
 "vendorTemplateId": "4",
 "channelAddress": "8668042268"
-}
+
                   			 
             }];
 
