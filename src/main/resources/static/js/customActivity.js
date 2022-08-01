@@ -150,20 +150,20 @@ define([
 
             var TemplateNameValue = $('#TemplateName').val();
             var TemplateIDValue = $('#TemplateID').val();
-            let auth = "{{Contact.Attribute.PNM-DE.Value}}"
+            let auth = "{{Event." + eventDefinitionKey + '."apiKey"}}'
            
             payload['arguments'].execute.inArguments = [{
-              
- "Mobile":"3219611111",
-"FirstName": "Jose",
-"LastName" : "Thomas",
-"Note": "loanId:63446642 | actorId:67789414 | eventType:PAYMENT_REMINDER | variant:4",
-"URL": "https://www.google.com",
-"loanId": "63446642",
-"actorId": "67789414",
-"campaignId": "SSP-01",	    
-"categoryName": "PAYMENT_REMINDER",
-"vendorTemplateId": "4"
+                "Mobile":"{{Event." + eventDefinitionKey + '."Mobile"}}',
+                "FirstName": "{{Event." + eventDefinitionKey + '."FirstName"}}',
+                "LastName" : "{{Event." + eventDefinitionKey + '."LastName"}}',
+                "Note": "{{Event." + eventDefinitionKey + '."Note"}}',
+                "categoryName": TemplateNameValue,
+                "URL": "{{Event." + eventDefinitionKey + '."URL"}}',
+                "loanId": "{{Event." + eventDefinitionKey + '."loanId"}}',
+                "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
+                "campaignId": "{{Event." + eventDefinitionKey + '."campaignId"}}',
+                "vendorTemplateId": TemplateIDValue
+                  			 
             }];
 
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
