@@ -84,14 +84,35 @@
             "execute": {
                 "inArguments": [
                     {
-                        "requester": {
+                        "Mobile": {
+                            "dataType": "Phone",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+                    {
+                        "FirstName": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "out"
                         }
                     },
                     {
-                        "jobDescription": {
+                        "LastName": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+                    {
+                        "Note": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+                    {
+                        "URL": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "out"
@@ -100,55 +121,34 @@
                     {
                         "loanId": {
                             "dataType": "String",
-                            "isNullable": false,
+                            "isNullable": true,
                             "direction": "out"
                         }
                     },
                     {
                         "actorId": {
                             "dataType": "String",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                    },
-                    {
-                        "communicationChannel": {
-                            "dataType": "String",
                             "isNullable": false,
                             "direction": "out"
                         }
                     },
                     {
-                        "messageContent": {
+                        "campaignId": {
                             "dataType": "String",
                             "isNullable": true,
                             "direction": "out"
                         }
                     },
                     {
-                        "source": {
+                        "categoryName": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "out"
                         }
                     },
                     {
-                        "sourceMessageId": {
-                            "dataType": "String",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                    },
-                    {
-                        "vendor": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"
-                        }
-                    },
-                    {
-                        "channelAddress": {
-                            "dataType": "String",
+                        "vendorTemplateId": {
+                            "dataType": "Number",
                             "isNullable": false,
                             "direction": "out"
                         }
