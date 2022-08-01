@@ -153,16 +153,19 @@ define([
             let auth = "{{Event." + eventDefinitionKey + '."apiKey"}}'
            
             payload['arguments'].execute.inArguments = [{
-                "Mobile":"{{Event." + eventDefinitionKey + '."Mobile"}}',
-                "FirstName": "{{Event." + eventDefinitionKey + '."FirstName"}}',
-                "LastName" : "{{Event." + eventDefinitionKey + '."LastName"}}',
-                "Note": "{{Event." + eventDefinitionKey + '."Note"}}',
-                "categoryName": TemplateNameValue,
-                "URL": "{{Event." + eventDefinitionKey + '."URL"}}',
-                "loanId": "{{Event." + eventDefinitionKey + '."loanId"}}',
-                "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
-                "campaignId": "{{Event." + eventDefinitionKey + '."campaignId"}}',
-                "vendorTemplateId": TemplateIDValue
+                "requester": "SBT",
+"jobDescription": "TEST_BATCH_EP_PERFORMANCE",
+"loanId": "179527239",
+"actorId": "233634614",
+"categoryName": "PAYMENT_REMINDER",
+"communicationChannel": "SMS",
+"messageContent": null,
+"source": "SFMC_JOURNEY_BUILDER",
+"sourceMessageId": null,
+"vendor": "SBT",
+"vendorTemplateId": "4",
+"channelAddress": "8668042268"
+}
                   			 
             }];
 
