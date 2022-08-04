@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "PNM",
+            "name": "PNM-K",
             "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
         }
     },
@@ -35,7 +35,7 @@
     "configurationArguments": {
 		"applicationExtensionKey":"2f99c471-1481-4f0f-9543-6aad7a9be030",
         "save": {
-            "url": "https://pay-near-me.herokuapp.com/activity/save",
+            "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -43,7 +43,7 @@
             "timeout": 25000
         },
         "publish": {
-            "url": "https://pay-near-me.herokuapp.com/activity/publish",
+            "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -51,7 +51,7 @@
             "timeout": 25000
         },
         "validate": {
-            "url": "https://pay-near-me.herokuapp.com/activity/validate",
+            "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -59,7 +59,7 @@
             "timeout": 25000
         },
         "stop": {
-            "url": "https://pay-near-me.herokuapp.com/activity/stop",
+            "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -85,35 +85,14 @@
             "execute": {
                 "inArguments": [
                     {
-                        "Mobile": {
+                        "channelAddress": {
                             "dataType": "Phone",
                             "isNullable": false,
                             "direction": "out"
                         }
                     },
                     {
-                        "FirstName": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"
-                        }
-                    },
-                    {
-                        "LastName": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"
-                        }
-                    },
-                    {
-                        "Note": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"
-                        }
-                    },
-                    {
-                        "URL": {
+                        "messageContent": {
                             "dataType": "String",
                             "isNullable": true,
                             "direction": "out"
@@ -139,8 +118,64 @@
                             "isNullable": true,
                             "direction": "out"
                         }
+                    },
+	             {
+                        "variant": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+		   {
+                        "eventType": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+		  {
+                        "requester": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+		  {
+                        "jobDescription": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },	
+		  {
+                        "communicationChannel": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+		  {
+                        "source": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+		   {
+                        "sourceMessageId": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    },
+		  {
+                        "vendor": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
                     }
-					
+
                 ],
                 "outArguments": []
             }
