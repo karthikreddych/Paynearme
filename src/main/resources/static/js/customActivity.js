@@ -148,8 +148,7 @@ define([
     function save() {
         try {
 
-            var TemplateNameValue = $('#TemplateName').val();
-            var TemplateIDValue = $('#TemplateID').val();
+            
             let auth = "{{Event." + eventDefinitionKey + '."apiKey"}}'
 	    
 	    var Tnvalue = "{{Event." + eventDefinitionKey + '."eventType"}}'
