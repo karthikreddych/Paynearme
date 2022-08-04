@@ -164,7 +164,7 @@ define([
 	    var TemplateNameValue = Tnvalue; 	    
 	    }
 	   
-	   if(Tidvalue="")
+	   if(Tidvalue=="")
 	    {
 	    var TemplateIDValue = $('#TemplateID').val();
 	    }
