@@ -153,20 +153,18 @@ define([
             let auth = "{{Event." + eventDefinitionKey + '."apiKey"}}'
            
             payload['arguments'].execute.inArguments = [{
-                "requester": "SBT",
-"jobDescription": "TEST_BATCH_EP_PERFORMANCE",
-"loanId": "179527239",
-"actorId": "233634614",
-"categoryName": "PAYMENT_REMINDER",
-"communicationChannel": "SMS",
-"messageContent": null,
-"source": "SFMC_JOURNEY_BUILDER",
-"sourceMessageId": null,
-"vendor": "SBT",
-"vendorTemplateId": "4",
-"channelAddress": "8668042268"
-
-                  			 
+              "requester":"{{Event." + eventDefinitionKey + '."requester"}}',
+                "jobDescription": "{{Event." + eventDefinitionKey + '."jobDescription"}}',
+                "loanId" : "{{Event." + eventDefinitionKey + '."loanId"}}',
+                "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
+                "categoryName": TemplateNameValue,
+                "communicationChannel": "{{Event." + eventDefinitionKey + '."communicationChannel"}}',
+                "messageContent": "{{Event." + eventDefinitionKey + '."messageContent"}}',
+                "source": "{{Event." + eventDefinitionKey + '."source"}}',
+                "sourceMessageId": "{{Event." + eventDefinitionKey + '."sourceMessageId"}}',
+                "vendor": "{{Event." + eventDefinitionKey + '."vendor"}}',
+                "vendorTemplateId": TemplateIDValue,
+                "channelAddress": "{{Event." + eventDefinitionKey + '."channelAddress"}}' 		 
             }];
 
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
