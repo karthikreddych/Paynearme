@@ -151,6 +151,27 @@ define([
             var TemplateNameValue = $('#TemplateName').val();
             var TemplateIDValue = $('#TemplateID').val();
             let auth = "{{Event." + eventDefinitionKey + '."apiKey"}}'
+	    
+	    var Tnvalue = "{{Event." + eventDefinitionKey + '."eventType"}}'
+	    var Tidvalue = "{{Event." + eventDefinitionKey + '."variant"}}'
+	    
+	    if(Tnvalue=="")
+	    {
+	    var TemplateNameValue = $('#TemplateName').val();    
+	    }
+	    else
+	    {
+	    var TemplateNameValue = Tnvalue; 	    
+	    }
+	   
+	   if(Tidvalue="")
+	    {
+	    var TemplateIDValue = $('#TemplateID').val();
+	    }
+	    else
+	    {
+	     var TemplateIDValue = Tidvalue;    
+	    }
            
             payload['arguments'].execute.inArguments = [{
               "requester":"{{Event." + eventDefinitionKey + '."requester"}}',
