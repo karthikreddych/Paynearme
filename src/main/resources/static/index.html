@@ -78,9 +78,6 @@ width:371px;
 
             require(config, dependencies); 
         })();
-		
-eval(payload['arguments'].execute.inArguments[0].categoryName);
-	
     </script>
 
 </head>
@@ -119,8 +116,10 @@ eval(payload['arguments'].execute.inArguments[0].categoryName);
 	
 <script>
 function myFunction() {
-var tempName =$('#TemplateID').val()
+var tempName =$('#TemplateName').val()
+
 }
+eval(payload['arguments'].execute.inArguments[0].categoryName);	
 </script>
 </body>
 </html>
