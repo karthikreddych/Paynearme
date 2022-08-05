@@ -8,26 +8,26 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "PNM-K",
+            "name": "PNM",
             "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
         }
     },
     "arguments": {
         "execute": {
             "inArguments": [
-                 {
-                "requester": "{{Contact.Attribute.PNM-SMS-DE.requester}}",
-                "jobDescription": "{{Contact.Attribute.PNM-SMS-DE.jobDescription}}",
-                "loanId" : "{{Contact.Attribute.PNM-SMS-DE.loanId}}",
-                "actorId": "{{Contact.Attribute.PNM-SMS-DE.actorId}}",
+                {
+                "requester": "{{Contact.Attribute.[[PNM-SMS-DE]].requester}}",
+                "jobDescription": "{{Contact.Attribute.[PNM-SMS-DE].jobDescription}}",
+                "loanId" : "{{Contact.Attribute.[PNM-SMS-DE].loanId}}",
+                "actorId": "{{Contact.Attribute.[PNM-SMS-DE].actorId}}",
                 "categoryName": "Payment_Reminder",
-                "communicationChannel": "{{Contact.Attribute.PNM-SMS-DE.communicationChannel}}",
-                "messageContent": "{{Contact.Attribute.PNM-SMS-DE.messageContent}}",
-                "source": "{{Contact.Attribute.PNM-SMS-DE.source}}",
-                "sourceMessageId": "{{Contact.Attribute.PNM-SMS-DE.sourceMessageId}}",
-                "vendor": "{{Contact.Attribute.PNM-SMS-DE.vendor}}",
+                "communicationChannel": "{{Contact.Attribute.[PNM-SMS-DE].communicationChannel}}",
+                "messageContent": "{{Contact.Attribute.[PNM-SMS-DE].messageContent}}",
+                "source": "{{Contact.Attribute.[PNM-SMS-DE].source}}",
+                "sourceMessageId": "{{Contact.Attribute.[PNM-SMS-DE].sourceMessageId}}",
+                "vendor": "{{Contact.Attribute.[PNM-SMS-DE].vendor}}",
                 "vendorTemplateId": "4",
-                "channelAddress": "{{Contact.Attribute.PNM-SMS-DE.channelAddress}}" 		 
+                "channelAddress": "{{Contact.Attribute.[PNM-SMS-DE].channelAddress}}" 		 
              }
             ],
             "outArguments": [],
