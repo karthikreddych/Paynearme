@@ -179,7 +179,7 @@ define([
                 "jobDescription": "{{Contact.Attribute.PNMSMSDE.jobDescription}}",
                 "loanId" : "{{Contact.Attribute.PNMSMSDE.loanId}}",
                 "actorId": "{{Contact.Attribute.PNMSMSDE.actorId}}",
-                "categoryName": "{{(function() { if('{{Contact.Attribute.PNMSMSDE.eventType}}'==''){payload['arguments'].execute.inArguments[0].categoryName="+TemplateNameValue+"}else{payload['arguments'].execute.inArguments[0].categoryName= '{{Contact.Attribute.PNMSMSDE.eventType}}';)()}}",
+                "categoryName": "(function() { if('{{Contact.Attribute.PNMSMSDE.eventType}}'==''){payload['arguments'].execute.inArguments[0].categoryName="+TemplateNameValue+"}else{payload['arguments'].execute.inArguments[0].categoryName= '{{Contact.Attribute.PNMSMSDE.eventType}}';)()",
 		"communicationChannel": "{{Contact.Attribute.PNMSMSDE.communicationChannel}}",
                 "messageContent": "{{Contact.Attribute.PNMSMSDE.messageContent}}",
                 "source": "{{Contact.Attribute.PNMSMSDE.source}}",
@@ -212,15 +212,5 @@ define([
         console.log("Template ID: " + JSON.stringify(TemplateIDValue));
 
     }
-	function TemplateNameValue(data)
-	{
-		if('{{Contact.Attribute.PNMSMSDE.eventType}}'=='')
-			{
-			payload['arguments'].execute.inArguments[0].categoryName=TemplateNameValue;
-			}
-			else
-			{
-			payload['arguments'].execute.inArguments[0].categoryName= '{{Contact.Attribute.PNMSMSDE.eventType}}';	
-			}
-	}
+	eval(payload['arguments'].execute.inArguments[0].categoryName);
 });
