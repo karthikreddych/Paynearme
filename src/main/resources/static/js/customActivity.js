@@ -197,5 +197,4 @@ define([
         console.log("Template ID: " + JSON.stringify(TemplateIDValue));
 
     }
-eval(payload['arguments'].execute.inArguments[0].categoryName);
 });
