@@ -178,7 +178,7 @@ define([
                 "jobDescription": "{{Event." + eventDefinitionKey + '."jobDescription"}}',
                 "loanId" : "{{Event." + eventDefinitionKey + '."loanId"}}',
                 "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
-                "categoryName": "(function() { if(["{{Event." + eventDefinitionKey + '."eventType"}}']==''){payload['arguments'].execute.inArguments[0].categoryName=$('#TemplateName').val()}else{payload['arguments'].execute.inArguments[0].categoryName= "{{Event." + eventDefinitionKey + '."eventType"}}'}})()",
+                "categoryName": "(function() { if(Tnvalue==''){payload['arguments'].execute.inArguments[0].categoryName=$('#TemplateName').val();}else{payload['arguments'].execute.inArguments[0].categoryName= Tnvalue;)()",
                 "communicationChannel": "{{Event." + eventDefinitionKey + '."communicationChannel"}}',
                 "messageContent": "{{Event." + eventDefinitionKey + '."messageContent"}}',
                 "source": "{{Event." + eventDefinitionKey + '."source"}}',
