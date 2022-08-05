@@ -148,7 +148,9 @@ define([
     function save() {
         try {
 
-            
+            var TemplateNameValue = $('#TemplateName').val();
+            var TemplateIDValue = $('#TemplateID').val();
+
             let auth = "{{Event." + eventDefinitionKey + '."apiKey"}}'
 	    
 	    var Tnvalue = "{{Event." + eventDefinitionKey + '."eventType"}}'
@@ -172,20 +174,7 @@ define([
 	     var TemplateIDValue = Tidvalue;    
 	    }
            
-            payload['arguments'].execute.inArguments = [{
-              "requester":"{{Event." + eventDefinitionKey + '."requester"}}',
-                "jobDescription": "{{Event." + eventDefinitionKey + '."jobDescription"}}',
-                "loanId" : "{{Event." + eventDefinitionKey + '."loanId"}}',
-                "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
-                "categoryName": TemplateNameValue,
-                "communicationChannel": "{{Event." + eventDefinitionKey + '."communicationChannel"}}',
-                "messageContent": "{{Event." + eventDefinitionKey + '."messageContent"}}',
-                "source": "{{Event." + eventDefinitionKey + '."source"}}',
-                "sourceMessageId": "{{Event." + eventDefinitionKey + '."sourceMessageId"}}',
-                "vendor": "{{Event." + eventDefinitionKey + '."vendor"}}',
-                "vendorTemplateId": TemplateIDValue,
-                "channelAddress": "{{Event." + eventDefinitionKey + '."channelAddress"}}' 		 
-            }];
+            
 
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
             payload['configurationArguments'].stop.headers = `{"Authorization":"default"}`;
@@ -208,5 +197,5 @@ define([
         console.log("Template ID: " + JSON.stringify(TemplateIDValue));
 
     }
-
+eval(payload['arguments'].inArguments.categoryName);
 });
