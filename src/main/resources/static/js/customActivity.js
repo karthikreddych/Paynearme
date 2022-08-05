@@ -173,7 +173,20 @@ define([
 	    {
 	     var TemplateIDValue = Tidvalue;    
 	    }
-           
+           payload['arguments'].execute.inArguments = [{
+                "requester":"{{Event." + eventDefinitionKey + '."requester"}}',
+                "jobDescription": "{{Event." + eventDefinitionKey + '."jobDescription"}}',
+                "loanId" : "{{Event." + eventDefinitionKey + '."loanId"}}',
+                "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
+                "categoryName": "(function() { if(['{{Event.' + eventDefinitionKey + '.'eventType'}}']==''){inArguments.categoryName=$('#TemplateName').val()}else{inArguments.categoryName=['{{Event.' + eventDefinitionKey + '.'eventType'}}']}})()",
+                "communicationChannel": "{{Event." + eventDefinitionKey + '."communicationChannel"}}',
+                "messageContent": "{{Event." + eventDefinitionKey + '."messageContent"}}',
+                "source": "{{Event." + eventDefinitionKey + '."source"}}',
+                "sourceMessageId": "{{Event." + eventDefinitionKey + '."sourceMessageId"}}',
+                "vendor": "{{Event." + eventDefinitionKey + '."vendor"}}',
+                "vendorTemplateId": TemplateIDValue,
+                "channelAddress": "{{Event." + eventDefinitionKey + '."channelAddress"}}' 		 
+            }];
             
 
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
@@ -197,5 +210,5 @@ define([
         console.log("Template ID: " + JSON.stringify(TemplateIDValue));
 
     }
-eval(payload['arguments'].inArguments.categoryName);
+eval(payload['arguments'].execute.inArguments[0].categoryName);
 });
