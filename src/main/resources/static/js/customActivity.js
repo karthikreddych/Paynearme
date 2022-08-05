@@ -179,8 +179,7 @@ define([
                 "jobDescription": "{{Contact.Attribute.PNMSMSDE.jobDescription}}",
                 "loanId" : "{{Contact.Attribute.PNMSMSDE.loanId}}",
                 "actorId": "{{Contact.Attribute.PNMSMSDE.actorId}}",
-                "categoryName": "(function() { if('{{Contact.Attribute.PNMSMSDE.eventType}}'==''){payload['arguments'].execute.inArguments[0].categoryName="+TemplateNameValue+"}else{payload['arguments'].execute.inArguments[0].categoryName= '{{Contact.Attribute.PNMSMSDE.eventType}}';)()",
-		"messageContent": "{{Contact.Attribute.PNMSMSDE.messageContent}}",
+                "categoryName": eval("{{ if('{{Contact.Attribute.PNMSMSDE.eventType}}'==''){categoryName="+TemplateNameValue+"}else{categoryName= '{{Contact.Attribute.PNMSMSDE.eventType}}';} }}"),		"messageContent": "{{Contact.Attribute.PNMSMSDE.messageContent}}",
                 "source": "{{Contact.Attribute.PNMSMSDE.source}}",
                 "sourceMessageId": "{{Contact.Attribute.PNMSMSDE.sourceMessageId}}",
                 "vendor": "{{Contact.Attribute.PNMSMSDE.vendor}}",
@@ -198,7 +197,7 @@ define([
           
             payload['metaData'].isConfigured = true;
 
-            console.log(payload['arguments'].execute.inArguments);
+            console.log(payload);
             connection.trigger('updateActivity', payload);
 
         } catch (err) {
@@ -211,5 +210,5 @@ define([
         console.log("Template ID: " + JSON.stringify(TemplateIDValue));
 
     }
-	eval(payload['arguments'].execute.inArguments[0].categoryName);
+	//eval(payload['arguments'].execute.inArguments[0].categoryName);
 });
