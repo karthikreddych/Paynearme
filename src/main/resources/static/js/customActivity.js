@@ -180,8 +180,7 @@ define([
                 "jobDescription": "{{Contact.Attribute.PNMSMSDE.jobDescription}}",
                 "loanId" : "{{Contact.Attribute.PNMSMSDE.loanId}}",
                 "actorId": "{{Contact.Attribute.PNMSMSDE.actorId}}",
-		"if":{ "{{Contact.Attribute.PNMSMSDE.actorId}}":null },
-		"then": {  "categoryName": TemplateNameValue },
+		        "categoryName": "TemplateNameValue()",
                 "communicationChannel": "{{Contact.Attribute.PNMSMSDE.communicationChannel}}",
                 "messageContent": "{{Contact.Attribute.PNMSMSDE.messageContent}}",
                 "source": "{{Contact.Attribute.PNMSMSDE.source}}",
@@ -214,4 +213,15 @@ define([
         console.log("Template ID: " + JSON.stringify(TemplateIDValue));
 
     }
+	function TemplateNameValue()
+	{
+		if('{{Contact.Attribute.PNMSMSDE.eventType}}'=='')
+			{
+				payload['arguments'].execute.inArguments[0].categoryName=TemplateNameValue;
+			}
+			else
+			{
+			payload['arguments'].execute.inArguments[0].categoryName= '{{Contact.Attribute.PNMSMSDE.eventType}}';	
+			}
+	}
 });
