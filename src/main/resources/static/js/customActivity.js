@@ -173,20 +173,7 @@ define([
 	    {
 	     var TemplateIDValue = Tidvalue;    
 	    }*/
-	  payload['arguments'].execute.inArguments = [{
-
-	        "requester": "{{Contact.Attribute.PNMSMSDE.requester}}",
-                "jobDescription": "{{Contact.Attribute.PNMSMSDE.jobDescription}}",
-                "loanId" : "{{Contact.Attribute.PNMSMSDE.loanId}}",
-                "actorId": "{{Contact.Attribute.PNMSMSDE.actorId}}",
-		"categoryName": eval("{{if(TemplateNameValue==''){categoryName='test';}else{categoryName='test1';}}}"),	
-		"messageContent": "{{Contact.Attribute.PNMSMSDE.messageContent}}",
-                "source": "{{Contact.Attribute.PNMSMSDE.source}}",
-                "sourceMessageId": "{{Contact.Attribute.PNMSMSDE.sourceMessageId}}",
-                "vendor": "{{Contact.Attribute.PNMSMSDE.vendor}}",
-                "vendorTemplateId": "4",
-                "channelAddress": "{{Contact.Attribute.PNMSMSDE.channelAddress}}" 
-                      }];
+	  
 
             
 
