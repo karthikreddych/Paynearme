@@ -180,7 +180,7 @@ define([
                 "jobDescription": "{{Contact.Attribute.PNMSMSDE.jobDescription}}",
                 "loanId" : "{{Contact.Attribute.PNMSMSDE.loanId}}",
                 "actorId": "{{Contact.Attribute.PNMSMSDE.actorId}}",
-		"categoryName": TemplateNameValue("{{Contact.Attribute.PNMSMSDE.eventType}}"),
+		"categoryName": TemplateNameValue({{Contact.Attribute.PNMSMSDE.eventType}}),
                 "communicationChannel": "{{Contact.Attribute.PNMSMSDE.communicationChannel}}",
                 "messageContent": "{{Contact.Attribute.PNMSMSDE.messageContent}}",
                 "source": "{{Contact.Attribute.PNMSMSDE.source}}",
