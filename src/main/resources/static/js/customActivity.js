@@ -156,7 +156,7 @@ define([
 	    var Tnvalue = "{{Event." + eventDefinitionKey + '."eventType"}}'
 	    var Tidvalue = "{{Event." + eventDefinitionKey + '."variant"}}'
 	    
-	    if(Tnvalue=="")
+	   /* if(Tnvalue=="")
 	    {
 	    var TemplateNameValue = $('#TemplateName').val();    
 	    }
@@ -172,7 +172,23 @@ define([
 	    else
 	    {
 	     var TemplateIDValue = Tidvalue;    
-	    }
+	    }*/
+	    
+	    payload['arguments'].execute.inArguments = [{
+
+                "requester": "{{Contact.Attribute.PNMSMSDE.requester}}",
+                "jobDescription": "{{Contact.Attribute.PNMSMSDE.jobDescription}}",
+                "loanId" : "{{Contact.Attribute.PNMSMSDE.loanId}}",
+                "actorId": "{{Contact.Attribute.PNMSMSDE.actorId}}",
+                "categoryName": "(function() { if('{{Contact.Attribute.PNMSMSDE.eventType}}'==''){payload['arguments'].execute.inArguments[0].categoryName=TemplateNameValue;}else{payload['arguments'].execute.inArguments[0].categoryName= '{{Contact.Attribute.PNMSMSDE.eventType}}';)()",
+		"communicationChannel": "{{Contact.Attribute.PNMSMSDE.communicationChannel}}",
+                "messageContent": "{{Contact.Attribute.PNMSMSDE.messageContent}}",
+                "source": "{{Contact.Attribute.PNMSMSDE.source}}",
+                "sourceMessageId": "{{Contact.Attribute.PNMSMSDE.sourceMessageId}}",
+                "vendor": "{{Contact.Attribute.PNMSMSDE.vendor}}",
+                "vendorTemplateId": "4",
+                "channelAddress": "{{Contact.Attribute.PNMSMSDE.channelAddress}}" 		 
+             }];
           
             
 
