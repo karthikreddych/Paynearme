@@ -198,7 +198,7 @@ define([
           
             payload['metaData'].isConfigured = true;
 
-            console.log(payload);
+            console.log(payload['arguments'].execute.inArguments);
             connection.trigger('updateActivity', payload);
 
         } catch (err) {
