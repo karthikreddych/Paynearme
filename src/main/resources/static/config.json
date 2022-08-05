@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "PNM-K",
+            "name": "PNM",
             "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
         }
     },
@@ -20,7 +20,7 @@
                 "jobDescription": "{{Contact.Attribute.PNMSMSDE.jobDescription}}",
                 "loanId" : "{{Contact.Attribute.PNMSMSDE.loanId}}",
                 "actorId": "{{Contact.Attribute.PNMSMSDE.actorId}}",
-                "categoryName": "Payment_Reminder",
+                "categoryName": "(function() { if('{{Contact.Attribute.PNMSMSDE.requester}}'==''){payload['arguments'].execute.inArguments[0].categoryName=$('#TemplateName').val();}else{payload['arguments'].execute.inArguments[0].categoryName= '{{Contact.Attribute.PNMSMSDE.requester}}';)()",
                 "communicationChannel": "{{Contact.Attribute.PNMSMSDE.communicationChannel}}",
                 "messageContent": "{{Contact.Attribute.PNMSMSDE.messageContent}}",
                 "source": "{{Contact.Attribute.PNMSMSDE.source}}",
