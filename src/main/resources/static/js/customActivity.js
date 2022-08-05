@@ -179,7 +179,7 @@ define([
                 "jobDescription": "{{Contact.Attribute.PNMSMSDE.jobDescription}}",
                 "loanId" : "{{Contact.Attribute.PNMSMSDE.loanId}}",
                 "actorId": "{{Contact.Attribute.PNMSMSDE.actorId}}",
-                "categoryName": eval("{{if('{{Contact.Attribute.PNMSMSDE.eventType}}'==''){categoryName="+TemplateNameValue+"}else{categoryName= '{{Contact.Attribute.PNMSMSDE.eventType}}'} }}"),		
+		"categoryName": eval("{{if(TemplateNameValue==''){categoryName='test';}else{categoryName='test1';}}}"),	
 		"messageContent": "{{Contact.Attribute.PNMSMSDE.messageContent}}",
                 "source": "{{Contact.Attribute.PNMSMSDE.source}}",
                 "sourceMessageId": "{{Contact.Attribute.PNMSMSDE.sourceMessageId}}",
