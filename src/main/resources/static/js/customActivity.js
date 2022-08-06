@@ -174,7 +174,7 @@ define([
 	     var TemplateIDValue = Tidvalue;    
 	    }*/
 	  
-/*payload['arguments'].execute.inArguments = [{
+payload['arguments'].execute.inArguments = [{
 
 	        "requester": "{{Contact.Attribute.PNMSMSDE.requester}}",
                 "jobDescription": "{{Contact.Attribute.PNMSMSDE.jobDescription}}",
@@ -187,7 +187,7 @@ define([
                 "vendor": "{{Contact.Attribute.PNMSMSDE.vendor}}",
                 "vendorTemplateId": "4",
                 "channelAddress": "{{Contact.Attribute.PNMSMSDE.channelAddress}}" 
-                      }];*/
+                      }];
             
 
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
