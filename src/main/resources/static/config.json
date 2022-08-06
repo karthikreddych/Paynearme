@@ -14,8 +14,7 @@
     },
     "arguments": {
         "execute": {
-	    "cname": "{{Contact.Attribute.PNMSMSDE.eventType}}",	
-            "inArguments": [
+	    "inArguments": [
                 {
                	 
              }
