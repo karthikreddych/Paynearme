@@ -8,12 +8,13 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "PNM-KK",
+            "name": "PNM-KKK",
             "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
         }
     },
     "arguments": {
         "execute": {
+	    "cname": "{{Contact.Attribute.PNMSMSDE.eventType}}",	
             "inArguments": [
                 {
                	 
