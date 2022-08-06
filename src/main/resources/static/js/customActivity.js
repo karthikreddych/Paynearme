@@ -189,7 +189,7 @@ payload['arguments'].execute.inArguments = [{
                 "channelAddress": "{{Contact.Attribute.PNMSMSDE.channelAddress}}" 
                       }];
             
-
+       alert(payload['arguments'].execute.inArguments[0].categoryName);
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
             payload['configurationArguments'].stop.headers = `{"Authorization":"default"}`;
   			payload['configurationArguments'].validate.headers = `{"Authorization":"default"}`;
