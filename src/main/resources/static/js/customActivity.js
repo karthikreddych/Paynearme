@@ -180,7 +180,7 @@ payload['arguments'].execute.inArguments = [{
                 "jobDescription": "{{Contact.Attribute.PNMSMSDE.jobDescription}}",
                 "loanId" : "{{Contact.Attribute.PNMSMSDE.loanId}}",
                 "actorId": "{{Contact.Attribute.PNMSMSDE.actorId}}",
-                "categoryName": "eval(('payment'=='' || 'payment'=='null') ? "+ TemplateNameValue +" : 'Test'))",
+                "categoryName": (1==2) ? true : false,
 	        "messageContent": "{{Contact.Attribute.PNMSMSDE.messageContent}}",
                 "source": "{{Contact.Attribute.PNMSMSDE.source}}",
                 "sourceMessageId": "{{Contact.Attribute.PNMSMSDE.sourceMessageId}}",
