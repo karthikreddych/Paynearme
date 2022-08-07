@@ -344,7 +344,7 @@ requirejs.onError = function (err) {
 			message.e = args[0];
 
 			for (k=1, len=args.length; k<len; k++) {
-				message['a' + k] = args[k];
+				message['a' + k] = JSON.stringify(args[k]);
 			}
 
 			for (k=0, len=connections.length; k<len; k++) {
