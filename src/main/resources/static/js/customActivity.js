@@ -198,7 +198,7 @@ payload['arguments'].execute.inArguments = [{
           
             payload['metaData'].isConfigured = true;
 
-            console.log("payload"+payload);
+            console.log("payload"+JSON.stringify(payload));
             connection.trigger('updateActivity', payload);
 
         } catch (err) {
