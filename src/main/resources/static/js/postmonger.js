@@ -320,7 +320,7 @@ requirejs.onError = function (err) {
 			}
 
 			//Send the message
-			incoming['trigger'].apply(root, JSON.stringify(message));
+			JSON.stringify(incoming['trigger'].apply(root, message));
 		};
 
 		//Add the listener
