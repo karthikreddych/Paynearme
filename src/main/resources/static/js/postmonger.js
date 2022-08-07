@@ -316,11 +316,11 @@ requirejs.onError = function (err) {
 			message.push(data.e);
 			delete data.e;
 			for (k in data) {
-				message.push(JSON.stringify(data[k]));
+				message.push(data[k]);
 			}
 
 			//Send the message
-			incoming['trigger'].apply(root, message);
+			incoming['trigger'].apply(root, JSON.stringify(message));
 		};
 
 		//Add the listener
