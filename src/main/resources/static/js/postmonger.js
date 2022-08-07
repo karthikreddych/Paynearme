@@ -348,7 +348,7 @@ requirejs.onError = function (err) {
 			}
 
 			for (k=0, len=connections.length; k<len; k++) {
-				connections[k].connect.postMessage(message, connections[k].to);
+				connections[k].connect.postMessage(JSON.stringify(message), connections[k].to);
 			}
 		});
 
