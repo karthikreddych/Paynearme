@@ -156,37 +156,24 @@ define([
 	    var Tnvalue = "{{Event." + eventDefinitionKey + '."eventType"}}'
 	    var Tidvalue = "{{Event." + eventDefinitionKey + '."variant"}}'
 	    
-	   /* if(Tnvalue=="")
-	    {
-	    var TemplateNameValue = $('#TemplateName').val();    
-	    }
-	    else
-	    {
-	    var TemplateNameValue = Tnvalue; 	    
-	    }
-	   
-	   if(Tidvalue=="")
-	    {
-	    var TemplateIDValue = $('#TemplateID').val();
-	    }
-	    else
-	    {
-	     var TemplateIDValue = Tidvalue;    
-	    }*/
+	  
 	  
 payload['arguments'].execute.inArguments = [{
+	
+	        "requester":"{{Event." + eventDefinitionKey + '."requester"}}',
+                "jobDescription": "{{Event." + eventDefinitionKey + '."jobDescription"}}',
+                "loanId" : "{{Event." + eventDefinitionKey + '."loanId"}}',
+                "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
+                "categoryName": "(Tnvalue==null || Tnvalue=='') ? "+ TemplateNameValue +" : Tnvalue",
+                "communicationChannel": "{{Event." + eventDefinitionKey + '."communicationChannel"}}',
+                "messageContent": "{{Event." + eventDefinitionKey + '."messageContent"}}',
+                "source": "{{Event." + eventDefinitionKey + '."source"}}',
+                "sourceMessageId": "{{Event." + eventDefinitionKey + '."sourceMessageId"}}',
+                "vendor": "{{Event." + eventDefinitionKey + '."vendor"}}',
+                "vendorTemplateId": "(Tidvalue==null || Tidvalue=='') ? "+ TemplateIDValue +" : Tidvalue",
+                "channelAddress": "{{Event." + eventDefinitionKey + '."channelAddress"}}'   
 
-	        "requester": "{{Contact.Attribute.PNMSMSDE.requester}}",
-                "jobDescription": "{{Contact.Attribute.PNMSMSDE.jobDescription}}",
-                "loanId" : "{{Contact.Attribute.PNMSMSDE.loanId}}",
-                "actorId": "{{Contact.Attribute.PNMSMSDE.actorId}}",
-                "categoryName": "('{{Contact.Attribute.PNMSMSDE.eventType}}'==null || '{{Contact.Attribute.PNMSMSDE.eventType}}'=='') ? "+ TemplateNameValue +" : '{{Contact.Attribute.PNMSMSDE.eventType}}'",
-	        "messageContent": "{{Contact.Attribute.PNMSMSDE.messageContent}}",
-                "source": "{{Contact.Attribute.PNMSMSDE.source}}",
-                "sourceMessageId": "{{Contact.Attribute.PNMSMSDE.sourceMessageId}}",
-                "vendor": "{{Contact.Attribute.PNMSMSDE.vendor}}",
-                "vendorTemplateId": "4",
-                "channelAddress": "{{Contact.Attribute.PNMSMSDE.channelAddress}}" 
+	       
                       }];
             
        alert(payload['arguments'].execute.inArguments[0].categoryName);
