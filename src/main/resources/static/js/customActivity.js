@@ -153,9 +153,6 @@ define([
 
             let auth = "{{Event." + eventDefinitionKey + '."apiKey"}}'
 	    
-	    var Tnvalue = "{{Event." + eventDefinitionKey + '."eventType"}}'
-	    var Tidvalue = "{{Event." + eventDefinitionKey + '."variant"}}'
-	    
 	    if(TemplateNameValue=="custom")
 	    {
 	     TemplateNameValue = "{{Event." + eventDefinitionKey + '."eventType"}}'
@@ -165,7 +162,7 @@ define([
 	    TemplateNameValue=TemplateNameValue;    
 	    }
 	   
-	    if(TemplateIDValue=="1")
+	    if(TemplateIDValue=="custom")
 	    {
 	     TemplateIDValue = "{{Event." + eventDefinitionKey + '."variant"}}'
 	    }
