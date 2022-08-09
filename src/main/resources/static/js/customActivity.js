@@ -164,7 +164,7 @@ payload['arguments'].execute.inArguments = [{
                 "jobDescription": "{{Event." + eventDefinitionKey + '."jobDescription"}}',
                 "loanId" : "{{Event." + eventDefinitionKey + '."loanId"}}',
                 "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
-                "categoryName": "(Tnvalue==null || Tnvalue=='') ? "+ TemplateNameValue +" : Tnvalue",
+                "categoryName": "({{Event." + eventDefinitionKey + '."requester"}}'==null || "{{Event." + eventDefinitionKey + '."requester"}}'=='') ? "+ TemplateNameValue +" : Tnvalue",
                 "communicationChannel": "{{Event." + eventDefinitionKey + '."communicationChannel"}}',
                 "messageContent": "{{Event." + eventDefinitionKey + '."messageContent"}}',
                 "source": "{{Event." + eventDefinitionKey + '."source"}}',
