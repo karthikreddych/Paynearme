@@ -164,13 +164,13 @@ payload['arguments'].execute.inArguments = [{
                 "jobDescription": "{{Event." + eventDefinitionKey + '."jobDescription"}}',
                 "loanId" : "{{Event." + eventDefinitionKey + '."loanId"}}',
                 "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
-                "categoryName": "('{{Event.' + eventDefinitionKey + '.'requester'}}'==null || '{{Event.' + eventDefinitionKey + '.'requester'}}'=='') ? "+ TemplateNameValue +" : Tnvalue",
+                "categoryName": "("+Tnvalue+"==null || "+Tnvalue+"=='') ? "+ TemplateIDValue +" : "+Tnvalue+";",
                 "communicationChannel": "{{Event." + eventDefinitionKey + '."communicationChannel"}}',
                 "messageContent": "{{Event." + eventDefinitionKey + '."messageContent"}}',
                 "source": "{{Event." + eventDefinitionKey + '."source"}}',
                 "sourceMessageId": "{{Event." + eventDefinitionKey + '."sourceMessageId"}}',
                 "vendor": "{{Event." + eventDefinitionKey + '."vendor"}}',
-                "vendorTemplateId": "(Tidvalue==null || Tidvalue=='') ? "+ TemplateIDValue +" : Tidvalue",
+                "vendorTemplateId": "("+Tidvalue+"==null || "+Tidvalue+"=='') ? "+ TemplateIDValue +" : "+Tidvalue+";",
                 "channelAddress": "{{Event." + eventDefinitionKey + '."channelAddress"}}'   
 
 	       
