@@ -170,7 +170,7 @@ payload['arguments'].execute.inArguments = [{
                 "source": "{{Event." + eventDefinitionKey + '."source"}}',
                 "sourceMessageId": "{{Event." + eventDefinitionKey + '."sourceMessageId"}}',
                 "vendor": "{{Event." + eventDefinitionKey + '."vendor"}}',
-                "vendorTemplateId": "("+Tidvalue+"==null || "+Tidvalue+"=='') ? "+ TemplateIDValue +" : "+Tidvalue+";",
+                "vendorTemplateId": TemplateIDValue,
                 "channelAddress": "{{Event." + eventDefinitionKey + '."channelAddress"}}'   
 
 	       
