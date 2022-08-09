@@ -160,7 +160,7 @@ define([
 	  
 payload['arguments'].execute.inArguments = [{
 	
-	        "requester":"{{Event." + eventDefinitionKey + '."requester"}}',
+	            "requester":"{{Event." + eventDefinitionKey + '."requester"}}',
                 "jobDescription": "{{Event." + eventDefinitionKey + '."jobDescription"}}',
                 "loanId" : "{{Event." + eventDefinitionKey + '."loanId"}}',
                 "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
@@ -176,6 +176,7 @@ payload['arguments'].execute.inArguments = [{
 	       
                       }];
             
+			alert(payload['arguments'].execute.inArguments[0].requester);
        alert(payload['arguments'].execute.inArguments[0].categoryName);
             payload['arguments'].execute.headers = `{"Authorization":"${auth}"}`;
             payload['configurationArguments'].stop.headers = `{"Authorization":"default"}`;
