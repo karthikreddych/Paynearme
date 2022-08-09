@@ -156,15 +156,32 @@ define([
 	    var Tnvalue = "{{Event." + eventDefinitionKey + '."eventType"}}'
 	    var Tidvalue = "{{Event." + eventDefinitionKey + '."variant"}}'
 	    
+	    if(TemplateNameValue=="custom")
+	    {
+	     TemplateNameValue = "{{Event." + eventDefinitionKey + '."eventType"}}'
+	    }
+	    else
+	    {
+	    TemplateNameValue=TemplateNameValue;    
+	    }
+	   
+	    if(TemplateIDValue=="1")
+	    {
+	     TemplateIDValue = "{{Event." + eventDefinitionKey + '."variant"}}'
+	    }
+	    else
+	    {
+	    TemplateIDValue=TemplateIDValue;    
+	    }
 	  
 	  
 payload['arguments'].execute.inArguments = [{
 	
-	            "requester":"{{Event." + eventDefinitionKey + '."requester"}}',
+	        "requester":"{{Event." + eventDefinitionKey + '."requester"}}',
                 "jobDescription": "{{Event." + eventDefinitionKey + '."jobDescription"}}',
                 "loanId" : "{{Event." + eventDefinitionKey + '."loanId"}}',
                 "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
-                "categoryName": (typeof('{{Contact.Attribute.PNMSMSDE.eventType}}')!=null || ('{{Contact.Attribute.PNMSMSDE.eventType}}').length>0) ? 'Test' : TemplateNameValue,
+                "categoryName": TemplateNameValue,
                 "messageContent": "{{Event." + eventDefinitionKey + '."messageContent"}}',
                 "source": "{{Event." + eventDefinitionKey + '."source"}}',
                 "sourceMessageId": "{{Event." + eventDefinitionKey + '."sourceMessageId"}}',
