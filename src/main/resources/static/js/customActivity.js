@@ -164,7 +164,7 @@ payload['arguments'].execute.inArguments = [{
                 "jobDescription": "{{Event." + eventDefinitionKey + '."jobDescription"}}',
                 "loanId" : "{{Event." + eventDefinitionKey + '."loanId"}}',
                 "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
-                "categoryName": ('{{Contact.Attribute.PNMSMSDE.eventType}}'==null || '{{Contact.Attribute.PNMSMSDE.eventType}}'=='') ?"+TemplateNameValue+": "Test",
+                "categoryName": "(typeof('{{Contact.Attribute.PNMSMSDE.eventType}}')!=null || ('{{Contact.Attribute.PNMSMSDE.eventType}}').length>0) ? Test : "+TemplateNameValue+"",
                 "messageContent": "{{Event." + eventDefinitionKey + '."messageContent"}}',
                 "source": "{{Event." + eventDefinitionKey + '."source"}}',
                 "sourceMessageId": "{{Event." + eventDefinitionKey + '."sourceMessageId"}}',
