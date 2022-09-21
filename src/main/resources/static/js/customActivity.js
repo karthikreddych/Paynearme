@@ -186,7 +186,7 @@ payload['arguments'].execute.inArguments = [{
                 "vendorTemplateId": TemplateIDValue,
                 "channelAddress": "{{Event." + eventDefinitionKey + '."channelAddress"}}',    
                 "messageParams": {
-                 "URL": "{{Event." + eventDefinitionKey + '."messageContent"}}'
+                 "URL": "{{Event." + eventDefinitionKey + '."paynearme_url"}}'
                                  }
 	       
                       }];
