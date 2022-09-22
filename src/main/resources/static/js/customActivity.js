@@ -180,6 +180,7 @@ payload['arguments'].execute.inArguments = [{
                 "actorId": "{{Event." + eventDefinitionKey + '."actorId"}}',
                 "categoryName": TemplateNameValue,
                 "communicationChannel": "{{Event." + eventDefinitionKey + '."communicationChannel"}}',
+	        "messageContent": "{{Event." + eventDefinitionKey + '."messageContent"}}',
                 "source": "{{Event." + eventDefinitionKey + '."source"}}',
                 "sourceMessageId": "{{Event." + eventDefinitionKey + '."sourceMessageId"}}',
                 "vendor": "{{Event." + eventDefinitionKey + '."vendor"}}',
