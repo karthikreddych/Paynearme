@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "PNM-SMS",
+            "name": "PNM-SMS-HEROKU",
             "description": "To send the Outbound Messaging to Message Service Provider via Comms Gateway"
         }
     },
@@ -26,7 +26,7 @@
             "header": "",
             "format": "json",
             "useJwt": false,
-            "timeout": 25000,
+            "timeout": 60000,
 			"retryCount": 0,
             "concurrentRequests" : 1,
 			"retryDelay": 10000
