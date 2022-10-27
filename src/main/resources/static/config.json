@@ -59,7 +59,7 @@
             "timeout": 25000
         },
         "stop": {
-            "url": "https://api.lendingclub.com/api/sbt-sms-febe/activity/stop",
+            "url": "https://api-sandbox.lendingclub.com/api/sbt-sms-febe/activity/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
